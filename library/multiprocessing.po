@@ -1437,7 +1437,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:711
 msgid "Same as :meth:`terminate` but using the ``SIGKILL`` signal on POSIX."
-msgstr ""
+msgstr "Ίδιο με το :meth:`terminate` αλλά χρησιμοποιώντας το σήμα ``SIGKILL`` στο POSIX."
 
 #: library/multiprocessing.rst:717
 msgid ""
@@ -1446,6 +1446,10 @@ msgid ""
 "running.  Once :meth:`close` returns successfully, most other methods and "
 "attributes of the :class:`Process` object will raise :exc:`ValueError`."
 msgstr ""
+"Κλείνει το αντικείμενο :class:`Process`, απελευθερώνοντας όλους τους πόρους που σχετίζονται με αυτό. "
+"Η :exc:`ValueError` γίνεται raise εάν η υποκείμενη διεργασία εξακολουθεί να εκτελείται. "
+"Μόλις η :meth:`close` επιστρέψει με επιτυχία, οι περισσότερες άλλες μέθοδοι και "
+"χαρακτηριστικά του αντικειμένου :class:`Process` θα προκαλέσουν :exc:`ValueError`."
 
 #: library/multiprocessing.rst:725
 msgid ""
@@ -1453,10 +1457,12 @@ msgid ""
 "`terminate` and :attr:`exitcode` methods should only be called by the "
 "process that created the process object."
 msgstr ""
+"Σημειώστε ότι οι μέθοδοι :meth:`start`, :meth:`join`, :meth:`is_alive`, :meth:`terminate` και το "
+":attr:`exitcode` θα πρέπει να καλούνται μόνο από τη διεργασία που δημιούργησε το αντικείμενο διεργασίας."
 
 #: library/multiprocessing.rst:729
 msgid "Example usage of some of the methods of :class:`Process`:"
-msgstr ""
+msgstr "Παράδειγμα χρήσης μερικών από τις μεθόδους της :class:`Process`:"
 
 #: library/multiprocessing.rst:731
 msgid ""
@@ -1492,31 +1498,35 @@ msgstr ""
 
 #: library/multiprocessing.rst:750
 msgid "The base class of all :mod:`multiprocessing` exceptions."
-msgstr ""
+msgstr "Η βασική κλάση όλων των εξαιρέσεων του :mod:`multiprocessing`."
 
 #: library/multiprocessing.rst:754
 msgid ""
 "Exception raised by :meth:`Connection.recv_bytes_into` when the supplied "
 "buffer object is too small for the message read."
 msgstr ""
+"Εξαίρεση που γίνεται raise από τη :meth:`Connection.recv_bytes_into` όταν το παρεχόμενο "
+"αντικείμενο buffer είναι πολύ μικρό για το μήνυμα που διαβάστηκε."
 
 #: library/multiprocessing.rst:757
 msgid ""
 "If ``e`` is an instance of :exc:`BufferTooShort` then ``e.args[0]`` will "
 "give the message as a byte string."
 msgstr ""
+"Εάν το ``e`` είναι ένα στιγμιότυπο της :exc:`BufferTooShort` τότε ``e.args[0]`` θα "
+"δώσει το μήνυμα ως byte string."
 
 #: library/multiprocessing.rst:762
 msgid "Raised when there is an authentication error."
-msgstr ""
+msgstr "Γίνεται raise όταν υπάρχει σφάλμα αυθεντικοποίησης."
 
 #: library/multiprocessing.rst:766
 msgid "Raised by methods with a timeout when the timeout expires."
-msgstr ""
+msgstr "Γίνεται raise από τις μεθόδους με ένα timeout όταν το timeout λήξει."
 
 #: library/multiprocessing.rst:769
 msgid "Pipes and Queues"
-msgstr ""
+msgstr "Pipes και Ουρές (Queues)"
 
 #: library/multiprocessing.rst:771
 msgid ""
@@ -1524,12 +1534,17 @@ msgid ""
 "communication between processes and avoids having to use any synchronization "
 "primitives like locks."
 msgstr ""
+"Όταν χρησιμοποιούνται πολλές διεργασίες, γενικά χρησιμοποιείται η αποστολή μηνυμάτων για "
+"την επικοινωνία μεταξύ διεργασιών και αποφεύγεται η χρήση όποιων πρωτογενών συγχρονισμού "
+"όπως κλειδώματα."
 
 #: library/multiprocessing.rst:775
 msgid ""
 "For passing messages one can use :func:`Pipe` (for a connection between two "
 "processes) or a queue (which allows multiple producers and consumers)."
 msgstr ""
+"Για την αποστολή μηνυμάτων μπορεί να χρησιμοποιηθεί η :func:`Pipe` (για μια σύνδεση μεταξύ δύο "
+"διεργασιών) ή μια ουρά (που επιτρέπει πολλούς παραγωγούς και καταναλωτές)."
 
 #: library/multiprocessing.rst:778
 msgid ""
@@ -1540,6 +1555,11 @@ msgid ""
 "meth:`~queue.Queue.join` methods introduced into Python 2.5's :class:`queue."
 "Queue` class."
 msgstr ""
+"Οι τύποι :class:`Queue`, :class:`SimpleQueue` και :class:`JoinableQueue` είναι "
+"πολυ-παραγωγικές, πολυ-καταναλωτικές :abbr:`FIFO (first-in, first-out)` ουρές "
+"μοντελοποιημένες στην κλάση :class:`queue.Queue` της τυπικής βιβλιοθήκης. "
+"Διαφέρουν στο ότι η :class:`Queue` δεν έχει τις μεθόδους :meth:`~queue.Queue.task_done` και :"
+"meth:`~queue.Queue.join` που εισήχθησαν στην κλάση :class:`queue.Queue` της Python 2.5."
 
 #: library/multiprocessing.rst:785
 msgid ""
@@ -1548,6 +1568,10 @@ msgid ""
 "semaphore used to count the number of unfinished tasks may eventually "
 "overflow, raising an exception."
 msgstr ""
+"Εάν χρησιμοποιείτε την :class:`JoinableQueue` τότε **πρέπει** να καλέσετε τη :meth:"
+"`JoinableQueue.task_done` για κάθε εργασία που αφαιρείται από την ουρά ή αλλιώς η "
+"σημαφόρος που χρησιμοποιείται για την καταμέτρηση του αριθμού των μη ολοκληρωμένων εργασιών "
+"μπορεί τελικά να υπερχειλίσει, κάνοντας raise μια εξαίρεση."
 
 #: library/multiprocessing.rst:790
 msgid ""
@@ -1556,12 +1580,18 @@ msgid ""
 "using :mod:`pickle`. The object return by the get method is a re-created "
 "object that does not share memory with the original object."
 msgstr ""
+"Μια διαφορά από άλλες υλοποιήσεις ουρών της Python, είναι ότι οι ουρές του :mod:"
+"`multiprocessing` σειριοποιούν όλα τα αντικείμενα που τοποθετούνται σε αυτές "
+"χρησιμοποιώντας το :mod:`pickle`. Το αντικείμενο που επιστρέφεται από τη μέθοδο get είναι ένα "
+"αντικείμενο που έχει αναδημιουργηθεί και δεν μοιράζεται μνήμη με το αρχικό αντικείμενο."
 
 #: library/multiprocessing.rst:795
 msgid ""
 "Note that one can also create a shared queue by using a manager object -- "
 "see :ref:`multiprocessing-managers`."
 msgstr ""
+"Σημειώστε ότι μπορεί επίσης να δημιουργηθεί μια κοινόχρηστη ουρά χρησιμοποιώντας ένα αντικείμενο διαχειριστή -- "
+"δείτε :ref:`multiprocessing-managers`."
 
 #: library/multiprocessing.rst:800
 msgid ""
@@ -1569,6 +1599,9 @@ msgid ""
 "Full` exceptions to signal a timeout.  They are not available in the :mod:"
 "`multiprocessing` namespace so you need to import them from :mod:`queue`."
 msgstr ""
+"Το :mod:`multiprocessing` χρησιμοποιεί τις συνήθεις :exc:`queue.Empty` και :exc:`queue.Full` "
+"εξαιρέσεις για να σηματοδοτήσει μια χρονική καθυστέρηση. Δεν είναι διαθέσιμες στο "
+":mod:`multiprocessing` namespace, οπότε πρέπει να τις εισάγετε από το :mod:`queue`."
 
 #: library/multiprocessing.rst:807
 msgid ""
@@ -1578,6 +1611,11 @@ msgid ""
 "practical difficulties -- if they really bother you then you can instead use "
 "a queue created with a :ref:`manager <multiprocessing-managers>`."
 msgstr ""
+"Όταν ένα αντικείμενο τοποθετείται σε μια ουρά, το αντικείμενο γίνεται pickle και ένα "
+"υπόβαθρο νήμα αργότερα ξεπλένει τα δεδομένα pickle σε έναν υποκείμενο pipe. "
+"Αυτό έχει μερικές συνέπειες που είναι λίγο εκπληκτικές, αλλά δεν θα πρέπει "
+"να προκαλέσουν καμία πρακτική δυσκολία -- αν σας ενοχλούν πραγματικά τότε μπορείτε αντίθετα να χρησιμοποιήσετε "
+"μια ουρά που δημιουργήθηκε με έναν :ref:`manager <multiprocessing-managers>`."
 
 #: library/multiprocessing.rst:814
 msgid ""
@@ -1585,6 +1623,9 @@ msgid ""
 "delay before the queue's :meth:`~Queue.empty` method returns :const:`False` "
 "and :meth:`~Queue.get_nowait` can return without raising :exc:`queue.Empty`."
 msgstr ""
+"Μετά την τοποθέτηση ενός αντικειμένου σε μια κενή ουρά μπορεί να υπάρξει μια "
+"απείρως μικρή καθυστέρηση πριν η :meth:`~Queue.empty` μέθοδος της ουράς επιστρέψει :const:`False` "
+"και η :meth:`~Queue.get_nowait` μπορεί να επιστρέψει χωρίς να κάνει raise την :exc:`queue.Empty`."
 
 #: library/multiprocessing.rst:819
 msgid ""
@@ -1593,6 +1634,9 @@ msgid ""
 "the same process will always be in the expected order with respect to each "
 "other."
 msgstr ""
+"Εάν πολλές διεργασίες τοποθετούν αντικείμενα στην ουρά, είναι πιθανό τα αντικείμενα "
+"εντός της ουράς να λαμβάνονται στην άλλη άκρη εκτός σειράς. Ωστόσο, τα αντικείμενα που τοποθετούνται "
+"από την ίδια διεργασία θα είναι πάντα στη σωστή σειρά μεταξύ τους."
 
 #: library/multiprocessing.rst:826
 msgid ""
@@ -1601,6 +1645,10 @@ msgid ""
 "likely to become corrupted.  This may cause any other process to get an "
 "exception when it tries to use the queue later on."
 msgstr ""
+"Εάν μια διεργασία σκοτωθεί χρησιμοποιώντας τη :meth:`Process.terminate` ή τη :func:`os.kill` "
+"ενώ προσπαθεί να χρησιμοποιήσει μια :class:`Queue`, τότε τα δεδομένα στην ουρά είναι πιθανό "
+"να καταστραφούν. Αυτό μπορεί να προκαλέσει σε οποιαδήποτε άλλη διεργασία να λάβει μια "
+"εξαίρεση όταν προσπαθεί να χρησιμοποιήσει την ουρά αργότερα."
 
 #: library/multiprocessing.rst:833
 msgid ""
@@ -1609,6 +1657,10 @@ msgid ""
 "cancel_join_thread>`), then that process will not terminate until all "
 "buffered items have been flushed to the pipe."
 msgstr ""
+"Όπως αναφέρθηκε παραπάνω, εάν μια διεργασία παιδί έχει τοποθετήσει αντικείμενα σε μια ουρά (και δεν έχει "
+"χρησιμοποιήσει τη :meth:`JoinableQueue.cancel_join_thread <multiprocessing.Queue.cancel_join_thread>`), "
+"τότε αυτή η διεργασία δεν θα τερματιστεί μέχρι να έχουν ξεπλυθεί όλα "
+"τα αντικείμενα που έχουν αποθηκευτεί στο buffer στον pipe."
 
 #: library/multiprocessing.rst:838
 msgid ""
@@ -1618,24 +1670,33 @@ msgid ""
 "parent process may hang on exit when it tries to join all its non-daemonic "
 "children."
 msgstr ""
+"Αυτό σημαίνει ότι εάν προσπαθήσετε να ενώσετε αυτή τη διεργασία μπορεί να προκύψει αδιέξοδο "
+"εκτός εάν είστε βέβαιοι ότι όλα τα αντικείμενα που έχουν τοποθετηθεί στην ουρά έχουν "
+"καταναλωθεί.  Παρομοίως, αν η θυγατρική διεργασία δεν είναι δαιμονική "
+"τότε η γονική διεργασία μπορεί να κολλήσει κατά την έξοδο όταν προσπαθεί να "
+"ενώσει όλες τις μη δαιμοινκές θυγατρικές της."
 
 #: library/multiprocessing.rst:843
 msgid ""
 "Note that a queue created using a manager does not have this issue.  See :"
 "ref:`multiprocessing-programming`."
 msgstr ""
+"Σημείωστε ότι μια ουρά που δημιουργήθηκε χρησιμοποιώντας έναν διαχειριστή δεν έχει αυτό το πρόβλημα.  Δείτε :"
+"ref:`multiprocessing-programming`."
 
 #: library/multiprocessing.rst:846
 msgid ""
 "For an example of the usage of queues for interprocess communication see :"
 "ref:`multiprocessing-examples`."
 msgstr ""
+"Για ένα παράδειγμα χρήσης ουρών για δια-διεργασιακή επικοινωνία, δείτε :ref:`multiprocessing-examples`."
 
 #: library/multiprocessing.rst:852
 msgid ""
 "Returns a pair ``(conn1, conn2)`` of :class:`~multiprocessing.connection."
 "Connection` objects representing the ends of a pipe."
 msgstr ""
+"Επιστρέφει ένα ζεύγος ``(conn1, conn2)`` από αντικείμενα :class:`~multiprocessing.connection.Connection` που αντιπροσωπεύουν τα άκρα ενός pipe."
 
 #: library/multiprocessing.rst:856
 msgid ""
@@ -1644,6 +1705,10 @@ msgid ""
 "used for receiving messages and ``conn2`` can only be used for sending "
 "messages."
 msgstr ""
+"Εάν το *duplex* είναι ``True`` (η προεπιλογή) τότε το pipe είναι αμφίδρομο. "
+"Εάν το *duplex* είναι ``False`` τότε το pipe είναι μονόδρομο: το ``conn1`` "
+"μπορεί να χρησιμοποιηθεί μόνο για τη λήψη μηνυμάτων και το ``conn2`` "
+"μπορεί να χρησιμοποιηθεί μόνο για την αποστολή μηνυμάτων."
 
 #: library/multiprocessing.rst:861
 msgid ""
@@ -1651,6 +1716,8 @@ msgid ""
 "using :mod:`pickle` and the :meth:`~multiprocessing.Connection.recv` re-"
 "creates the object."
 msgstr ""
+"Η μέθοδος :meth:`~multiprocessing.Connection.send` σειριοποιεί το αντικείμενο "
+"χρησιμοποιώντας το :mod:`pickle` και η :meth:`~multiprocessing.Connection.recv` αναδημιουργεί το αντικείμενο."
 
 #: library/multiprocessing.rst:866
 msgid ""
@@ -1658,46 +1725,57 @@ msgid ""
 "semaphores.  When a process first puts an item on the queue a feeder thread "
 "is started which transfers objects from a buffer into the pipe."
 msgstr ""
+"Επιστρέφει μια κοινόχρηστη διεργασία ουρά που υλοποιείται χρησιμοποιώντας έναν pipe και μερικά κλειδώματα/σημαφόρους. "
+"Όταν μια διεργασία τοποθετεί για πρώτη φορά ένα αντικείμενο στην ουρά, ξεκινά ένα νήμα τροφοδότη που μεταφέρει αντικείμενα από ένα buffer στον pipe."
 
 #: library/multiprocessing.rst:870
 msgid ""
 "The usual :exc:`queue.Empty` and :exc:`queue.Full` exceptions from the "
 "standard library's :mod:`queue` module are raised to signal timeouts."
 msgstr ""
+"Οι συνήθεις :exc:`queue.Empty` και :exc:`queue.Full` εξαιρέσεις από την "
+"τυπική βιβλιοθήκη :mod:`queue` προκαλούνται για να σηματοδοτήσουν χρονικές καθυστερήσεις."
 
 #: library/multiprocessing.rst:873
 msgid ""
 ":class:`Queue` implements all the methods of :class:`queue.Queue` except "
 "for :meth:`~queue.Queue.task_done` and :meth:`~queue.Queue.join`."
 msgstr ""
+"Η :class:`Queue` υλοποιεί όλες τις μεθόδους της :class:`queue.Queue` εκτός από "
+"τη :meth:`~queue.Queue.task_done` και τη :meth:`~queue.Queue.join`."
 
 #: library/multiprocessing.rst:878
 msgid ""
 "Return the approximate size of the queue.  Because of multithreading/"
 "multiprocessing semantics, this number is not reliable."
 msgstr ""
+"Επιστρέφει το κατά προσέγγιση μέγεθος της ουράς. Λόγω των σημασιολογιών πολυνηματικής/πολυδιεργασιακής λειτουργίας, αυτός ο αριθμός δεν είναι αξιόπιστος."
 
 #: library/multiprocessing.rst:881
 msgid ""
 "Note that this may raise :exc:`NotImplementedError` on platforms like macOS "
 "where ``sem_getvalue()`` is not implemented."
 msgstr ""
+"Σημειώστε ότι αυτό μπορεί να κάνει raise μια :exc:`NotImplementedError` σε πλατφόρμες όπως το macOS "
+"όπου το ``sem_getvalue()`` δεν είναι υλοποιημένο."
 
 #: library/multiprocessing.rst:886
 msgid ""
 "Return ``True`` if the queue is empty, ``False`` otherwise.  Because of "
 "multithreading/multiprocessing semantics, this is not reliable."
 msgstr ""
+"Επιστρέφει ``True`` εάν η ουρά είναι κενή, ``False`` διαφορετικά. Λόγω των σημασιολογιών πολυνηματικής/πολυδιεργασιακής λειτουργίας, αυτό δεν είναι αξιόπιστο."
 
 #: library/multiprocessing.rst:889
 msgid "May raise an :exc:`OSError` on closed queues. (not guaranteed)"
-msgstr ""
+msgstr "Μπορεί να κάνει raise μια :exc:`OSError` σε κλειστές ουρές. (δεν είναι εγγυημένο)"
 
 #: library/multiprocessing.rst:893
 msgid ""
 "Return ``True`` if the queue is full, ``False`` otherwise.  Because of "
 "multithreading/multiprocessing semantics, this is not reliable."
 msgstr ""
+"Επιστρέφει ``True`` εάν η ουρά είναι γεμάτη, ``False`` διαφορετικά. Λόγω των σημασιολογιών πολυνηματικής/πολυδιεργασιακής λειτουργίας, αυτό δεν είναι αξιόπιστο."
 
 #: library/multiprocessing.rst:898
 msgid ""
@@ -1709,12 +1787,21 @@ msgid ""
 "an item on the queue if a free slot is immediately available, else raise "
 "the :exc:`queue.Full` exception (*timeout* is ignored in that case)."
 msgstr ""
+"Τοποθετεί το obj στην ουρά. Εάν το προαιρετικό όρισμα *block* είναι ``True`` (η "
+"προεπιλογή) και το *timeout* είναι ``None`` (η προεπιλογή), μπλοκάρει αν είναι "
+"απαραίτητο μέχρι να είναι διαθέσιμο ένα ελεύθερο slot. Εάν το *timeout* "
+"είναι ένας θετικός αριθμός, μπλοκάρει το πολύ για *timeout* δευτερόλεπτα και κάνει "
+"raise την :exc:`queue.Full` εξαίρεση εάν δεν ήταν διαθέσιμο ένα ελεύθερο slot "
+"μέσα σε αυτό το χρονικό διάστημα. Διαφορετικά (*block* είναι ``False``), "
+"τοποθετεί ένα αντικείμενο στην ουρά εάν ένα ελεύθερο slot είναι άμεσα "
+"διαθέσιμο, αλλιώς κάνει raise την :exc:`queue.Full` εξαίρεση (*timeout* αγνοείται σε αυτή την περίπτωση)."
 
 #: library/multiprocessing.rst:907
 msgid ""
 "If the queue is closed, :exc:`ValueError` is raised instead of :exc:"
 "`AssertionError`."
 msgstr ""
+"Εάν η ουρά είναι κλειστή, η :exc:`ValueError` γίνεται raise αντί για :exc:`AssertionError`."
 
 #: library/multiprocessing.rst:913
 msgid "Equivalent to ``put(obj, False)``."
@@ -1730,12 +1817,20 @@ msgid ""
 "return an item if one is immediately available, else raise the :exc:`queue."
 "Empty` exception (*timeout* is ignored in that case)."
 msgstr ""
+"Αφαιρεί και επιστρέφει ένα αντικείμενο από την ουρά. Εάν τα προαιρετικά ορίσματα *block* είναι "
+"``True`` (η προεπιλογή) και *timeout* είναι ``None`` (η προεπιλογή), μπλοκάρει αν είναι "
+"απαραίτητο μέχρι να είναι διαθέσιμο ένα αντικείμενο. Εάν το *timeout* είναι ένας θετικός αριθμός, "
+"μπλοκάρει το πολύ για *timeout* δευτερόλεπτα και κάνει raise την :exc:`queue.Empty` εξαίρεση "
+"εάν δεν ήταν διαθέσιμο ένα αντικείμενο μέσα σε αυτό το χρονικό διάστημα. "
+"Διαφορετικά (block είναι ``False``), επιστρέφει ένα αντικείμενο εάν είναι "
+"άμεσα διαθέσιμο, αλλιώς κάνει raise την :exc:`queue.Empty` εξαίρεση (*timeout* αγνοείται σε αυτή την περίπτωση)."
 
 #: library/multiprocessing.rst:925
 msgid ""
 "If the queue is closed, :exc:`ValueError` is raised instead of :exc:"
 "`OSError`."
 msgstr ""
+"Εάν η ουρά είναι κλειστή, η :exc:`ValueError` γίνεται raise αντί για :exc:`OSError`."
 
 #: library/multiprocessing.rst:931
 msgid "Equivalent to ``get(False)``."
@@ -1746,6 +1841,8 @@ msgid ""
 ":class:`multiprocessing.Queue` has a few additional methods not found in :"
 "class:`queue.Queue`.  These methods are usually unnecessary for most code:"
 msgstr ""
+"Η :class:`multiprocessing.Queue` έχει μερικές επιπλέον μεθόδους που δεν βρίσκονται στην :"
+"class:`queue.Queue`. Αυτές οι μέθοδοι είναι συνήθως περιττές για τον περισσότερο κώδικα:"
 
 #: library/multiprocessing.rst:939
 msgid ""
@@ -1754,6 +1851,9 @@ msgid ""
 "data to the pipe.  This is called automatically when the queue is garbage "
 "collected."
 msgstr ""
+"Δηλώνει ότι δεν θα τοποθετηθούν άλλα δεδομένα σε αυτή την ουρά από την τρέχουσα "
+"διεργασία. Το υπόβαθρο νήμα θα τερματιστεί μόλις ξεπλύνει όλα τα δεδομένα που έχουν αποθηκευτεί "
+"στο buffer στον pipe. Αυτό καλείται αυτόματα όταν η ουρά συλλέγεται από τα σκουπίδια."
 
 #: library/multiprocessing.rst:946
 msgid ""
@@ -1761,6 +1861,9 @@ msgid ""
 "been called.  It blocks until the background thread exits, ensuring that all "
 "data in the buffer has been flushed to the pipe."
 msgstr ""
+"Ενώνει το υπόβαθρο νήμα. Αυτό μπορεί να χρησιμοποιηθεί μόνο αφού έχει κληθεί η :meth:`close`. "
+"Μπλοκάρει μέχρι να τερματιστεί το υπόβαθρο νήμα, διασφαλίζοντας ότι όλα τα δεδομένα στο buffer "
+"έχουν ξεπλυθεί στον pipe."
 
 #: library/multiprocessing.rst:950
 msgid ""
@@ -1768,6 +1871,9 @@ msgid ""
 "attempt to join the queue's background thread.  The process can call :meth:"
 "`cancel_join_thread` to make :meth:`join_thread` do nothing."
 msgstr ""
+"Από προεπιλογή, εάν μια διεργασία δεν είναι ο δημιουργός της ουράς τότε κατά την έξοδο θα "
+"προσπαθήσει να ενώσει το υπόβαθρο νήμα της ουράς. Η διεργασία μπορεί να καλέσει τη :meth:"
+"`cancel_join_thread` για να κάνει τη :meth:`join_thread` να μην κάνει τίποτα."
 
 #: library/multiprocessing.rst:956
 msgid ""
@@ -1775,6 +1881,9 @@ msgid ""
 "background thread from being joined automatically when the process exits -- "
 "see :meth:`join_thread`."
 msgstr ""
+"Αποτρέπει τη :meth:`join_thread` από το να μπλοκάρει. Ιδιαίτερα, αυτό αποτρέπει το "
+"υπόβαθρο νήμα από το να ενωθεί αυτόματα όταν η διεργασία τερματίσει -- "
+"δείτε τη :meth:`join_thread`."
 
 #: library/multiprocessing.rst:960
 msgid ""
@@ -1784,6 +1893,12 @@ msgid ""
 "to exit immediately without waiting to flush enqueued data to the underlying "
 "pipe, and you don't care about lost data."
 msgstr ""
+"Μια καλύτερη ονομασία για αυτή τη μέθοδο θα μπορούσε να είναι ``allow_exit_without_flush()``. "
+"Είναι πιθανό να προκαλέσει απώλεια δεδομένων που έχουν τοποθετηθεί στην ουρά, "
+"και σχεδόν σίγουρα δεν θα χρειαστεί να τη χρησιμοποιήσετε. Υπάρχει πραγματικά μόνο εάν "
+"χρειάζεστε η τρέχουσα διεργασία να τερματιστεί αμέσως χωρίς "
+"να περιμένει να ξεπλύνει τα δεδομένα που έχουν "
+"τοποθετηθεί στην ουρά στον υποκείμενο pipe, και δεν σας νοιάζει η απώλεια δεδομένων."
 
 #: library/multiprocessing.rst:969
 msgid ""
@@ -1794,43 +1909,55 @@ msgid ""
 "information.  The same holds true for any of the specialized queue types "
 "listed below."
 msgstr ""
+"Αυτή η λειτουργικότητα της κλάσης απαιτεί μια λειτουργική υλοποίηση κοινόχρηστης σημαφόρου "
+"στο λειτουργικό σύστημα του κεντρικού υπολογιστή. Χωρίς αυτήν, η λειτουργικότητα "
+"σε αυτήν την κλάση θα απενεργοποιηθεί, και οι προσπάθειες για την δημιουργία ενός :class:`Queue` "
+"θα έχουν ως αποτέλεσμα μια :exc:`ImportError`. Δείτε το :issue:`3770` για επιπλέον "
+"πληροφορίες. Το ίδιο ισχύει και για οποιονδήποτε από τους εξειδικευμένους τύπους ουρών "
+"που αναφέρονται παρακάτω."
 
 #: library/multiprocessing.rst:978
 msgid ""
 "It is a simplified :class:`Queue` type, very close to a locked :class:`Pipe`."
 msgstr ""
+"Αυτό είναι ένας απλοποιημένος τύπος :class:`Queue`, πολύ κοντά σε έναν κλειδωμένο :class:`Pipe`."
 
 #: library/multiprocessing.rst:982
 msgid "Close the queue: release internal resources."
-msgstr ""
+msgstr "Κλείνει την ουρά: απελευθερώνει εσωτερικούς πόρους."
 
 #: library/multiprocessing.rst:984
 msgid ""
 "A queue must not be used anymore after it is closed. For example, :meth:"
 "`get`, :meth:`put` and :meth:`empty` methods must no longer be called."
 msgstr ""
+"Μια ουρά δεν πρέπει να χρησιμοποιείται πλέον αφού κλείσει. Για "
+"παράδειγμα, οι μέθοδοι :meth:`get`, "
+":meth:`put` και :meth:`empty` δεν πρέπει πλέον να καλούνται."
 
 #: library/multiprocessing.rst:992
 msgid "Return ``True`` if the queue is empty, ``False`` otherwise."
-msgstr ""
+msgstr "Επιστρέφει ``True`` εάν η ουρά είναι κενή, ``False`` διαφορετικά."
 
 #: library/multiprocessing.rst:994
 msgid "Always raises an :exc:`OSError` if the SimpleQueue is closed."
-msgstr ""
+msgstr "Πάντα κάνει raise μια :exc:`OSError` εάν η SimpleQueue είναι κλειστή."
 
 #: library/multiprocessing.rst:998
 msgid "Remove and return an item from the queue."
-msgstr ""
+msgstr "Αφαιρεί και επιστρέφει ένα αντικείμενο από την ουρά."
 
 #: library/multiprocessing.rst:1002
 msgid "Put *item* into the queue."
-msgstr ""
+msgstr "Τοποθετεί το *item* στην ουρά."
 
 #: library/multiprocessing.rst:1007
 msgid ""
 ":class:`JoinableQueue`, a :class:`Queue` subclass, is a queue which "
 "additionally has :meth:`task_done` and :meth:`join` methods."
 msgstr ""
+":class:`JoinableQueue`, μια υποκλάση της :class:`Queue`, είναι μια ουρά που "
+"επιπλέον έχει τις μεθόδους :meth:`task_done` και :meth:`join`."
 
 #: library/multiprocessing.rst:1012
 msgid ""
@@ -1839,6 +1966,11 @@ msgid ""
 "call to :meth:`task_done` tells the queue that the processing on the task is "
 "complete."
 msgstr ""
+"Δηλώνει ότι μια προηγουμένως τοποθετημένη στην ουρά εργασία έχει ολοκληρωθεί. "
+"Χρησιμοποιείται από τους καταναλωτές της ουράς. Για κάθε :meth:`~Queue.get` "
+"που χρησιμοποιείται για την ανάκτηση μιας εργασίας, "
+"μια επακόλουθη κλήση στη :meth:`task_done` ενημερώνει "
+"την ουρά ότι η επεξεργασία της εργασίας έχει ολοκληρωθεί."
 
 #: library/multiprocessing.rst:1017
 msgid ""
@@ -1846,16 +1978,21 @@ msgid ""
 "all items have been processed (meaning that a :meth:`task_done` call was "
 "received for every item that had been :meth:`~Queue.put` into the queue)."
 msgstr ""
+"Εάν μια :meth:`~queue.Queue.join` μπλοκάρει αυτήν τη στιγμή, θα συνεχίσει όταν "
+"όλα τα αντικείμενα έχουν επεξεργαστεί (που σημαίνει ότι μια κλήση :meth:`task_done` "
+"έχει ληφθεί για κάθε αντικείμενο που είχε :meth:`~Queue.put` στην ουρά)."
 
 #: library/multiprocessing.rst:1021
 msgid ""
 "Raises a :exc:`ValueError` if called more times than there were items placed "
 "in the queue."
 msgstr ""
+"Κανει raise μια :exc:`ValueError` εάν κληθεί περισσότερες φορές από ό,τι υπήρχαν αντικείμενα τοποθετημένα "
+"στην ουρά."
 
 #: library/multiprocessing.rst:1027
 msgid "Block until all items in the queue have been gotten and processed."
-msgstr ""
+msgstr "Μπλοκάρει μέχρι όλα τα αντικείμενα στην ουρά να έχουν ληφθεί και επεξεργαστεί."
 
 #: library/multiprocessing.rst:1029
 msgid ""
@@ -1865,24 +2002,31 @@ msgid ""
 "the count of unfinished tasks drops to zero, :meth:`~queue.Queue.join` "
 "unblocks."
 msgstr ""
+"Ο μετρητής των μη ολοκληρωμένων εργασιών αυξάνεται κάθε φορά που ένα αντικείμενο προστίθεται στην "
+"ουρά. Ο μετρητής μειώνεται κάθε φορά που ένας καταναλωτής καλεί τη :meth:`task_done` για να "
+"δηλώσει ότι το αντικείμενο ανακτήθηκε και όλη η εργασία σε αυτό έχει ολοκληρωθεί. Όταν "
+"ο μετρητής των μη ολοκληρωμένων εργασιών πέσει στο μηδέν, η :meth:`~queue.Queue.join` "
+"ξεμπλοκάρει."
 
 #: library/multiprocessing.rst:1037
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Διάφορα"
 
 #: library/multiprocessing.rst:1041
 msgid "Return list of all live children of the current process."
-msgstr ""
+msgstr "Επιστρέφει μια λίστα με όλα τα ζωντανά παιδιά της τρέχουσας διεργασίας."
 
 #: library/multiprocessing.rst:1043
 msgid ""
 "Calling this has the side effect of \"joining\" any processes which have "
 "already finished."
 msgstr ""
+"Η κλήση αυτού έχει την παρενέργεια του \"joining\" οποιωνδήποτε διεργασιών έχουν "
+"ήδη τελειώσει."
 
 #: library/multiprocessing.rst:1048
 msgid "Return the number of CPUs in the system."
-msgstr ""
+msgstr "Επιστρέφει τον αριθμό των CPUs στο σύστημα."
 
 #: library/multiprocessing.rst:1050
 msgid ""
@@ -1890,12 +2034,16 @@ msgid ""
 "use.  The number of usable CPUs can be obtained with :func:`os."
 "process_cpu_count` (or ``len(os.sched_getaffinity(0))``)."
 msgstr ""
+"Αυτός ο αριθμός δεν είναι ισοδύναμος με τον αριθμό των CPUs που μπορεί να "
+"χρησιμοποιήσει η τρέχουσα διεργασία. Ο αριθμός των χρησιμοποιήσιμων CPUs μπορεί να "
+"αποκτηθεί με τη :func:`os.process_cpu_count` (ή ``len(os.sched_getaffinity(0))``)."
 
 #: library/multiprocessing.rst:1054
 msgid ""
 "When the number of CPUs cannot be determined a :exc:`NotImplementedError` is "
 "raised."
 msgstr ""
+"Όταν ο αριθμός των CPUs δεν μπορεί να προσδιοριστεί, γίνεται raise μια :exc:`NotImplementedError`."
 
 #: library/multiprocessing.rst:1058
 msgid ":func:`os.cpu_count` :func:`os.process_cpu_count`"
@@ -1907,15 +2055,19 @@ msgid ""
 "X>` flag or :envvar:`PYTHON_CPU_COUNT` as this is merely a wrapper around "
 "the :mod:`os` cpu count APIs."
 msgstr ""
+"Η τιμή επιστροφής μπορεί επίσης να παρακαμφθεί χρησιμοποιώντας τη :option:`-X cpu_count <-X>` "
+"σημαία ή το :envvar:`PYTHON_CPU_COUNT` καθώς αυτό είναι απλώς ένας περιτύλιγμα γύρω από τις "
+"APIs καταμέτρησεις cpu του :mod:`os`."
 
 #: library/multiprocessing.rst:1069
 msgid ""
 "Return the :class:`Process` object corresponding to the current process."
 msgstr ""
+"Επιστρέφει το αντικείμενο :class:`Process` που αντιστοιχεί στην τρέχουσα διεργασία."
 
 #: library/multiprocessing.rst:1071
 msgid "An analogue of :func:`threading.current_thread`."
-msgstr ""
+msgstr "Αναλογικό της :func:`threading.current_thread`."
 
 #: library/multiprocessing.rst:1075
 msgid ""
@@ -1923,6 +2075,7 @@ msgid ""
 "the :func:`current_process`. For the main process, ``parent_process`` will "
 "be ``None``."
 msgstr ""
+"Επιστρέφει το αντικείμενο :class:`Process` που αντιστοιχεί στην γονική διεργασία της :func:`current_process`. Για την κύρια διεργασία, το ``parent_process`` θα είναι ``None``."
 
 #: library/multiprocessing.rst:1083
 msgid ""
@@ -1930,12 +2083,16 @@ msgid ""
 "frozen to produce an executable.  (Has been tested with **py2exe**, "
 "**PyInstaller** and **cx_Freeze**.)"
 msgstr ""
+"Προσθέτει υποστήριξη για όταν ένα πρόγραμμα που χρησιμοποιεί το :mod:`multiprocessing` "
+"έχει παγώσει για να παραγάγει ένα εκτελέσιμο αρχείο. (Έχει δοκιμαστεί με τα **py2exe**, "
+"**PyInstaller** και **cx_Freeze**.)"
 
 #: library/multiprocessing.rst:1087
 msgid ""
 "One needs to call this function straight after the ``if __name__ == "
 "'__main__'`` line of the main module.  For example::"
 msgstr ""
+"Πρέπει να καλέσετε αυτή τη συνάρτηση αμέσως μετά τη γραμμή ``if __name__ == '__main__'`` του κύριου module. Για παράδειγμα::"
 
 #: library/multiprocessing.rst:1090
 msgid ""
@@ -1962,6 +2119,7 @@ msgid ""
 "If the ``freeze_support()`` line is omitted then trying to run the frozen "
 "executable will raise :exc:`RuntimeError`."
 msgstr ""
+"Αν η γραμμή ``freeze_support()`` παραληφθεί τότε η προσπάθεια εκτέλεσης του εκτελέσιμου αρχείου που έχει παγώσει θα κάνει raise :exc:`RuntimeError`."
 
 #: library/multiprocessing.rst:1102
 msgid ""
@@ -1970,6 +2128,8 @@ msgid ""
 "interpreter (the program has not been frozen), then ``freeze_support()`` has "
 "no effect."
 msgstr ""
+"Η κλήση του ``freeze_support()`` δεν έχει καμία επίδραση όταν η μέθοδος εκκίνησης δεν είναι "
+"*spawn*. Επιπλέον, εάν το module εκτελείται κανονικά από τον διερμηνέα Python (το πρόγραμμα δεν έχει παγώσει), τότε το ``freeze_support()`` δεν έχει καμία επίδραση."
 
 #: library/multiprocessing.rst:1109
 msgid ""
@@ -1978,12 +2138,17 @@ msgid ""
 "``'forkserver'``.  Not all platforms support all methods.  See :ref:"
 "`multiprocessing-start-methods`."
 msgstr ""
+"Επιστρέφει μια λίστα με τις υποστηριζόμενες μεθόδους εκκίνησης, η πρώτη από "
+"τις οποίες είναι η προεπιλεγμένη. Οι πιθανές μέθοδοι εκκίνησης "
+"είναι ``'fork'``, ``'spawn'`` και ``'forkserver'``. Δεν υποστηρίζουν "
+"όλες οι πλατφόρμες όλες τις μεθόδους. Δείτε :ref:`multiprocessing-start-methods`."
 
 #: library/multiprocessing.rst:1118
 msgid ""
 "Return a context object which has the same attributes as the :mod:"
 "`multiprocessing` module."
 msgstr ""
+"Επιστρέφει ένα αντικείμενο context που έχει τα ίδια χαρακτηριστικά με το :mod:`multiprocessing` module."
 
 #: library/multiprocessing.rst:1121
 msgid ""
@@ -1992,10 +2157,14 @@ msgid ""
 "`ValueError` is raised if the specified start method is not available.  See :"
 "ref:`multiprocessing-start-methods`."
 msgstr ""
+"Εάν το *method* είναι ``None`` τότε επιστρέφεται το προεπιλεγμένο context. Διαφορετικά "
+"το *method* πρέπει να είναι ``'fork'``, ``'spawn'``, ``'forkserver'``. Η :exc:`ValueError` "
+"γίνεται raise εάν η καθορισμένη μέθοδος εκκίνησης δεν είναι διαθέσιμη. "
+"Δείτε :ref:`multiprocessing-start-methods`."
 
 #: library/multiprocessing.rst:1130
 msgid "Return the name of start method used for starting processes."
-msgstr ""
+msgstr "Επιστρέφει το όνομα της μεθόδου εκκίνησης που χρησιμοποιείται για την εκκίνηση διεργασιών."
 
 #: library/multiprocessing.rst:1132
 msgid ""
@@ -2003,12 +2172,17 @@ msgid ""
 "start method is fixed to the default and the name is returned.  If the start "
 "method has not been fixed and *allow_none* is true then ``None`` is returned."
 msgstr ""
+"Εάν η μέθοδος εκκίνησης δεν έχει καθοριστεί και το *allow_none* είναι false, τότε η "
+"μέθοδος εκκίνησης καθορίζεται στην προεπιλεγμένη και επιστρέφεται το όνομα. "
+"Εάν η μέθοδος εκκίνησης δεν έχει καθοριστεί και το *allow_none* είναι true τότε επιστρέφεται ``None``."
 
 #: library/multiprocessing.rst:1137
 msgid ""
 "The return value can be ``'fork'``, ``'spawn'``, ``'forkserver'`` or "
 "``None``.  See :ref:`multiprocessing-start-methods`."
 msgstr ""
+"Η τιμή επιστροφής μπορεί να είναι ``'fork'``, ``'spawn'``, ``'forkserver'`` ή "
+"``None``. Δείτε :ref:`multiprocessing-start-methods`."
 
 #: library/multiprocessing.rst:1144
 msgid ""
@@ -2016,6 +2190,9 @@ msgid ""
 "method should be considered unsafe as it can lead to crashes of the "
 "subprocess. See :issue:`33725`."
 msgstr ""
+"Στο macOS, η *spawn* μέθοδος εκκίνησης είναι πλέον η προεπιλεγμένη. Η *fork* μέθοδος εκκίνησης "
+"πρέπει να θεωρείται μη ασφαλής καθώς μπορεί να οδηγήσει σε κρασαρίσματα της "
+"υποδιεργασίας. Δείτε :issue:`33725`."
 
 #: library/multiprocessing.rst:1150
 msgid ""
@@ -2023,6 +2200,8 @@ msgid ""
 "(By default :data:`sys.executable` is used).  Embedders will probably need "
 "to do some thing like ::"
 msgstr ""
+"Ορίζει τη διαδρομή του διερμηνέα Python που θα χρησιμοποιηθεί κατά την εκκίνηση μιας "
+"υποδιεργασίας. (Από προεπιλογή χρησιμοποιείται το :data:`sys.executable`). Οι ενσωματωτές πιθανότατα θα χρειαστεί να κάνουν κάτι σαν ::"
 
 #: library/multiprocessing.rst:1154
 msgid "set_executable(os.path.join(sys.exec_prefix, 'pythonw.exe'))"
@@ -2030,11 +2209,11 @@ msgstr "set_executable(os.path.join(sys.exec_prefix, 'pythonw.exe'))"
 
 #: library/multiprocessing.rst:1156
 msgid "before they can create child processes."
-msgstr ""
+msgstr "πριν μπορέσουν να δημιουργήσουν υποδιεργασίες."
 
 #: library/multiprocessing.rst:1158
 msgid "Now supported on POSIX when the ``'spawn'`` start method is used."
-msgstr ""
+msgstr "Τώρα υποστηρίζεται σε POSIX όταν χρησιμοποιείται η μέθοδος εκκίνησης ``'spawn'``."
 
 #: library/multiprocessing.rst:1161
 msgid "Accepts a :term:`path-like object`."
@@ -2048,18 +2227,27 @@ msgid ""
 "can be used as a performance enhancement to avoid repeated work in every "
 "process."
 msgstr ""
+"Ορίζει μια λίστα με ονόματα module που η κύρια διεργασία του forkserver θα προσπαθήσει να "
+"εισαγάγει έτσι ώστε η ήδη εισαγμένη κατάστασή τους να κληρονομηθεί από τις "
+"διαδικασίες που έχουν γίνει fork. Οποιαδήποτε :exc:`ImportError` "
+"κατά τη διάρκεια αυτού "
+"αγνοείται σιωπηλά. Αυτό μπορεί να χρησιμοποιηθεί ως "
+"βελτίωση απόδοσης για να αποφευχθεί η επαναλαμβανόμενη εργασία σε κάθε διεργασία."
 
 #: library/multiprocessing.rst:1172
 msgid ""
 "For this to work, it must be called before the forkserver process has been "
 "launched (before creating a :class:`Pool` or starting a :class:`Process`)."
 msgstr ""
+"Για να λειτουργήσει αυτό, πρέπει να κληθεί πριν ξεκινήσει η διεργασία του forkserver "
+"(πριν τη δημιουργία ενός :class:`Pool` ή την εκκίνηση μιας :class:`Process`)."
 
 #: library/multiprocessing.rst:1175
 msgid ""
 "Only meaningful when using the ``'forkserver'`` start method. See :ref:"
 "`multiprocessing-start-methods`."
 msgstr ""
+"Σημαίνει μόνο όταν χρησιμοποιείται η μέθοδος εκκίνησης ``'forkserver'``. Δείτε :ref:`multiprocessing-start-methods`."
 
 #: library/multiprocessing.rst:1182
 msgid ""
@@ -2070,12 +2258,20 @@ msgid ""
 "method is set to ``None``.  If *method* is ``None`` and *force* is ``False`` "
 "then the context is set to the default context."
 msgstr ""
+"Ορίζει τη μέθοδο που θα χρησιμοποιηθεί για την εκκίνηση υποδιεργασιών. Το όρισμα "
+"*method* μπορεί να είναι ``'fork'``, ``'spawn'`` ή ``'forkserver'``. Κάνει raise μια :exc:`RuntimeError` "
+"εάν η μέθοδος εκκίνησης έχει ήδη οριστεί και το *force* δεν είναι ``True``. Εάν το *method* είναι ``None`` "
+"και το *force* είναι ``True`` τότε η μέθοδος εκκίνησης ορίζεται σε ``None``. "
+"Εάν το *method* είναι ``None`` και το *force* είναι ``False`` τότε το context "
+"ορίζεται στο προεπιλεγμένο context."
 
 #: library/multiprocessing.rst:1189
 msgid ""
 "Note that this should be called at most once, and it should be protected "
 "inside the ``if __name__ == '__main__'`` clause of the main module."
 msgstr ""
+"Σημειώστε ότι αυτό πρέπει να κληθεί το πολύ μία φορά, και θα πρέπει να προστατεύεται "
+"μέσα στη ρήτρα ``if __name__ == '__main__'`` του κύριου module."
 
 #: library/multiprocessing.rst:1193
 msgid "See :ref:`multiprocessing-start-methods`."
@@ -2088,28 +2284,36 @@ msgid ""
 "func:`threading.setprofile`, :class:`threading.Timer`, or :class:`threading."
 "local`."
 msgstr ""
+"Το :mod:`multiprocessing` δεν περιέχει αναλογίες των :func:`threading.active_count`, "
+":func:`threading.enumerate`, :func:`threading.settrace`, :func:`threading.setprofile`, :class:`threading.Timer`, ή :class:`threading.local`."
 
 #: library/multiprocessing.rst:1206
 msgid "Connection Objects"
-msgstr ""
+msgstr "Αντικείμενα Σύνδεσης"
 
 #: library/multiprocessing.rst:1210
 msgid ""
 "Connection objects allow the sending and receiving of picklable objects or "
 "strings.  They can be thought of as message oriented connected sockets."
 msgstr ""
+"Τα αντικείμενα σύνδεσης επιτρέπουν την αποστολή και λήψη αντικειμένων που μπορούν να "
+"γίνουν pickle ή συμβολοσειρών. Μπορούν να θεωρηθούν ως συνδεδεμένες υποδοχές προσανατολισμένες σε μηνύματα."
 
 #: library/multiprocessing.rst:1213
 msgid ""
 "Connection objects are usually created using :func:`Pipe <multiprocessing."
 "Pipe>` -- see also :ref:`multiprocessing-listeners-clients`."
 msgstr ""
+"Τα αντικείμενα σύνδεσης συνήθως δημιουργούνται χρησιμοποιώντας τη :func:`Pipe <multiprocessing.Pipe>` -- "
+"δείτε επίσης :ref:`multiprocessing-listeners-clients`."
 
 #: library/multiprocessing.rst:1221
 msgid ""
 "Send an object to the other end of the connection which should be read "
 "using :meth:`recv`."
 msgstr ""
+"Στέλνει ένα αντικείμενο στο άλλο άκρο της σύνδεσης που θα πρέπει να διαβαστεί "
+"χρησιμοποιώντας τη :meth:`recv`."
 
 #: library/multiprocessing.rst:1224
 msgid ""
@@ -4744,7 +4948,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:2998
 msgid "should be rewritten as ::"
-msgstr ""
+msgstr "θα πρέπει να ξαναγραφεί ως ::"
 
 #: library/multiprocessing.rst:3000
 msgid ""
@@ -4770,11 +4974,11 @@ msgstr ""
 
 #: library/multiprocessing.rst:3010
 msgid "Beware of replacing :data:`sys.stdin` with a \"file like object\""
-msgstr ""
+msgstr "Προσοχή στην αντικατάσταση του :data:`sys.stdin` με ένα \"αντικείμενο παρόμοιο με αρχείο\""
 
 #: library/multiprocessing.rst:3012
 msgid ":mod:`multiprocessing` originally unconditionally called::"
-msgstr ""
+msgstr "το :mod:`multiprocessing` αρχικά καλούσε χωρίς όρους::"
 
 #: library/multiprocessing.rst:3014
 msgid "os.close(sys.stdin.fileno())"
@@ -4785,6 +4989,8 @@ msgid ""
 "in the :meth:`multiprocessing.Process._bootstrap` method --- this resulted "
 "in issues with processes-in-processes. This has been changed to::"
 msgstr ""
+"στην :meth:`multiprocessing.Process._bootstrap` μέθοδο --- αυτό είχε ως αποτέλεσμα "
+"προβλήματα με διεργασίες-σε-διεργασίες. Αυτό έχει αλλάξει σε::"
 
 #: library/multiprocessing.rst:3019
 msgid ""
@@ -4803,6 +5009,14 @@ msgid ""
 "`~io.IOBase.close` on this file-like object, it could result in the same "
 "data being flushed to the object multiple times, resulting in corruption."
 msgstr ""
+"Το οποίο λύνει το θεμελιώδες πρόβλημα των διεργασιών που συγκρούονται "
+"μεταξύ τους με αποτέλεσμα ένα σφάλμα κακού περιγραφέα αρχείου, αλλά "
+"εισάγει έναν πιθανό κίνδυνο για εφαρμογές που αντικαθιστούν το "
+":func:`sys.stdin` με ένα \"αντικείμενο παρόμοιο με αρχείο\" με "
+"προσωρινή αποθήκευση εξόδου. Αυτός ο κίνδυνος είναι ότι εάν πολλές "
+"διεργασίες καλέσουν :meth:`~io.IOBase.close` σε αυτό το αντικείμενο "
+"παρόμοιο με αρχείο, θα μπορούσε να έχει ως αποτέλεσμα τα ίδια "
+"δεδομένα να εκφορτωθούν στο αντικείμενο πολλές φορές, οδηγώντας σε διαφθορά."
 
 #: library/multiprocessing.rst:3029
 msgid ""
@@ -4810,6 +5024,10 @@ msgid ""
 "it fork-safe by storing the pid whenever you append to the cache, and "
 "discarding the cache when the pid changes. For example::"
 msgstr ""
+"Εάν γράφετε ένα αντικείμενο παρόμοιο με αρχείο και υλοποιείτε τη "
+"δική σας προσωρινή αποθήκευση, μπορείτε να το κάνετε ασφαλές "
+"για fork αποθηκεύοντας το pid κάθε φορά που προσθέτετε στην "
+"προσωρινή μνήμη και απορρίπτοντας την προσωρινή μνήμη όταν αλλάζει το pid. Για παράδειγμα::"
 
 #: library/multiprocessing.rst:3033
 msgid ""
@@ -4833,20 +5051,22 @@ msgstr ""
 msgid ""
 "For more information, see :issue:`5155`, :issue:`5313` and :issue:`5331`"
 msgstr ""
+"Για περισσότερες πληροφορίες, δείτε :issue:`5155`, :issue:`5313` και :issue:`5331`"
 
 #: library/multiprocessing.rst:3047
 msgid "The *spawn* and *forkserver* start methods"
-msgstr ""
+msgstr "Οι μέθοδοι εκκίνησης *spawn* και *forkserver*"
 
 #: library/multiprocessing.rst:3049
 msgid ""
 "There are a few extra restrictions which don't apply to the *fork* start "
 "method."
 msgstr ""
+"Υπάρχουν μερικοί επιπλέον περιορισμοί που δεν ισχύουν για τη μέθοδο εκκίνησης *fork*."
 
 #: library/multiprocessing.rst:3052
 msgid "More picklability"
-msgstr ""
+msgstr "Περισσότερη δυνατότητα picklability"
 
 #: library/multiprocessing.rst:3054
 msgid ""
@@ -4855,10 +5075,14 @@ msgid ""
 "instances will be picklable when the :meth:`Process.start <multiprocessing."
 "Process.start>` method is called."
 msgstr ""
+"Βεβαιωθείτε ότι όλα τα ορίσματα για :meth:`Process.__init__` είναι picklable. Επίσης, "
+"εάν υποκλάσετε την :class:`~multiprocessing.Process`, βεβαιωθείτε ότι "
+"τα στιγμιότυπα θα είναι picklable όταν κληθεί η :meth:`Process.start <multiprocessing."
+"Process.start>`"
 
 #: library/multiprocessing.rst:3059
 msgid "Global variables"
-msgstr ""
+msgstr "Παγκόσμιες μεταβλητές"
 
 #: library/multiprocessing.rst:3061
 msgid ""
@@ -4867,16 +5091,21 @@ msgid ""
 "in the parent process at the time that :meth:`Process.start <multiprocessing."
 "Process.start>` was called."
 msgstr ""
+"Λάβετε υπόψη ότι εάν ο κώδικας που εκτελείται σε μια παιδική διαδικασία "
+"προσπαθεί να έχει πρόσβαση σε μια παγκόσμια μεταβλητή, τότε η τιμή που "
+"βλέπει (αν υπάρχει) ενδέχεται να μην είναι η ίδια με την τιμή στη "
+"γονική διαδικασία τη στιγμή που κλήθηκε η :meth:`Process.start <multiprocessing.Process.start>`."
 
 #: library/multiprocessing.rst:3066
 msgid ""
 "However, global variables which are just module level constants cause no "
 "problems."
 msgstr ""
+"Παρόλο, που οι παγκόσμιες μεταβλητές που είναι απλώς σταθερές σε επίπεδο module δεν προκαλούν προβλήματα."
 
 #: library/multiprocessing.rst:3071
 msgid "Safe importing of main module"
-msgstr ""
+msgstr "Ασφαλής εισαγωγή του κύριου module"
 
 #: library/multiprocessing.rst:3073
 msgid ""
@@ -4884,12 +5113,15 @@ msgid ""
 "interpreter without causing unintended side effects (such as starting a new "
 "process)."
 msgstr ""
+"Βεβαιωθείτε ότι το κύριο module μπορεί να εισαχθεί με ασφάλεια από έναν νέο "
+"διερμηνέα Python χωρίς να προκαλέσει ανεπιθύμητες παρενέργειες (όπως η εκκίνηση μιας νέας διαδικασίας)."
 
 #: library/multiprocessing.rst:3077
 msgid ""
 "For example, using the *spawn* or *forkserver* start method running the "
 "following module would fail with a :exc:`RuntimeError`::"
 msgstr ""
+"Για παράδειγμα, χρησιμοποιώντας τη μέθοδο εκκίνησης *spawn* ή *forkserver*, η εκτέλεση του ακόλουθου module θα απέτυχε με ένα :exc:`RuntimeError`::"
 
 #: library/multiprocessing.rst:3081
 msgid ""
@@ -4914,6 +5146,7 @@ msgid ""
 "Instead one should protect the \"entry point\" of the program by using ``if "
 "__name__ == '__main__':`` as follows::"
 msgstr ""
+"Αντίθετα, θα πρέπει να προστατεύσετε το \"σημείο εισόδου\" του προγράμματος χρησιμοποιώντας ``if __name__ == '__main__':`` ως εξής::"
 
 #: library/multiprocessing.rst:3092
 msgid ""
@@ -4944,18 +5177,22 @@ msgid ""
 "(The ``freeze_support()`` line can be omitted if the program will be run "
 "normally instead of frozen.)"
 msgstr ""
+"(Το ``freeze_support()`` μπορεί να παραληφθεί εάν το πρόγραμμα θα εκτελεστεί "
+"κανονικά αντί να παγώσει.)"
 
 #: library/multiprocessing.rst:3106
 msgid ""
 "This allows the newly spawned Python interpreter to safely import the module "
 "and then run the module's ``foo()`` function."
 msgstr ""
+"Αυτό επιτρέπει στον νεοδημιουργημένο διερμηνέα Python να εισάγει με ασφάλεια το module και στη συνέχεια να εκτελέσει τη συνάρτηση ``foo()`` του module."
 
 #: library/multiprocessing.rst:3109
 msgid ""
 "Similar restrictions apply if a pool or manager is created in the main "
 "module."
 msgstr ""
+"Παρόμοιοι περιορισμοί ισχύουν εάν μια δεξαμενή ή ένας διαχειριστής δημιουργηθεί στο κύριο module."
 
 #: library/multiprocessing.rst:3116
 msgid "Examples"
@@ -5151,7 +5388,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:3124
 msgid "Using :class:`~multiprocessing.pool.Pool`:"
-msgstr ""
+msgstr "Χρησιμοποιώντας την :class:`~multiprocessing.pool.Pool`:"
 
 #: library/multiprocessing.rst:3126
 msgid ""
