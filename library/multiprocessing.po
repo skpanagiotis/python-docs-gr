@@ -2320,6 +2320,8 @@ msgid ""
 "The object must be picklable.  Very large pickles (approximately 32 MiB+, "
 "though it depends on the OS) may raise a :exc:`ValueError` exception."
 msgstr ""
+"Το αντικείμενο πρέπει να μπορεί να γίνει pickle. Πολύ μεγάλα pickles (περίπου 32 MiB+, "
+"αν και εξαρτάται από το λειτουργικό σύστημα) μπορεί να κάνουν raise μια :exc:`ValueError` εξαίρεση."
 
 #: library/multiprocessing.rst:1229
 msgid ""
@@ -2327,22 +2329,25 @@ msgid ""
 "`send`.  Blocks until there is something to receive.  Raises :exc:`EOFError` "
 "if there is nothing left to receive and the other end was closed."
 msgstr ""
+"Επιστρέφει ένα αντικείμενο που στάλθηκε από το άλλο άκρο της σύνδεσης χρησιμοποιώντας τη :meth:`send`. "
+"Μπλοκάρει μέχρι να υπάρχει κάτι για λήψη. Κάνει raise μια :exc:`EOFError` "
+"εάν δεν υπάρχει τίποτα για λήψη και το άλλο άκρο έχει κλείσει."
 
 #: library/multiprocessing.rst:1236
 msgid "Return the file descriptor or handle used by the connection."
-msgstr ""
+msgstr "Επιστρέφει τον περιγραφέα αρχείου ή τον διαχειριστή που χρησιμοποιείται από τη σύνδεση."
 
 #: library/multiprocessing.rst:1240
 msgid "Close the connection."
-msgstr ""
+msgstr "Κλείνει τη σύνδεση."
 
 #: library/multiprocessing.rst:1242
 msgid "This is called automatically when the connection is garbage collected."
-msgstr ""
+msgstr "Αυτή η λειτουργία καλείται αυτόματα όταν η σύνδεση συλλέγεται από τον garbage collector."
 
 #: library/multiprocessing.rst:1246
 msgid "Return whether there is any data available to be read."
-msgstr ""
+msgstr "Επιστρέφει εάν υπάρχουν διαθέσιμα δεδομένα για ανάγνωση."
 
 #: library/multiprocessing.rst:1248
 msgid ""
@@ -2350,16 +2355,20 @@ msgid ""
 "is a number then this specifies the maximum time in seconds to block.  If "
 "*timeout* is ``None`` then an infinite timeout is used."
 msgstr ""
+"Εάν το *timeout* δεν καθορίζεται τότε θα επιστρέψει αμέσως. Εάν το *timeout* "
+"είναι ένας αριθμός τότε αυτό καθορίζει τον μέγιστο χρόνο σε δευτερόλεπτα για μπλοκάρισμα. "
+"Εάν το *timeout* είναι ``None`` τότε χρησιμοποιείται άπειρο timeout."
 
 #: library/multiprocessing.rst:1252
 msgid ""
 "Note that multiple connection objects may be polled at once by using :func:"
 "`multiprocessing.connection.wait`."
 msgstr ""
+"Σημειώστε ότι πολλαπλά αντικείμενα σύνδεσης μπορούν να ελεγχθούν ταυτόχρονα χρησιμοποιώντας τη :func:`multiprocessing.connection.wait`."
 
 #: library/multiprocessing.rst:1257
 msgid "Send byte data from a :term:`bytes-like object` as a complete message."
-msgstr ""
+msgstr "Στέλνει δεδομένα byte από ένα :term:`bytes-like object` ως ένα ολοκληρωμένο μήνυμα."
 
 #: library/multiprocessing.rst:1259
 msgid ""
@@ -2368,6 +2377,9 @@ msgid ""
 "buffers (approximately 32 MiB+, though it depends on the OS) may raise a :"
 "exc:`ValueError` exception"
 msgstr ""
+"Εάν δίνεται το *offset* τότε τα δεδομένα διαβάζονται από αυτή τη θέση στο *buffer*. "
+"Εάν δίνεται το *size* τότε τόσα πολλά bytes θα διαβαστούν από το buffer. "
+"Πολύ μεγάλα buffers (περίπου 32 MiB+, αν και εξαρτάται από το λειτουργικό σύστημα) μπορεί να κάνουν raise μια :exc:`ValueError` εξαίρεση."
 
 #: library/multiprocessing.rst:1266
 msgid ""
@@ -2376,18 +2388,23 @@ msgid ""
 "exc:`EOFError` if there is nothing left to receive and the other end has "
 "closed."
 msgstr ""
+"Επιστρέφει ένα ολοκληρωμένο μήνυμα δεδομένων byte που στάλθηκε από το άλλο άκρο της "
+"σύνδεσης ως μια συμβολοσειρά. Μπλοκάρει μέχρι να υπάρχει κάτι για λήψη. Κάνει raise μια :exc:`EOFError` "
+"εάν δεν υπάρχει τίποτα για λήψη και το άλλο άκρο έχει κλείσει."
 
 #: library/multiprocessing.rst:1271
 msgid ""
 "If *maxlength* is specified and the message is longer than *maxlength* then :"
 "exc:`OSError` is raised and the connection will no longer be readable."
 msgstr ""
+"Εάν καθοριστεί το *maxlength* και το μήνυμα είναι μεγαλύτερο από το *maxlength* τότε γίνεται raise μια :exc:`OSError` και η σύνδεση δεν θα είναι πλέον αναγνώσιμη."
 
 #: library/multiprocessing.rst:1275
 msgid ""
 "This function used to raise :exc:`IOError`, which is now an alias of :exc:"
 "`OSError`."
 msgstr ""
+"Αυτή η συνάρτηση παλαιότερα έκανε raise μια :exc:`IOError`, η οποία τώρα είναι ένα ψευδώνυμο της :exc:`OSError`."
 
 #: library/multiprocessing.rst:1282
 msgid ""
@@ -2396,6 +2413,9 @@ msgid ""
 "until there is something to receive.  Raises :exc:`EOFError` if there is "
 "nothing left to receive and the other end was closed."
 msgstr ""
+"Διαβάζει μέσα στο *buffer* ένα ολοκληρωμένο μήνυμα δεδομένων byte που στάλθηκε από το άλλο άκρο "
+"της σύνδεσης και επιστρέφει τον αριθμό των bytes στο μήνυμα. Μπλοκάρει μέχρι να υπάρχει κάτι για λήψη. "
+"Κάνει raise μια :exc:`EOFError` εάν δεν υπάρχει τίποτα για λήψη και το άλλο άκρο έχει κλείσει."
 
 #: library/multiprocessing.rst:1288
 msgid ""
@@ -2403,6 +2423,8 @@ msgid ""
 "then the message will be written into the buffer from that position.  Offset "
 "must be a non-negative integer less than the length of *buffer* (in bytes)."
 msgstr ""
+"Το *buffer* πρέπει να είναι ένα εγγράψιμο :term:`bytes-like object`. Εάν δίνεται το *offset* τότε το μήνυμα θα γραφτεί στο buffer από αυτή τη θέση. Το Offset "
+"πρέπει να είναι ένας μη αρνητικός ακέραιος μικρότερος από το μήκος του *buffer* (σε bytes)."
 
 #: library/multiprocessing.rst:1293
 msgid ""
@@ -2410,12 +2432,17 @@ msgid ""
 "and the complete message is available as ``e.args[0]`` where ``e`` is the "
 "exception instance."
 msgstr ""
+"Εάν το buffer είναι πολύ μικρό τότε γίνεται raise μια :exc:`BufferTooShort` εξαίρεση "
+"και το ολοκληρωμένο μήνυμα είναι διαθέσιμο ως ``e.args[0]`` όπου ``e`` είναι η "
+"περίπτωση της εξαίρεσης."
 
 #: library/multiprocessing.rst:1297
 msgid ""
 "Connection objects themselves can now be transferred between processes "
 "using :meth:`Connection.send` and :meth:`Connection.recv`."
 msgstr ""
+"Τα ίδια τα αντικείμενα σύνδεσης μπορούν πλέον να μεταφερθούν μεταξύ διεργασιών "
+"χρησιμοποιώντας τις :meth:`Connection.send` και :meth:`Connection.recv`."
 
 #: library/multiprocessing.rst:1301
 msgid ""
@@ -2423,6 +2450,9 @@ msgid ""
 "ref:`typecontextmanager`.  :meth:`~contextmanager.__enter__` returns the "
 "connection object, and :meth:`~contextmanager.__exit__` calls :meth:`close`."
 msgstr ""
+"Τα αντικείμενα σύνδεσης υποστηρίζουν επίσης το πρωτόκολλο διαχείρισης περιεχομένου -- "
+"δείτε :ref:`typecontextmanager`. Η :meth:`~contextmanager.__enter__` επιστρέφει το "
+"αντικείμενο σύνδεσης, και η :meth:`~contextmanager.__exit__` καλεί τη :meth:`close`."
 
 #: library/multiprocessing.rst:1305
 msgid "For example:"
@@ -2470,6 +2500,9 @@ msgid ""
 "receives, which can be a security risk unless you can trust the process "
 "which sent the message."
 msgstr ""
+"Η μέθοδος :meth:`Connection.recv` απο-κάνει αυτόματα pickle τα δεδομένα που λαμβάνει, "
+"που μπορεί να είναι ένας κίνδυνος ασφαλείας εκτός εάν μπορείτε να εμπιστευτείτε τη διεργασία "
+"που έστειλε το μήνυμα."
 
 #: library/multiprocessing.rst:1334
 msgid ""
@@ -2478,6 +2511,8 @@ msgid ""
 "methods after performing some sort of authentication.  See :ref:"
 "`multiprocessing-auth-keys`."
 msgstr ""
+"Επομένως, εκτός εάν το αντικείμενο σύνδεσης παράχθηκε χρησιμοποιώντας τη :func:`Pipe` θα πρέπει να χρησιμοποιείτε μόνο τις :meth:`~Connection.recv` και :meth:`~Connection.send` "
+"μετά την εκτέλεση κάποιου είδους αυθεντικοποίησης. Δείτε :ref:`multiprocessing-auth-keys`."
 
 #: library/multiprocessing.rst:1341
 msgid ""
@@ -2485,63 +2520,74 @@ msgid ""
 "the data in the pipe is likely to become corrupted, because it may become "
 "impossible to be sure where the message boundaries lie."
 msgstr ""
+"Αν μια διεργασία σκοτωθεί ενώ προσπαθεί να διαβάσει ή να γράψει σε έναν σωλήνα τότε "
+"τα δεδομένα στον σωλήνα είναι πιθανό να καταστραφούν, επειδή μπορεί "
+"να γίνει αδύνατο να είστε σίγουροι πού βρίσκονται τα όρια των μηνυμάτων."
 
 #: library/multiprocessing.rst:1347
 msgid "Synchronization primitives"
-msgstr ""
+msgstr "Πρωτόκολλα συγχρονισμού"
 
 #: library/multiprocessing.rst:1351
 msgid ""
 "Generally synchronization primitives are not as necessary in a multiprocess "
 "program as they are in a multithreaded program.  See the documentation for :"
 "mod:`threading` module."
-msgstr ""
+msgstr "Γενικά, τα πρωτόκολλα συγχρονισμού δεν είναι τόσο απαραίτητα σε ένα πρόγραμμα πολλαπλών διεργασιών όσο είναι σε ένα πρόγραμμα πολλαπλών νημάτων. Δείτε την τεκμηρίωση για το :mod:`threading`."
 
 #: library/multiprocessing.rst:1355
 msgid ""
 "Note that one can also create synchronization primitives by using a manager "
 "object -- see :ref:`multiprocessing-managers`."
 msgstr ""
+"Σημειώστε ότι μπορείτε επίσης να δημιουργήσετε πρωτόκολλα συγχρονισμού χρησιμοποιώντας ένα αντικείμενο διαχειριστή -- "
+"δείτε :ref:`multiprocessing-managers`."
 
 #: library/multiprocessing.rst:1360
 msgid "A barrier object: a clone of :class:`threading.Barrier`."
-msgstr ""
+msgstr "Ένα αντικείμενο φράγματος: ένα κλώνος της :class:`threading.Barrier`."
 
 #: library/multiprocessing.rst:1366
 msgid ""
 "A bounded semaphore object: a close analog of :class:`threading."
 "BoundedSemaphore`."
 msgstr ""
+"Ένα αντικείμενο οριοθετημένου σημαφόρου: ένα κοντινό ανάλογο της :class:`threading.BoundedSemaphore`."
 
 #: library/multiprocessing.rst:1369 library/multiprocessing.rst:1521
 msgid ""
 "A solitary difference from its close analog exists: its ``acquire`` method's "
 "first argument is named *block*, as is consistent with :meth:`Lock.acquire`."
 msgstr ""
+"Υπάρχει μια μοναδική διαφορά από το κοντινό ανάλογό του: το πρώτο όρισμα της μεθόδου ``acquire`` ονομάζεται *block*, όπως είναι συνεπές με τη :meth:`Lock.acquire`."
 
 #: library/multiprocessing.rst:1373
 msgid ""
 "On macOS, this is indistinguishable from :class:`Semaphore` because "
 "``sem_getvalue()`` is not implemented on that platform."
 msgstr ""
+"Στο macOS, αυτό είναι αδιαχώριστο από την :class:`Semaphore` επειδή το "
+"``sem_getvalue()`` δεν είναι υλοποιημένο σε αυτή την πλατφόρμα."
 
 #: library/multiprocessing.rst:1378
 msgid "A condition variable: an alias for :class:`threading.Condition`."
-msgstr ""
+msgstr "Μια μεταβλητή κατάστασης: ένα ψευδώνυμο για την :class:`threading.Condition`."
 
 #: library/multiprocessing.rst:1380
 msgid ""
 "If *lock* is specified then it should be a :class:`Lock` or :class:`RLock` "
 "object from :mod:`multiprocessing`."
 msgstr ""
+"Αν καθοριστεί το *lock* τότε θα πρέπει να είναι ένα αντικείμενο :class:`Lock` ή :class:`RLock` "
+"από το :mod:`multiprocessing`."
 
 #: library/multiprocessing.rst:1383 library/multiprocessing.rst:1935
 msgid "The :meth:`~threading.Condition.wait_for` method was added."
-msgstr ""
+msgstr "Προστέθηκε η μέθοδος :meth:`~threading.Condition.wait_for`."
 
 #: library/multiprocessing.rst:1388
 msgid "A clone of :class:`threading.Event`."
-msgstr ""
+msgstr "Ένας κλώνος της :class:`threading.Event`."
 
 #: library/multiprocessing.rst:1393
 msgid ""
@@ -2553,6 +2599,13 @@ msgid ""
 "`multiprocessing.Lock` as it applies to either processes or threads, except "
 "as noted."
 msgstr ""
+"Ένα μη αναδρομικό αντικείμενο κλειδώματος: ένα κοντινό ανάλογο της :class:`threading.Lock`. "
+"Μόλις μια διεργασία ή ένα νήμα έχει αποκτήσει ένα κλείδωμα, οι επόμενες προσπάθειες "
+"να το αποκτήσουν από οποιαδήποτε διεργασία ή νήμα θα μπλοκάρουν μέχρι να απελευθερωθεί. "
+"Οποιαδήποτε διεργασία ή νήμα μπορεί να το απελευθερώσει. Οι έννοιες και οι συμπεριφορές "
+"της :class:`threading.Lock` όπως εφαρμόζονται στα νήματα αναπαράγονται εδώ "
+"στην :class:`multiprocessing.Lock` όπως εφαρμόζονται είτε σε διεργασίες είτε σε νήματα, "
+"εκτός εάν σημειωθεί διαφορετικά."
 
 #: library/multiprocessing.rst:1401
 msgid ""
@@ -2560,16 +2613,20 @@ msgid ""
 "instance of ``multiprocessing.synchronize.Lock`` initialized with a default "
 "context."
 msgstr ""
+"Σημειώστε ότι η :class:`Lock` είναι στην πραγματικότητα μια συνάρτηση εργοστασίου που επιστρέφει μια "
+"περίπτωση του ``multiprocessing.synchronize.Lock`` που έχει αρχικοποιηθεί με ένα προεπιλεγμένο context."
 
 #: library/multiprocessing.rst:1405
 msgid ""
 ":class:`Lock` supports the :term:`context manager` protocol and thus may be "
 "used in :keyword:`with` statements."
 msgstr ""
+"Η :class:`Lock` υποστηρίζει το πρωτόκολλο :term:`context manager` και επομένως μπορεί να "
+"χρησιμοποιηθεί σε δηλώσεις :keyword:`with`."
 
 #: library/multiprocessing.rst:1410 library/multiprocessing.rst:1468
 msgid "Acquire a lock, blocking or non-blocking."
-msgstr ""
+msgstr "Αποκτά ένα κλείδωμα, είτε μπλοκάροντας είτε μη μπλοκάροντας."
 
 #: library/multiprocessing.rst:1412
 msgid ""
@@ -2578,6 +2635,10 @@ msgid ""
 "return ``True``.  Note that the name of this first argument differs from "
 "that in :meth:`threading.Lock.acquire`."
 msgstr ""
+"Με το όρισμα *block* ορισμένο σε ``True`` (η προεπιλογή), η κλήση της μεθόδου "
+"θα μπλοκάρει μέχρι το κλείδωμα να είναι σε ξεκλείδωτη κατάσταση, στη συνέχεια θα το ορίσει σε κλειδωμένο και "
+"θα επιστρέψει ``True``. Σημειώστε ότι το όνομα αυτού του πρώτου "
+"ορίσματος διαφέρει από αυτό στη :meth:`threading.Lock.acquire`."
 
 #: library/multiprocessing.rst:1417
 msgid ""
@@ -2585,6 +2646,9 @@ msgid ""
 "If the lock is currently in a locked state, return ``False``; otherwise set "
 "the lock to a locked state and return ``True``."
 msgstr ""
+"Με το όρισμα *block* ορισμένο σε ``False``, η κλήση της μεθόδου δεν μπλοκάρει. "
+"Εάν το κλείδωμα είναι επί του παρόντος σε κλειδωμένη κατάσταση, επιστρέφει ``False`` ∙ αλλιώς "
+"διαφορετικά ορίζει το κλείδωμα σε κλειδωμένη κατάσταση και επιστρέφει ``True``."
 
 #: library/multiprocessing.rst:1421
 msgid ""
@@ -2599,22 +2663,36 @@ msgid ""
 "``False`` and is thus ignored.  Returns ``True`` if the lock has been "
 "acquired or ``False`` if the timeout period has elapsed."
 msgstr ""
+"Όταν καλείται με μια θετική, κινητήρια τιμή για το *timeout*, μπλοκάρει για το "
+"μέγιστο τον αριθμό δευτερολέπτων που καθορίζεται από το *timeout* όσο το κλείδωμα δεν μπορεί "
+"να αποκτηθεί. Οι κλήσεις με μια αρνητική τιμή για το *timeout* είναι "
+"ισοδύναμες με ένα *timeout* μηδέν. Οι κλήσεις με μια τιμή *timeout* "
+"``None`` (η προεπιλογή) ορίζουν την περίοδο timeout σε άπειρη. Σημειώστε ότι η "
+"αντιμετώπιση αρνητικών ή ``None`` τιμών για το *timeout* διαφέρει από την "
+"υλοποιημένη συμπεριφορά στη :meth:`threading.Lock.acquire`. Το όρισμα *timeout* "
+"δεν έχει πρακτικές επιπτώσεις εάν το όρισμα *block* οριστεί σε "
+"``False`` και επομένως αγνοείται. Επιστρέφει ``True`` εάν το κλείδωμα έχει "
+"αποκτηθεί ή ``False`` εάν  η περίοδος timeout έχει παρέλθει."
 
 #: library/multiprocessing.rst:1436
 msgid ""
 "Release a lock.  This can be called from any process or thread, not only the "
 "process or thread which originally acquired the lock."
 msgstr ""
+"Απελευθερώνει ένα κλείδωμα. Αυτό μπορεί να κληθεί από οποιαδήποτε διεργασία ή νήμα, όχι μόνο από τη "
+"διεργασία ή το νήμα που αρχικά απέκτησε το κλείδωμα."
 
 #: library/multiprocessing.rst:1439
 msgid ""
 "Behavior is the same as in :meth:`threading.Lock.release` except that when "
 "invoked on an unlocked lock, a :exc:`ValueError` is raised."
 msgstr ""
+"Η συμπεριφορά είναι η ίδια με αυτή στη :meth:`threading.Lock.release` εκτός από το ότι όταν "
+"κληθεί σε ένα ξεκλείδωτο κλείδωμα, γίνεται raise μια :exc:`ValueError`."
 
 #: library/multiprocessing.rst:1445 library/multiprocessing.rst:1512
 msgid "Return a boolean indicating whether this object is locked right now."
-msgstr ""
+msgstr "Επιστρέφει μια boolean που υποδεικνύει εάν αυτό το αντικείμενο είναι κλειδωμένο αυτή τη στιγμή."
 
 #: library/multiprocessing.rst:1452
 msgid ""
@@ -2624,6 +2702,11 @@ msgid ""
 "thread may acquire it again without blocking; that process or thread must "
 "release it once for each time it has been acquired."
 msgstr ""
+"Ένα αναδρομικό αντικείμενο κλειδώματος: ένα κοντινό ανάλογο της :class:`threading.RLock`. "
+"Ένα αναδρομικό κλείδωμα πρέπει να απελευθερωθεί από τη διεργασία ή το νήμα που το απέκτησε. "
+"Μόλις μια διεργασία ή ένα νήμα έχει αποκτήσει ένα αναδρομικό κλείδωμα, η ίδια διεργασία ή "
+"νήμα μπορεί να το αποκτήσει ξανά χωρίς μπλοκάρισμα∙ αυτή η διεργασία ή το νήμα πρέπει "
+"να το απελευθερώσει μία φορά για κάθε φορά που έχει αποκτηθεί."
 
 #: library/multiprocessing.rst:1458
 msgid ""
@@ -2631,12 +2714,16 @@ msgid ""
 "instance of ``multiprocessing.synchronize.RLock`` initialized with a default "
 "context."
 msgstr ""
+"Σημειώστε ότι η :class:`RLock` είναι στην πραγματικότητα μια συνάρτηση εργοστασίου που επιστρέφει μια "
+"περίπτωση του ``multiprocessing.synchronize.RLock`` που έχει αρχικοποιηθεί με ένα προεπιλεγμένο context."
 
 #: library/multiprocessing.rst:1462
 msgid ""
 ":class:`RLock` supports the :term:`context manager` protocol and thus may be "
 "used in :keyword:`with` statements."
 msgstr ""
+"Η :class:`RLock` υποστηρίζει το πρωτόκολλο :term:`context manager` και επομένως μπορεί να "
+"χρησιμοποιηθεί σε δηλώσεις :keyword:`with`."
 
 #: library/multiprocessing.rst:1470
 msgid ""
@@ -2650,6 +2737,14 @@ msgid ""
 "of :meth:`threading.RLock.acquire`, starting with the name of the argument "
 "itself."
 msgstr ""
+"Όταν καλείται με το όρισμα *block* ορισμένο σε ``True``, μπλοκάρει μέχρι το κλείδωμα "
+"να είναι σε ξεκλείδωτη κατάσταση (μη κατεχόμενο από καμία διεργασία ή νήμα) εκτός εάν το κλείδωμα "
+"είναι ήδη κατεχόμενο από την τρέχουσα διεργασία ή νήμα. Η τρέχουσα διεργασία ή "
+"νήμα τότε αποκτά την ιδιοκτησία του κλειδώματος (εάν δεν έχει ήδη "
+"ιδιοκτησία) και το επίπεδο αναδρομής μέσα στο κλείδωμα αυξάνεται κατά ένα, "
+"με αποτέλεσμα μια τιμή επιστροφής ``True``. Σημειώστε ότι υπάρχουν αρκετές "
+"διαφορές στη συμπεριφορά αυτού του πρώτου ορίσματος σε σύγκριση με την υλοποίηση "
+"της :meth:`threading.RLock.acquire`, ξεκινώντας με το όνομα του ίδιου του ορίσματος."
 
 #: library/multiprocessing.rst:1480
 msgid ""
@@ -2661,6 +2756,13 @@ msgid ""
 "thread takes ownership and the recursion level is incremented, resulting in "
 "a return value of ``True``."
 msgstr ""
+"Όταν καλείται με το όρισμα *block* ορισμένο σε ``False``, δεν μπλοκάρει. Εάν "
+"το κλείδωμα έχει ήδη αποκτηθεί (και επομένως κατέχεται) από άλλη διεργασία ή "
+"νήμα, η τρέχουσα διεργασία ή νήμα δεν αποκτά την ιδιοκτησία και το επίπεδο "
+"αναδρομής μέσα στο κλείδωμα δεν αλλάζει, με αποτέλεσμα μια τιμή επιστροφής "
+"``False``. Εάν το κλείδωμα είναι σε ξεκλείδωτη κατάσταση, η τρέχουσα διεργασία "
+"ή νήμα αποκτά την ιδιοκτησία και το επίπεδο αναδρομής αυξάνεται, με αποτέλεσμα "
+"μια τιμή επιστροφής ``True``."
 
 #: library/multiprocessing.rst:1488
 msgid ""
@@ -2668,6 +2770,9 @@ msgid ""
 "acquire`.  Note that some of these behaviors of *timeout* differ from the "
 "implemented behaviors in :meth:`threading.RLock.acquire`."
 msgstr ""
+"Η χρήση και οι συμπεριφορές του ορίσματος *timeout* είναι οι ίδιες με αυτές στη :meth:`Lock.acquire`. "
+"Σημειώστε ότι μερικές από αυτές τις συμπεριφορές του *timeout* διαφέρουν από τις "
+"υλοποιημένες συμπεριφορές στη :meth:`threading.RLock.acquire`."
 
 #: library/multiprocessing.rst:1495
 msgid ""
@@ -2678,6 +2783,12 @@ msgid ""
 "after the decrement the recursion level is still nonzero, the lock remains "
 "locked and owned by the calling process or thread."
 msgstr ""
+"Απελευθερώνει ένα κλείδωμα, μειώνοντας το επίπεδο αναδρομής. Εάν μετά τη μείωση "
+"το επίπεδο αναδρομής είναι μηδέν, επαναφέρει το κλείδωμα σε ξεκλείδωτο (μη κατεχόμενο από καμία "
+"διεργασία ή νήμα) και εάν οποιεσδήποτε άλλες διεργασίες ή νήματα είναι μπλοκαρισμένα περιμένοντας "
+"να ξεκλειδώσει το κλείδωμα, επιτρέπει ακριβώς σε ένα από αυτά να προχωρήσει. Εάν μετά τη μείωση το "
+"επίπεδο αναδρομής είναι ακόμα μη μηδενικό, το κλείδωμα παραμένει κλειδωμένο και κατεχόμενο από τη "
+"καλούμενη διεργασία ή νήμα."
 
 #: library/multiprocessing.rst:1503
 msgid ""
@@ -2687,16 +2798,23 @@ msgid ""
 "state.  Note that the type of exception raised in this situation differs "
 "from the implemented behavior in :meth:`threading.RLock.release`."
 msgstr ""
+"Καλέστε αυτή τη μέθοδο μόνο όταν η καλούμενη διεργασία ή νήμα κατέχει το κλείδωμα. "
+"Μια :exc:`AssertionError` εξαίρεση γίνεται raise εάν αυτή η μέθοδος κληθεί από μια διεργασία ή "
+"νήμα διαφορετικό από τον κάτοχο ή εάν το κλείδωμα είναι σε ξεκλείδωτη (μη κατεχόμενη) κατάσταση. "
+"Σημειώστε ότι ο τύπος της εξαίρεσης που γίνεται raise σε αυτή την κατάσταση διαφέρει από την υλοποιημένη "
+"συμπεριφορά στη :meth:`threading.RLock.release`."
 
 #: library/multiprocessing.rst:1519
 msgid "A semaphore object: a close analog of :class:`threading.Semaphore`."
-msgstr ""
+msgstr "Ένα αντικείμενο σημαφόρου: ένα κοντινό ανάλογο της :class:`threading.Semaphore`."
 
 #: library/multiprocessing.rst:1526
 msgid ""
 "On macOS, ``sem_timedwait`` is unsupported, so calling ``acquire()`` with a "
 "timeout will emulate that function's behavior using a sleeping loop."
 msgstr ""
+"Στο macOS, το ``sem_timedwait`` δεν υποστηρίζεται, οπότε η κλήση του ``acquire()`` με ένα "
+"timeout θα μιμηθεί τη συμπεριφορά αυτής της λειτουργίας χρησιμοποιώντας έναν βρόχο ύπνου."
 
 #: library/multiprocessing.rst:1531
 msgid ""
@@ -2706,16 +2824,22 @@ msgid ""
 "import it will result in an :exc:`ImportError`. See :issue:`3770` for "
 "additional information."
 msgstr ""
+"Μερικές από τις λειτουργίες αυτού του πακέτου απαιτούν μια λειτουργική υλοποίηση κοινόχρηστου σημαφόρου στο "
+"λειτουργικό σύστημα υποδοχής. Χωρίς αυτήν, το :mod:`multiprocessing.synchronize` module θα απενεργοποιηθεί, και οι προσπάθειες να "
+"εισαχθεί θα έχουν ως αποτέλεσμα μια :exc:`ImportError`. Δείτε το :issue:`3770` για "
+"πρόσθετες πληροφορίες."
 
 #: library/multiprocessing.rst:1539
 msgid "Shared :mod:`ctypes` Objects"
-msgstr ""
+msgstr "Κοινόχρηστα Αντικείμενα :mod:`ctypes`"
 
 #: library/multiprocessing.rst:1541
 msgid ""
 "It is possible to create shared objects using shared memory which can be "
 "inherited by child processes."
 msgstr ""
+"Αυτό είναι δυνατό να δημιουργηθούν κοινόχρηστα αντικείμενα χρησιμοποιώντας κοινή μνήμη που μπορεί να "
+"κληρονομηθεί από τις παιδικές διεργασίες."
 
 #: library/multiprocessing.rst:1546
 msgid ""
@@ -2723,6 +2847,9 @@ msgid ""
 "return value is actually a synchronized wrapper for the object.  The object "
 "itself can be accessed via the *value* attribute of a :class:`Value`."
 msgstr ""
+"Επιστρέφει ένα :mod:`ctypes` αντικείμενο που έχει κατανεμηθεί από κοινή μνήμη. Από προεπιλογή, η "
+"τιμή επιστροφής είναι στην πραγματικότητα ένας συγχρονισμένος περιτυλιχτής για το αντικείμενο. Το ίδιο το αντικείμενο "
+"μπορεί να προσπελαστεί μέσω του χαρακτηριστικού *value* μιας :class:`Value`."
 
 #: library/multiprocessing.rst:1550 library/multiprocessing.rst:1637
 msgid ""
@@ -2730,6 +2857,9 @@ msgid ""
 "a ctypes type or a one character typecode of the kind used by the :mod:"
 "`array` module.  *\\*args* is passed on to the constructor for the type."
 msgstr ""
+"Το *typecode_or_type* καθορίζει τον τύπο του επιστρεφόμενου αντικειμένου: είναι είτε "
+"ένας τύπος ctypes είτε ένας μονοψήφιος τύπος κωδικοποίησης του είδους που χρησιμοποιείται από το :mod:`array` module. "
+"*\\*args* μεταβιβάζεται στον κατασκευαστή για τον τύπο."
 
 #: library/multiprocessing.rst:1554
 msgid ""
@@ -2740,6 +2870,11 @@ msgid ""
 "be automatically protected by a lock, so it will not necessarily be "
 "\"process-safe\"."
 msgstr ""
+"Εάν το *lock* είναι ``True`` (η προεπιλογή) τότε δημιουργείται ένα νέο αναδρομικό "
+"αντικείμενο κλειδώματος για τον συγχρονισμό της πρόσβασης στην τιμή. "
+"Εάν το *lock* είναι ένα αντικείμενο :class:`Lock` ή :class:`RLock` τότε αυτό θα χρησιμοποιηθεί για τον συγχρονισμό της πρόσβασης στην "
+"τιμή. Εάν το *lock* είναι ``False`` τότε η πρόσβαση στο "
+"επιστρεφόμενο αντικείμενο δεν θα προστατεύεται αυτόματα από ένα κλείδωμα, οπότε δεν θα είναι απαραίτητα \"ασφαλές για διεργασίες\"."
 
 #: library/multiprocessing.rst:1561
 msgid ""
@@ -2747,6 +2882,9 @@ msgid ""
 "if, for instance, you want to atomically increment a shared value it is "
 "insufficient to just do ::"
 msgstr ""
+"Οι λειτουργίες όπως το ``+=`` που περιλαμβάνουν ανάγνωση και εγγραφή δεν είναι ατομικές. "
+"Έτσι, αν, για παράδειγμα, θέλετε να αυξήσετε ατομικά μια κοινόχρηστη τιμή, δεν είναι "
+"αρκετό να κάνετε απλώς ::"
 
 #: library/multiprocessing.rst:1565
 msgid "counter.value += 1"
@@ -2757,6 +2895,8 @@ msgid ""
 "Assuming the associated lock is recursive (which it is by default) you can "
 "instead do ::"
 msgstr ""
+"Υποθέτοντας ότι το σχετικό κλείδωμα είναι αναδρομικό (που είναι από προεπιλογή) μπορείτε "
+"αντίθετα να κάνετε ::"
 
 #: library/multiprocessing.rst:1570
 msgid ""
@@ -2769,13 +2909,15 @@ msgstr ""
 #: library/multiprocessing.rst:1573 library/multiprocessing.rst:1663
 #: library/multiprocessing.rst:1678
 msgid "Note that *lock* is a keyword-only argument."
-msgstr ""
+msgstr "Σημειώστε ότι το *lock* είναι ένα όρισμα μόνο λέξης-κλειδιού."
 
 #: library/multiprocessing.rst:1577
 msgid ""
 "Return a ctypes array allocated from shared memory.  By default the return "
 "value is actually a synchronized wrapper for the array."
 msgstr ""
+"Επιστρέφει έναν πίνακα ctypes που έχει κατανεμηθεί από κοινή μνήμη. Από προεπιλογή, η "
+"τιμή επιστροφής είναι στην πραγματικότητα ένας συγχρονισμένος περιτύλιγματος για τον πίνακα."
 
 #: library/multiprocessing.rst:1580
 msgid ""
@@ -2786,6 +2928,12 @@ msgid ""
 "zeroed. Otherwise, *size_or_initializer* is a sequence which is used to "
 "initialize the array and whose length determines the length of the array."
 msgstr ""
+"Το *typecode_or_type* καθορίζει τον τύπο των στοιχείων του επιστρεφόμενου πίνακα: είναι είτε "
+"ένας τύπος ctypes είτε ένας μονοψήφιος τύπος κωδικοποίησης του είδους που χρησιμοποιείται "
+"από το :mod:`array` module. Εάν το *size_or_initializer* είναι ένας "
+"ακέραιος, τότε καθορίζει το μήκος του πίνακα, και ο πίνακας θα είναι "
+"αρχικά μηδενισμένος. Διαφορετικά, το *size_or_initializer* είναι μια ακολουθία "
+"που χρησιμοποιείται για την αρχικοποίηση του πίνακα και του οποίου το μήκος καθορίζει το μήκος του πίνακα."
 
 #: library/multiprocessing.rst:1587
 msgid ""
@@ -2796,20 +2944,24 @@ msgid ""
 "automatically protected by a lock, so it will not necessarily be \"process-"
 "safe\"."
 msgstr ""
+"Εάν το *lock* είναι ``True`` (η προεπιλογή) τότε δημιουργείται ένα νέο αντικείμενο κλειδώματος για "
+"τον συγχρονισμό της πρόσβασης στην τιμή. Εάν το *lock* είναι ένα αντικείμενο :class:`Lock` ή :class:`RLock` τότε αυτό θα χρησιμοποιηθεί για τον συγχρονισμό της πρόσβασης στην τιμή. "
+"Εάν το *lock* είναι ``False`` τότε η πρόσβαση στο επιστρεφόμενο αντικείμενο δεν θα προστατεύεται αυτόματα από ένα κλείδωμα, οπότε δεν θα είναι απαραίτητα \"ασφαλές για διεργασίες\"."
 
 #: library/multiprocessing.rst:1594
 msgid "Note that *lock* is a keyword only argument."
-msgstr ""
+msgstr "Σημειώστε ότι το *lock* είναι ένα όρισμα μόνο λέξης-κλειδιού."
 
 #: library/multiprocessing.rst:1596
 msgid ""
 "Note that an array of :data:`ctypes.c_char` has *value* and *raw* attributes "
 "which allow one to use it to store and retrieve strings."
 msgstr ""
+"Σημειώστε ότι ένας πίνακας από :data:`ctypes.c_char` έχει χαρακτηριστικά *value* και *raw* που επιτρέπουν τη χρήση του για την αποθήκευση και ανάκτηση συμβολοσειρών."
 
 #: library/multiprocessing.rst:1601
 msgid "The :mod:`multiprocessing.sharedctypes` module"
-msgstr ""
+msgstr "Το :mod:`multiprocessing.sharedctypes` module"
 
 #: library/multiprocessing.rst:1606
 msgid ""
@@ -2817,6 +2969,8 @@ msgid ""
 "allocating :mod:`ctypes` objects from shared memory which can be inherited "
 "by child processes."
 msgstr ""
+"Το :mod:`multiprocessing.sharedctypes` module παρέχει συναρτήσεις για την κατανομή "
+":mod:`ctypes` αντικειμένων από κοινή μνήμη που μπορεί να κληρονομηθεί από τις παιδικές διεργασίες."
 
 #: library/multiprocessing.rst:1612
 msgid ""
@@ -2826,10 +2980,14 @@ msgid ""
 "second process and trying to dereference the pointer from the second process "
 "may cause a crash."
 msgstr ""
+"Αν και είναι δυνατό να αποθηκεύσετε έναν δείκτη σε κοινή μνήμη, θυμηθείτε ότι "
+"αυτό θα αναφέρεται σε μια τοποθεσία στον χώρο διευθύνσεων μιας συγκεκριμένης διεργασίας. "
+"Ωστόσο, ο δείκτης είναι αρκετά πιθανό να είναι άκυρος στο πλαίσιο μιας δεύτερης διεργασίας και η προσπάθεια αποαναφοράς του δείκτη από τη δεύτερη διεργασία "
+"μπορεί να προκαλέσει συντριβή."
 
 #: library/multiprocessing.rst:1620
 msgid "Return a ctypes array allocated from shared memory."
-msgstr ""
+msgstr "Επιστρέφει έναν πίνακα ctypes που έχει κατανεμηθεί από κοινή μνήμη."
 
 #: library/multiprocessing.rst:1622
 msgid ""
@@ -2840,6 +2998,12 @@ msgid ""
 "zeroed. Otherwise *size_or_initializer* is a sequence which is used to "
 "initialize the array and whose length determines the length of the array."
 msgstr ""
+"Το *typecode_or_type* καθορίζει τον τύπο των στοιχείων του επιστρεφόμενου πίνακα: είναι είτε "
+"ένας τύπος ctypes είτε ένας μονοψήφιος τύπος κωδικοποίησης του είδους που χρησιμοποιείται "
+"από το :mod:`array` module. Εάν το *size_or_initializer* είναι ένας "
+"ακέραιος, τότε καθορίζει το μήκος του πίνακα, και ο πίνακας θα είναι "
+"αρχικά μηδενισμένος. Διαφορετικά, το *size_or_initializer* είναι μια ακολουθία "
+"που χρησιμοποιείται για την αρχικοποίηση του πίνακα και του οποίου το μήκος καθορίζει το μήκος του πίνακα."
 
 #: library/multiprocessing.rst:1629
 msgid ""
@@ -2847,10 +3011,12 @@ msgid ""
 "func:`Array` instead to make sure that access is automatically synchronized "
 "using a lock."
 msgstr ""
+"Σημειώστε ότι η ρύθμιση και η λήψη ενός στοιχείου είναι ενδεχομένως μη ατομική -- χρησιμοποιήστε το :func:`Array` αντί για να βεβαιωθείτε ότι η πρόσβαση συγχρονίζεται αυτόματα "
+"χρησιμοποιώντας ένα κλείδωμα."
 
 #: library/multiprocessing.rst:1635
 msgid "Return a ctypes object allocated from shared memory."
-msgstr ""
+msgstr "Επιστρέφει ένα αντικείμενο ctypes που έχει κατανεμηθεί από κοινή μνήμη."
 
 #: library/multiprocessing.rst:1641
 msgid ""
@@ -2858,6 +3024,8 @@ msgid ""
 "func:`Value` instead to make sure that access is automatically synchronized "
 "using a lock."
 msgstr ""
+"Σημειώστε ότι η ρύθμιση και η λήψη της τιμής είναι ενδεχομένως μη ατομική -- χρησιμοποιήστε το :func:`Value` αντί για να βεβαιωθείτε ότι η πρόσβαση συγχρονίζεται αυτόματα "
+"χρησιμοποιώντας ένα κλείδωμα."
 
 #: library/multiprocessing.rst:1645
 msgid ""
@@ -2865,6 +3033,9 @@ msgid ""
 "attributes which allow one to use it to store and retrieve strings -- see "
 "documentation for :mod:`ctypes`."
 msgstr ""
+"Σημειώστε ότι ένας πίνακας από :data:`ctypes.c_char` έχει χαρακτηριστικά ``value`` και ``raw`` "
+"που επιτρέπουν τη χρήση του για την αποθήκευση και ανάκτηση συμβολοσειρών -- δείτε την "
+"τεκμηρίωση για το :mod:`ctypes`."
 
 #: library/multiprocessing.rst:1651
 msgid ""
@@ -2872,6 +3043,8 @@ msgid ""
 "process-safe synchronization wrapper may be returned instead of a raw ctypes "
 "array."
 msgstr ""
+"Το ίδιο με τη :func:`RawArray` εκτός από το ότι ανάλογα με την τιμή του *lock* μπορεί να επιστραφεί ένας "
+"συγχρονισμένος περιτυλιχτής ασφαλής για διεργασίες αντί για έναν ακατέργαστο πίνακα ctypes."
 
 #: library/multiprocessing.rst:1655 library/multiprocessing.rst:1671
 msgid ""
@@ -2882,6 +3055,12 @@ msgid ""
 "returned object will not be automatically protected by a lock, so it will "
 "not necessarily be \"process-safe\"."
 msgstr ""
+"Εάν το *lock* είναι ``True`` (η προεπιλογή) τότε δημιουργείται "
+"ένα νέο αντικείμενο κλειδώματος για τον συγχρονισμό της πρόσβασης στην τιμή. "
+"Εάν το *lock* είναι ένα αντικείμενο :class:`~multiprocessing.Lock` ή :class:`~multiprocessing.RLock` "
+"τότε αυτό θα χρησιμοποιηθεί για τον συγχρονισμό της πρόσβασης στην τιμή. "
+"Εάν το *lock* είναι ``False`` τότε η πρόσβαση στο επιστρεφόμενο αντικείμενο δεν θα "
+"προστατεύεται αυτόματα από ένα κλείδωμα, οπότε δεν θα είναι απαραίτητα \"ασφαλές για διεργασίες\"."
 
 #: library/multiprocessing.rst:1667
 msgid ""
@@ -2889,12 +3068,16 @@ msgid ""
 "process-safe synchronization wrapper may be returned instead of a raw ctypes "
 "object."
 msgstr ""
+"Το ίδιο με τη :func:`RawValue` εκτός από το ότι ανάλογα με την τιμή του *lock* μπορεί να επιστραφεί ένας "
+"συγχρονισμένος περιτυ ασφαλής για διεργασίες αντί για ένα ακατέργαστο αντικείμενο ctypes."
 
 #: library/multiprocessing.rst:1682
 msgid ""
 "Return a ctypes object allocated from shared memory which is a copy of the "
 "ctypes object *obj*."
 msgstr ""
+"Επιστρέφει ένα αντικείμενο ctypes που έχει κατανεμηθεί από κοινή μνήμη και είναι ένα αντίγραφο του "
+"αντικειμένου ctypes *obj*."
 
 #: library/multiprocessing.rst:1687
 msgid ""
@@ -2902,6 +3085,8 @@ msgid ""
 "to synchronize access.  If *lock* is ``None`` (the default) then a :class:"
 "`multiprocessing.RLock` object is created automatically."
 msgstr ""
+"Επιστρέφει ένα ασφαλές για διεργασίες περιτύλιγμα για ένα αντικείμενο ctypes που χρησιμοποιεί το *lock* "
+"για τον συγχρονισμό της πρόσβασης. Εάν το *lock* είναι ``None`` (η προεπιλογή) τότε δημιουργείται αυτόματα ένα αντικείμενο :class:`multiprocessing.RLock`."
 
 #: library/multiprocessing.rst:1691
 msgid ""
@@ -2909,16 +3094,22 @@ msgid ""
 "object it wraps: :meth:`get_obj` returns the wrapped object and :meth:"
 "`get_lock` returns the lock object used for synchronization."
 msgstr ""
+"Ένας συγχρονισμένος περιτυλιχτής θα έχει δύο μεθόδους επιπλέον από αυτές του "
+"αντικειμένου που περιτυλίγει: η :meth:`get_obj` επιστρέφει το περιτυλιγμένο "
+"αντικείμενο και η :meth:`get_lock` επιστρέφει το αντικείμενο κλειδώματος που χρησιμοποιείται για τον συγχρονισμό."
 
 #: library/multiprocessing.rst:1695
 msgid ""
 "Note that accessing the ctypes object through the wrapper can be a lot "
 "slower than accessing the raw ctypes object."
 msgstr ""
+"Σημειώστε ότι η πρόσβαση στο αντικείμενο ctypes μέσω του περιτυλίγματος μπορεί να είναι πολύ "
+"πιο αργή από την πρόσβαση στο ακατέργαστο αντικείμενο ctypes."
 
 #: library/multiprocessing.rst:1698
 msgid "Synchronized objects support the :term:`context manager` protocol."
 msgstr ""
+"Τα συγχρονισμένα αντικείμενα υποστηρίζουν το πρωτόκολλο :term:`context manager`."
 
 #: library/multiprocessing.rst:1702
 msgid ""
@@ -2926,18 +3117,21 @@ msgid ""
 "shared memory with the normal ctypes syntax.  (In the table ``MyStruct`` is "
 "some subclass of :class:`ctypes.Structure`.)"
 msgstr ""
+"Ο παρακάτω πίνακας συγκρίνει τη σύνταξη για τη δημιουργία κοινόχρηστων ctypes αντικειμένων από "
+"κοινή μνήμη με τη κανονική σύνταξη ctypes. (Στον πίνακα, το ``MyStruct`` είναι "
+"κάποια υποκλάση της :class:`ctypes.Structure`.)"
 
 #: library/multiprocessing.rst:1707
 msgid "ctypes"
-msgstr ""
+msgstr "ctypes"
 
 #: library/multiprocessing.rst:1707
 msgid "sharedctypes using type"
-msgstr ""
+msgstr "sharedctypes χρησιμοποιώντας τύπο"
 
 #: library/multiprocessing.rst:1707
 msgid "sharedctypes using typecode"
-msgstr ""
+msgstr "sharedctypes χρησιμοποιώντας κωδικό τύπου"
 
 #: library/multiprocessing.rst:1709
 msgid "c_double(2.4)"
@@ -3059,7 +3253,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:1754
 msgid "The results printed are ::"
-msgstr ""
+msgstr "Τα αποτελέσματα που εκτυπώνονται είναι ::"
 
 #: library/multiprocessing.rst:1756
 msgid ""
@@ -3075,7 +3269,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:1767
 msgid "Managers"
-msgstr ""
+msgstr "Διαχειριστές"
 
 #: library/multiprocessing.rst:1769
 msgid ""
@@ -3085,6 +3279,11 @@ msgid ""
 "*shared objects*.  Other processes can access the shared objects by using "
 "proxies."
 msgstr ""
+"Οι διαχειριστές παρέχουν έναν τρόπο δημιουργίας δεδομένων που μπορούν να "
+"μοιράζονται μεταξύ διαφορετικών διεργασιών, συμπεριλαμβανομένης της κοινής χρήσης μέσω "
+"δικτύου μεταξύ διεργασιών που εκτελούνται σε διαφορετικές μηχανές. "
+"Ένα αντικείμενο διαχειριστή ελέγχει μια διαδικασία διακομιστή που διαχειρίζεται "
+"*κοινόχρηστα αντικείμενα*. Άλλες διεργασίες μπορούν να έχουν πρόσβαση στα κοινόχρηστα αντικείμενα χρησιμοποιώντας proxies."
 
 #: library/multiprocessing.rst:1778
 msgid ""
@@ -3093,6 +3292,10 @@ msgid ""
 "manager object corresponds to a spawned child process and has methods which "
 "will create shared objects and return corresponding proxies."
 msgstr ""
+"Επιστρέφει ένα εκκινημένο :class:`~multiprocessing.managers.SyncManager` αντικείμενο "
+"που μπορεί να χρησιμοποιηθεί για την κοινή χρήση αντικειμένων μεταξύ διεργασιών. "
+"Το επιστρεφόμενο αντικείμενο διαχειριστή αντιστοιχεί σε μια αναπτυγμένη θυγατρική διεργασία και έχει μεθόδους που "
+"θα δημιουργήσουν κοινόχρηστα αντικείμενα και θα επιστρέψουν τα αντίστοιχα proxies."
 
 #: library/multiprocessing.rst:1786
 msgid ""
@@ -3100,10 +3303,12 @@ msgid ""
 "their parent process exits.  The manager classes are defined in the :mod:"
 "`multiprocessing.managers` module:"
 msgstr ""
+"Οι διαδικασίες διαχειριστή θα τερματιστούν μόλις συλλεχθούν από τον garbage collector ή "
+"η γονική τους διεργασία τερματιστεί. Οι κλάσεις διαχειριστή ορίζονται στο :mod:`multiprocessing.managers` module:"
 
 #: library/multiprocessing.rst:1792
 msgid "Create a BaseManager object."
-msgstr ""
+msgstr "Δημειουργεί ένα αντικείμενο BaseManager."
 
 #: library/multiprocessing.rst:1794
 msgid ""
@@ -3111,12 +3316,18 @@ msgid ""
 "serve_forever()`` to ensure that the manager object refers to a started "
 "manager process."
 msgstr ""
+"Μόλις δημιουργηθεί, θα πρέπει να καλέσετε τη :meth:`start` ή "
+"``get_server().serve_forever()`` για να βεβαιωθείτε ότι "
+"το αντικείμενο διαχειριστή αναφέρεται σε μια εκκινημένη "
+"διαδικασία διαχειριστή."
 
 #: library/multiprocessing.rst:1797
 msgid ""
 "*address* is the address on which the manager process listens for new "
 "connections.  If *address* is ``None`` then an arbitrary one is chosen."
 msgstr ""
+"Το *address* είναι η διεύθυνση στην οποία η διαδικασία διαχειριστή ακούει για νέες "
+"συνδέσεις. Εάν το *address* είναι ``None`` τότε επιλέγεται μια αυθαίρετη."
 
 #: library/multiprocessing.rst:1800
 msgid ""
@@ -3125,18 +3336,26 @@ msgid ""
 "then ``current_process().authkey`` is used. Otherwise *authkey* is used and "
 "it must be a byte string."
 msgstr ""
+"Το *authkey* είναι το κλειδί πιστοποίησης που θα χρησιμοποιηθεί για τον έλεγχο της εγκυρότητας "
+"των εισερχόμενων συνδέσεων στη διαδικασία διακομιστή. Εάν το *authkey* είναι ``None`` "
+"τότε χρησιμοποιείται το ``current_process().authkey``. Διαφορετικά, το *authkey* χρησιμοποιείται και "
+"πρέπει να είναι μια byte string."
 
 #: library/multiprocessing.rst:1805
 msgid ""
 "*serializer* must be ``'pickle'`` (use :mod:`pickle` serialization) or "
 "``'xmlrpclib'`` (use :mod:`xmlrpc.client` serialization)."
 msgstr ""
+"Το *serializer* πρέπει να είναι ``'pickle'`` (χρησιμοποιεί σειριοποίηση :mod:`pickle`) ή "
+"``'xmlrpclib'`` (χρησιμοποιεί σειριοποίηση :mod:`xmlrpc.client`)."
 
 #: library/multiprocessing.rst:1808
 msgid ""
 "*ctx* is a context object, or ``None`` (use the current context). See the :"
 "func:`get_context` function."
 msgstr ""
+"Το *ctx* είναι ένα αντικείμενο context, ή ``None`` (χρησιμοποιεί το τρέχον context). Δείτε τη :"
+"func:`get_context` συνάρτηση."
 
 #: library/multiprocessing.rst:1811
 msgid ""
@@ -3145,16 +3364,23 @@ msgid ""
 "shutdown times out, the process is terminated. If terminating the process "
 "also times out, the process is killed."
 msgstr ""
+"Το *shutdown_timeout* είναι ένα χρονικό όριο σε δευτερόλεπτα που χρησιμοποιείται "
+"για την αναμονή μέχρι να ολοκληρωθεί η διαδικασία "
+"που χρησιμοποιείται από τον διαχειριστή στη :meth:`shutdown` μέθοδο. "
+"Εάν ο τερματισμός υπερβεί το χρονικό όριο, η διαδικασία τερματίζεται. Εάν ο τερματισμός της διαδικασίας "
+"επίσης υπερβεί το χρονικό όριο, η διαδικασία σκοτώνεται."
 
 #: library/multiprocessing.rst:1816
 msgid "Added the *shutdown_timeout* parameter."
-msgstr ""
+msgstr "Προστέθηκε η παράμετρος *shutdown_timeout*."
 
 #: library/multiprocessing.rst:1821
 msgid ""
 "Start a subprocess to start the manager.  If *initializer* is not ``None`` "
 "then the subprocess will call ``initializer(*initargs)`` when it starts."
 msgstr ""
+"Ξεκινά μια υποδιαδικασία για την εκκίνηση του διαχειριστή. Εάν το *initializer* δεν είναι ``None`` "
+"τότε η υποδιαδικασία θα καλέσει ``initializer(*initargs)`` όταν ξεκινήσει."
 
 #: library/multiprocessing.rst:1826
 msgid ""
@@ -3162,6 +3388,8 @@ msgid ""
 "the control of the Manager. The :class:`Server` object supports the :meth:"
 "`serve_forever` method::"
 msgstr ""
+"Επιστρέφει ένα αντικέιμενο :class:`Server` το οποίο αντιπροσωπεύει τον πραγματικό διακομιστή υπό "
+"τον έλεγχο του Διαχειριστή. Το αντικείμενο :class:`Server` υποστηρίζει τη :meth:`serve_forever` μέθοδο::"
 
 #: library/multiprocessing.rst:1830
 msgid ""
@@ -3177,11 +3405,11 @@ msgstr ""
 
 #: library/multiprocessing.rst:1835
 msgid ":class:`Server` additionally has an :attr:`address` attribute."
-msgstr ""
+msgstr "Η :class:`Server` έχει επιπλέον ένα χαρακτηριστικό :attr:`address`."
 
 #: library/multiprocessing.rst:1839
 msgid "Connect a local manager object to a remote manager process::"
-msgstr ""
+msgstr "Συνδέει ένα τοπικό αντικείμενο διαχειριστή σε μια απομακρυσμένη διαδικασία διαχειριστή::"
 
 #: library/multiprocessing.rst:1841
 msgid ""
@@ -3198,22 +3426,28 @@ msgid ""
 "Stop the process used by the manager.  This is only available if :meth:"
 "`start` has been used to start the server process."
 msgstr ""
+"Σταματά τη διαδικασία που χρησιμοποιείται από τον διαχειριστή. "
+"Αυτό είναι διαθέσιμο μόνο εάν η :meth:`start` έχει "
+"χρησιμοποιηθεί για την εκκίνηση της διαδικασίας διακομιστή."
 
 #: library/multiprocessing.rst:1850
 msgid "This can be called multiple times."
-msgstr ""
+msgstr "Αυτό μπορεί να κληθεί πολλές φορές."
 
 #: library/multiprocessing.rst:1854
 msgid ""
 "A classmethod which can be used for registering a type or callable with the "
 "manager class."
 msgstr ""
+"Μια κλάση μεθόδου που μπορεί να χρησιμοποιηθεί για την εγγραφή ενός τύπου ή καλέσιμου με την κλάση διαχειριστή."
 
 #: library/multiprocessing.rst:1857
 msgid ""
 "*typeid* is a \"type identifier\" which is used to identify a particular "
 "type of shared object.  This must be a string."
 msgstr ""
+"Το *typeid* είναι ένας \"ταυτοποιητής τύπου\" που χρησιμοποιείται για την ταυτοποίηση ενός συγκεκριμένου "
+"τύπου κοινόχρηστου αντικειμένου. Αυτό πρέπει να είναι μια συμβολοσειρά."
 
 #: library/multiprocessing.rst:1860
 msgid ""
@@ -3222,6 +3456,10 @@ msgid ""
 "the :meth:`connect` method, or if the *create_method* argument is ``False`` "
 "then this can be left as ``None``."
 msgstr ""
+"Το *callable* είναι ένα καλέσιμο που χρησιμοποιείται για τη δημιουργία αντικειμένων για αυτόν τον "
+"ταυτοποιητή τύπου. Εάν ένα στιγμιότυπο διαχειριστή θα συνδεθεί με τον διακομιστή χρησιμοποιώντας "
+"τη :meth:`connect` μέθοδο, ή εάν το όρισμα *create_method* είναι ``False`` "
+"τότε αυτό μπορεί να παραμείνει ως ``None``."
 
 #: library/multiprocessing.rst:1866
 msgid ""
@@ -3229,6 +3467,9 @@ msgid ""
 "proxies for shared objects with this *typeid*.  If ``None`` then a proxy "
 "class is created automatically."
 msgstr ""
+"Το *proxytype* είναι μια υποκλάση της :class:`BaseProxy` που χρησιμοποιείται για τη δημιουργία "
+"proxies για κοινόχρηστα αντικείμενα με αυτό το *typeid*. Εάν είναι ``None`` τότε μια κλάση proxy "
+"δημιουργείται αυτόματα."
 
 #: library/multiprocessing.rst:1870
 msgid ""
@@ -3240,6 +3481,11 @@ msgid ""
 "\"public method\" means any attribute which has a :meth:`~object.__call__` "
 "method and whose name does not begin with ``'_'``.)"
 msgstr ""
+"Το *exposed* χρησιμοποιείται για να καθορίσει μια ακολουθία ονομάτων μεθόδων που τα proxies για "
+"αυτό το typeid θα πρέπει να επιτρέπεται να έχουν πρόσβαση χρησιμοποιώντας τη :meth:`BaseProxy._callmethod`. "
+"(Εάν το *exposed* είναι ``None`` τότε χρησιμοποιείται το :attr:`proxytype._exposed_` αντί εάν υπάρχει.) "
+"Στην περίπτωση που δεν καθορίζεται λίστα εκτεθειμένων, όλες οι \"δημόσιες μέθοδοι\" του κοινόχρηστου αντικειμένου θα είναι προσβάσιμες. "
+"(Εδώ, μια \"δημόσια μέθοδος\" σημαίνει οποιοδήποτε χαρακτηριστικό που έχει μια :meth:`~object.__call__` μέθοδο και του οποίου το όνομα δεν αρχίζει με ``'_'``.)"
 
 #: library/multiprocessing.rst:1879
 msgid ""
@@ -3250,6 +3496,11 @@ msgid ""
 "not a key of this mapping or if the mapping is ``None`` then the object "
 "returned by the method will be copied by value."
 msgstr ""
+"Το *method_to_typeid* είναι ένας χάρτης που χρησιμοποιείται για να καθορίσει τον τύπο επιστροφής αυτών "
+"των εκτεθειμένων μεθόδων που θα πρέπει να επιστρέφουν ένα proxy. Χαρτογραφεί ονόματα μεθόδων σε "
+"συμβολοσειρές typeid. (Εάν το *method_to_typeid* είναι ``None`` τότε χρησιμοποιείται το :attr:`proxytype._method_to_typeid` "
+"αλλιώς αν υπάρχει.) Εάν το όνομα μιας μεθόδου δεν είναι κλειδί αυτού του χάρτη ή εάν ο χάρτης είναι ``None`` "
+"τότε το αντικείμενο που επιστρέφεται από τη μέθοδο θα αντιγραφεί κατά τιμή."
 
 #: library/multiprocessing.rst:1886
 msgid ""
@@ -3257,14 +3508,17 @@ msgid ""
 "*typeid* which can be used to tell the server process to create a new shared "
 "object and return a proxy for it.  By default it is ``True``."
 msgstr ""
+"Το *create_method* καθορίζει εάν θα πρέπει να δημιουργηθεί μια μέθοδος με το όνομα "
+"*typeid* που μπορεί να χρησιμοποιηθεί για να πει στη διαδικασία διακομιστή να δημιουργήσει ένα νέο κοινόχρηστο "
+"αντικείμενο και να επιστρέψει ένα proxy για αυτό. Από προεπιλογή είναι ``True``."
 
 #: library/multiprocessing.rst:1890
 msgid ":class:`BaseManager` instances also have one read-only property:"
-msgstr ""
+msgstr "Τα στιγμιότυπα :class:`BaseManager` έχουν επίσης μια μόνο ιδιότητα μόνο για ανάγνωση:"
 
 #: library/multiprocessing.rst:1894
 msgid "The address used by the manager."
-msgstr ""
+msgstr "Η διεύθυνση που χρησιμοποιείται από τον διαχειριστή."
 
 #: library/multiprocessing.rst:1896
 msgid ""
@@ -3273,12 +3527,17 @@ msgid ""
 "process (if it has not already started) and then returns the manager "
 "object.  :meth:`~contextmanager.__exit__` calls :meth:`shutdown`."
 msgstr ""
+"Τα αντικείμενα διαχειριστή υποστηρίζουν το πρωτόκολλο διαχείρισης περιεχομένου -- δείτε :ref:`typecontextmanager`. "
+"Η :meth:`~contextmanager.__enter__` ξεκινά τη διαδικασία διακομιστή (εάν δεν έχει ήδη ξεκινήσει) και στη συνέχεια επιστρέφει το αντικείμενο διαχειριστή. "
+"Η :meth:`~contextmanager.__exit__` καλεί τη :meth:`shutdown`."
 
 #: library/multiprocessing.rst:1902
 msgid ""
 "In previous versions :meth:`~contextmanager.__enter__` did not start the "
 "manager's server process if it was not already started."
 msgstr ""
+"Σε προηγούμενες εκδόσεις, η :meth:`~contextmanager.__enter__` δεν ξεκινούσε τη "
+"διαδικασία διακομιστή του διαχειριστή εάν δεν είχε ήδη ξεκινήσει."
 
 #: library/multiprocessing.rst:1907
 msgid ""
@@ -3286,6 +3545,8 @@ msgid ""
 "of processes.  Objects of this type are returned by :func:`multiprocessing."
 "Manager`."
 msgstr ""
+"Μια υποκλάση της :class:`BaseManager` που μπορεί να χρησιμοποιηθεί για τον συγχρονισμό "
+"των διεργασιών. Αντικείμενα αυτού του τύπου επιστρέφονται από τη :func:`multiprocessing.Manager`."
 
 #: library/multiprocessing.rst:1911
 msgid ""
@@ -3293,23 +3554,29 @@ msgid ""
 "number of commonly used data types to be synchronized across processes. This "
 "notably includes shared lists and dictionaries."
 msgstr ""
+"Οι μέθοδοι του δημιουργούν και επιστρέφουν :ref:`multiprocessing-proxy_objects` για έναν "
+"αριθμό από συνήθεις τύπους δεδομένων που θα συγχρονίζονται μεταξύ διεργασιών. Αυτό "
+"περιλαμβάνει ιδιαίτερα κοινόχρηστες λίστες και λεξικά."
 
 #: library/multiprocessing.rst:1917
 msgid ""
 "Create a shared :class:`threading.Barrier` object and return a proxy for it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`threading.Barrier` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1924
 msgid ""
 "Create a shared :class:`threading.BoundedSemaphore` object and return a "
 "proxy for it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`threading.BoundedSemaphore` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1929
 msgid ""
 "Create a shared :class:`threading.Condition` object and return a proxy for "
 "it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`threading.Condition`  και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1932
 msgid ""
@@ -3321,56 +3588,63 @@ msgstr ""
 msgid ""
 "Create a shared :class:`threading.Event` object and return a proxy for it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`threading.Event` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1944
 msgid ""
 "Create a shared :class:`threading.Lock` object and return a proxy for it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`threading.Lock` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1948
 msgid "Create a shared :class:`Namespace` object and return a proxy for it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`Namespace` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1952
 msgid "Create a shared :class:`queue.Queue` object and return a proxy for it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`queue.Queue` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1956
 msgid ""
 "Create a shared :class:`threading.RLock` object and return a proxy for it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`threading.RLock` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1960
 msgid ""
 "Create a shared :class:`threading.Semaphore` object and return a proxy for "
 "it."
 msgstr ""
+"Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`threading.Semaphore` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1965
 msgid "Create an array and return a proxy for it."
-msgstr ""
+msgstr "Δημιοργεί έναν πίνακα και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1969
 msgid ""
 "Create an object with a writable ``value`` attribute and return a proxy for "
 "it."
 msgstr ""
+"Δημιουργεί ένα αντικείμενο με ένα εγγράψιμο χαρακτηριστικό ``value`` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1976
 msgid "Create a shared :class:`dict` object and return a proxy for it."
-msgstr ""
+msgstr "Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`dict` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1981
 msgid "Create a shared :class:`list` object and return a proxy for it."
-msgstr ""
+msgstr "Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`list` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1987
 msgid "Create a shared :class:`set` object and return a proxy for it."
-msgstr ""
+msgstr "Δημιουργεί ένα κοινόχρηστο αντικείμενο :class:`set` και επιστρέφει ένα proxy για αυτό."
 
 #: library/multiprocessing.rst:1989
 msgid ":class:`set` support was added."
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη για :class:`set`."
 
 #: library/multiprocessing.rst:1992
 msgid ""
@@ -3378,16 +3652,21 @@ msgid ""
 "object such as a shared list can contain other shared objects which will all "
 "be managed and synchronized by the :class:`SyncManager`."
 msgstr ""
+"Τα κοινόχρηστα αντικείμενα είναι ικανά να είναι εμφωλευμένα. Για παράδειγμα, ένα κοινόχρηστο "
+"αντικείμενο κοντέινερ όπως μια κοινόχρηστη λίστα μπορεί να περιέχει άλλα κοινόχρηστα αντικείμενα που θα "
+"διαχειρίζονται και θα συγχρονίζονται όλα από την :class:`SyncManager`."
 
 #: library/multiprocessing.rst:1999
 msgid "A type that can register with :class:`SyncManager`."
-msgstr ""
+msgstr "Ένας τύπος που μπορεί να εγγραφεί με την :class:`SyncManager`."
 
 #: library/multiprocessing.rst:2001
 msgid ""
 "A namespace object has no public methods, but does have writable attributes. "
 "Its representation shows the values of its attributes."
 msgstr ""
+"Ένα αντικείμενο namespace δεν έχει δημόσιες μεθόδους, αλλά έχει εγγράψιμα χαρακτηριστικά. "
+"Η αναπαράστασή του δείχνει τις τιμές των χαρακτηριστικών του."
 
 #: library/multiprocessing.rst:2004
 msgid ""
@@ -3395,6 +3674,8 @@ msgid ""
 "with ``'_'`` will be an attribute of the proxy and not an attribute of the "
 "referent:"
 msgstr ""
+"Ωστόσο, όταν χρησιμοποιείτε ένα proxy για ένα αντικείμενο namespace, ένα χαρακτηριστικό που αρχίζει "
+"με ``'_'`` θα είναι ένα χαρακτηριστικό του proxy και όχι ένα χαρακτηριστικό του αναφερόμενου:"
 
 #: library/multiprocessing.rst:2008
 msgid ""
@@ -3418,7 +3699,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:2021
 msgid "Customized managers"
-msgstr ""
+msgstr "Προσαρμοσμένοι διαχειριστές"
 
 #: library/multiprocessing.rst:2023
 msgid ""
@@ -3426,6 +3707,9 @@ msgid ""
 "and uses the :meth:`~BaseManager.register` classmethod to register new types "
 "or callables with the manager class.  For example::"
 msgstr ""
+"Για να δημιουργήσετε τον δικό σας διαχειριστή, δημιουργείτε μια υποκλάση της :class:`BaseManager` "
+"και χρησιμοποιείτε την κλάση μεθόδου :meth:`~BaseManager.register` για να εγγράψετε νέους τύπους "
+"ή καλέσιμα με την κλάση διαχειριστή. Για παράδειγμα::"
 
 #: library/multiprocessing.rst:2027
 msgid ""
@@ -3469,19 +3753,23 @@ msgstr ""
 
 #: library/multiprocessing.rst:2048
 msgid "Using a remote manager"
-msgstr ""
+msgstr "Χρήση απομακρυσμένου διαχειριστή"
 
 #: library/multiprocessing.rst:2050
 msgid ""
 "It is possible to run a manager server on one machine and have clients use "
 "it from other machines (assuming that the firewalls involved allow it)."
 msgstr ""
+"Είναι δυνατό να εκτελέσετε έναν διακομιστή διαχειριστή σε μια μηχανή και να "
+"τον χρησιμοποιούν πελάτες από άλλες μηχανές (υποθέτοντας ότι τα firewalls που εμπλέκονται το επιτρέπουν)."
 
 #: library/multiprocessing.rst:2053
 msgid ""
 "Running the following commands creates a server for a single shared queue "
 "which remote clients can access::"
 msgstr ""
+"Η εκτέλεση των ακόλουθων εντολών δημιουργεί έναν διακομιστή για μια μόνο κοινόχρηστη ουρά "
+"στην οποία μπορούν να έχουν πρόσβαση απομακρυσμένοι πελάτες::"
 
 #: library/multiprocessing.rst:2056
 msgid ""
@@ -3505,7 +3793,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:2065
 msgid "One client can access the server as follows::"
-msgstr ""
+msgstr "Ένας πελάτης μπορεί να έχει πρόσβαση στον διακομιστή ως εξής::"
 
 #: library/multiprocessing.rst:2067
 msgid ""
@@ -3529,7 +3817,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:2075
 msgid "Another client can also use it::"
-msgstr ""
+msgstr "Ένας άλλος πελάτης μπορεί επίσης να το χρησιμοποιήσει::"
 
 #: library/multiprocessing.rst:2077
 msgid ""
@@ -3558,6 +3846,8 @@ msgid ""
 "Local processes can also access that queue, using the code from above on the "
 "client to access it remotely::"
 msgstr ""
+"Οι τοπικές διαδικασίες μπορούν επίσης να έχουν πρόσβαση σε αυτήν την ουρά, "
+"χρησιμοποιώντας τον κώδικα από πάνω στον πελάτη για να έχουν απομακρυσμένη πρόσβαση σε αυτήν::"
 
 #: library/multiprocessing.rst:2089
 msgid ""
@@ -3601,7 +3891,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:2111
 msgid "Proxy Objects"
-msgstr ""
+msgstr "Αντικείμενα Proxy"
 
 #: library/multiprocessing.rst:2113
 msgid ""
@@ -3609,6 +3899,9 @@ msgid ""
 "(presumably) in a different process.  The shared object is said to be the "
 "*referent* of the proxy.  Multiple proxy objects may have the same referent."
 msgstr ""
+"Ένα proxy είναι ένα αντικείμενο που *αναφέρεται* σε ένα κοινόχρηστο αντικείμενο που ζει "
+"(πιθανώς) σε μια διαφορετική διαδικασία. Το κοινόχρηστο αντικείμενο λέγεται ότι είναι ο "
+"*αναφερόμενος* του proxy. Πολλαπλά αντικείμενα proxy μπορεί να έχουν τον ίδιο αναφερόμενο."
 
 #: library/multiprocessing.rst:2117
 msgid ""
@@ -3617,6 +3910,10 @@ msgid ""
 "available through the proxy).  In this way, a proxy can be used just like "
 "its referent can:"
 msgstr ""
+"Ένα αντικείμενο proxy έχει μεθόδους που καλούν τις αντίστοιχες μεθόδους του "
+"αναφερόμενού του (αν και δεν θα είναι απαραίτητα κάθε μέθοδος του αναφερόμενου διαθέσιμη μέσω του proxy). "
+"Με αυτόν τον τρόπο, ένα proxy μπορεί να χρησιμοποιηθεί όπως ακριβώς και ο "
+"αναφερόμενός του:"
 
 #: library/multiprocessing.rst:2121
 msgid ""
@@ -3650,6 +3947,9 @@ msgid ""
 "of the referent, whereas applying :func:`repr` will return the "
 "representation of the proxy."
 msgstr ""
+"Σημειώστε ότι η εφαρμογή της :func:`str` σε ένα proxy θα επιστρέψει την αναπαράσταση "
+"του αναφερόμενου, ενώ η εφαρμογή της :func:`repr` θα επιστρέψει την "
+"αναπαράσταση του proxy."
 
 #: library/multiprocessing.rst:2139
 msgid ""
@@ -3658,6 +3958,11 @@ msgid ""
 "`multiprocessing-proxy_objects`.  This permits nesting of these managed "
 "lists, dicts, and other :ref:`multiprocessing-proxy_objects`:"
 msgstr ""
+"Ένα σημαντικό χαρακτηριστικό των αντικειμένων proxy είναι ότι μπορούν να "
+"εισαχθούν σε pickle, ώστε να μπορούν να περάσουν μεταξύ διεργασιών. "
+"Ως εκ τούτου, ένας αναφερόμενος μπορεί να περιέχει :ref:`multiprocessing-proxy_objects`. "
+"Αυτό επιτρέπει την εμφώλευση αυτών των διαχειριζόμενων "
+"λιστών, λεξικών και άλλων :ref:`multiprocessing-proxy_objects`:"
 
 #: library/multiprocessing.rst:2144
 msgid ""
@@ -3681,7 +3986,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:2155
 msgid "Similarly, dict and list proxies may be nested inside one another::"
-msgstr ""
+msgstr "Παρομοίως, τα dict και list proxies μπορούν να είναι εμφωλευμένα το ένα μέσα στο άλλο::"
 
 #: library/multiprocessing.rst:2157
 msgid ""
@@ -3717,6 +4022,13 @@ msgid ""
 "through the manager and so to effectively modify such an item, one could re-"
 "assign the modified value to the container proxy::"
 msgstr ""
+"Εάν τα τυπικά (μη-proxy) αντικείμενα :class:`list` ή :class:`dict` περιέχονται "
+"σε έναν αναφερόμενο, οι τροποποιήσεις σε αυτές τις μεταβλητές τιμές δεν θα "
+"διαδοθούν μέσω του διαχειριστή επειδή το proxy δεν έχει τρόπο να γνωρίζει πότε οι τιμές "
+"που περιέχονται μέσα τροποποιούνται. Ωστόσο, η αποθήκευση μιας τιμής σε ένα κοντέινερ "
+"proxy (που ενεργοποιεί ένα ``__setitem__`` στο αντικείμενο proxy) διαδίδεται "
+"μέσω του διαχειριστή και έτσι για να τροποποιήσετε αποτελεσματικά ένα τέτοιο στοιχείο, "
+"θα μπορούσατε να αναθέσετε ξανά την τροποποιημένη τιμή στο κοντέινερ proxy::"
 
 #: library/multiprocessing.rst:2176
 msgid ""
@@ -3748,12 +4060,15 @@ msgid ""
 "`multiprocessing-proxy_objects` for most use cases but also demonstrates a "
 "level of control over the synchronization."
 msgstr ""
+"Αυτή η προσέγγιση είναι ίσως λιγότερο βολική από τη χρήση εμφωλευμένων :ref:`multiprocessing-proxy_objects` για τις περισσότερες περιπτώσεις χρήσης, "
+"αλλά επίσης δείχνει ένα επίπεδο ελέγχου πάνω στο συγχρονισμό."
 
 #: library/multiprocessing.rst:2193
 msgid ""
 "The proxy types in :mod:`multiprocessing` do nothing to support comparisons "
 "by value.  So, for instance, we have:"
 msgstr ""
+"Οι τύποι proxy στο :mod:`multiprocessing` δεν κάνουν τίποτα για να υποστηρίξουν συγκρίσεις κατά τιμή. Έτσι, για παράδειγμα, έχουμε:"
 
 #: library/multiprocessing.rst:2196
 msgid ""
@@ -3767,27 +4082,29 @@ msgstr ""
 msgid ""
 "One should just use a copy of the referent instead when making comparisons."
 msgstr ""
+"Αντί να κάνετε συγκρίσεις, θα πρέπει να χρησιμοποιήσετε ένα αντίγραφο του αναφερόμενου."
 
 #: library/multiprocessing.rst:2205
 msgid "Proxy objects are instances of subclasses of :class:`BaseProxy`."
-msgstr ""
+msgstr "Τα αντικείμενα proxy είναι στιγμιότυπα της υποκλάσης της :class:`BaseProxy`."
 
 #: library/multiprocessing.rst:2209
 msgid "Call and return the result of a method of the proxy's referent."
-msgstr ""
+msgstr "Καλεί και επιστρέφει το αποτέλεσμα μιας μεθόδου του αναφερόμενου του proxy."
 
 #: library/multiprocessing.rst:2211
 msgid ""
 "If ``proxy`` is a proxy whose referent is ``obj`` then the expression ::"
 msgstr ""
+"Εάν το ``proxy`` είναι ένα proxy του οποίου ο αναφερόμενος είναι το ``obj``, τότε η έκφραση ::"
 
 #: library/multiprocessing.rst:2213
 msgid "proxy._callmethod(methodname, args, kwds)"
-msgstr ""
+msgstr "proxy._callmethod(methodname, args, kwds)"
 
 #: library/multiprocessing.rst:2215
 msgid "will evaluate the expression ::"
-msgstr ""
+msgstr "θα αξιολογήσει την έκφραση ::"
 
 #: library/multiprocessing.rst:2217
 msgid "getattr(obj, methodname)(*args, **kwds)"
@@ -3795,7 +4112,7 @@ msgstr "getattr(obj, methodname)(*args, **kwds)"
 
 #: library/multiprocessing.rst:2219
 msgid "in the manager's process."
-msgstr ""
+msgstr "στη διαδικασία του διαχειριστή."
 
 #: library/multiprocessing.rst:2221
 msgid ""
@@ -3803,6 +4120,8 @@ msgid ""
 "new shared object -- see documentation for the *method_to_typeid* argument "
 "of :meth:`BaseManager.register`."
 msgstr ""
+"Η επιστρεφόμενη τιμή θα είναι ένα αντίγραφο του αποτελέσματος της κλήσης ή ένα proxy σε ένα "
+"νέο κοινόχρηστο αντικείμενο -- δείτε την τεκμηρίωση για το όρισμα *method_to_typeid* της :meth:`BaseManager.register`."
 
 #: library/multiprocessing.rst:2225
 msgid ""
@@ -3811,16 +4130,21 @@ msgid ""
 "then this is converted into a :exc:`RemoteError` exception and is raised by :"
 "meth:`_callmethod`."
 msgstr ""
+"Εάν προκληθεί μια εξαίρεση από την κλήση, τότε επανεκκινείται από τη :meth:`_callmethod`. "
+"Εάν προκληθεί κάποια άλλη εξαίρεση στη διαδικασία του διαχειριστή, τότε "
+"αυτή μετατρέπεται σε εξαίρεση :exc:`RemoteError` και προκαλείται από τη :meth:`_callmethod`."
 
 #: library/multiprocessing.rst:2230
 msgid ""
 "Note in particular that an exception will be raised if *methodname* has not "
 "been *exposed*."
 msgstr ""
+"Σημειώστε ειδικά ότι θα προκληθεί εξαίρεση εάν το *methodname* δεν έχει "
+"*εκτεθεί*."
 
 #: library/multiprocessing.rst:2233
 msgid "An example of the usage of :meth:`_callmethod`:"
-msgstr ""
+msgstr "Ένα παράδειγμα χρήσης της :meth:`_callmethod`:"
 
 #: library/multiprocessing.rst:2235
 msgid ""
@@ -3846,45 +4170,47 @@ msgstr ""
 
 #: library/multiprocessing.rst:2249
 msgid "Return a copy of the referent."
-msgstr ""
+msgstr "Επιστρέφει ένα αντίγραφο του αναφερόμενου αντικειμένου."
 
 #: library/multiprocessing.rst:2251
 msgid "If the referent is unpicklable then this will raise an exception."
-msgstr ""
+msgstr "Αν το αναφερόμενο αντικείμενο δεν μπορεί να σειριοποιηθεί, τότε θα προκληθεί εξαίρεση."
 
 #: library/multiprocessing.rst:2255
 msgid "Return a representation of the proxy object."
-msgstr ""
+msgstr "Επιστρέφει μια αναπαράσταση του αντικειμένου αντιπροσώπευσης."
 
 #: library/multiprocessing.rst:2259
 msgid "Return the representation of the referent."
-msgstr ""
+msgstr "Επιστρέφει μια αναπαράσταση του αναφερόμενου αντικειμένου."
 
 #: library/multiprocessing.rst:2263
 msgid "Cleanup"
-msgstr ""
+msgstr "Καθαρισμός"
 
 #: library/multiprocessing.rst:2265
 msgid ""
 "A proxy object uses a weakref callback so that when it gets garbage "
 "collected it deregisters itself from the manager which owns its referent."
 msgstr ""
+"Ένα αντικείμενο αντιπροσώπευσης χρησιμοποιεί μια αδύναμη αναφορά (weakref) ως callback, έτσι ώστε όταν συλλεχθεί από τον garbage collector, να αποεγγραφεί από τον διαχειριστή που κατέχει το αναφερόμενο αντικείμενό του."
 
 #: library/multiprocessing.rst:2268
 msgid ""
 "A shared object gets deleted from the manager process when there are no "
 "longer any proxies referring to it."
 msgstr ""
+"Ένα κοινόχρηστο αντικείμενο διαγράφεται από τη διαδικασία του διαχειριστή όταν δεν υπάρχουν πλέον αντικείμενα αντιπροσώπευσης που να αναφέρονται σε αυτό."
 
 #: library/multiprocessing.rst:2273
 msgid "Process Pools"
-msgstr ""
+msgstr "Ομάδες Διαδικασιών"
 
 #: library/multiprocessing.rst:2278
 msgid ""
 "One can create a pool of processes which will carry out tasks submitted to "
 "it with the :class:`Pool` class."
-msgstr ""
+msgstr "Μπορεί κανείς να δημιουργήσει μια ομάδα διαδικασιών που θα εκτελέσουν εργασίες που υποβάλλονται σε αυτήν με την κλάση :class:`Pool`."
 
 #: library/multiprocessing.rst:2283
 msgid ""
@@ -3892,18 +4218,21 @@ msgid ""
 "jobs can be submitted.  It supports asynchronous results with timeouts and "
 "callbacks and has a parallel map implementation."
 msgstr ""
+"Μια ομάδα διαδικασιών που ελέγχει μια ομάδα από διεργασίες εργαζομένους στις οποίες μπορούν να υποβληθούν εργασίες. Υποστηρίζει ασύγχρονα αποτελέσματα με χρονικά όρια και callbacks και έχει μια παράλληλη υλοποίηση map."
 
 #: library/multiprocessing.rst:2287
 msgid ""
 "*processes* is the number of worker processes to use.  If *processes* is "
 "``None`` then the number returned by :func:`os.process_cpu_count` is used."
 msgstr ""
+"Τα *processes* είναι ο αριθμός των διεργασιών εργαζομένων που θα χρησιμοποιηθούν. Αν τα *processes* είναι ``None``, τότε χρησιμοποιείται ο αριθμός που επιστρέφεται από τη συνάρτηση :func:`os.process_cpu_count`."
 
 #: library/multiprocessing.rst:2290 library/multiprocessing.rst:2854
 msgid ""
 "If *initializer* is not ``None`` then each worker process will call "
 "``initializer(*initargs)`` when it starts."
 msgstr ""
+"Αν το *initializer* δεν είναι ``None``, τότε κάθε διεργασία εργαζομένων θα καλέσει ``initializer(*initargs)`` όταν ξεκινά."
 
 #: library/multiprocessing.rst:2293
 msgid ""
@@ -3912,6 +4241,11 @@ msgid ""
 "unused resources to be freed. The default *maxtasksperchild* is ``None``, "
 "which means worker processes will live as long as the pool."
 msgstr ""
+"Το *maxtasksperchild* είναι ο αριθμός των εργασιών που μια διεργασία εργαζομένων "
+"μπορεί να ολοκληρώσει προτού τερματιστεί και αντικατασταθεί με μια "
+"νέα διεργασία εργαζομένων, για να επιτραπεί η απελευθέρωση μη χρησιμοποιούμενων "
+"πόρων. Το προεπιλεγμένο *maxtasksperchild* είναι ``None``, που σημαίνει ότι "
+"οι διεργασίες εργαζομένων θα ζουν όσο διαρκεί η ομάδα."
 
 #: library/multiprocessing.rst:2298
 msgid ""
@@ -3920,12 +4254,19 @@ msgid ""
 "`multiprocessing.Pool` or the :meth:`Pool` method of a context object.  In "
 "both cases *context* is set appropriately."
 msgstr ""
+"Το *context* μπορεί να χρησιμοποιηθεί για να καθορίσει το πλαίσιο "
+"που θα χρησιμοποιηθεί για την εκκίνηση των διεργασιών εργαζομένων. "
+"Συνήθως μια ομάδα δημιουργείται χρησιμοποιώντας τη συνάρτηση "
+":func:`multiprocessing.Pool` ή τη μέθοδο :meth:`Pool` ενός "
+"αντικειμένου πλαισίου. Σε κάθε περίπτωση, το *context* ορίζεται κατάλληλα."
 
 #: library/multiprocessing.rst:2304
 msgid ""
 "Note that the methods of the pool object should only be called by the "
 "process which created the pool."
 msgstr ""
+"Σημειώστε ότι οι μέθοδοι του αντικειμένου της ομάδας θα πρέπει να καλούνται "
+"μόνο από τη διαδικασία που δημιούργησε την ομάδα."
 
 #: library/multiprocessing.rst:2308
 msgid ""
@@ -3934,6 +4275,11 @@ msgid ""
 "manager or by calling :meth:`close` and :meth:`terminate` manually. Failure "
 "to do this can lead to the process hanging on finalization."
 msgstr ""
+"Τα αντικείμενα :class:`multiprocessing.pool` έχουν εσωτερικούς πόρους που "
+"πρέπει να διαχειρίζονται σωστά (όπως κάθε άλλος πόρος) χρησιμοποιώντας την "
+"ομάδα ως διαχειριστή πλαισίου ή καλώντας τις μεθόδους :meth:`close` και "
+":meth:`terminate` χειροκίνητα. Η αποτυχία να γίνει αυτό μπορεί να οδηγήσει σε "
+"πάγωμα της διαδικασίας κατά τον τερματισμό."
 
 #: library/multiprocessing.rst:2313
 msgid ""
@@ -3941,20 +4287,25 @@ msgid ""
 "the pool as CPython does not assure that the finalizer of the pool will be "
 "called (see :meth:`object.__del__` for more information)."
 msgstr ""
+"Σημείωστε ότι δεν είναι **σωστό** να βασίζεστε στον garbage collector για να "
+"καταστρέψει την ομάδα, καθώς η CPython δεν διασφαλίζει ότι ο τελικοποιητής της "
+"ομάδας θα κληθεί (δείτε :meth:`object.__del__` για περισσότερες πληροφορίες)."
 
 #: library/multiprocessing.rst:2317
 msgid "Added the *maxtasksperchild* parameter."
-msgstr ""
+msgstr "Προστέθηκε η παράμετρος *maxtasksperchild*."
 
 #: library/multiprocessing.rst:2320
 msgid "Added the *context* parameter."
-msgstr ""
+msgstr "Προστέθηκε η παράμετρος *context*."
 
 #: library/multiprocessing.rst:2323
 msgid ""
 "*processes* uses :func:`os.process_cpu_count` by default, instead of :func:"
 "`os.cpu_count`."
 msgstr ""
+"Τα *processes* χρησιμοποιούν από προεπιλογή τη συνάρτηση :func:`os.process_cpu_count` "
+"αντί για τη :func:`os.cpu_count`."
 
 #: library/multiprocessing.rst:2329
 msgid ""
@@ -3966,6 +4317,12 @@ msgid ""
 "one. The *maxtasksperchild* argument to the :class:`Pool` exposes this "
 "ability to the end user."
 msgstr ""
+"Οι διεργασίες εργαζομένων μέσα σε μια :class:`Pool` συνήθως ζουν για ολόκληρη τη "
+"διάρκεια της ουράς εργασίας της ομάδας. Ένα συχνό μοντέλο που βρίσκεται σε "
+"άλλα συστήματα (όπως το Apache, mod_wsgi, κ.λπ.) για την απελευθέρωση πόρων που κατέχονται από τους "
+"εργαζόμενους είναι να επιτρέπεται σε έναν εργαζόμενο μέσα σε μια ομάδα να ολοκληρώσει μόνο ένα "
+"ορισμένο ποσό εργασίας προτού τερματιστεί, καθαριστεί και μια νέα διαδικασία να δημιουργηθεί για να αντικαταστήσει την παλιά. "
+"Το *maxtasksperchild* όρισμα στην :class:`Pool` εκθέτει αυτή τη δυνατότητα στον τελικό χρήστη."
 
 #: library/multiprocessing.rst:2339
 msgid ""
@@ -3974,12 +4331,18 @@ msgid ""
 "suited for performing work in parallel. Additionally, *func* is only "
 "executed in one of the workers of the pool."
 msgstr ""
+"Καλεί τη *func* με τα ορίσματα *args* και τις λέξεις-κλειδιά *kwds*. "
+"Αναστέλλει την εκτέλεση μέχρι να είναι έτοιμο το αποτέλεσμα. "
+"Δεδομένου ότι αυτό αναστέλλει την εκτέλεση, "
+"η :meth:`apply_async` είναι πιο κατάλληλη για την εκτέλεση "
+"εργασίας σε παράλληλο τρόπο. Επιπλέον, η *func* εκτελείται μόνο σε έναν από τους εργαζόμενους της ομάδας."
 
 #: library/multiprocessing.rst:2346
 msgid ""
 "A variant of the :meth:`apply` method which returns a :class:"
 "`~multiprocessing.pool.AsyncResult` object."
 msgstr ""
+"Μια παραλλαγή της μεθόδου :meth:`apply` που επιστρέφει ένα αντικείμενο :class:`~multiprocessing.pool.AsyncResult`."
 
 #: library/multiprocessing.rst:2349 library/multiprocessing.rst:2380
 msgid ""
@@ -3988,6 +4351,9 @@ msgid ""
 "that is unless the call failed, in which case the *error_callback* is "
 "applied instead."
 msgstr ""
+"Αν το *callback* καθοριστεί, τότε θα πρέπει να είναι ένα αντικείμενο που "
+"μπορεί να κληθεί και να δέχεται ένα μόνο όρισμα. Όταν το αποτέλεσμα "
+"είναι έτοιμο, το *callback* εφαρμόζεται σε αυτό, εκτός αν η κλήση απέτυχε, οπότε εφαρμόζεται το *error_callback*."
 
 #: library/multiprocessing.rst:2354 library/multiprocessing.rst:2385
 msgid ""
@@ -3995,12 +4361,18 @@ msgid ""
 "a single argument.  If the target function fails, then the *error_callback* "
 "is called with the exception instance."
 msgstr ""
+"Αν το *error_callback* καθοριστεί, τότε θα πρέπει να είναι ένα αντικείμενο "
+"που μπορεί να κληθεί και να δέχεται ένα μόνο όρισμα. Αν η στοχευμένη "
+"συνάρτηση αποτύχει, τότε το *error_callback* καλείται με την "
+"εγκατάσταση της εξαίρεσης."
 
 #: library/multiprocessing.rst:2358 library/multiprocessing.rst:2389
 msgid ""
 "Callbacks should complete immediately since otherwise the thread which "
 "handles the results will get blocked."
 msgstr ""
+"Τα callbacks θα πρέπει να ολοκληρώνονται αμέσως, διαφορετικά το νήμα που "
+"χειρίζεται τα αποτελέσματα θα μπλοκαριστεί."
 
 #: library/multiprocessing.rst:2363
 msgid ""
@@ -4008,6 +4380,9 @@ msgid ""
 "one *iterable* argument though, for multiple iterables see :meth:`starmap`). "
 "It blocks until the result is ready."
 msgstr ""
+"Ένα παράλληλο ισοδύναμο της ενσωματωμένης συνάρτησης :func:`map` (υποστηρίζει μόνο ένα "
+"*iterable* όρισμα, για πολλαπλά iterables δείτε τη :meth:`starmap`). "
+"Αναστέλλει την εκτέλεση μέχρι να είναι έτοιμο το αποτέλεσμα."
 
 #: library/multiprocessing.rst:2367
 msgid ""
@@ -4015,6 +4390,9 @@ msgid ""
 "the process pool as separate tasks.  The (approximate) size of these chunks "
 "can be specified by setting *chunksize* to a positive integer."
 msgstr ""
+"Αυτή η μέθοδος χωρίζει το iterable σε έναν αριθμό κομματιών που υποβάλλει "
+"στην ομάδα διαδικασιών ως ξεχωριστές εργασίες. Το (περίπου) μέγεθος αυτών των "
+"κομματιών μπορεί να καθοριστεί ορίζοντας το *chunksize* σε έναν θετικό ακέραιο."
 
 #: library/multiprocessing.rst:2371
 msgid ""
@@ -4022,16 +4400,20 @@ msgid ""
 "using :meth:`imap` or :meth:`imap_unordered` with explicit *chunksize* "
 "option for better efficiency."
 msgstr ""
+"Σημειώστε ότι μπορεί να προκαλέσει υψηλή χρήση μνήμης για πολύ μεγάλα "
+"iterables. Σκεφτείτε να χρησιμοποιήσετε τη :meth:`imap` ή τη :meth:`imap_unordered` "
+"με ρητή επιλογή *chunksize* για καλύτερη αποδοτικότητα."
 
 #: library/multiprocessing.rst:2377
 msgid ""
 "A variant of the :meth:`.map` method which returns a :class:"
 "`~multiprocessing.pool.AsyncResult` object."
 msgstr ""
+"Μια παραλλαγή της μεθόδου :meth:`.map` που επιστρέφει ένα αντικείμενο :class:`~multiprocessing.pool.AsyncResult`."
 
 #: library/multiprocessing.rst:2394
 msgid "A lazier version of :meth:`.map`."
-msgstr ""
+msgstr "Μια πιο τεμπέλικη έκδοση της :meth:`.map`."
 
 #: library/multiprocessing.rst:2396
 msgid ""
@@ -4039,6 +4421,9 @@ msgid ""
 "method.  For very long iterables using a large value for *chunksize* can "
 "make the job complete **much** faster than using the default value of ``1``."
 msgstr ""
+"Το όρισμα *chunksize* είναι το ίδιο με αυτό που χρησιμοποιείται από τη μέθοδο :meth:`.map`. "
+"Για πολύ μεγάλα iterables, η χρήση μιας μεγάλης τιμής για το *chunksize* μπορεί "
+"να κάνει την εργασία να ολοκληρωθεί **πολύ** πιο γρήγορα από τη χρήση της προεπιλεγμένης τιμής ``1``."
 
 #: library/multiprocessing.rst:2401
 msgid ""
@@ -4047,6 +4432,11 @@ msgid ""
 "``next(timeout)`` will raise :exc:`multiprocessing.TimeoutError` if the "
 "result cannot be returned within *timeout* seconds."
 msgstr ""
+"Επίσης, αν το *chunksize* είναι ``1``, τότε η μέθοδος :meth:`!next` του "
+"iterator που επιστρέφεται από τη μέθοδο :meth:`imap` έχει ένα προαιρετικό "
+"*timeout* όρισμα: "
+"``next(timeout)`` θα προκαλέσει :exc:`multiprocessing.TimeoutError` αν το αποτέλεσμα δεν μπορεί να "
+"επιστραφεί μέσα σε *timeout* δευτερόλεπτα."
 
 #: library/multiprocessing.rst:2408
 msgid ""
@@ -4054,18 +4444,25 @@ msgid ""
 "returned iterator should be considered arbitrary.  (Only when there is only "
 "one worker process is the order guaranteed to be \"correct\".)"
 msgstr ""
+"Το ίδιο με τη :meth:`imap`, εκτός από το ότι η σειρά των αποτελεσμάτων από "
+"τον επιστρεφόμενο iterator θα πρέπει να θεωρείται αυθαίρετη. (Μόνο όταν υπάρχει "
+"μία διεργασία εργαζομένων η σειρά είναι εγγυημένα \"σωστή\".)"
 
 #: library/multiprocessing.rst:2414
 msgid ""
 "Like :meth:`~multiprocessing.pool.Pool.map` except that the elements of the "
 "*iterable* are expected to be iterables that are unpacked as arguments."
 msgstr ""
+"Όπως η :meth:`~multiprocessing.pool.Pool.map`, εκτός από το ότι τα στοιχεία του "
+"*iterable* αναμένεται να είναι iterables που αποσυσκευάζονται ως ορίσματα."
 
 #: library/multiprocessing.rst:2418
 msgid ""
 "Hence an *iterable* of ``[(1,2), (3, 4)]`` results in ``[func(1,2), "
 "func(3,4)]``."
 msgstr ""
+"Επομένως, ένα *iterable* από ``[(1,2), (3, 4)]`` έχει ως αποτέλεσμα "
+"``[func(1,2), func(3,4)]``."
 
 #: library/multiprocessing.rst:2425
 msgid ""
@@ -4073,12 +4470,17 @@ msgid ""
 "*iterable* of iterables and calls *func* with the iterables unpacked. "
 "Returns a result object."
 msgstr ""
+"Ένας συνδυασμός της :meth:`starmap` και της :meth:`map_async` που επαναλαμβάνει "
+"πάνω σε ένα *iterable* από iterables και καλεί τη *func* με τα iterables αποσυσκευασμένα. "
+"Επιστρέφει ένα αντικείμενο αποτελέσματος."
 
 #: library/multiprocessing.rst:2433
 msgid ""
 "Prevents any more tasks from being submitted to the pool.  Once all the "
 "tasks have been completed the worker processes will exit."
 msgstr ""
+"Αποτρέπει την υποβολή περισσότερων εργασιών στην ομάδα. Μόλις ολοκληρωθούν όλες οι "
+"εργασίες, οι διεργασίες εργαζομένων θα τερματιστούν."
 
 #: library/multiprocessing.rst:2438
 msgid ""
@@ -4086,12 +4488,16 @@ msgid ""
 "When the pool object is garbage collected :meth:`terminate` will be called "
 "immediately."
 msgstr ""
+"Τερματίζει τις διεργασίες εργαζομένων αμέσως χωρίς να ολοκληρώσει την εκκρεμή εργασία. "
+"Όταν το αντικείμενο της ομάδας συλλεχθεί από τον garbage collector, η :meth:`terminate` θα κληθεί αμέσως."
 
 #: library/multiprocessing.rst:2444
 msgid ""
 "Wait for the worker processes to exit.  One must call :meth:`close` or :meth:"
 "`terminate` before using :meth:`join`."
 msgstr ""
+"Περιμένει να τερματιστούν οι διεργασίες εργαζομένων. Πρέπει να "
+"καλέσετε τη :meth:`close` ή τη :meth:`terminate` πριν χρησιμοποιήσετε τη :meth:`join`."
 
 #: library/multiprocessing.rst:2447
 msgid ""
@@ -4099,12 +4505,16 @@ msgid ""
 "`typecontextmanager`.  :meth:`~contextmanager.__enter__` returns the pool "
 "object, and :meth:`~contextmanager.__exit__` calls :meth:`terminate`."
 msgstr ""
+"Τα αντικείμενα Pool τώρα υποστηρίζουν το πρωτόκολλο διαχείρισης πλαισίου -- "
+"δείτε :ref:`typecontextmanager`. Η :meth:`~contextmanager.__enter__` επιστρέφει "
+"το αντικείμενο της ομάδας, και η :meth:`~contextmanager.__exit__` καλεί τη :meth:`terminate`."
 
 #: library/multiprocessing.rst:2455
 msgid ""
 "The class of the result returned by :meth:`Pool.apply_async` and :meth:`Pool."
 "map_async`."
 msgstr ""
+"Η κλάση του αποτελέσματος που επιστρέφεται από τις μεθόδους :meth:`Pool.apply_async` και :meth:`Pool.map_async`."
 
 #: library/multiprocessing.rst:2460
 msgid ""
@@ -4113,30 +4523,35 @@ msgid ""
 "TimeoutError` is raised.  If the remote call raised an exception then that "
 "exception will be reraised by :meth:`get`."
 msgstr ""
+"Επιστρέφει το αποτέλεσμα όταν αυτό φτάσει. Αν το *timeout* δεν είναι ``None`` και το "
+"αποτέλεσμα δεν φτάσει μέσα σε *timeout* δευτερόλεπτα, τότε προκαλείται :exc:`multiprocessing.TimeoutError`. "
+"Αν η απομακρυσμένη κλήση προκάλεσε εξαίρεση, τότε αυτή η εξαίρεση θα επανεκκινηθεί από τη :meth:`get`."
 
 #: library/multiprocessing.rst:2467
 msgid "Wait until the result is available or until *timeout* seconds pass."
-msgstr ""
+msgstr "Περιμένει μέχρι να είναι διαθέσιμο το αποτέλεσμα ή μέχρι να περάσουν *timeout* δευτερόλεπτα."
 
 #: library/multiprocessing.rst:2471
 msgid "Return whether the call has completed."
-msgstr ""
+msgstr "Επιστρέφει αν η κλήση έχει ολοκληρωθεί."
 
 #: library/multiprocessing.rst:2475
 msgid ""
 "Return whether the call completed without raising an exception.  Will raise :"
 "exc:`ValueError` if the result is not ready."
 msgstr ""
+"Επιστρέφει αν η κλήση ολοκληρώθηκε χωρίς να γίνει raise εξαίρεση. Θα γίνει raise μια :exc:`ValueError` αν το αποτέλεσμα δεν είναι έτοιμο."
 
 #: library/multiprocessing.rst:2478
 msgid ""
 "If the result is not ready, :exc:`ValueError` is raised instead of :exc:"
 "`AssertionError`."
 msgstr ""
+"Αν το αποτέλεσμα δεν είναι έτοιμο, γίνεται raise η :exc:`ValueError` αντί για :exc:`AssertionError`."
 
 #: library/multiprocessing.rst:2482
 msgid "The following example demonstrates the use of a pool::"
-msgstr ""
+msgstr "Το παράδειγμα που ακολουθεί δείχνει τη χρήση μιας ομάδας::"
 
 #: library/multiprocessing.rst:2484
 msgid ""
@@ -4192,13 +4607,15 @@ msgstr ""
 
 #: library/multiprocessing.rst:2509
 msgid "Listeners and Clients"
-msgstr ""
+msgstr "Ακροατές και Πελάτες"
 
 #: library/multiprocessing.rst:2514
 msgid ""
 "Usually message passing between processes is done using queues or by using :"
 "class:`~Connection` objects returned by :func:`~multiprocessing.Pipe`."
 msgstr ""
+"Συνήθως η αποστολή μηνυμάτων μεταξύ διεργασιών γίνεται χρησιμοποιώντας ουρές ή "
+"χρησιμοποιώντας αντικείμενα :class:`~Connection` που επιστρέφονται από την :func:`~multiprocessing.Pipe`."
 
 #: library/multiprocessing.rst:2518
 msgid ""
@@ -4208,12 +4625,18 @@ msgid ""
 "*digest authentication* using the :mod:`hmac` module, and for polling "
 "multiple connections at the same time."
 msgstr ""
+"Ωστόσο, το :mod:`multiprocessing.connection` module επιτρέπει κάποια επιπλέον "
+"ευελιξία. Βασικά παρέχει ένα API προσανατολισμένο στα μηνύματα για την αντιμετώπιση "
+"των sockets ή των Windows named pipes. Επίσης, διαθέτει υποστήριξη "
+"για *έλεγχο ταυτότητας κατακερματισμού* "
+"χρησιμοποιώντας το :mod:`hmac` module, και για polling πολλαπλών συνδέσεων ταυτόχρονα."
 
 #: library/multiprocessing.rst:2527
 msgid ""
 "Send a randomly generated message to the other end of the connection and "
 "wait for a reply."
 msgstr ""
+"Στέλνει ένα τυχαία δημιουργημένο μήνυμα στο άλλο άκρο της σύνδεσης και περιμένει για μια απάντηση."
 
 #: library/multiprocessing.rst:2530
 msgid ""
@@ -4221,24 +4644,30 @@ msgid ""
 "then a welcome message is sent to the other end of the connection.  "
 "Otherwise :exc:`~multiprocessing.AuthenticationError` is raised."
 msgstr ""
+"Αν η απάντηση ταιριάζει με το κατακερματισμό του μηνύματος χρησιμοποιώντας το *authkey* ως κλειδί, τότε ένα μήνυμα καλωσορίσματος αποστέλλεται στο άλλο άκρο της σύνδεσης. "
+"Διαφορετικά, γίνεται raise μια :exc:`~multiprocessing.AuthenticationError`."
 
 #: library/multiprocessing.rst:2536
 msgid ""
 "Receive a message, calculate the digest of the message using *authkey* as "
 "the key, and then send the digest back."
 msgstr ""
+"Λαμβάνει ένα μήνυμα, υπολογίζει το κατακερματισμό του μηνύματος χρησιμοποιώντας το *authkey* ως κλειδί, και στη συνέχεια στέλνει τον κατακερματισμό πίσω."
 
 #: library/multiprocessing.rst:2539
 msgid ""
 "If a welcome message is not received, then :exc:`~multiprocessing."
 "AuthenticationError` is raised."
 msgstr ""
+"Αν δεν ληφθεί μήνυμα καλωσορίσματος, τότε γίνεται raise μια :exc:`~multiprocessing.AuthenticationError`."
 
 #: library/multiprocessing.rst:2544
 msgid ""
 "Attempt to set up a connection to the listener which is using address "
 "*address*, returning a :class:`~Connection`."
 msgstr ""
+"Προσπαθεί να ρυθμίσει μια σύνδεση με τον ακροατή που χρησιμοποιεί τη διεύθυνση "
+"*address*, επιστρέφοντας ένα :class:`~Connection`."
 
 #: library/multiprocessing.rst:2547
 msgid ""
@@ -4246,6 +4675,9 @@ msgid ""
 "generally be omitted since it can usually be inferred from the format of "
 "*address*. (See :ref:`multiprocessing-address-formats`)"
 msgstr ""
+"Ο τύπος της σύνδεσης καθορίζεται από το όρισμα *family*, αλλά αυτό μπορεί "
+"γενικά να παραληφθεί, καθώς συνήθως μπορεί να εξαχθεί από τη μορφή του "
+"*address*. (Δείτε :ref:`multiprocessing-address-formats`)"
 
 #: library/multiprocessing.rst:2551 library/multiprocessing.rst:2586
 msgid ""
@@ -4255,18 +4687,27 @@ msgid ""
 "AuthenticationError` is raised if authentication fails. See :ref:"
 "`multiprocessing-auth-keys`."
 msgstr ""
+"Αν το *authkey* δοθεί και δεν είναι ``None``, θα πρέπει να είναι μια byte "
+"συμβολοσειρά και θα χρησιμοποιηθεί ως το μυστικό κλειδί για μια πρόκληση "
+"ελέγχου ταυτότητας βασισμένη στο HMAC. Δεν γίνεται έλεγχος ταυτότητας αν το "
+"*authkey* είναι ``None``. Γίνεται raise μια :exc:`~multiprocessing.AuthenticationError` "
+"αν ο έλεγχος ταυτότητας αποτύχει. Δείτε :ref:`multiprocessing-auth-keys`."
 
 #: library/multiprocessing.rst:2559
 msgid ""
 "A wrapper for a bound socket or Windows named pipe which is 'listening' for "
 "connections."
 msgstr ""
+"Ένας περιτυλιχτής για ένα δεσμευμένο socket ή Windows named pipe που "
+"\"ακούει\" για συνδέσεις."
 
 #: library/multiprocessing.rst:2562
 msgid ""
 "*address* is the address to be used by the bound socket or named pipe of the "
 "listener object."
 msgstr ""
+"Το *address* είναι η διεύθυνση που θα χρησιμοποιηθεί από το δεσμευμένο "
+"socket ή named pipe του αντικειμένου ακροατή."
 
 #: library/multiprocessing.rst:2567
 msgid ""
@@ -4274,6 +4715,9 @@ msgid ""
 "end point on Windows. If you require a connectable end-point, you should use "
 "'127.0.0.1'."
 msgstr ""
+"Εάν μια διεύθυνση '0.0.0.0' χρησιμοποιηθεί, η διεύθυνση δεν θα είναι ένα συνδεόμενο "
+"σημείο τερματισμού στα Windows. Εάν χρειάζεστε ένα συνδεόμενο σημείο τερματισμού, "
+"θα πρέπει να χρησιμοποιήσετε το '127.0.0.1'."
 
 #: library/multiprocessing.rst:2571
 msgid ""
@@ -4288,6 +4732,11 @@ msgid ""
 "then the socket will be created in a private temporary directory created "
 "using :func:`tempfile.mkstemp`."
 msgstr ""
+"Το *family* είναι ο τύπος του socket (ή named pipe) που θα χρησιμοποιηθεί. "
+"Αυτό μπορεί να είναι μία από τις συμβολοσειρές ``'AF_INET'`` (για ένα TCP socket), "
+"``'AF_UNIX'`` (για ένα Unix domain socket) ή ``'AF_PIPE'`` (για ένα Windows named pipe). "
+"Από αυτά, μόνο το πρώτο είναι εγγυημένο ότι θα είναι διαθέσιμο. "
+"Αν το *family* είναι ``None``, τότε το family εξαχθεί από τη
 
 #: library/multiprocessing.rst:2582
 msgid ""
@@ -4295,6 +4744,9 @@ msgid ""
 "to the :meth:`~socket.socket.listen` method of the socket once it has been "
 "bound."
 msgstr ""
+"Αν το αντικείμενο ακροατή χρησιμοποιεί ένα socket, τότε το *backlog* (1 από "
+"προεπιλογή) περνά στη μέθοδο :meth:`~socket.socket.listen` του socket μόλις "
+"δεσμευτεί."
 
 #: library/multiprocessing.rst:2594
 msgid ""
@@ -4302,6 +4754,10 @@ msgid ""
 "and return a :class:`~Connection` object. If authentication is attempted and "
 "fails, then :exc:`~multiprocessing.AuthenticationError` is raised."
 msgstr ""
+"Αποδέχεται μια σύνδεση στο δεσμευμένο socket ή named pipe του "
+"αντικειμένου ακροατή και επιστρέφει ένα αντικείμενο :class:`~Connection`. Αν γίνει "
+"προσπάθεια ελέγχου ταυτότητας και αποτύχει, τότε γίνεται "
+"raise μια :exc:`~multiprocessing.AuthenticationError`."
 
 #: library/multiprocessing.rst:2601
 msgid ""
@@ -4309,20 +4765,25 @@ msgid ""
 "automatically when the listener is garbage collected.  However it is "
 "advisable to call it explicitly."
 msgstr ""
+"Κλείνει το δεσμευμένο socket ή το named pipe του αντικειμένου ακροατή. "
+"Αυτό καλείται αυτόματα όταν ο ακροατής συλλεχθεί από τον garbage collector. "
+"Ωστόσο, είναι σκόπιμο να το καλέσετε ρητά."
 
 #: library/multiprocessing.rst:2605
 msgid "Listener objects have the following read-only properties:"
-msgstr ""
+msgstr "Τα αντικείμενα Listener έχουν τις ακόλουθες ιδιότητες μόνο για ανάγνωση:"
 
 #: library/multiprocessing.rst:2609
 msgid "The address which is being used by the Listener object."
-msgstr ""
+msgstr "Η διεύθυνση που χρησιμοποιείται από το αντικείμενο Listener."
 
 #: library/multiprocessing.rst:2613
 msgid ""
 "The address from which the last accepted connection came.  If this is "
 "unavailable then it is ``None``."
 msgstr ""
+"Η διεύθυνση από την οποία προήλθε η τελευταία αποδεκτή σύνδεση. "
+"Αν αυτό δεν είναι διαθέσιμο, τότε είναι ``None``."
 
 #: library/multiprocessing.rst:2616
 msgid ""
@@ -4330,6 +4791,9 @@ msgid ""
 "`typecontextmanager`.  :meth:`~contextmanager.__enter__` returns the "
 "listener object, and :meth:`~contextmanager.__exit__` calls :meth:`close`."
 msgstr ""
+"Τα αντικείμενα Listener τώρα υποστηρίζουν το πρωτόκολλο διαχείρισης πλαισίου -- "
+"δείτε :ref:`typecontextmanager`. Η :meth:`~contextmanager.__enter__` επιστρέφει "
+"το αντικείμενο του ακροατή, και η :meth:`~contextmanager.__exit__` καλεί τη :meth:`close`."
 
 #: library/multiprocessing.rst:2623
 msgid ""
@@ -4339,31 +4803,39 @@ msgid ""
 "will block for an unlimited period. A negative timeout is equivalent to a "
 "zero timeout."
 msgstr ""
+"Περιμένει μέχρι να είναι έτοιμο ένα αντικείμενο στη λίστα *object_list*. "
+"Επιστρέφει τη λίστα αυτών των αντικειμένων στη λίστα *object_list* που είναι έτοιμα. "
+"Αν το *timeout* είναι ένας float, τότε η κλήση αναστέλλει την εκτέλεση για το πολύ τόσα δευτερόλεπτα. "
+"Αν το *timeout* είναι ``None``, τότε θα αναστέλλει την εκτέλεση για απεριόριστο χρονικό διάστημα. "
+"Ένα αρνητικό timeout είναι ισοδύναμο με μηδενικό timeout."
 
 #: library/multiprocessing.rst:2629
 msgid ""
 "For both POSIX and Windows, an object can appear in *object_list* if it is"
 msgstr ""
+"Για τόσο το POSIX όσο και τα Windows, ένα αντικείμενο μπορεί να εμφανιστεί στη λίστα *object_list* αν είναι"
 
 #: library/multiprocessing.rst:2632
 msgid "a readable :class:`~multiprocessing.connection.Connection` object;"
-msgstr ""
+msgstr "ένα αναγνώσιμο αντικείμενο :class:`~multiprocessing.connection.Connection`∙"
 
 #: library/multiprocessing.rst:2633
 msgid "a connected and readable :class:`socket.socket` object; or"
-msgstr ""
+msgstr "ένα συνδεδεμένο και αναγνώσιμο αντικείμενο :class:`socket.socket` ∙ ή"
 
 #: library/multiprocessing.rst:2634
 msgid ""
 "the :attr:`~multiprocessing.Process.sentinel` attribute of a :class:"
 "`~multiprocessing.Process` object."
 msgstr ""
+"το χαρακτηριστικό :attr:`~multiprocessing.Process.sentinel` ενός αντικειμένου :class:`~multiprocessing.Process`."
 
 #: library/multiprocessing.rst:2637
 msgid ""
 "A connection or socket object is ready when there is data available to be "
 "read from it, or the other end has been closed."
 msgstr ""
+"Μια σύνδεση ή ένα αντικείμενο socket είναι έτοιμο όταν υπάρχουν δεδομένα διαθέσιμα για ανάγνωση από αυτό, ή όταν το άλλο άκρο έχει κλείσει."
 
 #: library/multiprocessing.rst:2640
 msgid ""
@@ -4372,6 +4844,10 @@ msgid ""
 "`select.select` is interrupted by a signal, it can raise :exc:`OSError` with "
 "an error number of ``EINTR``, whereas :func:`wait` will not."
 msgstr ""
+"**POSIX**: ``wait(object_list, timeout)`` είναι σχεδόν ισοδύναμο με το ``select."
+"select(object_list, [], [], timeout)``. Η διαφορά είναι ότι, αν η :func:`select.select` "
+"διακοπεί από ένα σήμα, μπορεί να προκαλέσει :exc:`OSError` με έναν αριθμό σφάλματος "
+"``EINTR``, ενώ η :func:`wait` δεν θα το κάνει."
 
 #: library/multiprocessing.rst:2646
 msgid ""
@@ -4382,10 +4858,15 @@ msgid ""
 "handle.  (Note that pipe handles and socket handles are **not** waitable "
 "handles.)"
 msgstr ""
+"**Windows**: Ένα στοιχείο στη λίστα *object_list* πρέπει είτε να είναι ένας "
+"ακέραιος χειρισμός που μπορεί να περιμένει (σύμφωνα με τον ορισμό που χρησιμοποιείται "
+"από την τεκμηρίωση της λειτουργίας Win32 ``WaitForMultipleObjects()``) είτε μπορεί να είναι ένα αντικείμενο με μια μέθοδο "
+":meth:`~io.IOBase.fileno` που επιστρέφει έναν χειρισμό socket ή pipe. "
+"(Σημειώστε ότι οι χειρισμοί pipe και socket **δεν** είναι χειρισμοί που μπορούν να περιμένουν.)"
 
 #: library/multiprocessing.rst:2656
 msgid "**Examples**"
-msgstr ""
+msgstr "**Παραδείγματα**"
 
 #: library/multiprocessing.rst:2658
 msgid ""
@@ -4393,6 +4874,9 @@ msgid ""
 "password'`` as an authentication key.  It then waits for a connection and "
 "sends some data to the client::"
 msgstr ""
+"Η παρακάτω κωδικοποίηση διακομιστή δημιουργεί έναν ακροατή που χρησιμοποιεί ``'secret "
+"password'`` ως κλειδί ελέγχου ταυτότητας. Στη συνέχεια περιμένει για μια σύνδεση και "
+"στέλνει κάποια δεδομένα στον πελάτη::"
 
 #: library/multiprocessing.rst:2662
 msgid ""
@@ -4431,6 +4915,7 @@ msgid ""
 "The following code connects to the server and receives some data from the "
 "server::"
 msgstr ""
+"Ο παρακάτω κώδικας συνδέεται με τον διακομιστή και λαμβάνει κάποια δεδομένα από τον διακομιστή::"
 
 #: library/multiprocessing.rst:2680
 msgid ""
@@ -4467,6 +4952,7 @@ msgid ""
 "The following code uses :func:`~multiprocessing.connection.wait` to wait for "
 "messages from multiple processes at once::"
 msgstr ""
+"Ο παράκατω κώδικας χρησιμοποιεί τη :func:`~multiprocessing.connection.wait` για να περιμένει για μηνύματα από πολλές διεργασίες ταυτόχρονα::"
 
 #: library/multiprocessing.rst:2697
 msgid ""
@@ -4534,19 +5020,23 @@ msgstr ""
 
 #: library/multiprocessing.rst:2732
 msgid "Address Formats"
-msgstr ""
+msgstr "Μορφές Διευθύνσεων"
 
 #: library/multiprocessing.rst:2734
 msgid ""
 "An ``'AF_INET'`` address is a tuple of the form ``(hostname, port)`` where "
 "*hostname* is a string and *port* is an integer."
 msgstr ""
+"Μια διεύθυνση ``'AF_INET'`` είναι μια πλειάδα της μορφής ``(hostname, port)`` όπου "
+"*hostname* είναι μια συμβολοσειρά και *port* είναι ένας ακέραιος."
 
 #: library/multiprocessing.rst:2737
 msgid ""
 "An ``'AF_UNIX'`` address is a string representing a filename on the "
 "filesystem."
 msgstr ""
+"Μια διεύθυνση ``'AF_UNIX'`` είναι μια συμβολοσειρά που αναπαριστά ένα όνομα αρχείου στο "
+"σύστημα αρχείων."
 
 #: library/multiprocessing.rst:2740
 msgid ""
@@ -4556,16 +5046,23 @@ msgid ""
 "the form :samp:`r'\\\\\\\\\\\\\\\\{ServerName}\\\\pipe\\\\\\\\{PipeName}'` "
 "instead."
 msgstr ""
+"Μια διεύθυνση ``'AF_PIPE'`` είναι μια συμβολοσειρά της μορφής :samp:`r'\\\\\\\\\\\\.\\"
+"\\pipe\\\\\\\\{PipeName}'`. Για να χρησιμοποιήσετε το :func:`Client` για να συνδεθείτε σε ένα "
+"ονομασμένο pipe σε έναν απομακρυσμένο υπολογιστή που ονομάζεται *ServerName*, "
+"θα πρέπει να χρησιμοποιήσετε μια διεύθυνση της μορφής :samp:`r'\\\\\\\\\\\\\\\\{ServerName}\\\\pipe\\\\\\\\{PipeName}'` "
+"αντί για αυτό."
 
 #: library/multiprocessing.rst:2745
 msgid ""
 "Note that any string beginning with two backslashes is assumed by default to "
 "be an ``'AF_PIPE'`` address rather than an ``'AF_UNIX'`` address."
 msgstr ""
+"Σημειώστε ότι οποιαδήποτε συμβολοσειρά που ξεκινά με δύο ανάστροφες κάθετες θεωρείται "
+"από προεπιλογή ως διεύθυνση ``'AF_PIPE'`` αντί για διεύθυνση ``'AF_UNIX'``."
 
 #: library/multiprocessing.rst:2752
 msgid "Authentication keys"
-msgstr ""
+msgstr "Κλειδιά Αυθεντικοποίησης"
 
 #: library/multiprocessing.rst:2754
 msgid ""
@@ -4574,6 +5071,10 @@ msgid ""
 "source is a security risk. Therefore :class:`Listener` and :func:`Client` "
 "use the :mod:`hmac` module to provide digest authentication."
 msgstr ""
+"Όταν κάποιος χρησιμοποιεί :meth:`Connection.recv <Connection.recv>`, τα δεδομένα "
+"που λαμβάνονται απο-πακετάρονται αυτόματα. Δυστυχώς το απο-πακετάρισμα δεδομένων "
+"από μια μη αξιόπιστη πηγή αποτελεί κίνδυνο για την ασφάλεια. Επομένως το :class:`Listener` και :func:`Client` "
+"χρησιμοποιούν το :mod:`hmac` module για να παρέχουν αυθεντικοποίηση με σύνοψη μηνύματος."
 
 #: library/multiprocessing.rst:2760
 msgid ""
@@ -4582,6 +5083,10 @@ msgid ""
 "the other knows the authentication key.  (Demonstrating that both ends are "
 "using the same key does **not** involve sending the key over the connection.)"
 msgstr ""
+"Ένα κλειδί αυθεντικοποίησης είναι μια byte string που μπορεί να θεωρηθεί ως "
+"κωδικός πρόσβασης: μόλις καθιερωθεί μια σύνδεση, και οι δύο άκρες θα απαιτήσουν "
+"απόδειξη ότι ο άλλος γνωρίζει το κλειδί αυθεντικοποίησης. (Η απόδειξη ότι και οι δύο άκρες "
+"χρησιμοποιούν το ίδιο κλειδί δεν περιλαμβάνει την αποστολή του κλειδιού μέσω της σύνδεσης.)"
 
 #: library/multiprocessing.rst:2766
 msgid ""
@@ -4593,16 +5098,24 @@ msgid ""
 "program will share a single authentication key which can be used when "
 "setting up connections between themselves."
 msgstr ""
+"Εάν ζητηθεί αυθεντικοποίηση αλλά δεν καθοριστεί κλειδί αυθεντικοποίησης, τότε "
+"χρησιμοποιείται η τιμή επιστροφής του ``current_process().authkey`` "
+"(βλέπε :class:`~multiprocessing.Process`). Αυτή η τιμή θα κληρονομηθεί αυτόματα από "
+"οποιοδήποτε :class:`~multiprocessing.Process` αντικείμενο που δημιουργεί η τρέχουσα "
+"διαδικασία. Αυτό σημαίνει ότι (από προεπιλογή) όλες οι διαδικασίες ενός "
+"πολυ-διαδικασιακού προγράμματος θα μοιράζονται ένα μόνο κλειδί αυθεντικοποίησης που μπορεί να χρησιμοποιηθεί "
+"κατά τη ρύθμιση συνδέσεων μεταξύ τους."
 
 #: library/multiprocessing.rst:2774
 msgid ""
 "Suitable authentication keys can also be generated by using :func:`os."
 "urandom`."
 msgstr ""
+"Κατάλληλα κλειδιά αυθεντικοποίησης μπορούν επίσης να δημιουργηθούν χρησιμοποιώντας :func:`os.urandom`."
 
 #: library/multiprocessing.rst:2778
 msgid "Logging"
-msgstr ""
+msgstr "Καταγραφή"
 
 #: library/multiprocessing.rst:2780
 msgid ""
@@ -4611,12 +5124,17 @@ msgid ""
 "(depending on the handler type) for messages from different processes to get "
 "mixed up."
 msgstr ""
+"Μια κάποια υποστήριξη για καταγραφή είναι διαθέσιμη. Σημειώστε, ωστόσο, ότι το :mod:`logging` "
+"πακέτο δεν χρησιμοποιεί κλειδώματα κοινής χρήσης διεργασιών, επομένως είναι "
+"πιθανό (ανάλογα με τον τύπο χειριστή) τα μηνύματα από διαφορετικές διεργασίες να αναμειχθούν."
 
 #: library/multiprocessing.rst:2787
 msgid ""
 "Returns the logger used by :mod:`multiprocessing`.  If necessary, a new one "
 "will be created."
 msgstr ""
+"Επιστρέφει τον logger που χρησιμοποιείται από το :mod:`multiprocessing`. Αν "
+"είναι απαραίτητο, θα δημιουργηθεί ένας νέος."
 
 #: library/multiprocessing.rst:2790
 msgid ""
@@ -4624,6 +5142,9 @@ msgid ""
 "default handler. Messages sent to this logger will not by default propagate "
 "to the root logger."
 msgstr ""
+"Όταν δημιουργηθεί για πρώτη φορά, ο logger έχει επίπεδο :const:`logging.NOTSET` και κανέναν "
+"προεπιλεγμένο χειριστή. Τα μηνύματα που στέλνονται σε αυτόν τον logger δεν θα προωθούνται "
+"από προεπιλογή στον root logger."
 
 #: library/multiprocessing.rst:2794
 msgid ""
@@ -4631,6 +5152,8 @@ msgid ""
 "parent process's logger -- any other customization of the logger will not be "
 "inherited."
 msgstr ""
+"Σημειώστε ότι στα Windows οι διεργασίες παιδιών θα κληρονομήσουν μόνο το επίπεδο "
+"του logger της διεργασίας γονέα -- οποιαδήποτε άλλη προσαρμογή του logger δεν θα κληρονομηθεί."
 
 #: library/multiprocessing.rst:2801
 msgid ""
@@ -4640,10 +5163,15 @@ msgid ""
 "%(message)s'``. You can modify ``levelname`` of the logger by passing a "
 "``level`` argument."
 msgstr ""
+"Αυτή η συνάρτηση εκτελεί μια κλήση στη :func:`get_logger` αλλά επιπλέον για "
+"την επιστροφή του logger που δημιουργήθηκε από το get_logger, προσθέτει έναν "
+"χειριστή που στέλνει την έξοδο στο :data:`sys.stderr` χρησιμοποιώντας τη μορφή "
+"``'[%(levelname)s/%(processName)s] %(message)s'``. Μπορείτε να τροποποιήσετε το "
+"``levelname`` του logger περνώντας ένα όρισμα ``level``."
 
 #: library/multiprocessing.rst:2807
 msgid "Below is an example session with logging turned on::"
-msgstr ""
+msgstr "Παρακάτω είναι μια παράδειγμα συνεδρίας με την καταγραφή ενεργοποιημένη::"
 
 #: library/multiprocessing.rst:2809
 msgid ""
@@ -4675,17 +5203,19 @@ msgstr ""
 
 #: library/multiprocessing.rst:2822
 msgid "For a full table of logging levels, see the :mod:`logging` module."
-msgstr ""
+msgstr "Για έναν πλήρη πίνακα επιπέδων καταγραφής, δείτε το :mod:`logging` module."
 
 #: library/multiprocessing.rst:2826
 msgid "The :mod:`multiprocessing.dummy` module"
-msgstr ""
+msgstr "Το :mod:`multiprocessing.dummy` module"
 
 #: library/multiprocessing.rst:2831
 msgid ""
 ":mod:`multiprocessing.dummy` replicates the API of :mod:`multiprocessing` "
 "but is no more than a wrapper around the :mod:`threading` module."
 msgstr ""
+"Το :mod:`multiprocessing.dummy` αναπαράγει το API του :mod:`multiprocessing` "
+"αλλά δεν είναι τίποτα περισσότερο από ένα wrapper γύρω από το :mod:`threading` module."
 
 #: library/multiprocessing.rst:2836
 msgid ""
@@ -4694,6 +5224,10 @@ msgid ""
 "class:`Pool` that supports all the same method calls but uses a pool of "
 "worker threads rather than worker processes."
 msgstr ""
+"Ειδικότερα, η συνάρτηση ``Pool`` που παρέχεται από το :mod:`multiprocessing."
+"dummy` επιστρέφει ένα στιγμιότυπο της :class:`ThreadPool`, που είναι μια "
+"υποκλάση της :class:`Pool` που υποστηρίζει όλες τις ίδιες κλήσεις μεθόδων αλλά χρησιμοποιεί μια "
+"δεξαμενή από νήματα εργαζομένων αντί για διεργασίες εργαζομένων."
 
 #: library/multiprocessing.rst:2844
 msgid ""
@@ -4704,17 +5238,26 @@ msgid ""
 "calling :meth:`~multiprocessing.pool.Pool.close` and :meth:`~multiprocessing."
 "pool.Pool.terminate` manually."
 msgstr ""
+"Ένα αντικείμενο δεξαμενής νημάτων που ελέγχει μια δεξαμενή από νήματα "
+"εργαζομένων στα οποία μπορούν να υποβληθούν εργασίες. Τα στιγμιότυπα "
+":class:`ThreadPool` είναι πλήρως συμβατά με τα στιγμιότυπα :class:`Pool`, "
+"και οι πόροι τους πρέπει επίσης να διαχειρίζονται σωστά, είτε χρησιμοποιώντας "
+"την δεξαμενή ως διαχειριστή περιβάλλοντος είτε καλώντας :meth:`~multiprocessing.pool.Pool.close` "
+"και :meth:`~multiprocessing.pool.Pool.terminate` χειροκίνητα." 
 
 #: library/multiprocessing.rst:2851
 msgid ""
 "*processes* is the number of worker threads to use.  If *processes* is "
 "``None`` then the number returned by :func:`os.process_cpu_count` is used."
 msgstr ""
+"*processes* είναι ο αριθμός των νημάτων εργαζομένων που θα χρησιμοποιηθούν. "
+"Εάν *processes* είναι ``None``, τότε χρησιμοποιείται ο αριθμός που επιστρέφεται από :func:`os.process_cpu_count`."
 
 #: library/multiprocessing.rst:2857
 msgid ""
 "Unlike :class:`Pool`, *maxtasksperchild* and *context* cannot be provided."
 msgstr ""
+"Σε αντίθεση με το :class:`Pool`, δεν μπορούν να παρέχονται τα *maxtasksperchild* και *context*."
 
 #: library/multiprocessing.rst:2861
 msgid ""
@@ -4725,6 +5268,12 @@ msgid ""
 "for representing the status of asynchronous jobs, :class:`AsyncResult`, that "
 "is not understood by any other libraries."
 msgstr ""
+"Μια :class:`ThreadPool` μοιράζεται την ίδια διεπαφή με το :class:`Pool`, που "
+"έχει σχεδιαστεί γύρω από μια δεξαμενή διεργασιών και προηγείται της εισαγωγής του :"
+"class:`concurrent.futures` module. Ως εκ τούτου, κληρονομεί ορισμένες λειτουργίες που "
+"δεν έχουν νόημα για μια δεξαμενή που υποστηρίζεται από νήματα, και έχει τον δικό της "
+"τύπο για την αναπαράσταση της κατάστασης των ασύγχρονων εργασιών, :class:`AsyncResult`, που δεν "
+"κατανοείται από καμία άλλη βιβλιοθήκη."
 
 #: library/multiprocessing.rst:2868
 msgid ""
@@ -4734,34 +5283,42 @@ msgid ""
 "instances that are compatible with many other libraries, including :mod:"
 "`asyncio`."
 msgstr ""
+"Οι χρήστες θα πρέπει γενικά να προτιμούν τη χρήση του :class:`concurrent.futures."
+"ThreadPoolExecutor`, που έχει μια απλούστερη διεπαφή που σχεδιάστηκε γύρω από "
+"νήματα από την αρχή, και που επιστρέφει στιγμιότυπα :class:`concurrent.futures.Future` "
+"που είναι συμβατά με πολλές άλλες βιβλιοθήκες, συμπεριλαμβαλαμβανομένου του :mod:`asyncio`."
 
 #: library/multiprocessing.rst:2878
 msgid "Programming guidelines"
-msgstr ""
+msgstr "Κατευθυντήριες γραμμές προγραμματισμού"
 
 #: library/multiprocessing.rst:2880
 msgid ""
 "There are certain guidelines and idioms which should be adhered to when "
 "using :mod:`multiprocessing`."
 msgstr ""
+"Υπάρχουν ορισμένες κατευθυντήριες γραμμές και ιδιώματα που πρέπει να "
+"τηρούνται κατά τη χρήση του :mod:`multiprocessing`."
 
 #: library/multiprocessing.rst:2885
 msgid "All start methods"
-msgstr ""
+msgstr "Όλες οι μέθοδοι εκκίνησης"
 
 #: library/multiprocessing.rst:2887
 msgid "The following applies to all start methods."
-msgstr ""
+msgstr "Το ακόλουθο ισχύει για όλες τις μεθόδους εκκίνησης."
 
 #: library/multiprocessing.rst:2889
 msgid "Avoid shared state"
-msgstr ""
+msgstr "Αποφύγετε την κοινή χρήση κατάστασης"
 
 #: library/multiprocessing.rst:2891
 msgid ""
 "As far as possible one should try to avoid shifting large amounts of data "
 "between processes."
 msgstr ""
+"Όσο το δυνατόν θα πρέπει να προσπαθείτε να αποφύγετε τη μεταφορά μεγάλων "
+"ποσοτήτων δεδομένων μεταξύ διεργασιών."
 
 #: library/multiprocessing.rst:2894
 msgid ""
@@ -4769,33 +5326,39 @@ msgid ""
 "between processes rather than using the lower level synchronization "
 "primitives."
 msgstr ""
+"Πιθανώς είναι καλύτερο να χρησιμοποιείτε ουρές ή σωλήνες για την "
+"επικοινωνία μεταξύ διεργασιών παρά να χρησιμοποιείτε τα κατώτερα "
+"πρωτόκολλα συγχρονισμού."
 
 #: library/multiprocessing.rst:2898
 msgid "Picklability"
-msgstr ""
+msgstr "Επιλογή Picklability"
 
 #: library/multiprocessing.rst:2900
 msgid "Ensure that the arguments to the methods of proxies are picklable."
-msgstr ""
+msgstr "Βεβαιωθείτε ότι τα επιχειρήματα στις μεθόδους των proxies είναι picklable."
 
 #: library/multiprocessing.rst:2902
 msgid "Thread safety of proxies"
-msgstr ""
+msgstr "Ασφάλεια νημάτων των proxies"
 
 #: library/multiprocessing.rst:2904
 msgid ""
 "Do not use a proxy object from more than one thread unless you protect it "
 "with a lock."
 msgstr ""
+"Μην χρησιμοποιείτε ένα αντικείμενο proxy από περισσότερα από ένα νήματα "
+"εκτός αν το προστατεύετε με ένα κλείδωμα."
 
 #: library/multiprocessing.rst:2907
 msgid ""
 "(There is never a problem with different processes using the *same* proxy.)"
 msgstr ""
+"(Δεν υπάρχει ποτέ πρόβλημα με διαφορετικές διεργασίες που χρησιμοποιούν το *ίδιο* proxy.)"
 
 #: library/multiprocessing.rst:2909
 msgid "Joining zombie processes"
-msgstr ""
+msgstr "Συγχώνευση διεργασιών ζόμπι"
 
 #: library/multiprocessing.rst:2911
 msgid ""
@@ -4807,10 +5370,17 @@ msgid ""
 "is_alive>` will join the process.  Even so it is probably good practice to "
 "explicitly join all the processes that you start."
 msgstr ""
+"Στα POSIX, όταν μια διεργασία τελειώνει αλλά δεν έχει συγχωνευτεί, γίνεται "
+"ζόμπι. Δεν θα πρέπει ποτέ να υπάρχουν πάρα πολλά γιατί κάθε φορά που ξεκινά μια νέα διεργασία "
+"(ή καλείται η :func:`~multiprocessing.active_children`), όλες οι ολοκληρωμένες "
+"διεργασίες που δεν έχουν ακόμη συγχωνευτεί θα συγχωνευτούν. "
+"Επίσης, η κλήση της :meth:`Process.is_alive <multiprocessing.Process.is_alive>` "
+"μιας ολοκληρωμένης διεργασίας θα συγχωνεύσει τη διεργασία. "
+"Παρόλα αυτά, είναι πιθανώς καλή πρακτική να συγχωνεύετε ρητά όλες τις διεργασίες που ξεκινάτε."
 
 #: library/multiprocessing.rst:2919
 msgid "Better to inherit than pickle/unpickle"
-msgstr ""
+msgstr "Καλύτερα να κληρονομήσετε παρά να κάνετε pickle/unpickle"
 
 #: library/multiprocessing.rst:2921
 msgid ""
@@ -4821,10 +5391,18 @@ msgid ""
 "that a process which needs access to a shared resource created elsewhere can "
 "inherit it from an ancestor process."
 msgstr ""
+"Όταν χρησιμοποιείτε τις μεθόδους εκκίνησης *spawn* ή *forkserver*, πολλοί "
+"τύποι από το :mod:`multiprocessing` πρέπει να είναι picklable έτσι ώστε οι "
+"διεργασίες παιδιών να μπορούν να τα χρησιμοποιούν. Ωστόσο, θα πρέπει "
+"γενικά να αποφεύγετε την αποστολή κοινών αντικειμένων σε άλλες διεργασίες "
+"χρησιμοποιώντας σωλήνες ή ουρές. Αντίθετα, θα πρέπει να οργανώσετε το "
+"πρόγραμμα έτσι ώστε μια διεργασία που χρειάζεται πρόσβαση σε έναν κοινό "
+"πόρο που δημιουργήθηκε αλλού να μπορεί να τον κληρονομήσει από μια "
+"διεργασία προγόνου."
 
 #: library/multiprocessing.rst:2929
 msgid "Avoid terminating processes"
-msgstr ""
+msgstr "Αποφύγετε τον τερματισμό διεργασιών"
 
 #: library/multiprocessing.rst:2931
 msgid ""
@@ -4833,6 +5411,10 @@ msgid ""
 "locks, semaphores, pipes and queues) currently being used by the process to "
 "become broken or unavailable to other processes."
 msgstr ""
+"Η χρήση της :meth:`Process.terminate <multiprocessing.Process.terminate>` "
+"μεθόδου για τη διακοπή μιας διεργασίας είναι πιθανό να προκαλέσει σε οποιουσδήποτε "
+"κοινόχρηστους πόρους (όπως κλειδώματα, semaphores, pipes και ουρές) που χρησιμοποιούνται "
+"τώρα από τη διεργασία να καταστραφούν ή να γίνουν μη διαθέσιμοι σε άλλες διεργασίες."
 
 #: library/multiprocessing.rst:2937
 msgid ""
@@ -4840,10 +5422,13 @@ msgid ""
 "terminate <multiprocessing.Process.terminate>` on processes which never use "
 "any shared resources."
 msgstr ""
+"Επομένως, είναι πιθανώς καλύτερο να εξετάζετε τη χρήση της :meth:`Process."
+"terminate <multiprocessing.Process.terminate>` μόνο σε διεργασίες που δεν "
+"χρησιμοποιούν ποτέ κοινόχρηστους πόρους."
 
 #: library/multiprocessing.rst:2941
 msgid "Joining processes that use queues"
-msgstr ""
+msgstr "Συγχώνευση διεργασιών που χρησιμοποιούν ουρές"
 
 #: library/multiprocessing.rst:2943
 msgid ""
@@ -4853,6 +5438,11 @@ msgid ""
 "cancel_join_thread <multiprocessing.Queue.cancel_join_thread>` method of the "
 "queue to avoid this behaviour.)"
 msgstr ""
+"Λάβετε υπόψη ότι μια διεργασία που έχει τοποθετήσει αντικείμενα σε μια "
+"ουρά θα περιμένει πριν τερματιστεί μέχρι όλα τα αντικείμενα που είναι "
+"αποθηκευμένα σε buffer να τροφοδοτηθούν από το νήμα \"feeder\" στον υποκείμενο σωλήνα. (Η "
+"διεργασία παιδί μπορεί να καλέσει τη :meth:`Queue.cancel_join_thread <multiprocessing.Queue.cancel_join_thread>` μέθοδο της "
+"ουράς για να αποφύγει αυτή τη συμπεριφορά.)"
 
 #: library/multiprocessing.rst:2949
 msgid ""
@@ -4862,10 +5452,15 @@ msgid ""
 "put items on the queue will terminate.  Remember also that non-daemonic "
 "processes will be joined automatically."
 msgstr ""
+"Αυτό σημαίνει ότι κάθε φορά που χρησιμοποιείτε μια ουρά, πρέπει να βεβαιωθείτε "
+"ότι όλα τα αντικείμενα που έχουν τοποθετηθεί στην ουρά θα αφαιρεθούν τελικά πριν "
+"συγχωνευτεί η διεργασία. Διαφορετικά, δεν μπορείτε να είστε σίγουροι ότι οι διεργασίες που έχουν "
+"τοποθετήσει αντικείμενα στην ουρά θα τερματιστούν. Θυμηθείτε επίσης ότι οι μη δαίμονες "
+"διεργασίες θα συγχωνευτούν αυτόματα."
 
 #: library/multiprocessing.rst:2955
 msgid "An example which will deadlock is the following::"
-msgstr ""
+msgstr "Ένα παράδειγμα που θα προκαλέσει αδιέξοδο είναι το ακόλουθο::"
 
 #: library/multiprocessing.rst:2957
 msgid ""
@@ -4898,10 +5493,11 @@ msgid ""
 "A fix here would be to swap the last two lines (or simply remove the ``p."
 "join()`` line)."
 msgstr ""
+"Μια λύση εδώ θα ήταν να ανταλλάξετε τις δύο τελευταίες γραμμές (ή απλά να αφαιρέσετε τη γραμμή ``p.join()``)."
 
 #: library/multiprocessing.rst:2972
 msgid "Explicitly pass resources to child processes"
-msgstr ""
+msgstr "Περάστε ρητά πόρους σε διεργασίες παιδί"
 
 #: library/multiprocessing.rst:2974
 msgid ""
@@ -4910,6 +5506,10 @@ msgid ""
 "However, it is better to pass the object as an argument to the constructor "
 "for the child process."
 msgstr ""
+"Στα POSIX που χρησιμοποιούν τη μέθοδο εκκίνησης *fork*, μια διεργασία "
+"παιδί μπορεί να χρησιμοποιήσει έναν κοινό πόρο που δημιουργήθηκε σε μια "
+"διεργασία γονέα χρησιμοποιώντας έναν παγκόσμιο πόρο. Ωστόσο, είναι "
+"καλύτερο να περάσετε το αντικείμενο ως όρισμα στον κατασκευαστή για τη διεργασία παιδί."
 
 #: library/multiprocessing.rst:2979
 msgid ""
@@ -4919,10 +5519,16 @@ msgid ""
 "This might be important if some resource is freed when the object is garbage "
 "collected in the parent process."
 msgstr ""
+"Πέρα από το να κάνει τον κώδικα (ενδεχομένως) συμβατό με τα Windows και τις "
+"άλλες μεθόδους εκκίνησης, αυτό επίσης διασφαλίζει ότι όσο η διεργασία "
+"παιδί είναι ακόμα ζωντανή, το αντικείμενο δεν θα συλλεχθεί από τα "
+"σκουπίδια στη διεργασία γονέα. Αυτό μπορεί να είναι σημαντικό εάν "
+"κάποιος πόρος απελευθερώνεται όταν το αντικείμενο "
+"συλλέγεται από τα σκουπίδια στη διεργασία γονέα."
 
 #: library/multiprocessing.rst:2986
 msgid "So for instance ::"
-msgstr ""
+msgstr "Συνεπώς για παράδειγμα ::"
 
 #: library/multiprocessing.rst:2988
 msgid ""
