@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Python 3.12\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-04 09:48+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-12-24 17:13+0200\n"
 "Last-Translator: Panagiotis Skias <panagiotis.skias@gmail.com>\n"
 "Language-Team: PyGreece <organizers@pygreece.org>\n"
 "Language: el\n"
@@ -235,6 +235,10 @@ msgid ""
 "into a REPL it could lead to an :exc:`AttributeError` in the child process "
 "trying to locate the *f* function in the ``__main__`` module."
 msgstr ""
+"Τα ορίσματα για την :class:`Process` συνήθως πρέπει να είναι unpickleable "
+"από τη θυγατρική διεργασία. Εάν προσπαθήσετε να πληκτρολογήσετε το παραπάνω παράδειγμα "
+"απευθείας σε ένα REPL, μπορεί να οδηγήσει σε ένα :exc:`AttributeError` "
+"στη θυγατρική διεργασία που προσπαθεί να εντοπίσει τη συνάρτηση *f* στο ``__main__`` module."
 
 #: library/multiprocessing.rst:112
 msgid "Contexts and start methods"
@@ -1190,6 +1194,10 @@ msgid ""
 "`concurrent.futures.ProcessPoolExecutor` from a REPL with a locally defined "
 "*target* function."
 msgstr ""
+"Γενικά, όλα τα ορίσματα στην :class:`Process` πρέπει να είναι picklable. "
+"Αυτό παρατηρείται συχνά κατά την προσπάθεια δημιουργίας μιας :class:`Process` ή "
+"χρήσης μιας :class:`concurrent.futures.ProcessPoolExecutor` από ένα REPL με "
+"μια τοπικά ορισμένη συνάρτηση *target*."
 
 #: library/multiprocessing.rst:561
 msgid ""
@@ -1201,7 +1209,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:566
 msgid "Example of this uncatchable error from the child::"
-msgstr ""
+msgstr "Παράδειγμα αυτού του μη ανακτήσιμου σφάλματος από το παιδί::"
 
 #: library/multiprocessing.rst:568
 msgid ""
@@ -1219,6 +1227,19 @@ msgid ""
 "<SpawnProcess name='SpawnProcess-1' pid=379473 parent=378707 stopped "
 "exitcode=1>"
 msgstr ""
+">>> import multiprocessing as mp\n"
+">>> def knigit():\n"
+"...     print(\"Ni!\")\n"
+"...\n"
+">>> process = mp.Process(target=knigit)\n"
+">>> process.start()\n"
+">>> Traceback (most recent call last):\n"
+"  File \".../multiprocessing/spawn.py\", line ..., in spawn_main\n"
+"  File \".../multiprocessing/spawn.py\", line ..., in _main\n"
+"AttributeError: module '__main__' has no attribute 'knigit'\n"
+">>> process\n"
+"<SpawnProcess name='SpawnProcess-1' pid=379473 parent=378707 stopped "
+"exitcode=1>"
 
 #: library/multiprocessing.rst:581
 msgid ""
@@ -1227,6 +1248,10 @@ msgid ""
 "no longer the default on any platform.  See :ref:`multiprocessing-start-"
 "methods`. See also :gh:`132898`."
 msgstr ""
+"Δείτε το :ref:`multiprocessing-programming-spawn`. Ενώ αυτός ο περιορισμός "
+"δεν ισχύει εάν χρησιμοποιείτε τη μέθοδο εκκίνησης ``\"fork\"``, από την Python "
+"``3.14`` αυτό δεν είναι πλέον η προεπιλογή σε καμία πλατφόρμα. Δείτε το :ref:"
+"`multiprocessing-start-methods`. Δείτε επίσης το :gh:`132898`."
 
 #: library/multiprocessing.rst:587
 msgid "Added the *daemon* parameter."
@@ -2009,7 +2034,7 @@ msgstr ""
 
 #: library/multiprocessing.rst:982 library/multiprocessing.rst:1030
 msgid "Close the queue: release internal resources."
-msgstr ""
+msgstr "Κλείνει την ουρά: απελευθερώνει εσωτερικούς πόρους."
 
 #: library/multiprocessing.rst:984
 msgid ""
@@ -2017,12 +2042,18 @@ msgid ""
 "`~Queue.get`, :meth:`~Queue.put` and :meth:`~Queue.empty` methods must no "
 "longer be called."
 msgstr ""
+"Μια ουρά δεν πρέπει να χρησιμοποιείται πλέον αφού έχει κλείσει. "
+"Για παράδειγμα, οι μέθοδοι :meth:`~Queue.get`, :meth:`~Queue.put` "
+"και :meth:`~Queue.empty` δεν πρέπει πλέον να καλούνται."
 
 #: library/multiprocessing.rst:988
 msgid ""
 "The background thread will quit once it has flushed all buffered data to the "
 "pipe.  This is called automatically when the queue is garbage collected."
 msgstr ""
+"Το υπόβαθρο νήμα θα τερματιστεί μόλις ξεπλύνει όλα τα δεδομένα που έχουν "
+"αποθηκευτεί στο buffer στον pipe. Αυτό καλείται αυτόματα όταν η ουρά "
+"συλλέγεται από τον garbage collector."
 
 #: library/multiprocessing.rst:994
 msgid ""
@@ -2794,7 +2825,8 @@ msgstr ""
 #: library/multiprocessing.rst:1424 library/multiprocessing.rst:1501
 #: library/multiprocessing.rst:1568 library/multiprocessing.rst:1591
 msgid "Return a boolean indicating whether this object is locked right now."
-msgstr ""
+msgstr "Επιστρέφει μια boolean τιμή που υποδεικνύει εάν αυτό το αντικείμενο είναι "
+"κλειδωμένο αυτή τη στιγμή."
 
 #: library/multiprocessing.rst:1429
 msgid ""
@@ -3050,12 +3082,12 @@ msgstr ""
 #: library/multiprocessing.rst:1575
 msgid "A semaphore object: a close analog of :class:`threading.Semaphore`."
 msgstr ""
-"Ένα αντικείμενο σημαφόρου: ένα κοντινό ανάλογο της :class:`threading."
+"Ένα αντικείμενο semaphore: ένα κοντινό ανάλογο της :class:`threading."
 "Semaphore`."
 
 #: library/multiprocessing.rst:1583
 msgid "Return the current value of semaphore."
-msgstr ""
+msgstr "Επιστρέφει την τρέχουσα τιμή του semaphore."
 
 #: library/multiprocessing.rst:1598
 msgid ""
@@ -3075,7 +3107,7 @@ msgid ""
 "additional information."
 msgstr ""
 "Μερικές από τις λειτουργίες αυτού του πακέτου απαιτούν μια λειτουργική "
-"υλοποίηση κοινόχρηστου σημαφόρου στο λειτουργικό σύστημα υποδοχής. Χωρίς "
+"υλοποίηση κοινόχρηστου semaphore στο λειτουργικό σύστημα υποδοχής. Χωρίς "
 "αυτήν, το :mod:`multiprocessing.synchronize` module θα απενεργοποιηθεί, και "
 "οι προσπάθειες να εισαχθεί θα έχουν ως αποτέλεσμα μια :exc:`ImportError`. "
 "Δείτε το :issue:`3770` για πρόσθετες πληροφορίες."
@@ -3890,6 +3922,8 @@ msgid ""
 "If *lock* is supplied then it should be a proxy for a :class:`threading."
 "Lock` or :class:`threading.RLock` object."
 msgstr ""
+"Εάν παρέχεται το *lock* τότε θα πρέπει να είναι ένα proxy για ένα :class:"
+"`threading.Lock` ή :class:`threading.RLock` αντικείμενο."
 
 #: library/multiprocessing.rst:2012
 msgid ""
@@ -6748,6 +6782,9 @@ msgid ""
 "An example showing how to use queues to feed tasks to a collection of worker "
 "processes and collect the results:"
 msgstr ""
+"Ένα παράδειγμα που δείχνει πώς να χρησιμοποιήσετε ουρές για να τροφοδοτήσετε "
+"εργασίες σε μια συλλογή από διεργασίες εργαζομένων και να συλλέξετε τα "
+"αποτελέσματα:"
 
 #: library/multiprocessing.rst:3205
 msgid ""
