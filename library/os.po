@@ -10,20 +10,20 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-04 09:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Panagiotis Skias <panagiotis.skias@gmail.com>\n"
+"Language-Team: PyGreece <organizers@pygreece.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: library/os.rst:2
 msgid ":mod:`!os` --- Miscellaneous operating system interfaces"
-msgstr ""
+msgstr ":mod:`!os` --- Διάφορες διεπαφές λειτουργικού συστήματος"
 
 #: library/os.rst:7
 msgid "**Source code:** :source:`Lib/os.py`"
-msgstr ""
+msgstr "**Πηγαίος κώδικας:** :source:`Lib/os.py`"
 
 #: library/os.rst:11
 msgid ""
@@ -35,10 +35,16 @@ msgid ""
 "mod:`tempfile` module, and for high-level file and directory handling see "
 "the :mod:`shutil` module."
 msgstr ""
+"Αυτό το module παρέχει έναν φορητό τρόπο χρήσης λειτουργιών που εξαρτώνται "
+"από το λειτουργικό σύστημα. Αν θέλετε απλώς να διαβάσετε ή να γράψετε ένα αρχείο, "
+"δείτε τη συνάρτηση :func:`open`. Αν θέλετε να χειριστείτε διαδρομές, δείτε το module "
+":mod:`os.path`. Αν θέλετε να διαβάσετε όλες τις γραμμές από όλα τα αρχεία στη γραμμή εντολών, "
+"δείτε το module :mod:`fileinput`. Για τη δημιουργία προσωρινών αρχείων και καταλόγων, "
+"δείτε το module :mod:`tempfile`. Για χειρισμό αρχείων και καταλόγων υψηλού επιπέδου, δείτε το module :mod:`shutil`."
 
 #: library/os.rst:19
 msgid "Notes on the availability of these functions:"
-msgstr ""
+msgstr "Σημειώσεις σχετικά με τη διαθεσιμότητα αυτών των συναρτήσεων:"
 
 #: library/os.rst:21
 msgid ""
@@ -48,6 +54,10 @@ msgid ""
 "information about *path* in the same format (which happens to have "
 "originated with the POSIX interface)."
 msgstr ""
+"Ο σχεδιασμός όλων των ενσωματωμένων module που εξαρτώνται από το λειτουργικό "
+"σύστημα στην Python είναι τέτοιος ώστε, όσο η ίδια λειτουργικότητα είναι διαθέσιμη, να χρησιμοποιεί την ίδια διεπαφή. "
+"Για παράδειγμα, η συνάρτηση ``os.stat(path)`` επιστρέφει πληροφορίες κατάστασης για την "
+"*διαδρομή* με την ίδια μορφή (η οποία προέρχεται από τη διεπαφή POSIX)."
 
 #: library/os.rst:27
 msgid ""
@@ -55,6 +65,8 @@ msgid ""
 "through the :mod:`os` module, but using them is of course a threat to "
 "portability."
 msgstr ""
+"Επεκτάσεις που είναι ιδιόμορφες για ένα συγκεκριμένο λειτουργικό σύστημα είναι επίσης "
+"διαθέσιμες μέσω του module :mod:`os`, αλλά η χρήση τους αποτελεί απειλή για τη φορητότητα."
 
 #: library/os.rst:31
 msgid ""
@@ -62,11 +74,14 @@ msgid ""
 "objects, and result in an object of the same type, if a path or file name is "
 "returned."
 msgstr ""
+"Όλες οι συναρτήσεις που δέχονται διαδρομές ή ονόματα αρχείων δέχονται τόσο "
+"αντικείμενα bytes όσο και string, και επιστρέφουν ένα αντικείμενο του ίδιου τύπου, αν επιστρέφεται μια διαδρομή ή όνομα αρχείου."
 
 #: library/os.rst:35
 msgid ""
 "On VxWorks, os.popen, os.fork, os.execv and os.spawn*p* are not supported."
 msgstr ""
+"Στο VxWorks, οι συναρτήσεις os.popen, os.fork, os.execv και os.spawn*p* δεν υποστηρίζονται."
 
 #: library/os.rst:37
 msgid ""
@@ -77,6 +92,11 @@ msgid ""
 "getpid` are emulated or stubs. WebAssembly platforms also lack support for "
 "signals (e.g. :func:`~os.kill`, :func:`~os.wait`)."
 msgstr ""
+"Σε πλατφόρμες WebAssembly, Android και iOS, μεγάλα μέρη του module :mod:`os` δεν είναι διαθέσιμα ή συμπεριφέρονται διαφορετικά. "
+"Οι διεπαφές προγραμματισμού εφαρμογών (APIs) που σχετίζονται με τις διεργασίες (π.χ. :func:`~os.fork`, :func:`~os.execve`) "
+"και τους πόρους (π.χ. :func:`~os.nice`) δεν είναι διαθέσιμες. Άλλες όπως :func:`~os.getuid` "
+"και :func:`~os.getpid` είναι εξομοιωμένες ή είναι απλά στέγες (stubs). Οι πλατφόρμες "
+"WebAssembly επίσης δεν υποστηρίζουν σήματα (π.χ. :func:`~os.kill`, :func:`~os.wait`)."
 
 #: library/os.rst:47
 msgid ""
@@ -84,32 +104,39 @@ msgid ""
 "the case of invalid or inaccessible file names and paths, or other arguments "
 "that have the correct type, but are not accepted by the operating system."
 msgstr ""
+"Όλες οι συναρτήσεις σε αυτό το module κάνουν raise την :exc:`OSError` (ή υποκλάσεις αυτής) "
+"σε περίπτωση μη έγκυρων ή μη προσβάσιμων ονομάτων αρχείων και διαδρομών ή άλλων "
+"ορισμάτων που έχουν τον σωστό τύπο, αλλά δεν γίνονται δεκτά από το λειτουργικό σύστημα."
 
 #: library/os.rst:53
 msgid "An alias for the built-in :exc:`OSError` exception."
-msgstr ""
+msgstr "Ένα ψευδώνυμο για την ενσωματωμένη εξαίρεση :exc:`OSError`."
 
 #: library/os.rst:58
 msgid ""
 "The name of the operating system dependent module imported.  The following "
 "names have currently been registered: ``'posix'``, ``'nt'``, ``'java'``."
 msgstr ""
+"Το όνομα του εξαρτώμενου module από το λειτουργικό σύστημα που εισήχθη. Τα ακόλουθα ονόματα έχουν " 
+"καταχωρηθεί αυτήν τη στιγμή: ``'posix'``, ``'nt'``, ``'java'``."
 
 #: library/os.rst:63
 msgid ""
 ":data:`sys.platform` has a finer granularity.  :func:`os.uname` gives system-"
 "dependent version information."
 msgstr ""
+"Το :data:`sys.platform` έχει πιο λεπτομερή διαβάθμιση. Η :func:`os.uname` δίνει πληροφορίες έκδοσης που εξαρτώνται από το σύστημα."
 
 #: library/os.rst:66
 msgid ""
 "The :mod:`platform` module provides detailed checks for the system's "
 "identity."
 msgstr ""
+"Το module :mod:`platform` παρέχει λεπτομερείς ελέγχους για την ταυτότητα του συστήματος."
 
 #: library/os.rst:74
 msgid "File Names, Command Line Arguments, and Environment Variables"
-msgstr ""
+msgstr "Ονόματα αρχείων, ορίσματα γραμμής εντολών και μεταβλητές περιβάλλοντος"
 
 #: library/os.rst:76
 msgid ""
@@ -119,6 +146,10 @@ msgid ""
 "Python uses the :term:`filesystem encoding and error handler` to perform "
 "this conversion (see :func:`sys.getfilesystemencoding`)."
 msgstr ""
+"Στην Python, τα ονόματα αρχείων, τα ορίσματα γραμμής εντολών και οι μεταβλητές περιβάλλοντος "
+"αναπαρίστανται χρησιμοποιώντας τον τύπο string. Σε ορισμένα συστήματα, είναι απαραίτητο να γίνει "
+"αποκωδικοποίηση αυτών των συμβολοσειρών από και προς bytes πριν τα περάσουμε στο λειτουργικό σύστημα. "
+"Η Python χρησιμοποιεί τον :term:`filesystem encoding and error handler` για να πραγματοποιήσει αυτή τη μετατροπή (δείτε :func:`sys.getfilesystemencoding`)."
 
 #: library/os.rst:82
 msgid ""
@@ -127,6 +158,9 @@ msgid ""
 "filesystem_encoding` and :c:member:`~PyConfig.filesystem_errors` members of :"
 "c:type:`PyConfig`."
 msgstr ""
+"Ο :term:`filesystem encoding and error handler` διαμορφώνονται κατά την εκκίνηση της Python από τη "
+":c:func:`PyConfig_Read` συνάρτηση: δείτε τα μέλη :c:member:`~PyConfig.filesystem_encoding` "
+"και :c:member:`~PyConfig.filesystem_errors` του :c:type:`PyConfig`."
 
 #: library/os.rst:87
 msgid ""
@@ -136,6 +170,11 @@ msgid ""
 "Unicode character U+DC\\ *xx* on decoding, and these are again translated to "
 "the original byte on encoding."
 msgstr ""
+"Σε ορισμένα συστήματα, η μετατροπή χρησιμοποιώντας την κωδικοποίηση του "
+"συστήματος αρχείων μπορεί να αποτύχει. Σε αυτή την περίπτωση, η Python "
+"χρησιμοποιεί τον :ref:`surrogateescape encoding error handler "
+"<surrogateescape>`, που σημαίνει ότι τα μη αποκωδικοποιήσιμα bytes αντικαθίστανται από έναν "
+"χαρακτήρα Unicode U+DC\\ *xx* κατά την αποκωδικοποίηση, και αυτά μετατρέπονται ξανά στο αρχικό byte κατά την κωδικοποίηση."
 
 #: library/os.rst:95
 msgid ""
@@ -144,40 +183,46 @@ msgid ""
 "system encoding fails to provide this guarantee, API functions can raise :"
 "exc:`UnicodeError`."
 msgstr ""
+"Ο :term:`file system encoding <filesystem encoding and error handler>` πρέπει να εγγυάται "
+"την επιτυχή αποκωδικοποίηση όλων των bytes κάτω από το 128. Αν η κωδικοποίηση του "
+"συστήματος αρχείων αποτύχει να παρέχει αυτή την εγγύηση, οι συναρτήσεις API μπορούν να κάνουν raise την :exc:`UnicodeError`."
 
 #: library/os.rst:100
 msgid "See also the :term:`locale encoding`."
-msgstr ""
+msgstr "Δείτε επίσης το :term:`locale encoding`."
 
 #: library/os.rst:106
 msgid "Python UTF-8 Mode"
-msgstr ""
+msgstr "Python UTF-8 Mode"
 
 #: library/os.rst:108
 msgid "See :pep:`540` for more details."
-msgstr ""
+msgstr "Δείτε το :pep:`540` για περισσότερες λεπτομέρειες."
 
 #: library/os.rst:111
 msgid ""
 "The Python UTF-8 Mode ignores the :term:`locale encoding` and forces the "
 "usage of the UTF-8 encoding:"
 msgstr ""
+"Το Python UTF-8 Mode αγνοεί το :term:`locale encoding` και επιβάλλει τη χρήση της κωδικοποίησης UTF-8:"
 
 #: library/os.rst:114
 msgid ""
 "Use UTF-8 as the :term:`filesystem encoding <filesystem encoding and error "
 "handler>`."
 msgstr ""
+"Χρησιμοποιήστε το UTF-8 ως :term:`filesystem encoding <filesystem encoding and error handler>`."
 
 #: library/os.rst:116
 msgid ":func:`sys.getfilesystemencoding` returns ``'utf-8'``."
-msgstr ""
+msgstr "το :func:`sys.getfilesystemencoding` επιστρέφει ``'utf-8'``."
 
 #: library/os.rst:117
 msgid ""
 ":func:`locale.getpreferredencoding` returns ``'utf-8'`` (the *do_setlocale* "
 "argument has no effect)."
 msgstr ""
+"το :func:`locale.getpreferredencoding` επιστρέφει ``'utf-8'`` (το όρισμα *do_setlocale* δεν έχει καμία επίδραση)."
 
 #: library/os.rst:119
 msgid ""
@@ -187,12 +232,17 @@ msgid ""
 "(:data:`sys.stderr` continues to use ``backslashreplace`` as it does in the "
 "default locale-aware mode)"
 msgstr ""
+"τα :data:`sys.stdin`, :data:`sys.stdout` και :data:`sys.stderr` χρησιμοποιούν όλα το UTF-8 ως κωδικοποίηση κειμένου, με τον "
+"``surrogateescape`` :ref:`error handler <error-handlers>` να είναι ενεργοποιημένος για τα :data:`sys.stdin` και :data:`sys.stdout` "
+"(το :data:`sys.stderr` συνεχίζει να χρησιμοποιεί το ``backslashreplace`` όπως κάνει στη "
+"προεπιλεγμένη λειτουργία που βασίζεται στο locale)"
 
 #: library/os.rst:124
 msgid ""
 "On Unix, :func:`os.device_encoding` returns ``'utf-8'`` rather than the "
 "device encoding."
 msgstr ""
+"Στο Unix, το :func:`os.device_encoding` επιστρέφει ``'utf-8'`` αντί για την κωδικοποίηση της συσκευής."
 
 #: library/os.rst:127
 msgid ""
@@ -200,22 +250,26 @@ msgid ""
 "envvar:`PYTHONIOENCODING` (just as they can be in the default locale-aware "
 "mode)."
 msgstr ""
+"Σημειώστε ότι οι ρυθμίσεις των τυπικών ροών στην UTF-8 λειτουργία μπορούν να παρακαμφθούν από το :envvar:`PYTHONIOENCODING` (όπως μπορούν και στη "
+"προεπιλεγμένη λειτουργία που βασίζεται στο locale)."
 
 #: library/os.rst:131
 msgid ""
 "As a consequence of the changes in those lower level APIs, other higher "
 "level APIs also exhibit different default behaviours:"
 msgstr ""
+"Ως συνέπεια των αλλαγών σε αυτές τις χαμηλότερου επιπέδου APIs, άλλες υψηλότερου επιπέδου APIs παρουσιάζουν επίσης διαφορετικές προεπιλεγμένες συμπεριφορές:"
 
 #: library/os.rst:134
 msgid ""
 "Command line arguments, environment variables and filenames are decoded to "
 "text using the UTF-8 encoding."
 msgstr ""
+"Τα ορίσματα γραμμής εντολών, οι μεταβλητές περιβάλλοντος και τα ονόματα αρχείων αποκωδικοποιούνται σε κείμενο χρησιμοποιώντας την κωδικοποίηση UTF-8."
 
 #: library/os.rst:136
 msgid ":func:`os.fsdecode` and :func:`os.fsencode` use the UTF-8 encoding."
-msgstr ""
+msgstr "Τα :func:`os.fsdecode` και :func:`os.fsencode` χρησιμοποιούν την κωδικοποίηση UTF-8."
 
 #: library/os.rst:137
 msgid ""
@@ -224,6 +278,9 @@ msgid ""
 "default so that attempting to open a binary file in text mode is likely to "
 "raise an exception rather than producing nonsense data."
 msgstr ""
+"Τα :func:`open`, :func:`io.open` και :func:`codecs.open` χρησιμοποιούν την κωδικοποίηση UTF-8 από προεπιλογή. "
+"Ωστόσο, εξακολουθούν να χρησιμοποιούν τον αυστηρό error handler από προεπιλογή, έτσι ώστε η προσπάθεια "
+"ανοίγματος ενός δυαδικού αρχείου σε λειτουργία κειμένου πιθανότατα να προκαλέσει εξαίρεση αντί να παράγει άχρηστα δεδομένα."
 
 #: library/os.rst:142
 msgid ""
@@ -231,12 +288,14 @@ msgid ""
 "is ``C`` or ``POSIX`` at Python startup (see the :c:func:`PyConfig_Read` "
 "function)."
 msgstr ""
+"Το :ref:`Python UTF-8 Mode <utf8-mode>` ενεργοποιείται αν το LC_CTYPE locale είναι ``C`` ή ``POSIX`` κατά την εκκίνηση της Python (δείτε τη συνάρτηση :c:func:`PyConfig_Read`)."
 
 #: library/os.rst:146
 msgid ""
 "It can be enabled or disabled using the :option:`-X utf8 <-X>` command line "
 "option and the :envvar:`PYTHONUTF8` environment variable."
 msgstr ""
+"Μπορεί να ενεργοποιηθεί ή να απενεργοποιηθεί χρησιμοποιώντας την επιλογή γραμμής εντολών :option:`-X utf8 <-X>` και τη μεταβλητή περιβάλλοντος :envvar:`PYTHONUTF8`."
 
 #: library/os.rst:149
 msgid ""
@@ -247,41 +306,50 @@ msgid ""
 "or fails. In such legacy locales, the interpreter will default to enabling "
 "UTF-8 mode unless explicitly instructed not to do so."
 msgstr ""
+"Αν η μεταβλητή περιβάλλοντος :envvar:`PYTHONUTF8` δεν έχει οριστεί καθόλου, τότε ο "
+"διερμηνέας προεπιλέγεται να χρησιμοποιεί τις τρέχουσες ρυθμίσεις locale, *εκτός αν* το τρέχον "
+"locale αναγνωρίζεται ως ένα παλαιού τύπου locale βασισμένο σε ASCII (όπως περιγράφεται για το "
+":envvar:`PYTHONCOERCECLOCALE`), και ο εξαναγκασμός locale είναι είτε απενεργοποιημένος είτε αποτυγχάνει. "
+"Σε τέτοια παλαιού τύπου locales, ο διερμηνέας θα προεπιλέγεται να ενεργοποιεί τη λειτουργία UTF-8 εκτός αν του δοθεί ρητή εντολή να μην το κάνει."
 
 #: library/os.rst:156
 msgid ""
 "The Python UTF-8 Mode can only be enabled at the Python startup. Its value "
 "can be read from :data:`sys.flags.utf8_mode <sys.flags>`."
 msgstr ""
+"Η λειτουργία Python UTF-8 Mode μπορεί να ενεργοποιηθεί μόνο κατά την εκκίνηση της Python. Η τιμή της μπορεί να διαβαστεί από το :data:`sys.flags.utf8_mode <sys.flags>`."
 
 #: library/os.rst:159
 msgid ""
 "See also the :ref:`UTF-8 mode on Windows <win-utf8-mode>` and the :term:"
 "`filesystem encoding and error handler`."
 msgstr ""
+"Δείτε επίσης το :ref:`UTF-8 mode on Windows <win-utf8-mode>` και τον :term:`filesystem encoding and error handler`."
 
 #: library/os.rst:164
 msgid ":pep:`686`"
-msgstr ""
+msgstr ":pep:`686`"
 
 #: library/os.rst:165
 msgid "Python 3.15 will make :ref:`utf8-mode` default."
-msgstr ""
+msgstr "Η Python 3.15 θα κάνει το :ref:`utf8-mode` προεπιλεγμένο."
 
 #: library/os.rst:171
 msgid "Process Parameters"
-msgstr ""
+msgstr "Παράμετροι διεργασίας"
 
 #: library/os.rst:173
 msgid ""
 "These functions and data items provide information and operate on the "
 "current process and user."
 msgstr ""
+"Αυτές οι συναρτήσεις και τα δεδομένα παρέχουν πληροφορίες και λειτουργούν στη τρέχουσα διεργασία και χρήστη."
 
 #: library/os.rst:179
 msgid ""
 "Return the filename corresponding to the controlling terminal of the process."
 msgstr ""
+"Επιστρέφει το όνομα αρχείου που αντιστοιχεί στο τερματικό ελέγχου της διεργασίας."
 
 #: library/os.rst:345 library/os.rst:381 library/os.rst:399 library/os.rst:421
 #: library/os.rst:457 library/os.rst:485 library/os.rst:514 library/os.rst:535
@@ -314,7 +382,7 @@ msgstr ""
 #: library/os.rst:5404 library/os.rst:5422 library/os.rst:5595
 #: library/os.rst:5628 library/os.rst:5664 library/os.rst:5787
 msgid "Availability"
-msgstr ""
+msgstr "Διαθεσιμότητα"
 
 #: library/os.rst:186
 msgid ""
@@ -323,6 +391,10 @@ msgid ""
 "of your home directory (on some platforms), and is equivalent to "
 "``getenv(\"HOME\")`` in C."
 msgstr ""
+"Ένα :term:`mapping` αντικείμενο όπου τα κλειδιά και οι τιμές είναι συμβολοσειρές που "
+"αντιπροσωπεύουν το περιβάλλον της διεργασίας. Για παράδειγμα, το ``environ['HOME']`` "
+"είναι το όνομα διαδρομής του οικιακού καταλόγου σας (σε ορισμένες πλατφόρμες) και "
+"είναι ισοδύναμο με το ``getenv(\"HOME\")`` στη C."
 
 #: library/os.rst:191
 msgid ""
@@ -332,6 +404,10 @@ msgid ""
 "`os.environ`, except for changes made by modifying :data:`os.environ` "
 "directly."
 msgstr ""
+"Αυτή η αντιστοίχιση καταγράφεται την πρώτη φορά που εισάγεται το module :mod:`os`, "
+"τυπικά κατά την εκκίνηση της Python ως μέρος της επεξεργασίας του :file:`site.py`. "
+"Οι αλλαγές στο περιβάλλον που γίνονται μετά από αυτή τη στιγμή δεν αντικατοπτρίζονται στο :data:`os.environ`, "
+"εκτός από τις αλλαγές που γίνονται με την άμεση τροποποίηση του :data:`os.environ`."
 
 #: library/os.rst:196
 msgid ""
@@ -339,6 +415,8 @@ msgid ""
 "environment.  :func:`putenv` will be called automatically when the mapping "
 "is modified."
 msgstr ""
+"Αυτή η αντιστοίχιση μπορεί να χρησιμοποιηθεί για την τροποποίηση του περιβάλλοντος καθώς και για την ερώτηση του περιβάλλοντος. "
+"Η :func:`putenv` θα κληθεί αυτόματα όταν τροποποιηθεί η αντιστοίχιση."
 
 #: library/os.rst:200
 msgid ""
@@ -346,6 +424,8 @@ msgid ""
 "``'surrogateescape'`` error handler. Use :data:`environb` if you would like "
 "to use a different encoding."
 msgstr ""
+"Στο Unix, τα κλειδιά και οι τιμές χρησιμοποιούν το :func:`sys.getfilesystemencoding` και τον "
+"``'surrogateescape'`` διαχειριστή σφαλμάτων. Χρησιμοποιήστε το :data:`environb` αν θέλετε να χρησιμοποιήσετε μια διαφορετική κωδικοποίηση."
 
 #: library/os.rst:204
 msgid ""
@@ -353,18 +433,24 @@ msgid ""
 "getting, setting, or deleting an item. For example, ``environ['monty'] = "
 "'python'`` maps the key ``'MONTY'`` to the value ``'python'``."
 msgstr ""
+"Στα Windows, τα κλειδιά μετατρέπονται σε κεφαλαία γράμματα. Αυτό ισχύει επίσης "
+"κατά την ανάκτηση, τον ορισμό ή τη διαγραφή ενός στοιχείου. Για παράδειγμα το ``environ['monty'] = "
+"'python'`` αντιστοιχεί το κλειδί ``'MONTY'`` στην τιμή ``'python'``."
 
 #: library/os.rst:211
 msgid ""
 "Calling :func:`putenv` directly does not change :data:`os.environ`, so it's "
 "better to modify :data:`os.environ`."
 msgstr ""
+"Καλώντας την :func:`putenv` απευθείας δεν αλλάζει το :data:`os.environ`, οπότε είναι καλύτερο να τροποποιήσετε το :data:`os.environ`."
 
 #: library/os.rst:216
 msgid ""
 "On some platforms, including FreeBSD and macOS, setting ``environ`` may "
 "cause memory leaks.  Refer to the system documentation for :c:func:`!putenv`."
 msgstr ""
+"Σε μερικές πλατφόρμες, συμπεριλαμβανομένου του FreeBSD και macOS, η ρύθμιση του ``environ`` " 
+"μπορεί να προκαλέσει διαρροές μνήμης. Ανατρέξτε στην τεκμηρίωση του συστήματος για το :c:func:`!putenv`."
 
 #: library/os.rst:220
 msgid ""
@@ -2222,51 +2308,51 @@ msgstr ""
 
 #: library/os.rst:2143
 msgid ":const:`stat.UF_NODUMP`"
-msgstr ""
+msgstr ":const:`stat.UF_NODUMP`"
 
 #: library/os.rst:2144
 msgid ":const:`stat.UF_IMMUTABLE`"
-msgstr ""
+msgstr ":const:`stat.UF_IMMUTABLE`"
 
 #: library/os.rst:2145
 msgid ":const:`stat.UF_APPEND`"
-msgstr ""
+msgstr ":const:`stat.UF_APPEND`"
 
 #: library/os.rst:2146
 msgid ":const:`stat.UF_OPAQUE`"
-msgstr ""
+msgstr ":const:`stat.UF_OPAQUE`"
 
 #: library/os.rst:2147
 msgid ":const:`stat.UF_NOUNLINK`"
-msgstr ""
+msgstr ":const:`stat.UF_NOUNLINK`"
 
 #: library/os.rst:2148
 msgid ":const:`stat.UF_COMPRESSED`"
-msgstr ""
+msgstr ":const:`stat.UF_COMPRESSED`"
 
 #: library/os.rst:2149
 msgid ":const:`stat.UF_HIDDEN`"
-msgstr ""
+msgstr ":const:`stat.UF_HIDDEN`"
 
 #: library/os.rst:2150
 msgid ":const:`stat.SF_ARCHIVED`"
-msgstr ""
+msgstr ":const:`stat.SF_ARCHIVED`"
 
 #: library/os.rst:2151
 msgid ":const:`stat.SF_IMMUTABLE`"
-msgstr ""
+msgstr ":const:`stat.SF_IMMUTABLE`"
 
 #: library/os.rst:2152
 msgid ":const:`stat.SF_APPEND`"
-msgstr ""
+msgstr ":const:`stat.SF_APPEND`"
 
 #: library/os.rst:2153
 msgid ":const:`stat.SF_NOUNLINK`"
-msgstr ""
+msgstr ":const:`stat.SF_NOUNLINK`"
 
 #: library/os.rst:2154
 msgid ":const:`stat.SF_SNAPSHOT`"
-msgstr ""
+msgstr ":const:`stat.SF_SNAPSHOT`"
 
 #: library/os.rst:2156
 msgid ""
@@ -2292,79 +2378,79 @@ msgstr ""
 
 #: library/os.rst:2175
 msgid ":const:`stat.S_ISUID`"
-msgstr ""
+msgstr ":const:`stat.S_ISUID`"
 
 #: library/os.rst:2176
 msgid ":const:`stat.S_ISGID`"
-msgstr ""
+msgstr ":const:`stat.S_ISGID`"
 
 #: library/os.rst:2177
 msgid ":const:`stat.S_ENFMT`"
-msgstr ""
+msgstr ":const:`stat.S_ENFMT`"
 
 #: library/os.rst:2178
 msgid ":const:`stat.S_ISVTX`"
-msgstr ""
+msgstr ":const:`stat.S_ISVTX`"
 
 #: library/os.rst:2179
 msgid ":const:`stat.S_IREAD`"
-msgstr ""
+msgstr ":const:`stat.S_IREAD`"
 
 #: library/os.rst:2180
 msgid ":const:`stat.S_IWRITE`"
-msgstr ""
+msgstr ":const:`stat.S_IWRITE`"
 
 #: library/os.rst:2181
 msgid ":const:`stat.S_IEXEC`"
-msgstr ""
+msgstr ":const:`stat.S_IEXEC`"
 
 #: library/os.rst:2182
 msgid ":const:`stat.S_IRWXU`"
-msgstr ""
+msgstr ":const:`stat.S_IRWXU`"
 
 #: library/os.rst:2183
 msgid ":const:`stat.S_IRUSR`"
-msgstr ""
+msgstr ":const:`stat.S_IRUSR`"
 
 #: library/os.rst:2184
 msgid ":const:`stat.S_IWUSR`"
-msgstr ""
+msgstr ":const:`stat.S_IWUSR`"
 
 #: library/os.rst:2185
 msgid ":const:`stat.S_IXUSR`"
-msgstr ""
+msgstr ":const:`stat.S_IXUSR`"
 
 #: library/os.rst:2186
 msgid ":const:`stat.S_IRWXG`"
-msgstr ""
+msgstr ":const:`stat.S_IRWXG`"
 
 #: library/os.rst:2187
 msgid ":const:`stat.S_IRGRP`"
-msgstr ""
+msgstr ":const:`stat.S_IRGRP`"
 
 #: library/os.rst:2188
 msgid ":const:`stat.S_IWGRP`"
-msgstr ""
+msgstr ":const:`stat.S_IWGRP`"
 
 #: library/os.rst:2189
 msgid ":const:`stat.S_IXGRP`"
-msgstr ""
+msgstr ":const:`stat.S_IXGRP`"
 
 #: library/os.rst:2190
 msgid ":const:`stat.S_IRWXO`"
-msgstr ""
+msgstr ":const:`stat.S_IRWXO`"
 
 #: library/os.rst:2191
 msgid ":const:`stat.S_IROTH`"
-msgstr ""
+msgstr ":const:`stat.S_IROTH`"
 
 #: library/os.rst:2192
 msgid ":const:`stat.S_IWOTH`"
-msgstr ""
+msgstr ":const:`stat.S_IWOTH`"
 
 #: library/os.rst:2193
 msgid ":const:`stat.S_IXOTH`"
-msgstr ""
+msgstr ":const:`stat.S_IXOTH`"
 
 #: library/os.rst:2228 library/os.rst:3623
 msgid ""
@@ -3339,7 +3425,7 @@ msgstr ""
 
 #: library/os.rst:3877
 msgid "Example::"
-msgstr ""
+msgstr "Παράδειγμα::"
 
 #: library/os.rst:3106
 msgid ""
@@ -3352,6 +3438,14 @@ msgid ""
 ">>> statinfo.st_size\n"
 "264"
 msgstr ""
+">>> import os\n"
+">>> statinfo = os.stat('somefile.txt')\n"
+">>> statinfo\n"
+"os.stat_result(st_mode=33188, st_ino=7876932, st_dev=234881026,\n"
+"st_nlink=1, st_uid=501, st_gid=501, st_size=264, st_atime=1297230295,\n"
+"st_mtime=1297230027, st_ctime=1297230027)\n"
+">>> statinfo.st_size\n"
+"264"
 
 #: library/os.rst:3117
 msgid ":func:`fstat` and :func:`lstat` functions."
@@ -4048,6 +4142,17 @@ msgid ""
 "        os.rmdir(os.path.join(root, name))\n"
 "os.rmdir(top)"
 msgstr ""
+"# Delete everything reachable from the directory named in \"top\",\n"
+"# assuming there are no symbolic links.\n"
+"# CAUTION:  This is dangerous!  For example, if top == '/', it\n"
+"# could delete all your disk files.\n"
+"import os\n"
+"for root, dirs, files in os.walk(top, topdown=False):\n"
+"    for name in files:\n"
+"        os.remove(os.path.join(root, name))\n"
+"    for name in dirs:\n"
+"        os.rmdir(os.path.join(root, name))\n"
+"os.rmdir(top)"
 
 #: library/os.rst:3727
 msgid ""
@@ -4099,6 +4204,14 @@ msgid ""
 "    if '__pycache__' in dirs:\n"
 "        dirs.remove('__pycache__')  # don't visit __pycache__ directories"
 msgstr ""
+"import os\n"
+"for root, dirs, files, rootfd in os.fwalk('python/Lib/xml'):\n"
+"    print(root, \"consumes\", end=\" \")\n"
+"    print(sum([os.stat(name, dir_fd=rootfd).st_size for name in files]),\n"
+"          end=\" \")\n"
+"    print(\"bytes in\", len(files), \"non-directory files\")\n"
+"    if '__pycache__' in dirs:\n"
+"        dirs.remove('__pycache__')  # don't visit __pycache__ directories"
 
 #: library/os.rst:3773
 msgid ""
@@ -4222,6 +4335,20 @@ msgid ""
 "finally:\n"
 "    os.close(fd)"
 msgstr ""
+"import os\n"
+"\n"
+"# semaphore with start value '1'\n"
+"fd = os.eventfd(1, os.EFD_SEMAPHORE | os.EFC_CLOEXEC)\n"
+"try:\n"
+"    # acquire semaphore\n"
+"    v = os.eventfd_read(fd)\n"
+"    try:\n"
+"        do_work()\n"
+"    finally:\n"
+"        # release semaphore\n"
+"        os.eventfd_write(fd, v)\n"
+"finally:\n"
+"    os.close(fd)"
 
 #: library/os.rst:3900
 msgid ""
@@ -4270,15 +4397,15 @@ msgstr ""
 
 #: library/os.rst:3959
 msgid ":func:`read`"
-msgstr ""
+msgstr ":func:`read`"
 
 #: library/os.rst:3960
 msgid ":func:`~select.select`"
-msgstr ""
+msgstr ":func:`~select.select`"
 
 #: library/os.rst:3961
 msgid ":func:`~select.poll`"
-msgstr ""
+msgstr ":func:`~select.poll`"
 
 #: library/os.rst:3963
 msgid ""
@@ -4303,11 +4430,11 @@ msgstr ""
 
 #: library/os.rst:3974
 msgid ":const:`time.CLOCK_REALTIME`"
-msgstr ""
+msgstr ":const:`time.CLOCK_REALTIME`"
 
 #: library/os.rst:3975
 msgid ":const:`time.CLOCK_MONOTONIC`"
-msgstr ""
+msgstr ":const:`time.CLOCK_MONOTONIC`"
 
 #: library/os.rst:3976
 msgid ":const:`time.CLOCK_BOOTTIME` (Since Linux 3.15 for timerfd_create)"
@@ -4343,11 +4470,11 @@ msgstr ""
 
 #: library/os.rst:3994
 msgid ":const:`TFD_NONBLOCK`"
-msgstr ""
+msgstr ":const:`TFD_NONBLOCK`"
 
 #: library/os.rst:3995
 msgid ":const:`TFD_CLOEXEC`"
-msgstr ""
+msgstr ":const:`TFD_CLOEXEC`"
 
 #: library/os.rst:3997
 msgid ""
@@ -4450,11 +4577,11 @@ msgstr ""
 
 #: library/os.rst:4060
 msgid "``settimeofday``"
-msgstr ""
+msgstr "``settimeofday``"
 
 #: library/os.rst:4061
 msgid "``clock_settime``"
-msgstr ""
+msgstr "``clock_settime``"
 
 #: library/os.rst:4062
 msgid "set the system date and time by ``date`` command"
@@ -4471,6 +4598,8 @@ msgid ""
 ":manpage:`timerfd_create(2)`, :manpage:`timerfd_settime(2)`, :manpage:"
 "`settimeofday(2)`, :manpage:`clock_settime(2)`, and :manpage:`date(1)`."
 msgstr ""
+":manpage:`timerfd_create(2)`, :manpage:`timerfd_settime(2)`, :manpage:"
+"`settimeofday(2)`, :manpage:`clock_settime(2)`, and :manpage:`date(1)`."
 
 #: library/os.rst:4080
 msgid ""
@@ -4496,7 +4625,7 @@ msgstr ""
 
 #: library/os.rst:4099
 msgid ":manpage:`timerfd_gettime(2)`"
-msgstr ""
+msgstr ":manpage:`timerfd_gettime(2)`"
 
 #: library/os.rst:4108
 msgid "Similar to :func:`timerfd_gettime`, but return time as nanoseconds."
@@ -5132,7 +5261,7 @@ msgstr ""
 
 #: library/os.rst:4742
 msgid "(``os.POSIX_SPAWN_OPEN``, *fd*, *path*, *flags*, *mode*)"
-msgstr ""
+msgstr "(``os.POSIX_SPAWN_OPEN``, *fd*, *path*, *flags*, *mode*)"
 
 #: library/os.rst:4744
 msgid "Performs ``os.dup2(os.open(path, flags, mode), fd)``."
@@ -5140,7 +5269,7 @@ msgstr ""
 
 #: library/os.rst:4748
 msgid "(``os.POSIX_SPAWN_CLOSE``, *fd*)"
-msgstr ""
+msgstr "(``os.POSIX_SPAWN_CLOSE``, *fd*)"
 
 #: library/os.rst:4750
 msgid "Performs ``os.close(fd)``."
@@ -5148,7 +5277,7 @@ msgstr ""
 
 #: library/os.rst:4754
 msgid "(``os.POSIX_SPAWN_DUP2``, *fd*, *new_fd*)"
-msgstr ""
+msgstr "(``os.POSIX_SPAWN_DUP2``, *fd*, *new_fd*)"
 
 #: library/os.rst:4756
 msgid "Performs ``os.dup2(fd, new_fd)``."
@@ -5156,7 +5285,7 @@ msgstr ""
 
 #: library/os.rst:4760
 msgid "(``os.POSIX_SPAWN_CLOSEFROM``, *fd*)"
-msgstr ""
+msgstr "(``os.POSIX_SPAWN_CLOSEFROM``, *fd*)"
 
 #: library/os.rst:4762
 msgid "Performs ``os.closerange(fd, INF)``."
@@ -5377,6 +5506,11 @@ msgid ""
 "L = ['cp', 'index.html', '/dev/null']\n"
 "os.spawnvpe(os.P_WAIT, 'cp', L, os.environ)"
 msgstr ""
+"import os\n"
+"os.spawnlp(os.P_WAIT, 'cp', 'cp', 'index.html', '/dev/null')\n"
+"\n"
+"L = ['cp', 'index.html', '/dev/null']\n"
+"os.spawnvpe(os.P_WAIT, 'cp', L, os.environ)"
 
 #: library/os.rst:4931
 msgid ""
