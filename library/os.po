@@ -459,15 +459,18 @@ msgid ""
 "`os.environ`, and when one of the :meth:`pop` or :meth:`clear` methods is "
 "called."
 msgstr ""
+"Μπορείτε να διαγράψετε στοιχεία σε αυτή την αντιστοίχιση για να απενεργοποιήσετε μεταβλητές περιβάλλοντος. "
+":func:`unsetenv` θα κληθεί αυτόματα όταν διαγραφεί ένα στοιχείο από το :data:`os.environ`, και όταν κληθεί μία από τις μεθόδους :meth:`pop` ή :meth:`clear`."
 
 #: library/os.rst:227
 msgid "The :func:`os.reload_environ` function."
-msgstr ""
+msgstr "Η συνάρτηση :func:`os.reload_environ`."
 
 #: library/os.rst:245
 msgid ""
 "Updated to support :pep:`584`'s merge (``|``) and update (``|=``) operators."
 msgstr ""
+"Ενημερώθηκε για να υποστηρίξει τους τελεστές συγχώνευσης (``|``) και ενημέρωσης (``|=``) του :pep:`584`."
 
 #: library/os.rst:235
 msgid ""
@@ -476,12 +479,16 @@ msgid ""
 "data:`environ` and :data:`environb` are synchronized (modifying :data:"
 "`environb` updates :data:`environ`, and vice versa)."
 msgstr ""
+"Έκδοση σε bytes του :data:`environ`: ένα :term:`mapping` αντικείμενο όπου τόσο τα κλειδιά "
+"όσο και οι τιμές είναι αντικείμενα :class:`bytes` που αντιπροσωπεύουν το περιβάλλον της διεργασίας. "
+"Τα :data:`environ` και :data:`environb` είναι συγχρονισμένα (η τροποποίηση του :data:`environb` ενημερώνει το :data:`environ`, και το αντίστροφο)."
 
 #: library/os.rst:240
 msgid ""
 ":data:`environb` is only available if :const:`supports_bytes_environ` is "
 "``True``."
 msgstr ""
+"Το :data:`environb` είναι διαθέσιμο μόνο αν το :const:`supports_bytes_environ` είναι ``True``."
 
 #: library/os.rst:251
 msgid ""
@@ -492,6 +499,10 @@ msgid ""
 "to update :data:`os.environ` and :data:`os.environb` with any such changes "
 "to the current process environment."
 msgstr ""
+"Οι αντιστοιχίσεις :data:`os.environ` και :data:`os.environb` είναι μια προσωρινή αποθήκη "
+"μεταβλητών περιβάλλοντος τη στιγμή που ξεκίνησε η Python. Ως εκ τούτου, οι αλλαγές στο "
+"τρέχον περιβάλλον διεργασίας δεν αντικατοπτρίζονται αν γίνουν εκτός της Python, ή από τις :func:`os.putenv` ή :func:`os.unsetenv`. "
+"Χρησιμοποιήστε τη :func:`!os.reload_environ` για να ενημερώσετε τα :data:`os.environ` και :data:`os.environb` με τέτοιες αλλαγές στο τρέχον περιβάλλον διεργασίας."
 
 #: library/os.rst:259
 msgid ""
@@ -500,40 +511,49 @@ msgid ""
 "environ` or :data:`os.environb`, or calling :func:`os.getenv` while "
 "reloading, may return an empty result."
 msgstr ""
+"Αυτή η συνάρτηση δεν είναι ασφαλής για νήματα (thread-safe). Η κλήση της ενώ το "
+"περιβάλλον τροποποιείται σε ένα άλλο νήμα είναι μια μη ορισοθετημένη συμπεριφορά. "
+"Η ανάγνωση από το :data:`os.environ` ή το :data:`os.environb`, ή η κλήση της :func:`os.getenv` "
+"ενώ γίνεται επαναφόρτωση, μπορεί να επιστρέψει ένα κενό αποτέλεσμα."
 
 #: library/os.rst:272
 msgid "These functions are described in :ref:`os-file-dir`."
-msgstr ""
+msgstr "Αυτές οι συναρτήσεις περιγράφονται στο :ref:`os-file-dir`."
 
 #: library/os.rst:277
 msgid ""
 "Encode :term:`path-like <path-like object>` *filename* to the :term:"
 "`filesystem encoding and error handler`; return :class:`bytes` unchanged."
 msgstr ""
+"Κωδικοποιεί το :term:`αντικείμενο τύπου διαδρομής <path-like object>` *filename* στον "
+":term:`κωδικοποιητή και χειριστή σφαλμάτων του συστήματος αρχείων`; επιστρέφει τα :class:`bytes` αμετάβλητα."
 
 #: library/os.rst:281
 msgid ":func:`fsdecode` is the reverse function."
-msgstr ""
+msgstr ":func:`fsdecode` είναι η αντίστροφη συνάρτηση."
 
 #: library/os.rst:300
 msgid ""
 "Support added to accept objects implementing the :class:`os.PathLike` "
 "interface."
 msgstr ""
+"Προστέθηκε υποστήριξη για την αποδοχή αντικειμένων που υλοποιούν τη διεπαφή :class:`os.PathLike`."
 
 #: library/os.rst:292
 msgid ""
 "Decode the :term:`path-like <path-like object>` *filename* from the :term:"
 "`filesystem encoding and error handler`; return :class:`str` unchanged."
 msgstr ""
+"Αποκωδικοποιεί το :term:`αντικείμενο τύπου διαδρομής <path-like object>` *filename* από τον "
+":term:`κωδικοποιητή και χειριστή σφαλμάτων του συστήματος αρχείων`; επιστρέφει τα :class:`str` αμετάβλητα."
 
 #: library/os.rst:296
 msgid ":func:`fsencode` is the reverse function."
-msgstr ""
+msgstr ":func:`fsencode` είναι η αντίστροφη συνάρτηση."
 
 #: library/os.rst:307
 msgid "Return the file system representation of the path."
-msgstr ""
+msgstr "Επιστρέφει την αναπαράσταση του συστήματος αρχείων της διαδρομής."
 
 #: library/os.rst:309
 msgid ""
@@ -542,22 +562,28 @@ msgid ""
 "returned as long as it is a :class:`str` or :class:`bytes` object. In all "
 "other cases, :exc:`TypeError` is raised."
 msgstr ""
+"Αν περαστεί :class:`str` ή :class:`bytes`, επιστρέφεται αμετάβλητο. "
+"Διαφορετικά καλείται η :meth:`~os.PathLike.__fspath__` και η τιμή της επιστρέφεται εφόσον είναι ένα "
+":class:`str` ή :class:`bytes` αντικείμενο. Σε όλες τις άλλες περιπτώσεις, γίνεται raise η :exc:`TypeError`."
 
 #: library/os.rst:319
 msgid ""
 "An :term:`abstract base class` for objects representing a file system path, "
 "e.g. :class:`pathlib.PurePath`."
 msgstr ""
+"Ένας :term:`abstract base class` για αντικείμενα που αντιπροσωπεύουν μια διαδρομή συστήματος αρχείων, "
+"π.χ. :class:`pathlib.PurePath`."
 
 #: library/os.rst:327
 msgid "Return the file system path representation of the object."
-msgstr ""
+msgstr "Επιστρέφει το αντικείμενο αναπαράστασης διαδρομής συστήματος αρχείων."
 
 #: library/os.rst:329
 msgid ""
 "The method should only return a :class:`str` or :class:`bytes` object, with "
 "the preference being for :class:`str`."
 msgstr ""
+"Η μέθοδος θα πρέπει να επιστρέφει μόνο ένα :class:`str` ή :class:`bytes` αντικείμενο, με την προτίμηση να είναι για το :class:`str`."
 
 #: library/os.rst:335
 msgid ""
@@ -567,6 +593,10 @@ msgid ""
 "also captured on import, and the function may not reflect future environment "
 "changes."
 msgstr ""
+"Επιστρέφει την τιμή της μεταβλητής περιβάλλοντος *key* ως συμβολοσειρά αν υπάρχει, "
+"ή *default* αν δεν υπάρχει. Το *key* είναι μια συμβολοσειρά. Σημειώστε ότι επειδή το :func:`getenv` "
+"χρησιμοποιεί το :data:`os.environ`, η αντιστοίχιση του :func:`getenv` είναι παρόμοια "
+"επίσης καταγεγραμμένη κατά την εισαγωγή, και η συνάρτηση μπορεί να μην αντικατοπτρίζει μελλοντικές αλλαγές περιβάλλοντος."
 
 #: library/os.rst:341
 msgid ""
@@ -574,6 +604,9 @@ msgid ""
 "and ``'surrogateescape'`` error handler. Use :func:`os.getenvb` if you would "
 "like to use a different encoding."
 msgstr ""
+"Στο Unix, τα κλειδιά και οι τιμές αποκωδικοποιούνται με το :func:`sys.getfilesystemencoding` "
+"και τον χειριστή σφαλμάτων ``'surrogateescape'``. Χρησιμοποιήστε το :func:`os.getenvb` αν θέλετε "
+"να χρησιμοποιήσετε μια διαφορετική κωδικοποίηση."
 
 #: library/os.rst:350
 msgid ""
@@ -583,12 +616,17 @@ msgid ""
 "similarly also captured on import, and the function may not reflect future "
 "environment changes."
 msgstr ""
+"Επιστρέφει την τιμή της μεταβλητής περιβάλλοντος *key* ως bytes αν αυτό υπάρχει, ή "
+"*default* αν δεν υπάρχει. Το *key* πρέπει να είναι σε bytes. Σημειώστε ότι επειδή το :func:`getenvb` "
+"χρησιμοποιεί το :data:`os.environb`, η αντιστοίχιση του :func:`getenvb` είναι παρόμοια "
+"επίσης καταγεγραμμένη κατά την εισαγωγή, και η συνάρτηση μπορεί να μην αντικατοπτρίζει μελλοντικές αλλαγές περιβάλλοντος."
 
 #: library/os.rst:357
 msgid ""
 ":func:`getenvb` is only available if :const:`supports_bytes_environ` is "
 "``True``."
 msgstr ""
+":func:`getenvb` είναι διαθέσιμο μόνο αν το :const:`supports_bytes_environ` είναι ``True``."
 
 #: library/os.rst:367
 msgid ""
@@ -597,26 +635,33 @@ msgid ""
 "specified, should be an environment variable dictionary to lookup the PATH "
 "in. By default, when *env* is ``None``, :data:`environ` is used."
 msgstr ""
+"Επιστρέφει μια λίστα από καταλόγους όπου θα αναζητηθεί ένα ονομασμένο "
+"εκτελέσιμο, παρόμοια με ένα κέλυφος (shell), κατά την εκκίνηση μιας διεργασίας. Το *env*, όταν "
+"καθορίζεται, θα πρέπει να είναι ένα λεξικό μεταβλητών περιβάλλοντος για την αναζήτηση του PATH. "
+"Από προεπιλογή, όταν το *env* είναι ``None``, χρησιμοποιείται το :data:`environ`."
 
 #: library/os.rst:378
 msgid ""
 "Return the effective group id of the current process.  This corresponds to "
 "the \"set id\" bit on the file being executed in the current process."
 msgstr ""
+"Επιστρέφει το αποτελεσματικό αναγνωριστικό ομάδας (group id) της τρέχουσας διεργασίας. "
+"Αυτό αντιστοιχεί στο bit \"set id\" στο αρχείο που εκτελείται στη τρέχουσα διεργασία."
 
 #: library/os.rst:388
 msgid "Return the current process's effective user id."
-msgstr ""
+msgstr "Επιστρέφει την αποτελεσματική ταυτότητα χρήστη (user id) της τρέχουσας διεργασίας."
 
 #: library/os.rst:397
 msgid "Return the real group id of the current process."
-msgstr ""
+msgstr "Επιστρέφει το πραγματικό αναγνωριστικό ομάδας (group id) της τρέχουσας διεργασίας."
 
 #: library/os.rst:474 library/os.rst:783
 msgid ""
 "The function is a stub on WASI, see :ref:`wasm-availability` for more "
 "information."
 msgstr ""
+"Η συνάρτηση είναι ένα stub στο WASI, δείτε το :ref:`wasm-availability` για περισσότερες πληροφορίες."
 
 #: library/os.rst:407
 msgid ""
@@ -625,11 +670,15 @@ msgid ""
 "from the password record for *user*, because that group ID will otherwise be "
 "potentially omitted."
 msgstr ""
+"Επιστρέφει μια λίστα από αναγνωριστικά ομάδων (group ids) στα οποία ανήκει ο *user*. "
+"Αν το *group* δεν είναι στη λίστα, συμπεριλαμβάνεται∙ συνήθως, το *group* καθορίζεται ως το πεδίο αναγνωριστικού ομάδας από την εγγραφή κωδικού πρόσβασης για τον *user*, "
+"επειδή αυτό το αναγνωριστικό ομάδας ενδέχεται να παραληφθεί."
 
 #: library/os.rst:419
 msgid ""
 "Return list of supplemental group ids associated with the current process."
 msgstr ""
+"Επιστρέφει μια λίστα από συμπληρωματικά αναγνωριστικά ομάδων (group ids) που σχετίζονται με την τρέχουσα διεργασία."
 
 #: library/os.rst:425
 msgid ""
@@ -647,6 +696,17 @@ msgid ""
 "`MACOSX_DEPLOYMENT_TARGET`, can be obtained with :func:`sysconfig."
 "get_config_var`."
 msgstr ""
+"Στο macOS, η συμπεριφορά της :func:`getgroups` διαφέρει κάπως από άλλες πλατφόρμες Unix. "
+"Αν ο διερμηνέας Python κατασκευάστηκε με έναν στόχο ανάπτυξης (deployment target) του ``10.5`` ή νωρίτερα, "
+"η :func:`getgroups` επιστρέφει τη λίστα από αποτελεσματικά αναγνωριστικά ομάδων "
+"(group ids) που σχετίζονται με την τρέχουσα διεργασία χρήστη∙ "
+"αυτή η λίστα περιορίζεται σε έναν συστημικά ορισμένο αριθμό καταχωρήσεων, "
+"συνήθως 16, και μπορεί να τροποποιηθεί με κλήσεις στη :func:`setgroups` αν υπάρχει κατάλληλη προνόμια. "
+"Αν κατασκευάστηκε με έναν στόχο ανάπτυξης μεγαλύτερο από το ``10.5``, "
+"η :func:`getgroups` επιστρέφει την τρέχουσα λίστα πρόσβασης ομάδας για τον χρήστη "
+"που σχετίζεται με το αποτελεσματικό αναγνωριστικό χρήστη (user id) της διεργασίας∙ "
+"η λίστα πρόσβασης ομάδας μπορεί να αλλάξει κατά τη διάρκεια ζωής της διεργασίας, δεν επηρεάζεται από κλήσεις στη :func:`setgroups`, και το μήκος της δεν περιορίζεται σε 16. "
+"Η τιμή του στόχου ανάπτυξης, :const:`MACOSX_DEPLOYMENT_TARGET`, μπορεί να ληφθεί με τη :func:`sysconfig.get_config_var`."
 
 #: library/os.rst:442
 msgid ""
@@ -656,20 +716,30 @@ msgid ""
 "or :envvar:`USERNAME` to find out who the user is, and falls back to ``pwd."
 "getpwuid(os.getuid())[0]`` to get the login name of the current real user id."
 msgstr ""
+"Επιστρέφει το όνομα του χρήστη που είναι συνδεδεμένος στο τερματικό "
+"ελέγχου της διεργασίας. Για τους περισσότερους σκοπούς, είναι πιο "
+"χρήσιμο να χρησιμοποιήσετε τη :func:`getpass.getuser` "
+"καθώς αυτή ελέγχει τις μεταβλητές περιβάλλοντος :envvar:`LOGNAME` "
+"ή :envvar:`USERNAME` για να μάθει ποιος είναι ο χρήστης, "
+"και επιστρέφει στην ``pwd.getpwuid(os.getuid())[0]`` για "
+"να πάρει το όνομα σύνδεσης του τρέχοντος πραγματικού αναγνωριστικού χρήστη (real user id)."
 
 #: library/os.rst:454
 msgid ""
 "Return the process group id of the process with process id *pid*. If *pid* "
 "is 0, the process group id of the current process is returned."
 msgstr ""
+"Επιστρέφει το αναγνωριστικό ομάδας διεργασίας της διεργασίας με αναγνωριστικό διεργασίας *pid*. "
+"Αν το *pid* είναι 0, επιστρέφεται το αναγνωριστικό ομάδας διεργασίας της τρέχουσας διεργασίας."
 
 #: library/os.rst:463
 msgid "Return the id of the current process group."
 msgstr ""
+"Επιστρέφει το αναγνωριστικό της τρέχουσας ομάδας διεργασίας."
 
 #: library/os.rst:472
 msgid "Return the current process id."
-msgstr ""
+msgstr "Επιστρέφει το τρέχον αναγνωριστικό διεργασίας."
 
 #: library/os.rst:481
 msgid ""
@@ -677,10 +747,13 @@ msgid ""
 "the id returned is the one of the init process (1), on Windows it is still "
 "the same id, which may be already reused by another process."
 msgstr ""
+"Επιστρέφει το αναγνωριστικό διεργασίας της γονικής διεργασίας. Όταν η γονική διεργασία τερματιστεί, στο "
+"Unix το αναγνωριστικό που επιστρέφεται είναι αυτό της διεργασίας init (1), στα Windows εξακολουθεί να είναι το "
+"ίδιο αναγνωριστικό, το οποίο ενδέχεται να έχει ήδη επαναχρησιμοποιηθεί από άλλη διεργασία."
 
 #: library/os.rst:487
 msgid "Added support for Windows."
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη για Windows."
 
 #: library/os.rst:495
 msgid ""
@@ -692,27 +765,38 @@ msgid ""
 "the calling process, the process group of the calling process, or the real "
 "user ID of the calling process."
 msgstr ""
+"Λαμβάνει την προτεραιότητα προγραμματισμού του προγράμματος. Η τιμή *which* είναι μία "
+"από τις :const:`PRIO_PROCESS`, :const:`PRIO_PGRP`, ή :const:`PRIO_USER`, και το *who* "
+"ερμηνεύεται σε σχέση με το *which* (ένα αναγνωριστικό διεργασίας για το :const:`PRIO_PROCESS`, "
+"αναγνωριστικό ομάδας διεργασίας για το :const:`PRIO_PGRP`, και ένα αναγνωριστικό χρήστη "
+"για το :const:`PRIO_USER`). Μια μηδενική τιμή για το *who* δηλώνει (αντίστοιχα) την καλούσα "
+"διεργασία, την ομάδα διεργασίας της καλούσας διεργασίας, ή το πραγματικό αναγνωριστικό χρήστη της καλούσας διεργασίας."
 
 #: library/os.rst:524
 msgid ""
 "Parameters for the :func:`getpriority` and :func:`setpriority` functions."
 msgstr ""
+"Παράμετροι για τις συναρτήσεις :func:`getpriority` και :func:`setpriority`."
 
 #: library/os.rst:532
 msgid ""
 "Return a tuple (ruid, euid, suid) denoting the current process's real, "
 "effective, and saved user ids."
 msgstr ""
+"Επιστρέφει μια πλειάδα (tuple) (ruid, euid, suid) που δηλώνει τα πραγματικά, "
+"αποτελεσματικά και αποθηκευμένα αναγνωριστικά χρήστη (user ids) της τρέχουσας διεργασίας."
 
 #: library/os.rst:542
 msgid ""
 "Return a tuple (rgid, egid, sgid) denoting the current process's real, "
 "effective, and saved group ids."
 msgstr ""
+"Επιστρέφει μια πλειάδα (tuple) (rgid, egid, sgid) "
+"που δηλώνει τα πραγματικά, αποτελεσματικά και αποθηκευμένα αναγνωριστικά ομάδας (group ids) της τρέχουσας διεργασίας."
 
 #: library/os.rst:554
 msgid "Return the current process's real user id."
-msgstr ""
+msgstr "Επιστρέφει το πραγματικό αναγνωριστικό χρήστη (user id) της τρέχουσας διεργασίας."
 
 #: library/os.rst:564
 msgid ""
@@ -720,6 +804,9 @@ msgid ""
 "all of the groups of which the specified username is a member, plus the "
 "specified group id."
 msgstr ""
+"Καλεί το σύστημα ``initgroups()`` για να αρχικοποιήσει τη λίστα πρόσβασης ομάδας με "
+"όλες τις ομάδες στις οποίες ανήκει το καθορισμένο όνομα χρήστη, συν το "
+"καθορισμένο αναγνωριστικό ομάδας."
 
 #: library/os.rst:577
 msgid ""
@@ -727,6 +814,8 @@ msgid ""
 "changes to the environment affect subprocesses started with :func:`os."
 "system`, :func:`popen` or :func:`fork` and :func:`execv`."
 msgstr ""
+"Ορίζει την μεταβλητή περιβάλλοντος με όνομα *key* στην συμβολοσειρά *value*. "
+"Τέτοιες αλλαγές στο περιβάλλον επηρεάζουν τις υποδιεργασίες που ξεκινούν με τις :func:`os.system`, :func:`popen` ή :func:`fork` και :func:`execv`."
 
 #: library/os.rst:581
 msgid ""
@@ -737,38 +826,47 @@ msgid ""
 "`getenvb`, which respectively use :data:`os.environ` and :data:`os.environb` "
 "in their implementations."
 msgstr ""
+"Οι αναθέσεις σε στοιχεία στο :data:`os.environ` μεταφράζονται αυτόματα σε "
+"αντίστοιχες κλήσεις στην :func:`putenv` ∙ ωστόσο, οι κλήσεις στην :func:`putenv` "
+"δεν ενημερώνουν το :data:`os.environ`, οπότε είναι προτιμότερο να ανατίθενται σε "
+"στοιχεία του :data:`os.environ`. Αυτό ισχύει επίσης για τις :func:`getenv` και :func:`getenvb`, οι οποίες χρησιμοποιούν αντίστοιχα τα :data:`os.environ` και :data:`os.environb` "
+"στις υλοποιήσεις τους."
 
 #: library/os.rst:837
 msgid "See also the :func:`os.reload_environ` function."
-msgstr ""
+msgstr "Δείτε επίσης τη συνάρτηση :func:`os.reload_environ`."
 
 #: library/os.rst:591
 msgid ""
 "On some platforms, including FreeBSD and macOS, setting ``environ`` may "
 "cause memory leaks. Refer to the system documentation for :c:func:`!putenv`."
 msgstr ""
+"Σε μερικές πλατφόρμες, συμπεριλαμβανομένου του FreeBSD και macOS, η ρύθμιση του ``environ`` "
+"μπορεί να προκαλέσει διαρροές μνήμης. Ανατρέξτε στην τεκμηρίωση του συστήματος για το :c:func:`!putenv`."
 
 #: library/os.rst:594
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.putenv`` with arguments "
 "``key``, ``value``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.putenv``με ορίσματα "
+"``key``, ``value``."
 
 #: library/os.rst:596
 msgid "The function is now always available."
-msgstr ""
+msgstr "Η συνάρτηση είναι τώρα πάντα διαθέσιμη."
 
 #: library/os.rst:602
 msgid "Set the current process's effective group id."
-msgstr ""
+msgstr "Ορίζει το αποτελεσματικό αναγνωριστικό ομάδας (group id) της τρέχουσας διεργασίας."
 
 #: library/os.rst:609
 msgid "Set the current process's effective user id."
-msgstr ""
+msgstr "Ορίζει το αποτελεσματικό αναγνωριστικό χρήστη (user id) της τρέχουσας διεργασίας."
 
 #: library/os.rst:616
 msgid "Set the current process' group id."
-msgstr ""
+msgstr "Ορίζει το αναγνωριστικό ομάδας (group id) της τρέχουσας διεργασίας."
 
 #: library/os.rst:623
 msgid ""
@@ -777,6 +875,9 @@ msgid ""
 "integer identifying a group. This operation is typically available only to "
 "the superuser."
 msgstr ""
+"Ορίζει τη λίστα από συμπληρωματικά αναγνωριστικά ομάδων (group ids) που σχετίζονται με την τρέχουσα διεργασία στο *groups*. "
+"Το *groups* πρέπει να είναι μια ακολουθία, και κάθε στοιχείο πρέπει να είναι ένας ακέραιος που αναγνωρίζει μια ομάδα. "
+"Αυτή η λειτουργία είναι συνήθως διαθέσιμη μόνο στον υπερχρήστη."
 
 #: library/os.rst:629
 msgid ""
@@ -785,12 +886,15 @@ msgid ""
 "`getgroups` for cases where it may not return the same group list set by "
 "calling setgroups()."
 msgstr ""
+"Στο macOS, το μήκος του *groups* δεν μπορεί να υπερβαίνει τον συστημικά ορισμένο μέγιστο αριθμό αποτελεσματικών αναγνωριστικών ομάδων, συνήθως 16. "
+"Δείτε την τεκμηρίωση για τη :func:`getgroups` για περιπτώσεις όπου μπορεί να μην επιστρέφει την ίδια λίστα ομάδων που ορίζεται με την κλήση της setgroups()."
 
 #: library/os.rst:636
 msgid ""
 "Reassociate the current thread with a Linux namespace. See the :manpage:"
 "`setns(2)` and :manpage:`namespaces(7)` man pages for more details."
 msgstr ""
+"Επανασυνδέει το τρέχον νήμα με ένα namespace του Linux. Δείτε τις σελίδες χειροκίνητης :manpage:`setns(2)` και :manpage:`namespaces(7)` για περισσότερες λεπτομέρειες."
 
 #: library/os.rst:640
 msgid ""
@@ -800,6 +904,10 @@ msgid ""
 "clone-flags>` to impose constraints on the operation (``0`` means no "
 "constraints)."
 msgstr ""
+"Εάν το *fd* αναφέρεται σε έναν σύνδεσμο :file:`/proc/{pid}/ns/`, το ``setns()`` "
+"επανασυνδέει το καλούν νήμα με το namespace που σχετίζεται με αυτόν τον σύνδεσμο, και "
+"το *nstype* μπορεί να οριστεί σε μία από τις :ref:`CLONE_NEW* "
+"constants <os-unshare-clone-flags>` για να επιβάλει περιορισμούς στη λειτουργία (το ``0`` σημαίνει κανένας περιορισμός)."
 
 #: library/os.rst:647
 msgid ""
@@ -811,18 +919,24 @@ msgid ""
 "flags>`, e.g. ``setns(fd, os.CLONE_NEWUTS | os.CLONE_NEWPID)``. The caller's "
 "memberships in unspecified namespaces are left unchanged."
 msgstr ""
+"Από το Linux 5.8, το *fd* μπορεί να αναφέρεται σε ένα PID file descriptor που αποκτήθηκε από τη :func:`~os.pidfd_open`. "
+"Σε αυτή την περίπτωση, το ``setns()`` επανασυνδέει το καλούν νήμα σε ένα ή περισσότερα από τα ίδια namespaces με το νήμα που αναφέρεται από το *fd*. "
+"Αυτό υπόκειται σε οποιουσδήποτε περιορισμούς επιβάλλονται από το *nstype*, το οποίο είναι μια μάσκα bit που συνδυάζει ένα ή περισσότερα από τις :ref:`CLONE_NEW* constants <os-unshare-clone-flags>`, π.χ. ``setns(fd, os.CLONE_NEWUTS | os.CLONE_NEWPID)``. "
+"Οι συμμετοχές του καλούντος σε μη καθορισμένα namespaces παραμένουν αμετάβλητες."
 
 #: library/os.rst:656
 msgid ""
 "*fd* can be any object with a :meth:`~io.IOBase.fileno` method, or a raw "
 "file descriptor."
 msgstr ""
+"Το *fd* μπορεί να είναι οποιοδήποτε αντικείμενο με μια :meth:`~io.IOBase.fileno` μέθοδο, ή ένα ακατέργαστο file descriptor."
 
 #: library/os.rst:658
 msgid ""
 "This example reassociates the thread with the ``init`` process's network "
 "namespace::"
 msgstr ""
+"Αυτό το παράδειγμα επανασυνδέει το νήμα με το namespace δικτύου της διεργασίας ``init``::"
 
 #: library/os.rst:660
 msgid ""
@@ -830,10 +944,13 @@ msgid ""
 "os.setns(fd, os.CLONE_NEWNET)\n"
 "os.close(fd)"
 msgstr ""
+"fd = os.open(\"/proc/1/ns/net\", os.O_RDONLY)\n"
+"os.setns(fd, os.CLONE_NEWNET)\n"
+"os.close(fd)"
 
 #: library/os.rst:670
 msgid "The :func:`~os.unshare` function."
-msgstr ""
+msgstr "Η συνάρτηση :func:`~os.unshare`."
 
 #: library/os.rst:674
 msgid ""
@@ -841,6 +958,8 @@ msgid ""
 "which version is implemented (if any).  See the Unix manual for the "
 "semantics."
 msgstr ""
+"Καλεί το σύστημα :c:func:`!setpgrp` ή ``setpgrp(0, 0)`` ανάλογα με το ποια έκδοση έχει υλοποιηθεί (αν υπάρχει). "
+"Δείτε το εγχειρίδιο Unix για τη σημασιολογία."
 
 #: library/os.rst:682
 msgid ""
@@ -848,6 +967,8 @@ msgid ""
 "process with id *pid* to the process group with id *pgrp*.  See the Unix "
 "manual for the semantics."
 msgstr ""
+"Καλεί το σύστημα :c:func:`!setpgid` για να ορίσει το αναγνωριστικό ομάδας διεργασίας της διεργασίας με αναγνωριστικό *pid* στην ομάδα διεργασίας με αναγνωριστικό *pgrp*. "
+"Δείτε το εγχειρίδιο Unix για τη σημασιολογία."
 
 #: library/os.rst:693
 msgid ""
@@ -861,38 +982,49 @@ msgid ""
 "19. The default priority is 0; lower priorities cause more favorable "
 "scheduling."
 msgstr ""
+"Ορίζει την προτεραιότητα προγραμματισμού του προγράμματος. Η τιμή *which* είναι μία "
+"από τις :const:`PRIO_PROCESS`, :const:`PRIO_PGRP`, ή :const:`PRIO_USER`, και το *who* "
+"ερμηνεύεται σε σχέση με το *which* (ένα αναγνωριστικό διεργασίας για το :const:`PRIO_PROCESS`, "
+"αναγνωριστικό ομάδας διεργασίας για το :const:`PRIO_PGRP`, και ένα αναγνωριστικό χρήστη "
+"για το :const:`PRIO_USER`). Μια μηδενική τιμή για το *who* δηλώνει (αντίστοιχα) την καλούσα "
+"διεργασία, την ομάδα διεργασίας της καλούσας διεργασίας, ή το πραγματικό αναγνωριστικό χρήστη της καλούσας διεργασίας. "
+"Το *priority* είναι μια τιμή στο εύρος από -20 έως 19. Η προεπιλεγμένη προτεραιότητα είναι 0∙ "
+"χαμηλότερες προτεραιότητες προκαλούν πιο ευνοϊκό προγραμματισμό."
 
 #: library/os.rst:710
 msgid "Set the current process's real and effective group ids."
-msgstr ""
+msgstr "Ορίζει τα πραγματικά και αποτελεσματικά αναγνωριστικά ομάδας (group ids) της τρέχουσας διεργασίας."
 
 #: library/os.rst:717
 msgid "Set the current process's real, effective, and saved group ids."
-msgstr ""
+msgstr "Ορίζει τα πραγματικά, αποτελεσματικά και αποθηκευμένα αναγνωριστικά ομάδας (group ids) της τρέχουσας διεργασίας."
 
 #: library/os.rst:726
 msgid "Set the current process's real, effective, and saved user ids."
-msgstr ""
+msgstr "Ορίζει τα πραγματικά, αποτελεσματικά και αποθηκευμένα αναγνωριστικά χρήστη (user ids) της τρέχουσας διεργασίας."
 
 #: library/os.rst:735
 msgid "Set the current process's real and effective user ids."
-msgstr ""
+msgstr "Ορίζει τα πραγματικά και αποτελεσματικά αναγνωριστικά χρήστη (user ids) της τρέχουσας διεργασίας."
 
 #: library/os.rst:742
 msgid ""
 "Call the system call :c:func:`!getsid`.  See the Unix manual for the "
 "semantics."
 msgstr ""
+"Καλεί το σύστημα :c:func:`!getsid`. Δείτε το εγχειρίδιο Unix για τη σημασιολογία."
 
 #: library/os.rst:749
 msgid ""
 "Call the system call :c:func:`!setsid`.  See the Unix manual for the "
 "semantics."
 msgstr ""
+"Καλεί το σύστημα :c:func:`!setsid`. Δείτε το εγχειρίδιο Unix για τη σημασιολογία."
 
 #: library/os.rst:758
 msgid "Set the current process's user id."
 msgstr ""
+"Ορίζει το αναγνωριστικό χρήστη (user id) της τρέχουσας διεργασίας."
 
 #: library/os.rst:766
 msgid ""
@@ -900,42 +1032,46 @@ msgid ""
 "platforms where :c:func:`!strerror` returns ``NULL`` when given an unknown "
 "error number, :exc:`ValueError` is raised."
 msgstr ""
+"Επιστρέφει το μήνυμα σφάλματος που αντιστοιχεί στον κωδικό σφάλματος στο *code*. "
+"Σε πλατφόρμες όπου το :c:func:`!strerror` επιστρέφει ``NULL`` όταν δίνεται ένας άγνωστος αριθμός σφάλματος, γίνεται raise το :exc:`ValueError`."
 
 #: library/os.rst:773
 msgid ""
 "``True`` if the native OS type of the environment is bytes (eg. ``False`` on "
 "Windows)."
 msgstr ""
+"``True`` αν ο εγγενής τύπος OS του περιβάλλοντος είναι bytes (π.χ. ``False`` στα Windows)."
 
 #: library/os.rst:781
 msgid "Set the current numeric umask and return the previous umask."
-msgstr ""
+msgstr "Ορίζει το τρέχον αριθμητικό umask και επιστρέφει το προηγούμενο umask."
 
 #: library/os.rst:793
 msgid ""
 "Returns information identifying the current operating system. The return "
 "value is an object with five attributes:"
 msgstr ""
+"Επιστρέφει πληροφορίες που ταυτοποιούν το τρέχον λειτουργικό σύστημα. Η τιμή επιστροφής είναι ένα αντικείμενο με πέντε χαρακτηριστικά:"
 
 #: library/os.rst:796
 msgid ":attr:`sysname` - operating system name"
-msgstr ""
+msgstr ":attr:`sysname` - όνομα λειτουργικού συστήματος"
 
 #: library/os.rst:797
 msgid ":attr:`nodename` - name of machine on network (implementation-defined)"
-msgstr ""
+msgstr ":attr:`nodename` - όνομα μηχανής στο δίκτυο (ορισμένο από την υλοποίηση)"
 
 #: library/os.rst:798
 msgid ":attr:`release` - operating system release"
-msgstr ""
+msgstr ":attr:`release` - έκδοση λειτουργικού συστήματος"
 
 #: library/os.rst:799
 msgid ":attr:`version` - operating system version"
-msgstr ""
+msgstr ":attr:`version` - έκδοση λειτουργικού συστήματος"
 
 #: library/os.rst:800
 msgid ":attr:`machine` - hardware identifier"
-msgstr ""
+msgstr ":attr:`machine` - αναγνωριστικό υλικού"
 
 #: library/os.rst:802
 msgid ""
@@ -943,6 +1079,9 @@ msgid ""
 "five-tuple containing :attr:`sysname`, :attr:`nodename`, :attr:`release`, :"
 "attr:`version`, and :attr:`machine` in that order."
 msgstr ""
+"Για λόγους συμβατότητας προς τα πίσω, αυτό το αντικείμενο είναι επίσης iterable, "
+"συμπεριφερόμενο σαν μια πεντάδα (five-tuple) που περιέχει τα :attr:`sysname`, "
+":attr:`nodename`, :attr:`release`, :attr:`version`, και :attr:`machine` με αυτή τη σειρά."
 
 #: library/os.rst:807
 msgid ""
@@ -950,6 +1089,9 @@ msgid ""
 "component; a better way to get the hostname is :func:`socket.gethostname`  "
 "or even ``socket.gethostbyaddr(socket.gethostname())``."
 msgstr ""
+"Ορισμένα συστήματα περικόπτουν το :attr:`nodename` σε 8 χαρακτήρες ή στο "
+"πρώτο συστατικό∙ ένας καλύτερος τρόπος για να λάβετε το όνομα κεντρικού "
+"υπολογιστή είναι η :func:`socket.gethostname` ή ακόμα και η ``socket.gethostbyaddr(socket.gethostname())``."
 
 #: library/os.rst:812
 msgid ""
@@ -958,12 +1100,16 @@ msgid ""
 "uname` can be used to get the user-facing operating system name and version "
 "on iOS and Android."
 msgstr ""
+"Στο macOS, iOS και Android, αυτό επιστρέφει το όνομα και την έκδοση του *kernel* "
+"(δηλαδή, ``'Darwin'`` στο macOS και iOS∙ ``'Linux'`` στο Android). Η :func:`platform.uname` "
+"μπορεί να χρησιμοποιηθεί για να ληφθεί το όνομα και η έκδοση του λειτουργικού συστήματος που βλέπει ο χρήστης στο iOS και Android."
 
 #: library/os.rst:5086
 msgid ""
 "Return type changed from a tuple to a tuple-like object with named "
 "attributes."
 msgstr ""
+"Ο επιστρεφόμενος τύπος άλλαξε από μια πλειάδα σε ένα αντικείμου τύπου πλειάδα με ονομασμένα χαρακτηριστικά."
 
 #: library/os.rst:828
 msgid ""
@@ -971,6 +1117,8 @@ msgid ""
 "environment affect subprocesses started with :func:`os.system`, :func:"
 "`popen` or :func:`fork` and :func:`execv`."
 msgstr ""
+"Αφαιρεί (διαγράφει) τη μεταβλητή περιβάλλοντος με όνομα *key*. "
+"Τέτοιες αλλαγές στο περιβάλλον επηρεάζουν τις υποδιεργασίες που ξεκινούν με τις :func:`os.system`, :func:`popen` ή :func:`fork` και :func:`execv`."
 
 #: library/os.rst:832
 msgid ""
@@ -979,16 +1127,22 @@ msgid ""
 "don't update :data:`os.environ`, so it is actually preferable to delete "
 "items of :data:`os.environ`."
 msgstr ""
+"Η διαγραφή στοιχείων στο :data:`os.environ` μεταφράζεται αυτόματα σε μια "
+"αντίστοιχη κλήση στην :func:`unsetenv` ∙ ωστόσο, οι κλήσεις στην :func:`unsetenv` "
+"δεν ενημερώνουν το :data:`os.environ`, οπότε είναι προτιμότερο να διαγράφονται "
+"στοιχεία του :data:`os.environ`."
 
 #: library/os.rst:839
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.unsetenv`` with argument "
 "``key``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.unsetenv`` με όρισμα "
+"``key``."
 
 #: library/os.rst:841
 msgid "The function is now always available and is also available on Windows."
-msgstr ""
+msgstr "Η συνάρτηση είναι τώρα πάντα διαθέσιμη και είναι επίσης διαθέσιμη στα Windows."
 
 #: library/os.rst:847
 msgid ""
@@ -1000,10 +1154,15 @@ msgid ""
 "and moved to a new namespace. If the *flags* argument is ``0``, no changes "
 "are made to the calling process's execution context."
 msgstr ""
+"Αποσυνδέει μέρη του πλαισίου εκτέλεσης της διεργασίας, και τα μεταφέρει σε ένα "
+"νεοδημιουργημένο namespace. Δείτε τη σελίδα χειροκίνητης :manpage:`unshare(2)` για περισσότερες λεπτομέρειες. "
+"Το όρισμα *flags* είναι μια μάσκα bit, που συνδυάζει μηδέν ή περισσότερες από τις :ref:`CLONE_* constants <os-unshare-clone-flags>`, "
+"που καθορίζει ποια μέρη του πλαισίου εκτέλεσης θα αποσυνδεθούν από τις υπάρχουσες συσχετίσεις τους και θα μεταφερθούν σε ένα νέο namespace. "
+"Αν το όρισμα *flags* είναι ``0``, δεν γίνονται αλλαγές στο πλαίσιο εκτέλεσης της καλούσας διεργασίας."
 
 #: library/os.rst:864
 msgid "The :func:`~os.setns` function."
-msgstr ""
+msgstr "Η συνάρτηση :func:`~os.setns`."
 
 #: library/os.rst:868
 msgid ""
@@ -1011,16 +1170,20 @@ msgid ""
 "See :manpage:`unshare(2)` in the Linux manual for their exact effect and "
 "availability."
 msgstr ""
+"Σημαίες (flags) για τη συνάρτηση :func:`unshare`, αν η υλοποίηση τις υποστηρίζει. "
+"Δείτε τη :manpage:`unshare(2)` στο εγχειρίδιο Linux για την ακριβή τους επίδραση και διαθεσιμότητα."
 
 #: library/os.rst:891
 msgid "File Object Creation"
-msgstr ""
+msgstr "Δημιουργία Αντικειμένων Αρχείων"
 
 #: library/os.rst:893
 msgid ""
 "These functions create new :term:`file objects <file object>`.  (See also :"
 "func:`~os.open` for opening file descriptors.)"
 msgstr ""
+"Αυτές οι συναρτήσεις δημιουργούν νέα :term:`αντικείμενα αρχείων <file object>`. "
+"(Δείτε επίσης τη :func:`~os.open` για το άνοιγμα file descriptors.)"
 
 #: library/os.rst:899
 msgid ""
@@ -1029,15 +1192,19 @@ msgid ""
 "arguments. The only difference is that the first argument of :func:`fdopen` "
 "must always be an integer."
 msgstr ""
+"Επιστρέφει ένα ανοιχτό αντικείμενο αρχείου συνδεδεμένο με το file descriptor *fd*. "
+"Αυτή είναι μια συντόμευση της ενσωματωμένης συνάρτησης :func:`open` και δέχεται τα ίδια ορίσματα. "
+"Η μόνη διαφορά είναι ότι το πρώτο όρισμα της :func:`fdopen` πρέπει πάντα να είναι ένας ακέραιος."
 
 #: library/os.rst:908
 msgid "File Descriptor Operations"
-msgstr ""
+msgstr "Λειτουργίες File Descriptor"
 
 #: library/os.rst:910
 msgid ""
 "These functions operate on I/O streams referenced using file descriptors."
 msgstr ""
+"Αυτές οι συναρτήσεις λειτουργούν σε ροές I/O που αναφέρονται χρησιμοποιώντας file descriptors."
 
 #: library/os.rst:912
 msgid ""
@@ -1048,6 +1215,10 @@ msgid ""
 "\"file descriptor\" is slightly deceptive; on Unix platforms, sockets and "
 "pipes are also referenced by file descriptors."
 msgstr ""
+"Οι file descriptors είναι μικροί ακέραιοι που αντιστοιχούν σε ένα αρχείο που έχει ανοιχτεί από την τρέχουσα διεργασία. "
+"Για παράδειγμα , η τυπική είσοδος είναι συνήθως το file descriptor 0, η τυπική έξοδος είναι το 1, και το τυπικό σφάλμα είναι το 2. "
+"Περαιτέρω αρχεία που ανοίγονται από μια διεργασία θα ανατεθούν τότε στα 3, 4, 5, και ούτω καθεξής. "
+"Το όνομα \"file descriptor\" είναι ελαφρώς παραπλανητικό∙ σε πλατφόρμες Unix, τα sockets και τα pipes αναφέρονται επίσης από file descriptors."
 
 #: library/os.rst:919
 msgid ""
@@ -1056,10 +1227,14 @@ msgid ""
 "using the file descriptor directly will bypass the file object methods, "
 "ignoring aspects such as internal buffering of data."
 msgstr ""
+"Η μέθοδος :meth:`~io.IOBase.fileno` μπορεί να χρησιμοποιηθεί για να "
+"ληφθεί το file descriptor που σχετίζεται με ένα :term:`αντικείμενο αρχείου` όταν απαιτείται. "
+"Σημειώστε ότι η χρήση του file descriptor απευθείας θα παρακάμψει τις μεθόδους "
+"του αντικειμένου αρχείου, αγνοώντας πτυχές όπως η εσωτερική προσωρινή αποθήκευση (buffering) των δεδομένων."
 
 #: library/os.rst:927
 msgid "Close file descriptor *fd*."
-msgstr ""
+msgstr "Κλείνει το file descriptor *fd*."
 
 #: library/os.rst:931
 msgid ""
@@ -1068,12 +1243,19 @@ msgid ""
 "\"file object\" returned by the built-in function :func:`open` or by :func:"
 "`popen` or :func:`fdopen`, use its :meth:`~io.IOBase.close` method."
 msgstr ""
+"Αυτή η συνάρτηση προορίζεται για χαμηλού επιπέδου I/O και πρέπει να "
+"εφαρμόζεται σε ένα file descriptor όπως επιστρέφεται από τη :func:`os.open` ή τη :func:`pipe`. "
+"Για να κλείσετε ένα \"αντικείμενο αρχείου\" που επιστρέφεται "
+"από την ενσωματωμένη συνάρτηση :func:`open` ή από "
+"τη :func:`popen` ή :func:`fdopen`, χρησιμοποιήστε τη μέθοδό του :meth:`~io.IOBase.close`."
 
 #: library/os.rst:939
 msgid ""
 "Close all file descriptors from *fd_low* (inclusive) to *fd_high* "
 "(exclusive), ignoring errors. Equivalent to (but much faster than)::"
 msgstr ""
+"Κλείνει όλα τα file descriptors από το *fd_low* (συμπεριλαμβανομένου) έως το *fd_high* "
+"(μη συμπεριλαμβανομένου), αγνοώντας τα σφάλματα. Ισοδύναμο με (αλλά πολύ πιο γρήγορο από)::"
 
 #: library/os.rst:942
 msgid ""
@@ -1083,6 +1265,11 @@ msgid ""
 "    except OSError:\n"
 "        pass"
 msgstr ""
+"for fd in range(fd_low, fd_high):\n"
+"    try:\n"
+"        os.close(fd)\n"
+"    except OSError:\n"
+"        pass"
 
 #: library/os.rst:951
 msgid ""
@@ -1091,6 +1278,10 @@ msgid ""
 "If *offset_src* is ``None``, then *src* is read from the current position; "
 "respectively for *offset_dst*."
 msgstr ""
+"Αντιγράφει *count* bytes από το file descriptor *src*, ξεκινώντας από την "
+"θέση *offset_src*, στο file descriptor *dst*, ξεκινώντας από τη θέση *offset_dst*. "
+"Αν το *offset_src* είναι ``None``, τότε το *src* διαβάζεται από την τρέχουσα θέση∙ "
+"αντίστοιχα για το *offset_dst*."
 
 #: library/os.rst:956
 msgid ""
@@ -1098,6 +1289,10 @@ msgid ""
 "reside in the same filesystem, otherwise an :exc:`OSError` is raised with :"
 "attr:`~OSError.errno` set to :const:`errno.EXDEV`."
 msgstr ""
+"Στους πυρήνες Linux παλαιότερους από την έκδοση 5.3, τα αρχεία στα οποία "
+"δείχνουν τα *src* και *dst* πρέπει να βρίσκονται στο ίδιο σύστημα αρχείων, "
+"διαφορετικά γίνεται raise ένα :exc:`OSError` με το :attr:`~OSError.errno` "
+"ορισμένο στο :const:`errno.EXDEV`."
 
 #: library/os.rst:960
 msgid ""
@@ -1108,18 +1303,26 @@ msgid ""
 "blocks; supported file systems include btrfs and XFS) and server-side copy "
 "(in the case of NFS)."
 msgstr ""
+"Αυτή η αντιγραφή γίνεται χωρίς το επιπλέον κόστος της μεταφοράς δεδομένων από "
+"τον πυρήνα στο χώρο χρήστη και μετά πίσω στον πυρήνα. Επιπλέον, ορισμένα "
+"συστήματα αρχείων θα μπορούσαν να υλοποιήσουν επιπλέον βελτιστοποιήσεις, όπως η χρήση reflinks "
+"(δηλαδή, δύο ή περισσότερα inodes που μοιράζονται δείκτες προς τα ίδια μπλοκ δίσκου copy-on-write∙ "
+"τα υποστηριζόμενα συστήματα αρχείων περιλαμβάνουν τα btrfs και XFS) και η αντιγραφή από την πλευρά του διακομιστή "
+"(στην περίπτωση του NFS)."
 
 #: library/os.rst:967
 msgid ""
 "The function copies bytes between two file descriptors. Text options, like "
 "the encoding and the line ending, are ignored."
 msgstr ""
+"Η συνάρτηση αντιγράφει bytes μεταξύ δύο file descriptors. Οι επιλογές κειμένου, όπως η κωδικοποίηση και το τέλος γραμμής, αγνοούνται."
 
 #: library/os.rst:970
 msgid ""
 "The return value is the amount of bytes copied. This could be less than the "
 "amount requested."
 msgstr ""
+"Η τιμή επιστροφής είναι η ποσότητα των αντιγραμμένων bytes. Αυτό θα μπορούσε να είναι λιγότερο από την ζητούμενη ποσότητα."
 
 #: library/os.rst:975
 msgid ""
@@ -1128,38 +1331,48 @@ msgid ""
 "always copy no bytes and return 0 as if the file was empty because of a "
 "known Linux kernel issue."
 msgstr ""
+"Στο Linux, η :func:`os.copy_file_range` δεν πρέπει να χρησιμοποιείται για την αντιγραφή "
+"ενός εύρους ενός ψευδο-αρχείου από ένα ειδικό σύστημα αρχείων όπως το procfs και sysfs. "
+"Πάντα θα αντιγράφει 0 bytes και θα επιστρέφει 0 σαν να ήταν το αρχείο κενό λόγω ενός γνωστού προβλήματος του πυρήνα Linux."
 
 #: library/os.rst:987
 msgid ""
 "Return a string describing the encoding of the device associated with *fd* "
 "if it is connected to a terminal; else return :const:`None`."
 msgstr ""
+"Επιστρέφει μια συμβολοσειρά που περιγράφει την κωδικοποίηση της συσκευής που σχετίζεται με το *fd* "
+"αν είναι συνδεδεμένο σε ένα τερματικό∙ αλλιώς επιστρέφει :const:`None`."
 
 #: library/os.rst:990
 msgid ""
 "On Unix, if the :ref:`Python UTF-8 Mode <utf8-mode>` is enabled, return "
 "``'UTF-8'`` rather than the device encoding."
 msgstr ""
+"Στο Unix, αν η :ref:`Python UTF-8 Mode <utf8-mode>` είναι ενεργοποιημένη, επιστρέφει "
+"``'UTF-8'`` αντί για την κωδικοποίηση της συσκευής."
 
 #: library/os.rst:993
 msgid "On Unix, the function now implements the Python UTF-8 Mode."
-msgstr ""
+msgstr "Στο Unix, η συνάρτηση υλοποιεί τώρα τη λειτουργία Python UTF-8 Mode."
 
 #: library/os.rst:999
 msgid ""
 "Return a duplicate of file descriptor *fd*. The new file descriptor is :ref:"
 "`non-inheritable <fd_inheritance>`."
 msgstr ""
+"Επιστρέφει ένα αντίγραφο του file descriptor *fd*. Το νέο file descriptor είναι :ref:`μη-κληρονομήσιμο <fd_inheritance>`."
 
 #: library/os.rst:1002
 msgid ""
 "On Windows, when duplicating a standard stream (0: stdin, 1: stdout, 2: "
 "stderr), the new file descriptor is :ref:`inheritable <fd_inheritance>`."
 msgstr ""
+"Στα Windows, κατά την αντιγραφή μιας τυπικής ροής (0: stdin, 1: stdout, 2: stderr), "
+"το νέο file descriptor είναι :ref:`κληρονομήσιμο <fd_inheritance>`."
 
 #: library/os.rst:1293
 msgid "The new file descriptor is now non-inheritable."
-msgstr ""
+msgstr "Το νέο file descriptor είναι τώρα μη-κληρονομήσιμο."
 
 #: library/os.rst:1014
 msgid ""
@@ -1168,14 +1381,16 @@ msgid ""
 "<fd_inheritance>` by default or non-inheritable if *inheritable* is "
 "``False``."
 msgstr ""
+"Αντιγράφει το file descriptor *fd* στο *fd2*, κλείνοντας πρώτα το τελευταίο αν είναι απαραίτητο. Επιστρέφει το *fd2*. "
+"Το νέο file descriptor είναι :ref:`κληρονομήσιμο <fd_inheritance>` από προεπιλογή ή μη-κληρονομήσιμο αν το *inheritable* είναι ``False``."
 
 #: library/os.rst:1021
 msgid "Add the optional *inheritable* parameter."
-msgstr ""
+msgstr "Προσθέτει τη προαιρετική παράμετρο *inheritable*."
 
 #: library/os.rst:1024
 msgid "Return *fd2* on success. Previously, ``None`` was always returned."
-msgstr ""
+msgstr "Επιστρέφει το *fd2* σε περίπτωση επιτυχίας. Πριν, πάντα επιστρεφόταν το ``None``."
 
 #: library/os.rst:1030
 msgid ""
@@ -1183,12 +1398,17 @@ msgid ""
 "docs for :func:`chmod` for possible values of *mode*.  As of Python 3.3, "
 "this is equivalent to ``os.chmod(fd, mode)``."
 msgstr ""
+"Αλλάζει τη λειτουργία (mode) του αρχείου που δίνεται από το *fd* στον αριθμητικό *mode*. "
+"Δείτε τα έγγραφα για τη :func:`chmod` για τις πιθανές τιμές του *mode*. "
+"Από την έκδοση Python 3.3, αυτό είναι ισοδύναμο με το ``os.chmod(fd, mode)``."
 
 #: library/os.rst:2209 library/os.rst:2310
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.chmod`` with arguments "
 "``path``, ``mode``, ``dir_fd``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.chmod`` με ορίσματα "
+"``path``, ``mode``, ``dir_fd``."
 
 #: library/os.rst:1056 library/os.rst:1759 library/os.rst:2239
 #: library/os.rst:3535
@@ -1196,10 +1416,11 @@ msgid ""
 "The function is limited on WASI, see :ref:`wasm-availability` for more "
 "information."
 msgstr ""
+"Η συνάρτηση είναι περιορισμένη στο WASI, δείτε το :ref:`wasm-availability` για περισσότερες πληροφορίες."
 
 #: library/os.rst:2317
 msgid "Added support on Windows."
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη στα Windows."
 
 #: library/os.rst:1047
 msgid ""
@@ -1207,22 +1428,28 @@ msgid ""
 "and *gid*.  To leave one of the ids unchanged, set it to -1.  See :func:"
 "`chown`.  As of Python 3.3, this is equivalent to ``os.chown(fd, uid, gid)``."
 msgstr ""
+"Αλλάζει τον ιδιοκτήτη (owner) και το αναγνωριστικό ομάδας (group id) του αρχείου που δίνεται από το *fd* στον αριθμητικό *uid* και *gid*. "
+"Για να αφήσετε ένα από τα αναγνωριστικά αμετάβλητο, ορίστε το σε -1. Δείτε τη :func:`chown`. "
+"Από την έκδοση Python 3.3, αυτό είναι ισοδύναμο με το ``os.chown(fd, uid, gid)``."
 
 #: library/os.rst:2235 library/os.rst:2326
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.chown`` with arguments "
-"``path``, ``uid``, ``gid``, ``dir_fd``."
+"``path``
+=, ``uid``, ``gid``, ``dir_fd``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.chown`` με ορίσματα ``path``, ``uid``, ``gid``, ``dir_fd``."
 
 #: library/os.rst:1062
 msgid ""
 "Force write of file with filedescriptor *fd* to disk. Does not force update "
 "of metadata."
 msgstr ""
+"Αναγκάζει την εγγραφή του αρχείου με το filedescriptor *fd* στο δίσκο. Δεν αναγκάζει την ενημέρωση των μεταδεδομένων."
 
 #: library/os.rst:1068
 msgid "This function is not available on MacOS."
-msgstr ""
+msgstr "Αυτή η συνάρτηση δεν είναι διαθέσιμη στο MacOS."
 
 #: library/os.rst:1073
 msgid ""
@@ -1234,6 +1461,12 @@ msgid ""
 "given in the ``pathconf_names`` dictionary.  For configuration variables not "
 "included in that mapping, passing an integer for *name* is also accepted."
 msgstr ""
+"Επιστρέφει πληροφορίες συστήματος σχετικές με ένα ανοιχτό αρχείο. Το *name* "
+"καθορίζει την τιμή διαμόρφωσης που θα ανακτηθεί∙ μπορεί να είναι μια συμβολοσειρά που είναι το όνομα μιας ορισμένης τιμής συστήματος∙ "
+"αυτά τα ονόματα καθορίζονται σε έναν αριθμό προτύπων (POSIX.1, Unix 95, Unix 98, και άλλα). "
+"Ορισμένες πλατφόρμες ορίζουν επιπλέον ονόματα επίσης. "
+"Τα ονόματα που είναι γνωστά στο λειτουργικό σύστημα του υπολογιστή δίνονται στο λεξικό ``pathconf_names``. "
+"Για μεταβλητές διαμόρφωσης που δεν περιλαμβάνονται σε αυτόν τον χάρτη, γίνεται επίσης αποδεκτό το πέρασμα ενός ακέραιου για το *name*."
 
 #: library/os.rst:2646
 msgid ""
@@ -1242,24 +1475,28 @@ msgid ""
 "included in ``pathconf_names``, an :exc:`OSError` is raised with :const:"
 "`errno.EINVAL` for the error number."
 msgstr ""
+"Εάν το *name* είναι μια συμβολοσειρά και δεν είναι γνωστό, γίνεται raise το :exc:`ValueError`. "
+"Εάν μια συγκεκριμένη τιμή για το *name* δεν υποστηρίζεται από το σύστημα του υπολογιστή, ακόμα "
+"και αν περιλαμβάνεται στο ``pathconf_names``, γίνεται raise το :exc:`OSError` με το :const:`errno.EINVAL` για τον αριθμό σφάλματος."
 
 #: library/os.rst:1086
 msgid "As of Python 3.3, this is equivalent to ``os.pathconf(fd, name)``."
-msgstr ""
+msgstr "Από την έκδοση Python 3.3, αυτό είναι ισοδύναμο με το ``os.pathconf(fd, name)``."
 
 #: library/os.rst:1093
 msgid ""
 "Get the status of the file descriptor *fd*. Return a :class:`stat_result` "
 "object."
 msgstr ""
+"Λαμβάνει την κατάσταση (status) του file descriptor *fd*. Επιστρέφει ένα αντικείμενο :class:`stat_result`."
 
 #: library/os.rst:1096
 msgid "As of Python 3.3, this is equivalent to ``os.stat(fd)``."
-msgstr ""
+msgstr "Από την έκδοση Python 3.3, αυτό είναι ισοδύναμο με το ``os.stat(fd)``."
 
 #: library/os.rst:2474
 msgid "The :func:`.stat` function."
-msgstr ""
+msgstr "Η συνάρτηση :func:`.stat`."
 
 #: library/os.rst:1105
 msgid ""
@@ -1267,6 +1504,9 @@ msgid ""
 "file descriptor *fd*, like :func:`statvfs`.  As of Python 3.3, this is "
 "equivalent to ``os.statvfs(fd)``."
 msgstr ""
+"Επιστρέφει πληροφορίες σχετικά με το σύστημα αρχείων που περιέχει το αρχείο "
+"που σχετίζεται με το file descriptor *fd*, όπως η :func:`statvfs`. "
+"Από την έκδοση Python 3.3, αυτό είναι ισοδύναμο με το ``os.statvfs(fd)``."
 
 #: library/os.rst:1114
 msgid ""
@@ -1274,6 +1514,8 @@ msgid ""
 "the native :c:func:`!fsync` function; on Windows, the MS :c:func:`!_commit` "
 "function."
 msgstr ""
+"Αναγκάζει την εγγραφή του αρχείου με το filedescriptor *fd* στο δίσκο. "
+"Στο Unix, αυτό καλεί τη γηγενή :c:func:`!fsync` συνάρτηση∙ στα Windows, τη συνάρτηση MS :c:func:`!_commit`."
 
 #: library/os.rst:1117
 msgid ""
@@ -1281,6 +1523,9 @@ msgid ""
 "``f.flush()``, and then do ``os.fsync(f.fileno())``, to ensure that all "
 "internal buffers associated with *f* are written to disk."
 msgstr ""
+"Αν ξεκινάτε με ένα προσωρινά αποθηκευμένο (buffered) Python :term:`αντικείμενο αρχείου` *f*, "
+"πρώτα κάντε ``f.flush()``, και μετά κάντε ``os.fsync(f.fileno())``, για να διασφαλίσετε "
+"ότι όλοι οι εσωτερικοί buffers που σχετίζονται με το *f* έχουν εγγραφεί στο δίσκο."
 
 #: library/os.rst:1126
 msgid ""
@@ -1288,34 +1533,41 @@ msgid ""
 "most *length* bytes in size.  As of Python 3.3, this is equivalent to ``os."
 "truncate(fd, length)``."
 msgstr ""
+"Περικόπτει (truncates) το αρχείο που αντιστοιχεί στο file descriptor *fd*, "
+"ώστε να έχει μέγεθος το πολύ *length* bytes. Από την έκδοση Python 3.3, αυτό είναι "
+"ισοδύναμο με το ``os.truncate(fd, length)``."
 
 #: library/os.rst:1130
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.truncate`` with arguments "
 "``fd``, ``length``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.truncate`` με ορίσματα "
+"``fd``, ``length``."
 
 #: library/os.rst:3574
 msgid "Added support for Windows"
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη για τα Windows"
 
 #: library/os.rst:1140
 msgid ""
 "Get the blocking mode of the file descriptor: ``False`` if the :data:"
 "`O_NONBLOCK` flag is set, ``True`` if the flag is cleared."
 msgstr ""
+"Λαμβάνει τη λειτουργία αποκλεισμού (blocking mode) του file descriptor: ``False`` "
+"αν το flag :data:`O_NONBLOCK` είναι ορισμένο, ``True`` αν το flag είναι καθαρισμένο."
 
 #: library/os.rst:1143
 msgid "See also :func:`set_blocking` and :meth:`socket.socket.setblocking`."
-msgstr ""
+msgstr "Δείτε επίσης τη :func:`set_blocking` και τη :meth:`socket.socket.setblocking`."
 
 #: library/os.rst:1762
 msgid "On Windows, this function is limited to pipes."
-msgstr ""
+msgstr "Στα Windows, αυτή η συνάρτηση είναι περιορισμένη σε pipes."
 
 #: library/os.rst:1766
 msgid "Added support for pipes on Windows."
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη για pipes στα Windows."
 
 #: library/os.rst:1160
 msgid ""
@@ -1323,16 +1575,20 @@ msgid ""
 "pseudo-terminal device to which the file descriptor *fd* refers. The file "
 "descriptor *fd* is not closed upon failure."
 msgstr ""
+"Παρέχει πρόσβαση στη συσκευή slave pseudo-terminal που "
+"σχετίζεται με τη συσκευή master pseudo-terminal στην οποία αναφέρεται το file descriptor *fd*. "
+"Το file descriptor *fd* δεν κλείνει σε περίπτωση αποτυχίας."
 
 #: library/os.rst:1164
 msgid "Calls the C standard library function :c:func:`grantpt`."
-msgstr ""
+msgstr "Καλεί τη συνάρτηση της C standard library :c:func:`grantpt`."
 
 #: library/os.rst:1173
 msgid ""
 "Return ``True`` if the file descriptor *fd* is open and connected to a tty(-"
 "like) device, else ``False``."
 msgstr ""
+"Επιστρέφει ``True`` αν το file descriptor *fd* είναι ανοιχτό και συνδεδεμένο σε μια συσκευή tty(-like), αλλιώς ``False``."
 
 #: library/os.rst:1179
 msgid ""
@@ -1341,16 +1597,22 @@ msgid ""
 "`F_LOCK`, :data:`F_TLOCK`, :data:`F_ULOCK` or :data:`F_TEST`. *len* "
 "specifies the section of the file to lock."
 msgstr ""
+"Εφαρμόζει, ελέγχει ή αφαιρεί έναν κλείδωμα POSIX σε ένα ανοιχτό file descriptor. "
+"Το *fd* είναι ένα ανοιχτό file descriptor. Το *cmd* καθορίζει την εντολή που θα χρησιμοποιηθεί "
+"- μία από τις :data:`F_LOCK`, :data:`F_TLOCK`, :data:`F_ULOCK` ή :data:`F_TEST`. "
+"Το *len* καθορίζει το τμήμα του αρχείου που θα κλειδωθεί."
 
 #: library/os.rst:1185
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.lockf`` with arguments "
 "``fd``, ``cmd``, ``len``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.lockf`` με ορίσματα "
+"``fd``, ``cmd``, ``len``."
 
 #: library/os.rst:1197
 msgid "Flags that specify what action :func:`lockf` will take."
-msgstr ""
+msgstr "Σημαίες (flags) που καθορίζουν ποια ενέργεια θα εκτελέσει η :func:`lockf`."
 
 #: library/os.rst:1206
 msgid ""
@@ -1358,6 +1620,10 @@ msgid ""
 "Make the calling process a session leader; make the tty the controlling tty, "
 "the stdin, the stdout, and the stderr of the calling process; close fd."
 msgstr ""
+"Προετοιμάζει το tty του οποίου το fd είναι ένα file descriptor για μια νέα "
+"συνεδρία σύνδεσης (login session). Κάνει την καλούσα διεργασία έναν ηγέτη "
+"συνεδρίας (session leader)∙ κάνει το tty τον ελεγκτικό tty (controlling tty), "
+"την stdin, την stdout, και την stderr της καλούσας διεργασίας∙ κλείνει το fd."
 
 #: library/os.rst:1217
 msgid ""
@@ -1365,34 +1631,41 @@ msgid ""
 "by *whence*, and return the new position in bytes relative to the start of "
 "the file. Valid values for *whence* are:"
 msgstr ""
+"Ορίζει την τρέχουσα θέση του file descriptor *fd* στη θέση *pos*, τροποποιημένη "
+"από το *whence*, και επιστρέφει τη νέα θέση σε bytes σε σχέση με την αρχή του αρχείου. "
+"Οι έγκυρες τιμές για το *whence* είναι:"
 
 #: library/os.rst:1222
 msgid ""
 ":const:`SEEK_SET` or ``0`` -- set *pos* relative to the beginning of the file"
 msgstr ""
+":const:`SEEK_SET` ή ``0`` -- ορίζει το *pos* σε σχέση με την αρχή του αρχείου"
 
 #: library/os.rst:1223
 msgid ""
 ":const:`SEEK_CUR` or ``1`` -- set *pos* relative to the current file position"
 msgstr ""
+":const:`SEEK_CUR` ή ``1`` -- ορίζει το *pos* σε σχέση με την τρέχουσα θέση του αρχείου"
 
 #: library/os.rst:1224
 msgid ":const:`SEEK_END` or ``2`` -- set *pos* relative to the end of the file"
-msgstr ""
+msgstr ":const:`SEEK_END` ή ``2`` -- ορίζει το *pos* σε σχέση με το τέλος του αρχείου"
 
 #: library/os.rst:1225
 msgid ""
 ":const:`SEEK_HOLE` -- set *pos* to the next data location, relative to *pos*"
 msgstr ""
+":const:`SEEK_HOLE` -- ορίζει το *pos* στην επόμενη θέση δεδομένων, σε σχέση με το *pos*"
 
 #: library/os.rst:1226
 msgid ""
 ":const:`SEEK_DATA` -- set *pos* to the next data hole, relative to *pos*"
 msgstr ""
+":const:`SEEK_DATA` -- ορίζει το *pos* στην επόμενη θέση κενών (hole), σε σχέση με το *pos*"
 
 #: library/os.rst:1230
 msgid "Add support for :const:`!SEEK_HOLE` and :const:`!SEEK_DATA`."
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη για τα :const:`!SEEK_HOLE` και :const:`!SEEK_DATA`."
 
 #: library/os.rst:1237
 msgid ""
@@ -1400,34 +1673,36 @@ msgid ""
 "method on :term:`file-like objects <file object>`, for whence to adjust the "
 "file position indicator."
 msgstr ""
+"Παράμετροι για τη συνάρτηση :func:`lseek` και τη μέθοδο :meth:`~io.IOBase.seek` "
+"σε :term:`αντικείμενα τύπου αρχείου <file object>`, για το από που θα προσαρμοστεί ο δείκτης θέσης αρχείου."
 
 #: library/os.rst:1241
 msgid ":const:`SEEK_SET`"
-msgstr ""
+msgstr ":const:`SEEK_SET`"
 
 #: library/os.rst:1242
 msgid "Adjust the file position relative to the beginning of the file."
-msgstr ""
+msgstr "Προσαρμόζει τη θέση του αρχείου σε σχέση με την αρχή του αρχείου."
 
 #: library/os.rst:1243
 msgid ":const:`SEEK_CUR`"
-msgstr ""
+msgstr ":const:`SEEK_CUR`"
 
 #: library/os.rst:1244
 msgid "Adjust the file position relative to the current file position."
-msgstr ""
+msgstr "Προσαρμόζει τη θέση του αρχείου σε σχέση με την τρέχουσα θέση του αρχείου."
 
 #: library/os.rst:1245
 msgid ":const:`SEEK_END`"
-msgstr ""
+msgstr ":const:`SEEK_END`"
 
 #: library/os.rst:1246
 msgid "Adjust the file position relative to the end of the file."
-msgstr ""
+msgstr "Προσαρμόζει τη θέση του αρχείου σε σχέση με το τέλος του αρχείου."
 
 #: library/os.rst:1248
 msgid "Their values are 0, 1, and 2, respectively."
-msgstr ""
+msgstr "Οι τιμές τους είναι 0, 1, και 2, αντίστοιχα."
 
 #: library/os.rst:1254
 msgid ""
@@ -1435,30 +1710,37 @@ msgid ""
 "method on :term:`file-like objects <file object>`, for seeking file data and "
 "holes on sparsely allocated files."
 msgstr ""
+"Παράμετροι για τη συνάρτηση :func:`lseek` και τη μέθοδο :meth:`~io.IOBase.seek` "
+"σε :term:`αντικείμενα τύπου αρχείου <file object>`, για την αναζήτηση δεδομένων αρχείου και κενών σε αρχεία με αραιή κατανομή (sparsely allocated files)."
 
 #: library/os.rst:1258
 msgid ":data:`!SEEK_DATA`"
-msgstr ""
+msgstr ":data:`!SEEK_DATA`"
 
 #: library/os.rst:1259
 msgid ""
 "Adjust the file offset to the next location containing data, relative to the "
 "seek position."
 msgstr ""
+"Προσαρμόζει την απόκλιση (offset) του αρχείου στην επόμενη θέση "
+"που περιέχει δεδομένα, σε σχέση με τη θέση αναζήτησης (seek position)."
 
 #: library/os.rst:1262
 msgid ":data:`!SEEK_HOLE`"
-msgstr ""
+msgstr ":data:`!SEEK_HOLE`"
 
 #: library/os.rst:1263
 msgid ""
 "Adjust the file offset to the next location containing a hole, relative to "
 "the seek position. A hole is defined as a sequence of zeros."
 msgstr ""
+"Προσαρμόζει την απόκλιση (offset) του αρχείου στην επόμενη θέση "
+"που περιέχει ένα κενό (hole), σε σχέση με τη θέση αναζήτησης (seek position). "
+"Ένα κενό ορίζεται ως μια ακολουθία μηδενικών."
 
 #: library/os.rst:1269
 msgid "These operations only make sense for filesystems that support them."
-msgstr ""
+msgstr "Αυτές οι λειτουργίες έχουν νόημα μόνο για συστήματα αρχείων που τις υποστηρίζουν."
 
 #: library/os.rst:1278
 msgid ""
@@ -1466,7 +1748,10 @@ msgid ""
 "its mode according to *mode*.  When computing *mode*, the current umask "
 "value is first masked out.  Return the file descriptor for the newly opened "
 "file. The new file descriptor is :ref:`non-inheritable <fd_inheritance>`."
-msgstr ""
+msgstr "Ανοίγει το αρχείο *path* και ορίζει διάφορες σημαίες σύμφωνα με τις *flags* και "
+"πιθανώς τη λειτουργία του σύμφωνα με τις *mode*. Κατά τον υπολογισμό της *mode*, η τρέχουσα "
+"τιμή umask αφαιρείται πρώτα. Επιστρέφει τον περιγραφέα αρχείου για το νεοανοικτό αρχείο. Ο "
+"νέος περιγραφέας αρχείου είναι :ref:`μη κληρονομήσιμος <fd_inheritance>`."
 
 #: library/os.rst:1283
 msgid ""
@@ -1475,18 +1760,25 @@ msgid ""
 "are defined in the :mod:`os` module.  In particular, on Windows adding :"
 "const:`O_BINARY` is needed to open files in binary mode."
 msgstr ""
+"Για μια περιγραφή των τιμών σημαίας (flag) και λειτουργίας (mode), δείτε την "
+"τεκμηρίωση χρόνου εκτέλεσης της C∙ οι σταθερές σημαίας (flag constants) "
+"(όπως :const:`O_RDONLY` και :const:`O_WRONLY`) ορίζονται στο :mod:`os` module. "
+"Ειδικότερα, στα Windows, η προσθήκη του :const:`O_BINARY` είναι απαραίτητη για το άνοιγμα αρχείων σε δυαδική λειτουργία."
 
 #: library/os.rst:1288
 msgid ""
 "This function can support :ref:`paths relative to directory descriptors "
 "<dir_fd>` with the *dir_fd* parameter."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να υποστηρίξει :ref:`διαδρομές σχετικές με "
+"περιγραφείς καταλόγων <dir_fd>` με την παράμετρο *dir_fd*."
 
 #: library/os.rst:1291
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``open`` with arguments ``path``, "
 "``mode``, ``flags``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``open`` με ορίσματα ``path``, ``mode``, ``flags``."
 
 #: library/os.rst:1298
 msgid ""
@@ -1495,11 +1787,16 @@ msgid ""
 "meth:`~file.read` and :meth:`~file.write` methods (and many more).  To wrap "
 "a file descriptor in a file object, use :func:`fdopen`."
 msgstr ""
+"Αυτή η συνάρτηση προορίζεται για χαμηλού επιπέδου I/O. Για κανονική χρήση, "
+"χρησιμοποιήστε την ενσωματωμένη συνάρτηση :func:`open`, η οποία επιστρέφει ένα "
+":term:`αντικείμενο τύπου αρχείου` με μεθόδους :meth:`~file.read` και :meth:`~file.write` "
+"(και πολλές άλλες). Για να τυλίξετε (wrap) έναν περιγραφέα αρχείου σε ένα αντικείμενο τύπου αρχείου, "
+"χρησιμοποιήστε τη :func:`fdopen`."
 
 #: library/os.rst:2479 library/os.rst:2590 library/os.rst:2693
 #: library/os.rst:2830 library/os.rst:3590
 msgid "Added the *dir_fd* parameter."
-msgstr ""
+msgstr "Προστέθηκε η παράμετρος *dir_fd*."
 
 #: library/os.rst:1657 library/os.rst:5182
 msgid ""
@@ -1507,6 +1804,9 @@ msgid ""
 "exception, the function now retries the system call instead of raising an :"
 "exc:`InterruptedError` exception (see :pep:`475` for the rationale)."
 msgstr ""
+"Αν η κλήση συστήματος διακοπεί και ο χειριστής σήματος δεν κάνει raise μιας "
+"εξαίρεσης, η συνάρτηση τώρα επαναλαμβάνει την κλήση συστήματος αντί να κάνει raise "
+"μια εξαίρεση :exc:`InterruptedError` (δείτε το :pep:`475` για τη λογική)."
 
 #: library/os.rst:2102 library/os.rst:2165 library/os.rst:2256
 #: library/os.rst:2314 library/os.rst:2390 library/os.rst:2522
@@ -1514,7 +1814,7 @@ msgstr ""
 #: library/os.rst:3123 library/os.rst:3577 library/os.rst:3633
 #: library/os.rst:3794 library/os.rst:4371 library/os.rst:4940
 msgid "Accepts a :term:`path-like object`."
-msgstr ""
+msgstr "Αποδέχεται ένα :term:`path-like object`."
 
 #: library/os.rst:1314
 msgid ""
@@ -1525,44 +1825,53 @@ msgid ""
 "Unix or `the MSDN <https://msdn.microsoft.com/en-us/library/z0kc8e3z.aspx>`_ "
 "on Windows."
 msgstr ""
+"Οι ακόλουθες σταθερές είναι επιλογές για την παράμετρο *flags* της συνάρτησης :func:`~os.open`. "
+"Μπορούν να συνδυαστούν χρησιμοποιώντας τον τελεστή bitwise OR ``|``. "
+"Μερικές από αυτές δεν είναι διαθέσιμες σε όλες τις πλατφόρμες. "
+"Για περιγραφές της διαθεσιμότητας και της χρήσης τους, συμβουλευτείτε τη "
+":manpage:`open(2)` σελίδα εγχειριδίου στο Unix "
+"ή `το MSDN <https://msdn.microsoft.com/en-us/library/z0kc8e3z.aspx>`_ στα Windows."
 
 #: library/os.rst:1329
 msgid "The above constants are available on Unix and Windows."
-msgstr ""
+msgstr "Οι παραπάνω σταθερές είναι διαθέσιμες σε Unix και Windows."
 
 #: library/os.rst:1340
 msgid "The above constants are only available on Unix."
-msgstr ""
+msgstr "Οι παραπάνω σταθερές είναι διαθέσιμες μόνο σε Unix."
 
 #: library/os.rst:1342
 msgid "Add :data:`O_CLOEXEC` constant."
-msgstr ""
+msgstr "Προσθέτει τη σταθερά :data:`O_CLOEXEC`."
 
 #: library/os.rst:1353
 msgid "The above constants are only available on Windows."
-msgstr ""
+msgstr "Οι παραπάνω σταθερές είναι διαθέσιμες μόνο στα Windows."
 
 #: library/os.rst:1360
 msgid "The above constants are only available on macOS."
-msgstr ""
+msgstr "Οι παραπάνω σταθερές είναι διαθέσιμες μόνο στο macOS."
 
 #: library/os.rst:1362
 msgid ""
 "Add :data:`O_EVTONLY`, :data:`O_FSYNC`, :data:`O_SYMLINK` and :data:"
 "`O_NOFOLLOW_ANY` constants."
 msgstr ""
+"Προσθέτει τις σταθερές :data:`O_EVTONLY`, :data:`O_FSYNC`, :data:`O_SYMLINK` και :data:`O_NOFOLLOW_ANY`."
 
 #: library/os.rst:1376
 msgid ""
 "The above constants are extensions and not present if they are not defined "
 "by the C library."
 msgstr ""
+"Οι παραπάνω σταθερές είναι επεκτάσεις και δεν υπάρχουν αν δεν ορίζονται από τη βιβλιοθήκη C."
 
 #: library/os.rst:1379
 msgid ""
 "Add :data:`O_PATH` on systems that support it. Add :data:`O_TMPFILE`, only "
 "available on Linux Kernel 3.11   or newer."
 msgstr ""
+"Προσθέτει το :data:`O_PATH` σε συστήματα που το υποστηρίζουν. Προσθέτει το :data:`O_TMPFILE`, διαθέσιμο μόνο στον Linux Kernel 3.11 ή νεότερο."
 
 #: library/os.rst:1389
 msgid ""
@@ -1571,10 +1880,14 @@ msgid ""
 "descriptors are :ref:`non-inheritable <fd_inheritance>`. For a (slightly) "
 "more portable approach, use the :mod:`pty` module."
 msgstr ""
+"Ανοίγει ένα νέο ζεύγος pseudo-terminal. Επιστρέφει ένα ζεύγος file descriptors "
+"``(master, slave)`` για το pty και το tty, αντίστοιχα. Οι νέοι περιγραφείς αρχείων "
+"είναι :ref:`μη κληρονομήσιμοι <fd_inheritance>`. Για μια (ελαφρώς) πιο φορητή "
+"προσέγγιση, χρησιμοποιήστε το :mod:`pty` module."
 
 #: library/os.rst:1408
 msgid "The new file descriptors are now non-inheritable."
-msgstr ""
+msgstr "Οι νέοι περιγραφείς αρχείων είναι τώρα μη κληρονομήσιμοι."
 
 #: library/os.rst:1402
 msgid ""
@@ -1582,6 +1895,9 @@ msgid ""
 "reading and writing, respectively. The new file descriptor is :ref:`non-"
 "inheritable <fd_inheritance>`."
 msgstr ""
+"Δημιουργεί ένα pipe. Επιστρέφει ένα ζεύγος file descriptors ``(r, w)`` "
+"χρησιμοποιήσιμων για ανάγνωση και εγγραφή, αντίστοιχα. Ο νέος περιγραφέας αρχείων "
+"είναι :ref:`μη κληρονομήσιμος <fd_inheritance>`."
 
 #: library/os.rst:1414
 msgid ""
@@ -1590,12 +1906,18 @@ msgid ""
 "`O_CLOEXEC`. Return a pair of file descriptors ``(r, w)`` usable for reading "
 "and writing, respectively."
 msgstr ""
+"Δημιουργεί ένα pipe με τις *flags* ορισμένες ατομικά. Οι *flags* μπορούν να "
+"κατασκευαστούν συνδυάζοντας με το OR μία ή περισσότερες από αυτές τις τιμές: "
+":data:`O_NONBLOCK`, :data:`O_CLOEXEC`. Επιστρέφει ένα ζεύγος file descriptors ``(r, w)`` "
+"χρησιμοποιήσιμων για ανάγνωση και εγγραφή, αντίστοιχα."
 
 #: library/os.rst:1427
 msgid ""
 "Ensures that enough disk space is allocated for the file specified by *fd* "
 "starting from *offset* and continuing for *len* bytes."
 msgstr ""
+"Διασφαλίζει ότι έχει δεσμευτεί αρκετός χώρος στο δίσκο για το αρχείο που "
+"καθορίζεται από το *fd* ξεκινώντας από το *offset* και συνεχίζοντας για *len* bytes."
 
 #: library/os.rst:1437
 msgid ""
@@ -1607,28 +1929,40 @@ msgid ""
 "`POSIX_FADV_NOREUSE`, :data:`POSIX_FADV_WILLNEED` or :data:"
 "`POSIX_FADV_DONTNEED`."
 msgstr ""
+"Ανακοινώνει την πρόθεση να έχει πρόσβαση σε δεδομένα με ένα συγκεκριμένο "
+"πρότυπο, επιτρέποντας έτσι στον πυρήνα να κάνει βελτιστοποιήσεις. Η συμβουλή "
+"ισχύει για την περιοχή του αρχείου που καθορίζεται από το *fd* ξεκινώντας από το "
+"*offset* και συνεχίζοντας για *len* bytes. Το *advice* είναι ένα από τα :data:`POSIX_FADV_NORMAL`, "
+":data:`POSIX_FADV_SEQUENTIAL`, :data:`POSIX_FADV_RANDOM`, :data:`POSIX_FADV_NOREUSE`, :data:`POSIX_FADV_WILLNEED` ή :data:"
+"`POSIX_FADV_DONTNEED`."
 
 #: library/os.rst:1457
 msgid ""
 "Flags that can be used in *advice* in :func:`posix_fadvise` that specify the "
 "access pattern that is likely to be used."
 msgstr ""
+"Σημαίες (flags) που μπορούν να χρησιμοποιηθούν στο *advice* στη :func:`posix_fadvise` "
+"που καθορίζουν το πρότυπο πρόσβασης που πιθανόν να χρησιμοποιηθεί."
 
 #: library/os.rst:1467
 msgid ""
 "Read at most *n* bytes from file descriptor *fd* at a position of *offset*, "
 "leaving the file offset unchanged."
 msgstr ""
+"Διαβάζει το πολύ *n* bytes από το file descriptor *fd* σε μια θέση *offset*, "
+"διατηρώντας την απόκλιση (offset) του αρχείου αμετάβλητη."
 
 #: library/os.rst:1646
 msgid ""
 "Return a bytestring containing the bytes read. If the end of the file "
 "referred to by *fd* has been reached, an empty bytes object is returned."
 msgstr ""
+"Επιστρέφει ένα bytestring που περιέχει τα bytes που διαβάστηκαν. Αν έχει "
+"φτάσει στο τέλος του αρχείου που αναφέρεται από το *fd*, επιστρέφεται ένα κενό αντικείμενο bytes."
 
 #: library/os.rst:1480
 msgid "Open and return a file descriptor for a master pseudo-terminal device."
-msgstr ""
+msgstr "Ανοίγει και επιστρέφει έναν περιγραφέα αρχείου για μια συσκευή master pseudo-terminal."
 
 #: library/os.rst:1482
 msgid ""
@@ -1636,6 +1970,9 @@ msgid ""
 "argument is used to set file status flags and file access modes as specified "
 "in the manual page of :c:func:`posix_openpt` of your system."
 msgstr ""
+"Καλεί τη συνάρτηση της C standard library :c:func:`posix_openpt`. Το όρισμα "
+"*oflag* χρησιμοποιείται για να ορίσει τα flags κατάστασης αρχείου και τις λειτουργίες πρόσβασης "
+"αρχείου όπως καθορίζονται στη σελίδα εγχειριδίου της :c:func:`posix_openpt` του συστήματός σας."
 
 #: library/os.rst:1486
 msgid ""
@@ -1643,6 +1980,8 @@ msgid ""
 "the value :data:`O_CLOEXEC` is available on the system, it is added to "
 "*oflag*."
 msgstr ""
+"Ο επιστρεφόμενος περιγραφέας αρχείου είναι :ref:`μη κληρονομήσιμος <fd_inheritance>`. "
+"Αν η τιμή :data:`O_CLOEXEC` είναι διαθέσιμη στο σύστημα, προστίθεται στο *oflag*."
 
 #: library/os.rst:1497
 msgid ""
@@ -1651,40 +1990,50 @@ msgid ""
 "offset unchanged.  Transfer data into each buffer until it is full and then "
 "move on to the next buffer in the sequence to hold the rest of the data."
 msgstr ""
+"Διαβάζει από έναν περιγραφέα αρχείου *fd* σε μια θέση *offset* σε μεταβλητά "
+":term:`αντικείμενα τύπου bytes <bytes-like object>` *buffers*, διατηρώντας την "
+"απόκλιση (offset) του αρχείου αμετάβλητη. "
+"Μεταφέρει δεδομένα σε κάθε buffer μέχρι να γεμίσει και μετά "
+"προχωράει στο επόμενο buffer στη σειρά για να κρατήσει τα υπόλοιπα δεδομένα."
 
 #: library/os.rst:1587
 msgid ""
 "The flags argument contains a bitwise OR of zero or more of the following "
 "flags:"
 msgstr ""
+"Η παράμετρος flags περιέχει ένα bitwise OR από μηδέν ή περισσότερες από τις ακόλουθες σημαίες (flags):"
 
 #: library/os.rst:1505
 msgid ":data:`RWF_HIPRI`"
-msgstr ""
+msgstr ":data:`RWF_HIPRI`"
 
 #: library/os.rst:1506
 msgid ":data:`RWF_NOWAIT`"
-msgstr ""
+msgstr ":data:`RWF_NOWAIT`"
 
 #: library/os.rst:1829
 msgid ""
 "Return the total number of bytes actually read which can be less than the "
 "total capacity of all the objects."
 msgstr ""
+"Επιστρέφει το συνολικό αριθμό των bytes που διαβάστηκαν, ο οποίος μπορεί να είναι "
+"λιγότερος από τη συνολική χωρητικότητα όλων των αντικειμένων."
 
 #: library/os.rst:1596 library/os.rst:1907
 msgid ""
 "The operating system may set a limit (:func:`sysconf` value "
 "``'SC_IOV_MAX'``) on the number of buffers that can be used."
 msgstr ""
+"Το λειτουργικό σύστημα μπορεί να ορίσει ένα όριο (:func:`sysconf` τιμή "
+"``'SC_IOV_MAX'``) στον αριθμό των buffers που μπορούν να χρησιμοποιηθούν."
 
 #: library/os.rst:1514
 msgid "Combine the functionality of :func:`os.readv` and :func:`os.pread`."
-msgstr ""
+msgstr "Συνδυάζει τη λειτουργικότητα της :func:`os.readv` και της :func:`os.pread`."
 
 #: library/os.rst:1603
 msgid "Using flags requires Linux >= 4.6."
-msgstr ""
+msgstr "Η χρήση flags απαιτεί Linux >= 4.6."
 
 #: library/os.rst:1525
 msgid ""
@@ -1692,6 +2041,9 @@ msgid ""
 "specified, the system call will return instantly if it would have to read "
 "data from the backing storage or wait for a lock."
 msgstr ""
+"Μην περιμένετε για δεδομένα που δεν είναι άμεσα διαθέσιμα. Αν αυτό το flag "
+"καθοριστεί, η κλήση συστήματος θα επιστρέψει αμέσως αν θα έπρεπε να διαβάσει "
+"δεδομένα από την υποκείμενη αποθήκευση ή να περιμένει για ένα κλείδωμα."
 
 #: library/os.rst:1529
 msgid ""
@@ -1699,18 +2051,25 @@ msgid ""
 "If no bytes were read, it will return ``-1`` and set errno to :const:`errno."
 "EAGAIN`."
 msgstr ""
+"Αν κάποια δεδομένα διαβάστηκαν επιτυχώς, θα επιστρέψει τον αριθμό των bytes που "
+"διαβάστηκαν. Αν δεν διαβάστηκαν bytes, θα επιστρέψει ``-1`` και θα ορίσει το errno σε :const:`errno.EAGAIN`."
 
 #: library/os.rst:1540
 msgid ""
 "High priority read/write. Allows block-based filesystems to use polling of "
 "the device, which provides lower latency, but may use additional resources."
 msgstr ""
+"Ανάγνωση/εγγραφή υψηλής προτεραιότητας. Επιτρέπει στα αρχεία συστήματος "
+"βασισμένα σε μπλοκ να χρησιμοποιούν polling της συσκευής, το οποίο παρέχει "
+"χαμηλότερη καθυστέρηση, αλλά μπορεί να χρησιμοποιεί επιπλέον πόρους."
 
 #: library/os.rst:1544
 msgid ""
 "Currently, on Linux, this feature is usable only on a file descriptor opened "
 "using the :data:`O_DIRECT` flag."
 msgstr ""
+"Επί του παρόντος, στο Linux, αυτή η λειτουργία είναι χρησιμοποιήσιμη μόνο σε "
+"έναν περιγραφέα αρχείου που άνοιξε χρησιμοποιώντας το flag :data:`O_DIRECT`."
 
 #: library/os.rst:1554
 msgid ""
@@ -1718,6 +2077,9 @@ msgid ""
 "master pseudo-terminal device to which the file descriptor *fd* refers. The "
 "file descriptor *fd* is not closed upon failure."
 msgstr ""
+"Επιστρέφει το όνομα της συσκευής slave pseudo-terminal που σχετίζεται με τη "
+"συσκευή master pseudo-terminal στην οποία αναφέρεται ο περιγραφέας αρχείου *fd*. "
+"Ο περιγραφέας αρχείου *fd* δεν κλείνει σε περίπτωση αποτυχίας."
 
 #: library/os.rst:1558
 msgid ""
@@ -1725,16 +2087,21 @@ msgid ""
 "available; otherwise, the C standard library function :c:func:`ptsname`, "
 "which is not guaranteed to be thread-safe, is called."
 msgstr ""
+"Καλεί τη επαναεισαγωγική (reentrant) συνάρτηση της C standard library :c:func:`ptsname_r` "
+"αν είναι διαθέσιμη∙ διαφορετικά, καλείται η συνάρτηση της C standard library :c:func:`ptsname`, "
+"η οποία δεν εγγυάται ότι είναι ασφαλής για νήματα (thread-safe)."
 
 #: library/os.rst:1569
 msgid ""
 "Write the bytestring in *str* to file descriptor *fd* at position of "
 "*offset*, leaving the file offset unchanged."
 msgstr ""
+"Γράφει το bytestring στο *str* στον περιγραφέα αρχείου *fd* σε μια θέση "
+"*offset*, διατηρώντας την απόκλιση (offset) του αρχείου αμετάβλητη."
 
 #: library/os.rst:1882
 msgid "Return the number of bytes actually written."
-msgstr ""
+msgstr "Επιστρέφει τον αριθμό των bytes που γράφτηκαν πραγματικά."
 
 #: library/os.rst:1581
 msgid ""
@@ -1744,38 +2111,47 @@ msgid ""
 "order. Entire contents of the first buffer is written before proceeding to "
 "the second, and so on."
 msgstr ""
+"Γράφει τα περιεχόμενα των *buffers* στον περιγραφέα αρχείου *fd* σε μια θέση "
+"*offset*, διατηρώντας την απόκλιση (offset) του αρχείου αμετάβλητη. "
+"*buffers* πρέπει να είναι μια ακολουθία από :term:`αντικείμενα τύπου bytes <bytes-like object>`. "
+"Τα buffers επεξεργάζονται με τη σειρά του πίνακα. Το πλήρες περιεχόμενο του πρώτου buffer "
+"γράφεται πριν προχωρήσει στο δεύτερο, και ούτω καθεξής."
 
 #: library/os.rst:1590
 msgid ":data:`RWF_DSYNC`"
-msgstr ""
+msgstr ":data:`RWF_DSYNC`"
 
 #: library/os.rst:1591
 msgid ":data:`RWF_SYNC`"
-msgstr ""
+msgstr ":data:`RWF_SYNC`"
 
 #: library/os.rst:1592
 msgid ":data:`RWF_APPEND`"
-msgstr ""
+msgstr ":data:`RWF_APPEND`"
 
 #: library/os.rst:1594
 msgid "Return the total number of bytes actually written."
-msgstr ""
+msgstr "Επιστρέφει το συνολικό αριθμό των bytes που γράφτηκαν πραγματικά."
 
 #: library/os.rst:1599
 msgid "Combine the functionality of :func:`os.writev` and :func:`os.pwrite`."
-msgstr ""
+msgstr "Συνδυάζει τη λειτουργικότητα της :func:`os.writev` και της :func:`os.pwrite`."
 
 #: library/os.rst:1610
 msgid ""
 "Provide a per-write equivalent of the :data:`O_DSYNC` :func:`os.open` flag. "
 "This flag effect applies only to the data range written by the system call."
 msgstr ""
+"Παρέχει ένα ανά-εγγραφή ισοδύναμο του flag :data:`O_DSYNC` της :func:`os.open`. "
+"Η επίδραση αυτού του flag ισχύει μόνο για την περιοχή δεδομένων που γράφτηκε από την κλήση συστήματος."
 
 #: library/os.rst:1620
 msgid ""
 "Provide a per-write equivalent of the :data:`O_SYNC` :func:`os.open` flag. "
 "This flag effect applies only to the data range written by the system call."
 msgstr ""
+"Παρέχει ένα ανά-εγγραφή ισοδύναμο του flag :data:`O_SYNC` της :func:`os.open`. "
+"Η επίδραση αυτού του flag ισχύει μόνο για την περιοχή δεδομένων που γράφτηκε από την κλήση συστήματος."
 
 #: library/os.rst:1630
 msgid ""
@@ -1786,10 +2162,14 @@ msgid ""
 "of the file. However, if the *offset* argument is ``-1``, the current file "
 "*offset* is updated."
 msgstr ""
+"Παρέχει ένα ανά-εγγραφή ισοδύναμο του flag :data:`O_APPEND` της :func:`os.open`. "
+"Αυτό το flag έχει νόημα μόνο για τη :func:`os.pwritev`, και η επίδρασή του ισχύει μόνο για την περιοχή δεδομένων "
+"που γράφτηκε από την κλήση συστήματος. Το όρισμα *offset* δεν επηρεάζει τη λειτουργία εγγραφής∙ "
+"τα δεδομένα πάντα προστίθενται στο τέλος του αρχείου. Ωστόσο, αν το όρισμα *offset* είναι ``-1``, η τρέχουσα απόκλιση (offset) του αρχείου ενημερώνεται."
 
 #: library/os.rst:1644
 msgid "Read at most *n* bytes from file descriptor *fd*."
-msgstr ""
+msgstr "Διαβάζει το πολύ *n* bytes από τον περιγραφέα αρχείου *fd*."
 
 #: library/os.rst:1651
 msgid ""
@@ -1799,12 +2179,18 @@ msgid ""
 "or :func:`fdopen`, or :data:`sys.stdin`, use its :meth:`~file.read` or :meth:"
 "`~file.readline` methods."
 msgstr ""
+"Αυτή η συνάρτηση προορίζεται για χαμηλού επιπέδου I/O και πρέπει να εφαρμόζεται "
+"σε έναν περιγραφέα αρχείου όπως αυτός που επιστρέφεται από τη :func:`os.open` ή τη :func:`pipe`. "
+"Για να διαβάσετε ένα \"αντικείμενο τύπου αρχείου\" που επιστρέφεται από την ενσωματωμένη "
+"συνάρτηση :func:`open` ή από τη :func:`popen` ή τη :func:`fdopen`, ή το :data:`sys.stdin`, "
+"χρησιμοποιήστε τις μεθόδους :meth:`~file.read` ή :meth:`~file.readline`."
 
 #: library/os.rst:1665
 msgid ""
 "Read from a file descriptor *fd* into a mutable :ref:`buffer object "
 "<bufferobjects>` *buffer*."
 msgstr ""
+"Διαβάζει από έναν περιγραφέα αρχείου *fd* σε ένα μεταβλητό :ref:`αντικείμενο buffer <bufferobjects>` *buffer*."
 
 #: library/os.rst:1668
 msgid ""
@@ -1814,6 +2200,10 @@ msgid ""
 "interrupted by a signal, unless the signal handler raises an exception. "
 "Other errors will not be retried and an error will be raised."
 msgstr ""
+"Το *buffer* πρέπει να είναι μεταβλητό και :term:`αντικείμενο τύπου bytes <bytes-like object>`. "
+"Σε περίπτωση επιτυχίας, επιστρέφει τον αριθμό των bytes που διαβάστηκαν. "
+"Μπορεί να διαβαστούν λιγότερα bytes από το μέγεθος του buffer. Η υποκείμενη κλήση συστήματος θα επαναληφθεί όταν διακοπεί από ένα σήμα, "
+"εκτός αν ο χειριστής σήματος κάνει raise μια εξαίρεση. Άλλα σφάλματα δεν θα επαναληφθούν και θα γίνει raise ενός σφάλματος."
 
 #: library/os.rst:1674
 msgid ""
@@ -1821,6 +2211,8 @@ msgid ""
 "(which can be used to check for errors without reading data). Never returns "
 "negative."
 msgstr ""
+"Επιστρέφει 0 αν το *fd* είναι στο τέλος του αρχείου ή αν το παρεχόμενο *buffer* έχει μήκος 0 "
+"(το οποίο μπορεί να χρησιμοποιηθεί για να ελεγχθούν σφάλματα χωρίς να διαβαστούν δεδομένα). Δεν επιστρέφει ποτέ αρνητικό."
 
 #: library/os.rst:1680
 msgid ""
@@ -1830,6 +2222,11 @@ msgid ""
 "`sys.stdin`, use its member functions, for example :meth:`io.BufferedIOBase."
 "readinto`, :meth:`io.BufferedIOBase.read`, or :meth:`io.TextIOBase.read`"
 msgstr ""
+"Αυτή η συνάρτηση προορίζεται για χαμηλού επιπέδου I/O και πρέπει να εφαρμόζεται "
+"σε έναν περιγραφέα αρχείου όπως αυτός που επιστρέφεται από τη :func:`os.open` ή τη :func:`os.pipe`. "
+"Για να διαβάσετε ένα \"αντικείμενο τύπου αρχείου\" που επιστρέφεται από την ενσωματωμένη "
+"συνάρτηση :func:`open`, ή το :data:`sys.stdin`, χρησιμοποιήστε τις μεθόδους μέλη "
+"του, για παράδειγμα :meth:`io.BufferedIOBase.readinto`, :meth:`io.BufferedIOBase.read`, ή :meth:`io.TextIOBase.read`."
 
 #: library/os.rst:1693
 msgid ""
@@ -1837,18 +2234,24 @@ msgid ""
 "starting at *offset*. Return the number of bytes sent. When EOF is reached "
 "return ``0``."
 msgstr ""
+"Αντιγράφει *count* bytes από τον περιγραφέα αρχείου *in_fd* στον περιγραφέα "
+"αρχείου *out_fd* ξεκινώντας από το *offset*. Επιστρέφει τον αριθμό των bytes που στάλθηκαν. "
+"Όταν φτάσει στο EOF επιστρέφει ``0``."
 
 #: library/os.rst:1697
 msgid ""
 "The first function notation is supported by all platforms that define :func:"
 "`sendfile`."
 msgstr ""
+"Η πρώτη σημειογραφία της συνάρτησης υποστηρίζεται από όλες τις πλατφόρμες που ορίζουν τη :func:`sendfile`."
 
 #: library/os.rst:1700
 msgid ""
 "On Linux, if *offset* is given as ``None``, the bytes are read from the "
 "current position of *in_fd* and the position of *in_fd* is updated."
 msgstr ""
+"Στο Linux, αν το *offset* δοθεί ως ``None``, τα bytes διαβάζονται από την τρέχουσα "
+"θέση του *in_fd* και η θέση του *in_fd* ενημερώνεται."
 
 #: library/os.rst:1703
 msgid ""
@@ -1857,40 +2260,49 @@ msgid ""
 "after the data from *in_fd* is written. It returns the same as the first "
 "case."
 msgstr ""
+"Η δεύτερη περίπτωση μπορεί να χρησιμοποιηθεί στο macOS και το FreeBSD όπου τα "
+"*headers* και *trailers* είναι αυθαίρετες ακολουθίες buffers που γράφονται πριν και μετά "
+"τα δεδομένα από το *in_fd*. Επιστρέφει το ίδιο με την πρώτη περίπτωση."
 
 #: library/os.rst:1707
 msgid ""
 "On macOS and FreeBSD, a value of ``0`` for *count* specifies to send until "
 "the end of *in_fd* is reached."
 msgstr ""
+"Στο macOS και το FreeBSD, μια τιμή ``0`` για το *count* υποδηλώνει να σταλθεί μέχρι να φτάσει στο τέλος του *in_fd*."
 
 #: library/os.rst:1710
 msgid ""
 "All platforms support sockets as *out_fd* file descriptor, and some "
 "platforms allow other types (e.g. regular file, pipe) as well."
 msgstr ""
+"Όλες οι πλατφόρμες υποστηρίζουν sockets ως περιγραφέα αρχείου *out_fd*, και μερικές "
+"πλατφόρμες επιτρέπουν και άλλους τύπους (π.χ. κανονικό αρχείο, pipe) επίσης."
 
 #: library/os.rst:1713
 msgid ""
 "Cross-platform applications should not use *headers*, *trailers* and *flags* "
 "arguments."
 msgstr ""
+"Οι εφαρμογές πολλαπλών πλατφορμών δεν θα πρέπει να χρησιμοποιούν τα "
+"ορίσματα *headers*, *trailers* και *flags*."
 
 #: library/os.rst:1720
 msgid ""
 "For a higher-level wrapper of :func:`sendfile`, see :meth:`socket.socket."
 "sendfile`."
-msgstr ""
+msgstr "Για έναν wrapper υψηλότερου επιπέδου της :func:`sendfile`, δείτε :meth:`socket.socket.sendfile`."
 
 #: library/os.rst:1725
 msgid "Parameters *out* and *in* was renamed to *out_fd* and *in_fd*."
-msgstr ""
+msgstr "Οι παράμετροι *out* και *in* μετονομάστηκαν σε *out_fd* και *in_fd*."
 
 #: library/os.rst:1733
 msgid ""
 "Parameters to the :func:`sendfile` function, if the implementation supports "
 "them."
 msgstr ""
+"Παράμετροι για τη :func:`sendfile` συνάρτηση, αν η υλοποίηση τις υποστηρίζει."
 
 #: library/os.rst:1742
 msgid ""
@@ -1898,22 +2310,28 @@ msgid ""
 "it. The data won't be cached in the virtual memory and will be freed "
 "afterwards."
 msgstr ""
+"Παράμετρος για τη :func:`sendfile` συνάρτηση, αν η υλοποίηση την υποστηρίζει. "
+"Τα δεδομένα δεν θα αποθηκευτούν στην εικονική μνήμη και θα απελευθερωθούν μετά."
 
 #: library/os.rst:1752
 msgid ""
 "Set the blocking mode of the specified file descriptor. Set the :data:"
 "`O_NONBLOCK` flag if blocking is ``False``, clear the flag otherwise."
 msgstr ""
+"Ορίζει τη λειτουργία αποκλεισμού (blocking mode) του καθορισμένου περιγραφέα αρχείου. "
+"Ορίζει το flag :data:`O_NONBLOCK` αν το blocking είναι ``False``, διαφορετικά αφαιρεί το flag."
 
 #: library/os.rst:1755
 msgid "See also :func:`get_blocking` and :meth:`socket.socket.setblocking`."
-msgstr ""
+msgstr "Δείτε επίσης τη :func:`get_blocking` και τη :meth:`socket.socket.setblocking`."
 
 #: library/os.rst:1772
 msgid ""
 "Transfer *count* bytes from file descriptor *src*, starting from offset "
 "*offset_src*, to file descriptor *dst*, starting from offset *offset_dst*."
 msgstr ""
+"Μεταφέρει *count* bytes από τον περιγραφέα αρχείου *src*, ξεκινώντας από την απόκλιση "
+"*offset_src*, στον περιγραφέα αρχείου *dst*, ξεκινώντας από την απόκλιση *offset_dst*."
 
 #: library/os.rst:1775
 msgid ""
@@ -1921,6 +2339,9 @@ msgid ""
 "the following variables may used, combined using bitwise OR (the ``|`` "
 "operator):"
 msgstr ""
+"Η συμπεριφορά του splice μπορεί να τροποποιηθεί καθορίζοντας μια τιμή *flags*. "
+"Οποιαδήποτε από τις ακόλουθες μεταβλητές μπορεί να χρησιμοποιηθεί, συνδυασμένες "
+"χρησιμοποιώντας bitwise OR (τον τελεστή ``|``):"
 
 #: library/os.rst:1779
 msgid ""
@@ -1928,6 +2349,9 @@ msgid ""
 "instead of copying, but pages may still be copied if the kernel cannot move "
 "the pages from the pipe."
 msgstr ""
+"Αν καθοριστεί το :const:`SPLICE_F_MOVE`, ζητείται από τον πυρήνα να μετακινήσει "
+"σελίδες αντί να τις αντιγράψει, αλλά οι σελίδες μπορεί να αντιγραφούν αν ο "
+"πυρήνας δεν μπορεί να μετακινήσει τις σελίδες από το pipe."
 
 #: library/os.rst:1783
 msgid ""
@@ -1935,12 +2359,18 @@ msgid ""
 "on I/O. This makes the splice pipe operations nonblocking, but splice may "
 "nevertheless block because the spliced file descriptors may block."
 msgstr ""
+"Αν καθοριστεί το :const:`SPLICE_F_NONBLOCK`, ζητείται από τον πυρήνα να μην "
+"αποκλειστεί (block) σε I/O. Αυτό καθιστά τις λειτουργίες splice pipe μη αποκλειστικές "
+"(nonblocking), αλλά το splice μπορεί παρ' όλα αυτά να αποκλειστεί επειδή "
+"οι περιγραφείς αρχείων που έχουν γίνει splice μπορεί να αποκλειστούν."
 
 #: library/os.rst:1788
 msgid ""
 "If :const:`SPLICE_F_MORE` is specified, it hints to the kernel that more "
 "data will be coming in a subsequent splice."
 msgstr ""
+"Αν καθοριστεί το :const:`SPLICE_F_MORE`, δίνει μια υπόδειξη (hint) στον πυρήνα "
+"ότι θα έρθουν περισσότερα δεδομένα σε μια επόμενη splice."
 
 #: library/os.rst:1791
 msgid ""
@@ -1951,6 +2381,12 @@ msgid ""
 "in the same filesystem, otherwise an :exc:`OSError` is raised with :attr:"
 "`~OSError.errno` set to :const:`errno.EXDEV`."
 msgstr ""
+"Τουλάχιστον ένας από τους περιγραφείς αρχείων πρέπει να αναφέρεται σε ένα pipe. "
+"Αν το *offset_src* είναι ``None``, τότε το *src* διαβάζεται από την τρέχουσα θέση∙ "
+"αντίστοιχα για το *offset_dst*. Η απόκλιση (offset) που σχετίζεται με τον περιγραφέα αρχείου "
+"που αναφέρεται σε ένα pipe πρέπει να είναι ``None``. Τα αρχεία στα οποία "
+"δείχνουν τα *src* και *dst* πρέπει να βρίσκονται στο ίδιο σύστημα αρχείων, "
+"διαφορετικά γίνεται raise ένα :exc:`OSError` με το :attr:`~OSError.errno` ορισμένο σε :const:`errno.EXDEV`."
 
 #: library/os.rst:1798
 msgid ""
@@ -1959,6 +2395,10 @@ msgid ""
 "filesystems could implement extra optimizations. The copy is done as if both "
 "files are opened as binary."
 msgstr ""
+"Αυτή η αντιγραφή γίνεται χωρίς το επιπλέον κόστος της μεταφοράς δεδομένων από "
+"τον πυρήνα στον χώρο χρήστη και μετά πίσω στον πυρήνα. Επιπλέον, μερικά "
+"συστήματα αρχείων θα μπορούσαν να υλοποιήσουν επιπλέον βελτιστοποιήσεις. "
+"Η αντιγραφή γίνεται σαν να έχουν ανοιχτεί και τα δύο αρχεία ως binary."
 
 #: library/os.rst:1803
 msgid ""
@@ -1968,10 +2408,15 @@ msgid ""
 "sense to block because there are no writers connected to the write end of "
 "the pipe."
 msgstr ""
+"Μετά από επιτυχή ολοκλήρωση, επιστρέφει τον αριθμό των bytes που έγιναν splice "
+"προς ή από το pipe. Μια τιμή επιστροφής 0 σημαίνει τέλος εισόδου. Αν το *src* "
+"αναφέρεται σε ένα pipe, τότε αυτό σημαίνει ότι δεν υπήρχαν δεδομένα για "
+"μεταφορά, και δεν θα είχε νόημα να αποκλειστεί (block) επειδή δεν υπάρχουν "
+"συνδεδεμένοι writers στο write end του pipe."
 
 #: library/os.rst:1809
 msgid "The :manpage:`splice(2)` man page."
-msgstr ""
+msgstr "Η σελίδα εγχειριδίου (:manpage:)`:splice(2)`."
 
 #: library/os.rst:1824
 msgid ""
@@ -1980,18 +2425,26 @@ msgid ""
 "it is full and then move on to the next buffer in the sequence to hold the "
 "rest of the data."
 msgstr ""
+"Διαβάζει από έναν περιγραφέα αρχείου *fd* σε έναν αριθμό μεταβλητών :term:`bytes-like "
+"objects <bytes-like object>` *buffers*. Μεταφέρει δεδομένα σε κάθε buffer μέχρι "
+"να γεμίσει και στη συνέχεια προχωρά στο επόμενο buffer στη σειρά για να κρατήσει τα "
+"υπόλοιπα δεδομένα."
 
 #: library/os.rst:1842
 msgid ""
 "Return the process group associated with the terminal given by *fd* (an open "
 "file descriptor as returned by :func:`os.open`)."
 msgstr ""
+"Επιστρέφει την ομάδα διεργασιών που σχετίζεται με το τερματικό που δίνεται από το *fd* "
+"(ένας ανοιχτός περιγραφέας αρχείου όπως αυτός που επιστρέφεται από τη :func:`os.open`)."
 
 #: library/os.rst:1850
 msgid ""
 "Set the process group associated with the terminal given by *fd* (an open "
 "file descriptor as returned by :func:`os.open`) to *pg*."
 msgstr ""
+"Ορίζει την ομάδα διεργασιών που σχετίζεται με το τερματικό που δίνεται από το *fd* "
+"(ένας ανοιχτός περιγραφέας αρχείου όπως αυτός που επιστρέφεται από τη :func:`os.open`) σε *pg*."
 
 #: library/os.rst:1858
 msgid ""
@@ -1999,6 +2452,9 @@ msgid ""
 "descriptor *fd*.  If *fd* is not associated with a terminal device, an "
 "exception is raised."
 msgstr ""
+"Επιστρέφει μια συμβολοσειρά που καθορίζει τη συσκευή τερματικού που σχετίζεται με "
+"τον περιγραφέα αρχείου *fd*. Αν το *fd* δεν σχετίζεται με μια συσκευή τερματικού, "
+"γίνεται raise μια εξαίρεση."
 
 #: library/os.rst:1867
 msgid ""
@@ -2006,14 +2462,17 @@ msgid ""
 "terminal device to which the file descriptor *fd* refers. The file "
 "descriptor *fd* is not closed upon failure."
 msgstr ""
+"Ξεκλειδώνει τη συσκευή slave pseudo-terminal που σχετίζεται με τη συσκευή "
+"master pseudo-terminal στην οποία αναφέρεται ο περιγραφέας αρχείου *fd*. "
+"Ο περιγραφέας αρχείου *fd* δεν κλείνει σε περίπτωση αποτυχίας."
 
 #: library/os.rst:1871
 msgid "Calls the C standard library function :c:func:`unlockpt`."
-msgstr ""
+msgstr "Καλεί τη συνάρτηση της C standard library :c:func:`unlockpt`."
 
 #: library/os.rst:1880
 msgid "Write the bytestring in *str* to file descriptor *fd*."
-msgstr ""
+msgstr "Γράφει το bytestring στο *str* στον περιγραφέα αρχείου *fd*."
 
 #: library/os.rst:1886
 msgid ""
@@ -2023,6 +2482,11 @@ msgid ""
 "`popen` or :func:`fdopen`, or :data:`sys.stdout` or :data:`sys.stderr`, use "
 "its :meth:`~file.write` method."
 msgstr ""
+"Αυτή η συνάρτηση προορίζεται για χαμηλού επιπέδου I/O και πρέπει να εφαρμόζεται "
+"σε έναν περιγραφέα αρχείου όπως αυτός που επιστρέφεται από τη :func:`os.open` ή τη :func:`pipe`. "
+"Για να γράψετε σε ένα \"αντικείμενο τύπου αρχείου\" που επιστρέφεται από την ενσωματωμένη "
+"συνάρτηση :func:`open` ή από τη :func:`popen` ή τη :func:`fdopen`, ή το :data:`sys.stdout` ή το :data:`sys.stderr`, "
+"χρησιμοποιήστε τη μέθοδο :meth:`~file.write`."
 
 #: library/os.rst:1900
 msgid ""
@@ -2031,56 +2495,66 @@ msgid ""
 "processed in array order. Entire contents of the first buffer is written "
 "before proceeding to the second, and so on."
 msgstr ""
+"Γράφει τα περιεχόμενα των *buffers* στον περιγραφέα αρχείου *fd*. "
+"Τα *buffers* πρέπει να είναι μια ακολουθία από :term:`αντικείμενα τύπου bytes <bytes-like object>`. "
+"Τα buffers επεξεργάζονται με τη σειρά του πίνακα. Το πλήρες περιεχόμενο του πρώτου buffer "
+"γράφεται πριν προχωρήσει στο δεύτερο, και ούτω καθεξής."
 
 #: library/os.rst:1905
 msgid "Returns the total number of bytes actually written."
-msgstr ""
+msgstr "Επιστρέφει το συνολικό αριθμό των bytes που γράφτηκαν πραγματικά."
 
 #: library/os.rst:1918
 msgid "Querying the size of a terminal"
-msgstr ""
+msgstr "Ερώτηση για το μέγεθος ενός τερματικού"
 
 #: library/os.rst:1924
 msgid ""
 "Return the size of the terminal window as ``(columns, lines)``, tuple of "
 "type :class:`terminal_size`."
 msgstr ""
+"Επιστρέφει το μέγεθος του παραθύρου τερματικού ως ``(στήλες, γραμμές)``, "
+"tuple του τύπου :class:`terminal_size`."
 
 #: library/os.rst:1927
 msgid ""
 "The optional argument ``fd`` (default ``STDOUT_FILENO``, or standard output) "
 "specifies which file descriptor should be queried."
 msgstr ""
+"Το προαιρετικό όρισμα ``fd`` (προεπιλογή ``STDOUT_FILENO``, ή τυπική έξοδος) καθορίζει ποιος περιγραφέας αρχείου θα ερωτηθεί."
 
 #: library/os.rst:1930
 msgid ""
 "If the file descriptor is not connected to a terminal, an :exc:`OSError` is "
 "raised."
-msgstr ""
+msgstr "Εάν ο περιγραφέας αρχείου δεν είναι συνδεδεμένος σε τερματικό, προκαλείται :exc:`OSError`."
 
 #: library/os.rst:1933
 msgid ""
 ":func:`shutil.get_terminal_size` is the high-level function which should "
 "normally be used, ``os.get_terminal_size`` is the low-level implementation."
 msgstr ""
+"Η :func:`shutil.get_terminal_size` είναι η συνάρτηση υψηλού επιπέδου που θα πρέπει "
+"κανονικά να χρησιμοποιείται, ενώ η ``os.get_terminal_size`` είναι η υλοποίηση χαμηλού επιπέδου."
 
 #: library/os.rst:1941
 msgid ""
 "A subclass of tuple, holding ``(columns, lines)`` of the terminal window "
 "size."
 msgstr ""
+"Μια υποκλάση της πλειάδα, που κρατάει ``(columns, lines)`` του μεγέθους του παραθύρου τερματικού."
 
 #: library/os.rst:1945
 msgid "Width of the terminal window in characters."
-msgstr ""
+msgstr "Πλάτος του παραθύρου τερματικού σε χαρακτήρες."
 
 #: library/os.rst:1949
 msgid "Height of the terminal window in characters."
-msgstr ""
+msgstr "Ύψος του παραθύρου τερματικού σε χαρακτήρες."
 
 #: library/os.rst:1955
 msgid "Inheritance of File Descriptors"
-msgstr ""
+msgstr "Κληρονομηκότητα των Περιγραφέων Αρχείων"
 
 #: library/os.rst:1959
 msgid ""
@@ -2088,12 +2562,19 @@ msgid ""
 "descriptor can be inherited by child processes.  Since Python 3.4, file "
 "descriptors created by Python are non-inheritable by default."
 msgstr ""
+"Ένας περιγραφέας αρχείου έχει ένα flag \"inheritable\" που υποδεικνύει αν "
+"ο περιγραφέας αρχείου μπορεί να κληρονομηθεί από τις διεργασίες-παιδιά. Από "
+"την έκδοση 3.4 του Python, οι περιγραφείς αρχείων που δημιουργούνται "
+"από την Python είναι μη-κληρονομήσιμοι (non-inheritable) από προεπιλογή."
 
 #: library/os.rst:1963
 msgid ""
 "On UNIX, non-inheritable file descriptors are closed in child processes at "
 "the execution of a new program, other file descriptors are inherited."
 msgstr ""
+"Στα UNIX, οι μη-κληρονομήσιμοι περιγραφείς αρχείων κλείνονται στις "
+"διεργασίες-παιδιά κατά την εκτέλεση ενός νέου προγράμματος, "
+"ενώ οι άλλοι περιγραφείς αρχείων κληρονομούνται."
 
 #: library/os.rst:1966
 msgid ""
@@ -2105,37 +2586,47 @@ msgid ""
 "descriptors except standard streams are closed, and inheritable handles are "
 "only inherited if the *close_fds* parameter is ``False``."
 msgstr ""
+"Στα Windows, οι μη-κληρονομήσιμοι χειριστές (handles) και περιγραφείς αρχείων "
+"κλείνονται στις διεργασίες-παιδιά, εκτός από τα τυπικά ρεύματα (file descriptors 0, 1 και 2: stdin, "
+"stdout και stderr), τα οποία πάντα κληρονομούνται. Χρησιμοποιώντας τις "
+":func:`spawn\\* <spawnl>` συναρτήσεις, όλοι οι κληρονομήσιμοι χειριστές και όλοι "
+"οι κληρονομήσιμοι περιγραφείς αρχείων κληρονομούνται. "
+"Χρησιμοποιώντας το :mod:`subprocess` module, όλοι οι περιγραφείς αρχείων εκτός "
+"από τα τυπικά ρεύματα κλείνονται, και οι κληρονομήσιμοι χειριστές "
+"κληρονομούνται μόνο αν η παράμετρος *close_fds* είναι ``False``."
 
 #: library/os.rst:1974
 msgid "On WebAssembly platforms, the file descriptor cannot be modified."
-msgstr ""
+msgstr "Στις πλατφόρμες WebAssembly, ο περιγραφέας αρχείου δεν μπορεί να τροποποιηθεί."
 
 #: library/os.rst:1978
 msgid ""
 "Get the \"inheritable\" flag of the specified file descriptor (a boolean)."
 msgstr ""
+"Λαμβάνει το flag \"inheritable\" του καθορισμένου περιγραφέα αρχείου (boolean)."
 
 #: library/os.rst:1982
 msgid "Set the \"inheritable\" flag of the specified file descriptor."
-msgstr ""
+msgstr "Ορίζει το flag \"inheritable\" του καθορισμένου περιγραφέα αρχείου."
 
 #: library/os.rst:1986
 msgid "Get the \"inheritable\" flag of the specified handle (a boolean)."
-msgstr ""
+msgstr "Λαμβάνει το flag \"inheritable\" της καθορισμένης λαβής (boolean)."
 
 #: library/os.rst:1992
 msgid "Set the \"inheritable\" flag of the specified handle."
-msgstr ""
+msgstr "Ορίζει το flag \"inheritable\" της καθορισμένης λαβής."
 
 #: library/os.rst:2000
 msgid "Files and Directories"
-msgstr ""
+msgstr "Αρχεία και Κατάλογοι"
 
 #: library/os.rst:2002
 msgid ""
 "On some Unix platforms, many of these functions support one or more of these "
 "features:"
 msgstr ""
+"Σε ορισμένες πλατφόρμες Unix, πολλές από αυτές τις συναρτήσεις υποστηρίζουν ένα ή περισσότερα από τα ακόλουθα χαρακτηριστικά:"
 
 #: library/os.rst:2007
 msgid ""
@@ -2146,6 +2637,10 @@ msgid ""
 "to by the descriptor. For POSIX systems, Python will call the variant of the "
 "function prefixed with ``f`` (e.g. call ``fchdir`` instead of ``chdir``)."
 msgstr ""
+"**καθορισμός ενός περιγραφέα αρχείου:** Κανονικά, το όρισμα *path* που παρέχεται στις "
+"συναρτήσεις στο :mod:`os` module πρέπει να είναι μια συμβολοσειρά που καθορίζει μια διαδρομή αρχείου. "
+"Ωστόσο, μερικές συναρτήσεις τώρα εναλλακτικά δέχονται έναν ανοιχτό περιγραφέα αρχείου για το όρισμα *path* τους. Η συνάρτηση θα λειτουργήσει τότε στο αρχείο που αναφέρεται από τον περιγραφέα. "
+"Για τα συστήματα POSIX, η Python θα καλέσει την παραλλαγή της συνάρτησης με το πρόθεμα ``f`` (π.χ. καλέστε ``fchdir`` αντί για ``chdir``)."
 
 #: library/os.rst:2015
 msgid ""
@@ -2154,12 +2649,17 @@ msgid ""
 "this functionality is unavailable, using it will raise a :exc:"
 "`NotImplementedError`."
 msgstr ""
+"Μπορείτε να ελέγξετε αν το *path* μπορεί να καθοριστεί ως περιγραφέας αρχείου για "
+"μια συγκεκριμένη συνάρτηση στην πλατφόρμα σας χρησιμοποιώντας :data:`os.supports_fd`. "
+"Εάν αυτή η λειτουργικότητα δεν είναι διαθέσιμη, η χρήση της θα προκαλέσει :exc:`NotImplementedError`."
 
 #: library/os.rst:2020
 msgid ""
 "If the function also supports *dir_fd* or *follow_symlinks* arguments, it's "
 "an error to specify one of those when supplying *path* as a file descriptor."
 msgstr ""
+"Εάν η συνάρτηση υποστηρίζει επίσης τα ορίσματα *dir_fd* ή *follow_symlinks*, είναι σφάλμα να "
+"καθορίσετε ένα από αυτά όταν παρέχετε το *path* ως περιγραφέα αρχείου."
 
 #: library/os.rst:2025
 msgid ""
@@ -2171,6 +2671,12 @@ msgid ""
 "and possibly prefixed with ``f`` (e.g. call ``faccessat`` instead of "
 "``access``)."
 msgstr ""
+"**διαδρομές σχετικές με περιγραφείς καταλόγων:** Αν το *dir_fd* δεν είναι ``None``, θα πρέπει "
+"να είναι ένας περιγραφέας αρχείου που αναφέρεται σε έναν κατάλογο, και η διαδρομή για λειτουργία θα "
+"πρέπει να είναι σχετική; η διαδρομή θα είναι τότε σχετική με αυτόν τον κατάλογο. Αν η "
+"διαδρομή είναι απόλυτη, το *dir_fd* αγνοείται. Για τα συστήματα POSIX, η "
+"Python θα καλέσει την παραλλαγή της συνάρτησης με ένα επίθημα ``at`` "
+"και πιθανώς με πρόθεμα ``f`` (π.χ. καλέστε ``faccessat`` αντί για ``access``)."
 
 #: library/os.rst:2032
 msgid ""
@@ -2178,6 +2684,8 @@ msgid ""
 "on your platform using :data:`os.supports_dir_fd`.  If it's unavailable, "
 "using it will raise a :exc:`NotImplementedError`."
 msgstr ""
+"Μπορείτε να ελέγξετε αν το *dir_fd* υποστηρίζεται για μια συγκεκριμένη συνάρτηση στην πλατφόρμα σας χρησιμοποιώντας :data:`os.supports_dir_fd`. "
+"Εάν δεν είναι διαθέσιμο, η χρήση του θα προκαλέσει :exc:`NotImplementedError`."
 
 #: library/os.rst:2038
 msgid ""
@@ -2187,6 +2695,10 @@ msgid ""
 "link.  For POSIX systems, Python will call the ``l...`` variant of the "
 "function."
 msgstr ""
+"**να μην ακολουθούνται τα symlinks:** Αν το *follow_symlinks* είναι ``False``, και το τελευταίο "
+"στοιχείο της διαδρομής για λειτουργία είναι ένας συμβολικός σύνδεσμος, η συνάρτηση θα λειτουργήσει "
+"στον ίδιο τον συμβολικό σύνδεσμο αντί για το αρχείο στο οποίο δείχνει ο σύνδεσμος. Για τα συστήματα POSIX, "
+"η Python θα καλέσει την παραλλαγή της συνάρτησης με πρόθεμα ``l...``."
 
 #: library/os.rst:2044
 msgid ""
@@ -2194,6 +2706,9 @@ msgid ""
 "function on your platform using :data:`os.supports_follow_symlinks`. If it's "
 "unavailable, using it will raise a :exc:`NotImplementedError`."
 msgstr ""
+"Μπορείτε να ελέγξετε αν το *follow_symlinks* υποστηρίζεται για μια "
+"συγκεκριμένη συνάρτηση στην πλατφόρμα σας χρησιμοποιώντας :data:`os.supports_follow_symlinks`. "
+"Εάν δεν είναι διαθέσιμο, η χρήση του θα προκαλέσει :exc:`NotImplementedError`."
 
 #: library/os.rst:2052
 msgid ""
@@ -2206,12 +2721,21 @@ msgid ""
 "`True` if access is allowed, :const:`False` if not. See the Unix man page :"
 "manpage:`access(2)` for more information."
 msgstr ""
+"Χρησιμοποιήστε το πραγματικό uid/gid για να ελέγξετε την πρόσβαση στο *path*. Σημειώστε ότι οι περισσότερες "
+"λειτουργίες θα χρησιμοποιούν το αποτελεσματικό uid/gid, επομένως αυτή η ρουτίνα μπορεί να χρησιμοποιηθεί "
+"σε ένα περιβάλλον suid/sgid για να ελέγξει αν ο καλών χρήστης έχει την καθορισμένη πρόσβαση στο *path*. "
+"Το *mode* πρέπει να είναι :const:`F_OK` για να ελέγξει την ύπαρξη του *path*, ή μπορεί να είναι το "
+"inclusive OR ενός ή περισσότερων από τα :const:`R_OK`, :const:`W_OK`, και :const:`X_OK` για να ελέγξει τα "
+"δικαιώματα. Επιστρέφει :const:`True` αν η πρόσβαση επιτρέπεται, :const:`False` αν όχι. "
+"Δείτε τη σελίδα εγχειριδίου Unix :manpage:`access(2)` για περισσότερες πληροφορίες."
 
 #: library/os.rst:2061
 msgid ""
 "This function can support specifying :ref:`paths relative to directory "
 "descriptors <dir_fd>` and :ref:`not following symlinks <follow_symlinks>`."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να υποστηρίξει τον καθορισμό :ref:`διαδρομών σχετικών με περιγραφείς καταλόγων <dir_fd>` "
+"και :ref:`να μην ακολουθούνται τα symlinks <follow_symlinks>`."
 
 #: library/os.rst:2064
 msgid ""
@@ -2221,6 +2745,11 @@ msgid ""
 "or not it is available using :data:`os.supports_effective_ids`.  If it is "
 "unavailable, using it will raise a :exc:`NotImplementedError`."
 msgstr ""
+"Αν το *effective_ids* είναι ``True``, η :func:`access` θα πραγματοποιήσει τους "
+"ελέγχους πρόσβασης χρησιμοποιώντας το αποτελεσματικό uid/gid αντί για το πραγματικό uid/gid. "
+"Το *effective_ids* μπορεί να μην υποστηρίζεται στην πλατφόρμα σας; μπορείτε να ελέγξετε "
+"αν είναι διαθέσιμο χρησιμοποιώντας :data:`os.supports_effective_ids`. "
+"Εάν δεν είναι διαθέσιμο, η χρήση του θα προκαλέσει :exc:`NotImplementedError`."
 
 #: library/os.rst:2072
 msgid ""
@@ -2230,6 +2759,10 @@ msgid ""
 "the file to manipulate it. It's preferable to use :term:`EAFP` techniques. "
 "For example::"
 msgstr ""
+"Η χρήση της :func:`access` για να ελέγξετε αν ένας χρήστης έχει εξουσιοδότηση να π.χ. ανοίξει ένα αρχείο "
+"πριν το κάνει πραγματικά χρησιμοποιώντας τη :func:`open` δημιουργεί μια τρύπα ασφαλείας, επειδή ο χρήστης "
+"μπορεί να εκμεταλλευτεί το μικρό χρονικό διάστημα μεταξύ του ελέγχου και του "
+"ανοίγματος του αρχείου για να το χειριστεί. Είναι προτιμότερο να χρησιμοποιείτε τεχνικές :term:`EAFP`. Για παράδειγμα::"
 
 #: library/os.rst:2078
 msgid ""
@@ -2238,10 +2771,14 @@ msgid ""
 "        return fp.read()\n"
 "return \"some default data\""
 msgstr ""
+"if os.access(\"myfile\", os.R_OK):\n"
+"    with open(\"myfile\") as fp:\n"
+"        return fp.read()\n"
+"return \"some default data\""
 
 #: library/os.rst:2083
 msgid "is better written as::"
-msgstr ""
+msgstr "είναι καλύτερα να γραφτεί ως::"
 
 #: library/os.rst:2085
 msgid ""
@@ -2253,6 +2790,13 @@ msgid ""
 "    with fp:\n"
 "        return fp.read()"
 msgstr ""
+"try:\n"
+"    fp = open(\"myfile\")\n"
+"except PermissionError:\n"
+"    return \"some default data\"\n"
+"else:\n"
+"    with fp:\n"
+"        return fp.read()"
 
 #: library/os.rst:2095
 msgid ""
@@ -2260,10 +2804,13 @@ msgid ""
 "succeed, particularly for operations on network filesystems which may have "
 "permissions semantics beyond the usual POSIX permission-bit model."
 msgstr ""
+"Οι λειτουργίες I/O μπορεί να αποτύχουν ακόμη και όταν η :func:`access` υποδεικνύει ότι θα "
+"θα πετύχουν, ιδιαίτερα για λειτουργίες σε δίκτυα συστήματα αρχείων που μπορεί να έχουν "
+"σεμαντική άδεια πέρα από το συνηθισμένο μοντέλο bit-άδειας POSIX."
 
 #: library/os.rst:2099
 msgid "Added the *dir_fd*, *effective_ids*, and *follow_symlinks* parameters."
-msgstr ""
+msgstr "Προστέθηκαν οι παράμετροι *dir_fd*, *effective_ids*, και *follow_symlinks*."
 
 #: library/os.rst:2111
 msgid ""
@@ -2271,33 +2818,41 @@ msgid ""
 "existence, readability, writability and executability of *path*, "
 "respectively."
 msgstr ""
+"Τιμές που πρέπει να περάσετε ως παράμετρο *mode* της :func:`access` για να ελέγξετε την "
+"ύπαρξη, την αναγνωσιμότητα, την εγγράψιμότητα και την εκτελεσιμότητα του *path*, "
+"αντίστοιχα."
 
 #: library/os.rst:2120
 msgid "Change the current working directory to *path*."
-msgstr ""
+msgstr "Αλλάζει τον τρέχοντα κατάλογο εργασίας σε *path*."
 
 #: library/os.rst:2122
 msgid ""
 "This function can support :ref:`specifying a file descriptor <path_fd>`.  "
 "The descriptor must refer to an opened directory, not an open file."
-msgstr ""
+msgstr "Αυτή η συνάρτηση μπορεί να υποστηρίξει :ref:`τον καθορισμό ενός περιγραφέα αρχείου <path_fd>`. "
+"Ο περιγραφέας πρέπει να αναφέρεται σε έναν ανοιχτό κατάλογο, όχι σε ένα ανοιχτό αρχείο."
 
 #: library/os.rst:2125
 msgid ""
 "This function can raise :exc:`OSError` and subclasses such as :exc:"
 "`FileNotFoundError`, :exc:`PermissionError`, and :exc:`NotADirectoryError`."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να κάνει raise :exc:`OSError` και υποκλάσει όπως "
+":exc:`FileNotFoundError`, :exc:`PermissionError`, and :exc:`NotADirectoryError`."
 
 #: library/os.rst:2266
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.chdir`` with argument "
 "``path``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.chdir`` με όρισμα ``path``."
 
 #: library/os.rst:2130
 msgid ""
 "Added support for specifying *path* as a file descriptor on some platforms."
 msgstr ""
+"Προστέθηκε υποστήριξη για τον καθορισμό του *path* ως περιγραφέα αρχείου σε ορισμένες πλατφόρμες."
 
 #: library/os.rst:2140
 msgid ""
@@ -2305,6 +2860,8 @@ msgid ""
 "combination (bitwise OR) of the following values (as defined in the :mod:"
 "`stat` module):"
 msgstr ""
+"Ορίζει τα flags του *path* στον αριθμητικό *flags*. Το *flags* μπορεί να πάρει έναν συνδυασμό "
+"(bitwise OR) των ακόλουθων τιμών (όπως ορίζονται στο :mod:`stat` module):"
 
 #: library/os.rst:2143
 msgid ":const:`stat.UF_NODUMP`"
@@ -2358,16 +2915,19 @@ msgstr ":const:`stat.SF_SNAPSHOT`"
 msgid ""
 "This function can support :ref:`not following symlinks <follow_symlinks>`."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να υποστηρίξει :ref:`να μην ακολουθούνται τα symlinks <follow_symlinks>`."
 
 #: library/os.rst:2292
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.chflags`` with arguments "
 "``path``, ``flags``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.chflags`` με ορίσματα "
+"``path``, ``flags``."
 
 #: library/os.rst:2162
 msgid "Added the *follow_symlinks* parameter."
-msgstr ""
+msgstr "Προστέθηκε η παράμετρος *follow_symlinks*."
 
 #: library/os.rst:2171
 msgid ""
@@ -3135,6 +3695,10 @@ msgid ""
 "        if not entry.name.startswith('.') and entry.is_file():\n"
 "            print(entry.name)"
 msgstr ""
+"with os.scandir(path) as it:\n"
+"    for entry in it:\n"
+"        if not entry.name.startswith('.') and entry.is_file():\n"
+"            print(entry.name)"
 
 #: library/os.rst:2893
 msgid ""
@@ -3449,7 +4013,7 @@ msgstr ""
 
 #: library/os.rst:3117
 msgid ":func:`fstat` and :func:`lstat` functions."
-msgstr ""
+msgstr ":func:`fstat` και :func:`lstat` συναρτήσεις."
 
 #: library/os.rst:3119
 msgid ""
@@ -3476,11 +4040,11 @@ msgstr ""
 
 #: library/os.rst:3141
 msgid "Attributes:"
-msgstr ""
+msgstr "Χαρακτηριστικά:"
 
 #: library/os.rst:3145
 msgid "File mode: file type and file mode bits (permissions)."
-msgstr ""
+msgstr "Λειτουργία αρχείου: τύπος αρχείου και bits λειτουργίας αρχείου (δικαιώματα)."
 
 #: library/os.rst:3149
 msgid ""
@@ -3658,15 +4222,15 @@ msgstr ""
 
 #: library/os.rst:3298
 msgid "Real size of the file."
-msgstr ""
+msgstr "Πραγματικό μέγεθος του αρχείου."
 
 #: library/os.rst:3302
 msgid "Creator of the file."
-msgstr ""
+msgstr "Δημιουργός του αρχείο."
 
 #: library/os.rst:3306
 msgid "File type."
-msgstr ""
+msgstr "Τύπος αρχείου."
 
 #: library/os.rst:3308
 msgid "On Windows systems, the following attributes are also available:"
@@ -4120,6 +4684,14 @@ msgid ""
 "    if '__pycache__' in dirs:\n"
 "        dirs.remove('__pycache__')  # don't visit __pycache__ directories"
 msgstr ""
+"import os\n"
+"from os.path import join, getsize\n"
+"for root, dirs, files in os.walk('python/Lib/xml'):\n"
+"    print(root, \"consumes\", end=\" \")\n"
+"    print(sum(getsize(join(root, name)) for name in files), end=\" \")\n"
+"    print(\"bytes in\", len(files), \"non-directory files\")\n"
+"    if '__pycache__' in dirs:\n"
+"        dirs.remove('__pycache__')  # don't visit __pycache__ directories"
 
 #: library/os.rst:3711
 msgid ""
@@ -4232,6 +4804,16 @@ msgid ""
 "    for name in dirs:\n"
 "        os.rmdir(name, dir_fd=rootfd)"
 msgstr ""
+"# Delete everything reachable from the directory named in \"top\",\n"
+"# assuming there are no symbolic links.\n"
+"# CAUTION:  This is dangerous!  For example, if top == '/', it\n"
+"# could delete all your disk files.\n"
+"import os\n"
+"for root, dirs, files, rootfd in os.fwalk(top, topdown=False):\n"
+"    for name in files:\n"
+"        os.unlink(name, dir_fd=rootfd)\n"
+"    for name in dirs:\n"
+"        os.rmdir(name, dir_fd=rootfd)"
 
 #: library/os.rst:3788
 msgid ""
@@ -4517,11 +5099,11 @@ msgstr ""
 
 #: library/os.rst:4026
 msgid ":const:`TFD_TIMER_ABSTIME`"
-msgstr ""
+msgstr ":const:`TFD_TIMER_ABSTIME`"
 
 #: library/os.rst:4027
 msgid ":const:`TFD_TIMER_CANCEL_ON_SET`"
-msgstr ""
+msgstr ":const:`TFD_TIMER_CANCEL_ON_SET`"
 
 #: library/os.rst:4029
 msgid ""
