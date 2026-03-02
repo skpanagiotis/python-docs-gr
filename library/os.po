@@ -2935,6 +2935,8 @@ msgid ""
 "following values (as defined in the :mod:`stat` module) or bitwise ORed "
 "combinations of them:"
 msgstr ""
+"Αλλάζει τη λειτουργία του *path* στον αριθμητικό *mode*. Το *mode* μπορεί να πάρει μία από τις "
+"παρακάτω τιμές (όπως ορίζονται στο :mod:`stat` module) ή συνδυασμούς bitwise OR αυτών:"
 
 #: library/os.rst:2175
 msgid ":const:`stat.S_ISUID`"
@@ -3018,6 +3020,9 @@ msgid ""
 "ref:`paths relative to directory descriptors <dir_fd>` and :ref:`not "
 "following symlinks <follow_symlinks>`."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να υποστηρίξει :ref:`τον καθορισμό ενός περιγραφέα "
+"αρχείου <path_fd>`, :ref:`διαδρομές σχετικές με περιγραφείς καταλόγων "
+"<dir_fd>` και :ref:`να μην ακολουθούνται τα symlinks <follow_symlinks>`."
 
 #: library/os.rst:2201
 msgid ""
@@ -3026,38 +3031,47 @@ msgid ""
 "or a corresponding integer value).  All other bits are ignored. The default "
 "value of *follow_symlinks* is ``False`` on Windows."
 msgstr ""
+"Παρόλο που τα Windows υποστηρίζουν τη :func:`chmod`, μπορείτε μόνο να "
+"ορίσετε το flag μόνο-ανάγνωσης του αρχείου με αυτήν (μέσω των "
+"σταθερών ``stat.S_IWRITE`` και ``stat.S_IREAD`` ή μιας "
+"αντίστοιχης ακέραιας τιμής). Όλα τα άλλα bit αγνοούνται. "
+"Η προεπιλεγμένη τιμή του *follow_symlinks* είναι ``False`` στα Windows."
 
 #: library/os.rst:2242
 msgid ""
 "Added support for specifying *path* as an open file descriptor, and the "
 "*dir_fd* and *follow_symlinks* arguments."
 msgstr ""
+"Προστέθηκε υποστήριξη για τον καθορισμό του *path* ως ανοιχτού περιγραφέα αρχείου, και τα ορίσματα *dir_fd* και *follow_symlinks*."
 
 #: library/os.rst:2218
 msgid ""
 "Added support for a file descriptor and the *follow_symlinks* argument on "
 "Windows."
 msgstr ""
+"Προστέθηκε υποστήριξη για έναν περιγραφέα αρχείου και το όρισμα *follow_symlinks* στα Windows."
 
 #: library/os.rst:2225
 msgid ""
 "Change the owner and group id of *path* to the numeric *uid* and *gid*.  To "
 "leave one of the ids unchanged, set it to -1."
 msgstr ""
+"Αλλάζει το uid και gid του *path* στους αριθμητικούς *uid* και *gid*. Για να αφήσετε ένα από τα ids αμετάβλητο, ορίστε το σε -1."
 
 #: library/os.rst:2232
 msgid ""
 "See :func:`shutil.chown` for a higher-level function that accepts names in "
 "addition to numeric ids."
 msgstr ""
+"Δείτε τη :func:`shutil.chown` για μια συνάρτηση υψηλότερου επιπέδου που δέχεται ονόματα εκτός από αριθμητικά ids."
 
 #: library/os.rst:2246
 msgid "Supports a :term:`path-like object`."
-msgstr ""
+msgstr "Υποστηρίζει ένα :term:`αντικείμενο παρόμοιο με διαδρομή`."
 
 #: library/os.rst:2252
 msgid "Change the root directory of the current process to *path*."
-msgstr ""
+msgstr "Αλλάζει τον ριζικό κατάλογο της τρέχουσας διαδικασίας σε *path*."
 
 #: library/os.rst:2262
 msgid ""
@@ -3065,14 +3079,17 @@ msgid ""
 "file descriptor *fd*.  The descriptor must refer to an opened directory, not "
 "an open file.  As of Python 3.3, this is equivalent to ``os.chdir(fd)``."
 msgstr ""
+"Αλλάζει τον τρέχοντα κατάλογο εργασίας στον κατάλογο που αναπαρίσταται από τον "
+"περιγραφέα αρχείου *fd*. Ο περιγραφέας πρέπει να αναφέρεται σε έναν ανοιχτό κατάλογο, όχι σε ένα ανοιχτό αρχείο. "
+"Από την Python 3.3, αυτό είναι ισοδύναμο με ``os.chdir(fd)``."
 
 #: library/os.rst:2273
 msgid "Return a string representing the current working directory."
-msgstr ""
+msgstr "Επιστρέφει μια συμβολοσειρά που αναπαριστά τον τρέχοντα κατάλογο εργασίας."
 
 #: library/os.rst:2278
 msgid "Return a bytestring representing the current working directory."
-msgstr ""
+msgstr "Επιστρέφει ένα bytestring που αναπαριστά τον τρέχοντα κατάλογο εργασίας."
 
 #: library/os.rst:2280
 msgid ""
@@ -3080,6 +3097,9 @@ msgid ""
 "code page: see :pep:`529` for the rationale. The function is no longer "
 "deprecated on Windows."
 msgstr ""
+"Η συνάρτηση τώρα χρησιμοποιεί την κωδικοποίηση UTF-8 στα Windows, αντί για τον ANSI "
+"code page: δείτε :pep:`529` για τη λογική. Η συνάρτηση δεν είναι πλέον "
+"αποκλεισμένη στα Windows."
 
 #: library/os.rst:2288
 msgid ""
@@ -3087,6 +3107,10 @@ msgid ""
 "not follow symbolic links.  As of Python 3.3, this is equivalent to ``os."
 "chflags(path, flags, follow_symlinks=False)``."
 msgstr ""
+"Ορίζει τα flags του *path* στον αριθμητικό *flags*, όπως η :func:`chflags`, "
+"αλλά δεν ακολουθεί συμβολικούς συνδέσμους. Από την Python 3.3, "
+"αυτό είναι ισοδύναμο με "
+"``os.chflags(path, flags, follow_symlinks=False)``."
 
 #: library/os.rst:2302
 msgid ""
@@ -3095,12 +3119,17 @@ msgid ""
 "for possible values of *mode*.  As of Python 3.3, this is equivalent to ``os."
 "chmod(path, mode, follow_symlinks=False)``."
 msgstr ""
+"Αλλάζει τη λειτουργία του *path* στον αριθμητικό *mode*. Αν το path είναι ένας symlink, αυτό "
+"επηρεάζει τον symlink αντί για τον στόχο. Δείτε τα έγγραφα για τη :func:`chmod` για πιθανές τιμές του *mode*. "
+"Από την Python 3.3, αυτό είναι ισοδύναμο με ``os.chmod(path, mode, follow_symlinks=False)``."
 
 #: library/os.rst:2307
 msgid ""
 "``lchmod()`` is not part of POSIX, but Unix implementations may have it if "
 "changing the mode of symbolic links is supported."
 msgstr ""
+"Το ``lchmod()`` δεν είναι μέρος του POSIX, αλλά οι υλοποιήσεις Unix μπορεί να το έχουν αν "
+"η αλλαγή της λειτουργίας των συμβολικών συνδέσμων υποστηρίζεται."
 
 #: library/os.rst:2322
 msgid ""
@@ -3108,10 +3137,14 @@ msgid ""
 "This function will not follow symbolic links.  As of Python 3.3, this is "
 "equivalent to ``os.chown(path, uid, gid, follow_symlinks=False)``."
 msgstr ""
+"Αλλάζει το uid και gid του *path* στους αριθμητικούς *uid* και *gid*. "
+"Αυτή η συνάρτηση δεν θα ακολουθεί συμβολικούς συνδέσμους. "
+"Από την Python 3.3, αυτό είναι ισοδύναμο με "
+"``os.chown(path, uid, gid, follow_symlinks=False)``."
 
 #: library/os.rst:2336
 msgid "Create a hard link pointing to *src* named *dst*."
-msgstr ""
+msgstr "Δημιουργεί έναν σκληρό σύνδεσμο που δείχνει στο *src* με όνομα *dst*."
 
 #: library/os.rst:2338
 msgid ""
@@ -3120,24 +3153,29 @@ msgid ""
 "`not following symlinks <follow_symlinks>`. The default value of "
 "*follow_symlinks* is ``False`` on Windows."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να υποστηρίξει τον καθορισμό *src_dir_fd* και/ή *dst_dir_fd* για "
+"να παρέχει :ref:`διαδρομές σχετικές με περιγραφείς καταλόγων <dir_fd>`, και :ref:`να μην ακολουθούνται τα symlinks <follow_symlinks>`. "
+"Η προεπιλεγμένη τιμή του *follow_symlinks* είναι ``False`` στα Windows."
 
 #: library/os.rst:2343
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.link`` with arguments "
 "``src``, ``dst``, ``src_dir_fd``, ``dst_dir_fd``."
 msgstr ""
+"Κάνει raise μια :ref:`auditing event <auditing>` ``os.link`` με ορίσματα "
+"``src``, ``dst``, ``src_dir_fd``, ``dst_dir_fd``."
 
 #: library/os.rst:4620
 msgid "Added Windows support."
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη για Windows."
 
 #: library/os.rst:2350
 msgid "Added the *src_dir_fd*, *dst_dir_fd*, and *follow_symlinks* parameters."
-msgstr ""
+msgstr "Προστέθηκαν οι παράμετροι *src_dir_fd*, *dst_dir_fd*, και *follow_symlinks*."
 
 #: library/os.rst:2777 library/os.rst:3545
 msgid "Accepts a :term:`path-like object` for *src* and *dst*."
-msgstr ""
+msgstr "Δέχεται ένα :term:`αντικείμενο παρόμοιο με διαδρομή` για *src* και *dst*."
 
 #: library/os.rst:2359
 msgid ""
@@ -3147,6 +3185,11 @@ msgid ""
 "file is removed from or added to the directory during the call of this "
 "function, whether a name for that file be included is unspecified."
 msgstr ""
+"Επιστρέφει μια λίστα που περιέχει τα ονόματα των καταχωρήσεων στον κατάλογο που δίνεται από "
+"*path*. Η λίστα είναι σε τυχαία σειρά, και δεν περιλαμβάνει τις ειδικές "
+"καταχωρήσεις ``'.'`` και ``'..'`` ακόμα και αν είναι παρούσες στον κατάλογο. Αν ένα "
+"αρχείο αφαιρεθεί ή προστεθεί στον κατάλογο κατά τη διάρκεια της κλήσης αυτής της "
+"συνάρτησης, το αν ένα όνομα για αυτό το αρχείο θα συμπεριληφθεί είναι απροσδιόριστο."
 
 #: library/os.rst:2365
 msgid ""
@@ -3155,40 +3198,47 @@ msgid ""
 "filenames returned will also be of type ``bytes``; in all other "
 "circumstances, they will be of type ``str``."
 msgstr ""
+"Το *path* μπορεί να είναι ένα :term:`αντικείμενο παρόμοιο με διαδρομή`. Αν το *path* είναι τύπου ``bytes`` "
+"(άμεσα ή έμμεσα μέσω της διεπαφής :class:`PathLike`), τα ονόματα αρχείων που επιστρέφονται θα είναι επίσης τύπου ``bytes`` · σε όλες τις άλλες "
+"περιπτώσεις, θα είναι τύπου ``str``."
 
 #: library/os.rst:2862
 msgid ""
 "This function can also support :ref:`specifying a file descriptor "
 "<path_fd>`; the file descriptor must refer to a directory."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί επίσης να υποστηρίξει :ref:`τον καθορισμό ενός περιγραφέα αρχείου <path_fd>` · ο "
+"περιγραφέας αρχείου πρέπει να αναφέρεται σε έναν κατάλογο."
 
 #: library/os.rst:2373
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.listdir`` with argument "
 "``path``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.listdir`` με όρισμα ``path``."
 
 #: library/os.rst:2376
 msgid "To encode ``str`` filenames to ``bytes``, use :func:`~os.fsencode`."
-msgstr ""
+msgstr "Για να κωδικοποιήσετε τα ονόματα αρχείων ``str`` σε ``bytes``, χρησιμοποιήστε τη :func:`~os.fsencode`."
 
 #: library/os.rst:2380
 msgid ""
 "The :func:`scandir` function returns directory entries along with file "
 "attribute information, giving better performance for many common use cases."
 msgstr ""
+"Η συνάρτηση :func:`scandir` επιστρέφει καταχωρήσεις καταλόγου μαζί με πληροφορίες χαρακτηριστικών αρχείων, προσφέροντας καλύτερη απόδοση για πολλές κοινές περιπτώσεις χρήσης."
 
 #: library/os.rst:2384
 msgid "The *path* parameter became optional."
-msgstr ""
+msgstr "Η παράμετρος *path* έγινε προαιρετική."
 
 #: library/os.rst:3401
 msgid "Added support for specifying *path* as an open file descriptor."
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη για τον καθορισμό του *path* ως ανοιχτού περιγραφέα αρχείου."
 
 #: library/os.rst:2396
 msgid "Return a list containing the names of drives on a Windows system."
-msgstr ""
+msgstr "Επιστρέφει μια λίστα που περιέχει τα ονόματα των μονάδων σε ένα σύστημα Windows."
 
 #: library/os.rst:2398
 msgid ""
@@ -3197,21 +3247,28 @@ msgid ""
 "reasons, including permissions, network connectivity or missing media. This "
 "function does not test for access."
 msgstr ""
+"Ένα όνομα μονάδας συνήθως μοιάζει με ``'C:\\\\'``. Δεν θα συσχετιστεί κάθε όνομα μονάδας "
+"με έναν τόμο, και ορισμένα μπορεί να είναι απρόσιτα για διάφορους λόγους, "
+"συμπεριλαμβανομένων των δικαιωμάτων, της συνδεσιμότητας δικτύου ή του "
+"ελλείποντος μέσου. Αυτή η συνάρτηση δεν ελέγχει την πρόσβαση."
 
 #: library/os.rst:2403
 msgid "May raise :exc:`OSError` if an error occurs collecting the drive names."
-msgstr ""
+msgstr "Μπορεί να κάνει raise :exc:`OSError` αν προκύψει σφάλμα κατά τη συλλογή των ονομάτων μονάδων."
 
 #: library/os.rst:2406
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.listdrives`` with no "
 "arguments."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.listdrives`` με κανένα "
+"όρισμα."
 
 #: library/os.rst:2415
 msgid ""
 "Return a list containing the mount points for a volume on a Windows system."
 msgstr ""
+"Επιστρέφει μια λίστα που περιέχει τα σημεία προσάρτησης για έναν τόμο σε ένα σύστημα Windows."
 
 #: library/os.rst:2418
 msgid ""
@@ -3220,28 +3277,36 @@ msgid ""
 "all. In the latter case, the list will be empty. Mount points that are not "
 "associated with a volume will not be returned by this function."
 msgstr ""
+"Το *volume* πρέπει να αναπαρίσταται ως μια διαδρομή GUID, όπως αυτές που επιστρέφονται "
+"από τη :func:`os.listvolumes`. Οι τόμοι μπορεί να είναι προσαρτημένοι σε πολλαπλές τοποθεσίες "
+"ή καθόλου. Στη δεύτερη περίπτωση, η λίστα θα είναι κενή. Τα σημεία προσάρτησης που δεν "
+"σχετίζονται με έναν τόμο δεν θα επιστρέφονται από αυτή τη συνάρτηση."
 
 #: library/os.rst:2424
 msgid ""
 "The mount points return by this function will be absolute paths, and may be "
 "longer than the drive name."
 msgstr ""
+"Τα σημεία προσάρτησης που επιστρέφονται από αυτή τη συνάρτηση θα είναι απόλυτες "
+"διαδρομές, και μπορεί να είναι μεγαλύτερες από το όνομα μονάδας."
 
 #: library/os.rst:2427
 msgid ""
 "Raises :exc:`OSError` if the volume is not recognized or if an error occurs "
 "collecting the paths."
 msgstr ""
+"Κάνει raise :exc:`OSError` αν ο τόμος δεν αναγνωρίζεται ή αν προκύψει σφάλμα κατά τη συλλογή των διαδρομών."
 
 #: library/os.rst:2430
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.listmounts`` with argument "
 "``volume``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.listmounts`` με όρισμα ``volume``."
 
 #: library/os.rst:2439
 msgid "Return a list containing the volumes in the system."
-msgstr ""
+msgstr "Επιστρέφει μια λίστα που περιέχει τους τόμους στο σύστημα."
 
 #: library/os.rst:2441
 msgid ""
@@ -3251,16 +3316,22 @@ msgid ""
 "generally not familiar with them, and so the recommended use of this "
 "function is to retrieve mount points using :func:`os.listmounts`."
 msgstr ""
+"Οι τόμοι αναπαρίστανται συνήθως ως μια διαδρομή GUID που μοιάζει με "
+"``\\\\?\\Volume{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}\\``. Τα αρχεία μπορούν συνήθως να "
+"προσπελαστούν μέσω μιας διαδρομής GUID, επιτρέποντας τα δικαιώματα. Ωστόσο, οι χρήστες "
+"δεν είναι γενικά εξοικειωμένοι με αυτά, και έτσι η συνιστώμενη χρήση αυτής της "
+"συνάρτησης είναι να ανακτήσετε σημεία προσάρτησης χρησιμοποιώντας τη :func:`os.listmounts`."
 
 #: library/os.rst:2448
 msgid "May raise :exc:`OSError` if an error occurs collecting the volumes."
-msgstr ""
+msgstr "Μπορεί να κάνει raise :exc:`OSError` αν προκύψει σφάλμα κατά τη συλλογή των τόμων."
 
 #: library/os.rst:2450
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.listvolumes`` with no "
 "arguments."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.listvolumes`` με κανένα όρισμα."
 
 #: library/os.rst:2459
 msgid ""
@@ -3268,28 +3339,33 @@ msgid ""
 "Similar to :func:`~os.stat`, but does not follow symbolic links. Return a :"
 "class:`stat_result` object."
 msgstr ""
+"Εκτελεί το ισοδύναμο μιας κλήσης συστήματος :c:func:`!lstat` στη δεδομένη διαδρομή. "
+"Παρόμοιο με τη :func:`~os.stat`, αλλά δεν ακολουθεί συμβολικούς συνδέσμους. Επιστρέφει ένα αντικείμενο :class:`stat_result`."
 
 #: library/os.rst:2463
 msgid ""
 "On platforms that do not support symbolic links, this is an alias for :func:"
 "`~os.stat`."
 msgstr ""
+"Σε πλατφόρμες που δεν υποστηρίζουν συμβολικούς συνδέσμους, αυτό είναι ένα ψευδώνυμο για τη :func:`~os.stat`."
 
 #: library/os.rst:2466
 msgid ""
 "As of Python 3.3, this is equivalent to ``os.stat(path, dir_fd=dir_fd, "
 "follow_symlinks=False)``."
 msgstr ""
+"Από την Python 3.3, αυτό είναι ισοδύναμο με ``os.stat(path, dir_fd=dir_fd, follow_symlinks=False)``."
 
 #: library/os.rst:2511 library/os.rst:2607 library/os.rst:2681
 msgid ""
 "This function can also support :ref:`paths relative to directory descriptors "
 "<dir_fd>`."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί επίσης να υποστηρίξει :ref:`διαδρομές σχετικές με περιγραφείς καταλόγων <dir_fd>`."
 
 #: library/os.rst:2690 library/os.rst:3538
 msgid "Added support for Windows 6.0 (Vista) symbolic links."
-msgstr ""
+msgstr "Προστέθηκε υποστήριξη για συμβολικούς συνδέσμους των Windows 6.0 (Vista)."
 
 #: library/os.rst:2485
 msgid ""
@@ -3298,10 +3374,14 @@ msgid ""
 "of reparse points are resolved by the operating system as for :func:`~os."
 "stat`."
 msgstr ""
+"Στα Windows, τώρα ανοίγει σημεία επαναφοράς που αντιπροσωπεύουν μια άλλη διαδρομή (name "
+"surrogates), συμπεριλαμβανομένων των συμβολικών συνδέσμων και των συνδέσεων "
+"καταλόγων. Άλλοι τύποι σημείων επαναφοράς επιλύονται "
+"από το λειτουργικό σύστημα όπως για τη :func:`~os.stat`."
 
 #: library/os.rst:2494
 msgid "Create a directory named *path* with numeric mode *mode*."
-msgstr ""
+msgstr "Δημιουργεί έναν κατάλογο με όνομα *path* και αριθμητική λειτουργία *mode*."
 
 #: library/os.rst:2496
 msgid ""
