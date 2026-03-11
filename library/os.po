@@ -3389,6 +3389,7 @@ msgid ""
 "parent directory in the path does not exist, :exc:`FileNotFoundError` is "
 "raised."
 msgstr ""
+"Αν ο κατάλογος υπάρχει ήδη, γίνεται raise η :exc:`FileExistsError`. Αν ένας γονικός κατάλογος στη διαδρομή δεν υπάρχει, γίνεται raise η :exc:`FileNotFoundError`."
 
 #: library/os.rst:2501
 msgid ""
@@ -3398,6 +3399,10 @@ msgid ""
 "platform-dependent.  On some platforms, they are ignored and you should "
 "call :func:`chmod` explicitly to set them."
 msgstr ""
+"Σε ορισμένα συστήματα, το *mode* αγνοείται. Όπου χρησιμοποιείται, η τρέχουσα τιμή umask "
+"πρώτα μάσκαρεται. Αν ορισμένα bit εκτός από τα τελευταία 9 (δηλαδή τα τελευταία 3 "
+"ψηφία της οκταδικής αναπαράστασης του *mode*) είναι ρυθμισμένα, η σημασία τους είναι "
+"εξαρτώμενη από την πλατφόρμα. Σε ορισμένες πλατφόρμες, αγνοούνται και θα πρέπει να καλέσετε τη :func:`chmod` ρητά για να τα ρυθμίσετε."
 
 #: library/os.rst:2507
 msgid ""
@@ -3405,28 +3410,36 @@ msgid ""
 "control to the new directory such that only the current user and "
 "administrators have access. Other values of *mode* are ignored."
 msgstr ""
+"Στα Windows, ένα *mode* των ``0o700`` αντιμετωπίζεται ειδικά για να εφαρμόσει "
+"τον έλεγχο πρόσβασης στον νέο κατάλογο έτσι ώστε μόνο ο τρέχων χρήστης και οι "
+"διαχειριστές να έχουν πρόσβαση. Άλλες τιμές του *mode* αγνοούνται."
 
 #: library/os.rst:2514
 msgid ""
 "It is also possible to create temporary directories; see the :mod:`tempfile` "
 "module's :func:`tempfile.mkdtemp` function."
 msgstr ""
+"Είναι επίσης δυνατό να δημιουργήσετε προσωρινούς καταλόγους· δείτε τη συνάρτηση :func:`tempfile.mkdtemp` του :mod:`tempfile` module."
 
 #: library/os.rst:2554
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.mkdir`` with arguments "
 "``path``, ``mode``, ``dir_fd``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.mkdir`` με ορίσματα "
+"``path``, ``mode``, ``dir_fd``."
 
 #: library/os.rst:2525
 msgid "Windows now handles a *mode* of ``0o700``."
-msgstr ""
+msgstr "Τα Windows τώρα χειρίζονται ένα *mode* των ``0o700``."
 
 #: library/os.rst:2535
 msgid ""
 "Recursive directory creation function.  Like :func:`mkdir`, but makes all "
 "intermediate-level directories needed to contain the leaf directory."
 msgstr ""
+"Συνάρτηση δημιουργίας καταλόγου αναδρομικά. Όπως η :func:`mkdir`, αλλά "
+"δημιουργεί όλους τους ενδιάμεσους καταλόγους που χρειάζονται για να περιέχουν τον τελικό κατάλογο."
 
 #: library/os.rst:2538
 msgid ""
@@ -3436,26 +3449,34 @@ msgid ""
 "directories you can set the umask before invoking :func:`makedirs`.  The "
 "file permission bits of existing parent directories are not changed."
 msgstr ""
+"Η παράμετρος *mode* περνάει στη :func:`mkdir` για τη δημιουργία του τελικού "
+"καταλόγου· δείτε :ref:`την περιγραφή της mkdir() <mkdir_modebits>` για το πώς ερμηνεύεται. "
+"Για να ρυθμίσετε τα bit δικαιωμάτων αρχείων οποιωνδήποτε νεοδημιουργημένων γονικών καταλόγων, "
+"μπορείτε να ρυθμίσετε το umask πριν καλέσετε τη :func:`makedirs`. Τα bit "
+"δικαιωμάτων αρχείων των υπάρχοντων γονικών καταλόγων δεν αλλάζουν."
 
 #: library/os.rst:2544
 msgid ""
 "If *exist_ok* is ``False`` (the default), a :exc:`FileExistsError` is raised "
 "if the target directory already exists."
 msgstr ""
+"Αν *exist_ok* είναι ``False`` (η προεπιλογή), γίνεται raise η :exc:`FileExistsError` αν ο στοχευόμενος κατάλογος υπάρχει ήδη."
 
 #: library/os.rst:2549
 msgid ""
 ":func:`makedirs` will become confused if the path elements to create "
 "include :data:`pardir` (eg. \"..\" on UNIX systems)."
 msgstr ""
+"Η :func:`makedirs` θα μπερδευτεί αν τα στοιχεία διαδρομής που πρέπει να δημιουργηθούν "
+"περιλαμβάνουν :data:`pardir` (π.χ. \"..\" σε συστήματα UNIX)."
 
 #: library/os.rst:2552
 msgid "This function handles UNC paths correctly."
-msgstr ""
+msgstr "Αυτή η συνάρτηση χειρίζεται σωστά τις διαδρομές UNC."
 
 #: library/os.rst:2556
 msgid "Added the *exist_ok* parameter."
-msgstr ""
+msgstr "Προστέθηκε η παράμετρος *exist_ok*."
 
 #: library/os.rst:2561
 msgid ""
@@ -3464,18 +3485,27 @@ msgid ""
 "of the existing directory. Since this behavior was impossible to implement "
 "safely, it was removed in Python 3.4.1. See :issue:`21082`."
 msgstr ""
+"Πριν από την Python 3.4.1, αν *exist_ok* ήταν ``True`` και ο κατάλογος υπήρχε, "
+"η :func:`makedirs` θα εξακολουθούσε να κάνει raise σφάλμα αν το *mode* "
+"δεν ταίριαζε με τη λειτουργία του υπάρχοντος καταλόγου. Δεδομένου ότι αυτή η "
+"συμπεριφορά ήταν αδύνατο να υλοποιηθεί με ασφάλεια, αφαιρέθηκε στην Python 3.4.1. "
+"Δείτε :issue:`21082`."
 
 #: library/os.rst:2569
 msgid ""
 "The *mode* argument no longer affects the file permission bits of newly "
 "created intermediate-level directories."
 msgstr ""
+"Το όρισμα *mode* δεν επηρεάζει πλέον τα bit δικαιωμάτων αρχείων των νεοδημιουργημένων "
+"ενδιάμεσων καταλόγων."
 
 #: library/os.rst:2576
 msgid ""
 "Create a FIFO (a named pipe) named *path* with numeric mode *mode*. The "
 "current umask value is first masked out from the mode."
 msgstr ""
+"Δημιουργεί ένα FIFO (ένα ονομαζόμενο pipe) με όνομα *path* και αριθμητική λειτουργία *mode*. Η τρέχουσα τιμή umask "
+"πρώτα μάσκαρεται από το mode."
 
 #: library/os.rst:2582
 msgid ""
@@ -3486,6 +3516,12 @@ msgid ""
 "Note that :func:`mkfifo` doesn't open the FIFO --- it just creates the "
 "rendezvous point."
 msgstr ""
+"Τα FIFOs είναι pipes που μπορούν να προσπελαστούν όπως τα κανονικά αρχεία. "
+"Τα FIFOs υπάρχουν μέχρι να διαγραφούν (για παράδειγμα με τη :func:`os.unlink`). "
+"Γενικά, τα FIFOs χρησιμοποιούνται ως σημείο συνάντησης μεταξύ διεργασιών τύπου "
+"\"client\" και \"server\": ο server ανοίγει το FIFO για ανάγνωση, και ο "
+"client το ανοίγει για εγγραφή. Σημειώστε ότι η :func:`mkfifo` δεν ανοίγει "
+"το FIFO --- απλώς δημιουργεί το σημείο συνάντησης."
 
 #: library/os.rst:2599
 msgid ""
@@ -3497,22 +3533,30 @@ msgid ""
 "*device* defines the newly created device special file (probably using :func:"
 "`os.makedev`), otherwise it is ignored."
 msgstr ""
+"Δημιουργεί έναν κόμβο συστήματος αρχείων (αρχείο, ειδικό αρχείο συσκευής ή ονομαζόμενο pipe) με όνομα "
+"*path*. Το *mode* καθορίζει τόσο τα δικαιώματα που θα χρησιμοποιηθούν όσο και τον τύπο κόμβου που θα "
+"δημιουργηθεί, συνδυαζόμενο (bitwise OR) με ένα από τα ``stat.S_IFREG``, ``stat.S_IFCHR``, "
+"``stat.S_IFBLK``, και ``stat.S_IFIFO`` (αυτές οι σταθερές είναι διαθέσιμες "
+"στο :mod:`stat`). Για τα ``stat.S_IFCHR`` και ``stat.S_IFBLK``, το *device* ορίζει το "
+"νεοδημιουργημένο ειδικό αρχείο συσκευής (πιθανώς χρησιμοποιώντας τη :func:`os.makedev`), αλλιώς αγνοείται."
 
 #: library/os.rst:2621
 msgid ""
 "Extract the device major number from a raw device number (usually the :attr:"
 "`st_dev` or :attr:`st_rdev` field from :c:struct:`stat`)."
 msgstr ""
+"Εξάγει τον κύριο αριθμό συσκευής από έναν ακατέργαστο αριθμό συσκευής (συνήθως το πεδίο :attr:`st_dev` ή :attr:`st_rdev` από :c:struct:`stat`)."
 
 #: library/os.rst:2627
 msgid ""
 "Extract the device minor number from a raw device number (usually the :attr:"
 "`st_dev` or :attr:`st_rdev` field from :c:struct:`stat`)."
 msgstr ""
+"Εξάγει τον δευτερεύοντα αριθμό συσκευής από έναν ακατέργαστο αριθμό συσκευής (συνήθως το πεδίο :attr:`st_dev` ή :attr:`st_rdev` από :c:struct:`stat`)."
 
 #: library/os.rst:2633
 msgid "Compose a raw device number from the major and minor device numbers."
-msgstr ""
+msgstr "Συνθέτει έναν ακατέργαστο αριθμό συσκευής από τους κύριο και δευτερεύοντα αριθμούς συσκευής."
 
 #: library/os.rst:2638
 msgid ""
@@ -3524,11 +3568,20 @@ msgid ""
 "given in the ``pathconf_names`` dictionary.  For configuration variables not "
 "included in that mapping, passing an integer for *name* is also accepted."
 msgstr ""
+"Επιστρέφει πληροφορίες διαμόρφωσης συστήματος σχετικές με ένα ονομαζόμενο αρχείο. Το *name* "
+"καθορίζει την τιμή διαμόρφωσης που θα ανακτηθεί· μπορεί να είναι μια συμβολοσειρά που είναι "
+"το όνομα μιας ορισμένης τιμής συστήματος· αυτά τα ονόματα καθορίζονται σε έναν "
+"αριθμό προτύπων (POSIX.1, Unix 95, Unix 98, και άλλα). Ορισμένες πλατφόρμες "
+"ορίζουν επιπλέον ονόματα επίσης. Τα ονόματα που γνωρίζει το λειτουργικό "
+"σύστημα του υπολογιστή δίνονται στο λεξικό ``pathconf_names``. Για μεταβλητές "
+"διαμόρφωσης που δεν περιλαμβάνονται σε αυτόν τον χάρτη, η μετάδοση ενός "
+"ακέραιου για το *name* γίνεται επίσης αποδεκτή."
 
 #: library/os.rst:3394 library/os.rst:3566
 msgid ""
 "This function can support :ref:`specifying a file descriptor <path_fd>`."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να υποστηρίξει :ref:`τον καθορισμό ενός περιγραφέα αρχείου <path_fd>`."
 
 #: library/os.rst:2662
 msgid ""
@@ -3536,6 +3589,9 @@ msgid ""
 "to the integer values defined for those names by the host operating system.  "
 "This can be used to determine the set of names known to the system."
 msgstr ""
+"Λεξικό που αντιστοιχεί τα ονόματα που γίνονται αποδεκτά από τη :func:`pathconf` και τη :func:`fpathconf` "
+"στις ακέραιες τιμές που ορίζονται για αυτά τα ονόματα από το λειτουργικό σύστημα του υπολογιστή. "
+"Αυτό μπορεί να χρησιμοποιηθεί για να προσδιοριστεί το σύνολο των ονομάτων που γνωρίζει το σύστημα."
 
 #: library/os.rst:2671
 msgid ""
@@ -3544,6 +3600,9 @@ msgid ""
 "relative, it may be converted to an absolute pathname using ``os.path."
 "join(os.path.dirname(path), result)``."
 msgstr ""
+"Επιστρέφει μια συμβολοσειρά που αντιπροσωπεύει τη διαδρομή στην οποία δείχνει ο συμβολικός σύνδεσμος. "
+"Το αποτέλεσμα μπορεί να είναι είτε μια απόλυτη είτε μια σχετική διαδρομή· αν είναι "
+"σχετική, μπορεί να μετατραπεί σε απόλυτη διαδρομή χρησιμοποιώντας ``os.path.join(os.path.dirname(path), result)``."
 
 #: library/os.rst:2676
 msgid ""
@@ -3552,20 +3611,28 @@ msgid ""
 "may raise a UnicodeDecodeError. If the *path* is a bytes object (direct or "
 "indirectly), the result will be a bytes object."
 msgstr ""
+"Αν το *path* είναι ένα αντικείμενο συμβολοσειράς (άμεσα ή έμμεσα μέσω μιας διεπαφής "
+":class:`PathLike`), το αποτέλεσμα θα είναι επίσης ένα αντικείμενο "
+"συμβολοσειράς, και η κλήση μπορεί να κάνει raise ένα UnicodeDecodeError. "
+"Αν το *path* είναι ένα αντικείμενο bytes (άμεσα ή έμμεσα), "
+"το αποτέλεσμα θα είναι ένα αντικείμενο bytes."
 
 #: library/os.rst:2684
 msgid ""
 "When trying to resolve a path that may contain links, use :func:`~os.path."
 "realpath` to properly handle recursion and platform differences."
 msgstr ""
+"Όταν προσπαθείτε να επιλύσετε μια διαδρομή που "
+"μπορεί να περιέχει συνδέσμους, χρησιμοποιήστε τη "
+":func:`~os.path.realpath` για να χειριστείτε σωστά την αναδρομή και τις διαφορές πλατφόρμας."
 
 #: library/os.rst:2696
 msgid "Accepts a :term:`path-like object` on Unix."
-msgstr ""
+msgstr "Αποδέχεται ένα :term:`αντικείμενο παρόμοιο με διαδρομή` σε Unix."
 
 #: library/os.rst:2699
 msgid "Accepts a :term:`path-like object` and a bytes object on Windows."
-msgstr ""
+msgstr "Αποδέχεται ένα :term:`αντικείμενο παρόμοιο με διαδρομή` και ένα αντικείμενο bytes στα Windows."
 
 #: library/os.rst:2702
 msgid ""
@@ -3573,6 +3640,10 @@ msgid ""
 "substitution path (which typically includes ``\\\\?\\`` prefix) rather than "
 "the optional \"print name\" field that was previously returned."
 msgstr ""
+"Προστέθηκε υποστήριξη για συνδέσεις καταλόγων, και άλλαξε για να "
+"επιστρέφει τη διαδρομή υποκατάστασης (που συνήθως περιλαμβάνει "
+"το πρόθεμα ``\\\\?\\``) αντί του προαιρετικού "
+"πεδίου \"print name\" που επιστρεφόταν προηγουμένως."
 
 #: library/os.rst:2708
 msgid ""
@@ -3580,12 +3651,15 @@ msgid ""
 "`OSError` is raised.  Use :func:`rmdir` to remove directories. If the file "
 "does not exist, a :exc:`FileNotFoundError` is raised."
 msgstr ""
+"Αφαιρεί (διαγράφει) το αρχείο *path*. Αν το *path* είναι ένας κατάλογος, γίνεται raise ένα :exc:`OSError`. "
+"Χρησιμοποιήστε τη :func:`rmdir` για να αφαιρέσετε καταλόγους. Αν το αρχείο δεν υπάρχει, γίνεται raise ένα :exc:`FileNotFoundError`."
 
 #: library/os.rst:2825 library/os.rst:3517
 msgid ""
 "This function can support :ref:`paths relative to directory descriptors "
 "<dir_fd>`."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να υποστηρίξει :ref:`διαδρομές σχετικές με περιγραφείς καταλόγων <dir_fd>`."
 
 #: library/os.rst:2715
 msgid ""
@@ -3594,16 +3668,23 @@ msgid ""
 "allocated to the file is not made available until the original file is no "
 "longer in use."
 msgstr ""
+"Στα Windows, η προσπάθεια αφαίρεσης ενός αρχείου που "
+"χρησιμοποιείται προκαλεί την εμφάνιση εξαίρεσης· στο Unix, "
+"η καταχώριση του καταλόγου αφαιρείται αλλά ο χώρος που έχει "
+"δεσμευτεί για το αρχείο δεν γίνεται διαθέσιμος μέχρι να μην χρησιμοποιείται πλέον το αρχικό αρχείο."
 
 #: library/os.rst:2719
 msgid "This function is semantically identical to :func:`unlink`."
 msgstr ""
+"Αυτή η συνάρτηση είναι σημασιολογικά ταυτόσημη με τη :func:`unlink`."
 
 #: library/os.rst:2743 library/os.rst:3588
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.remove`` with arguments "
 "``path``, ``dir_fd``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.remove`` με ορίσματα "
+"``path``, ``dir_fd``."
 
 #: library/os.rst:2734
 msgid ""
@@ -3616,6 +3697,15 @@ msgid ""
 "and ``'foo'`` if they are empty. Raises :exc:`OSError` if the leaf directory "
 "could not be successfully removed."
 msgstr ""
+"Αφαιρεί καταλόγους αναδρομικά. Λειτουργεί όπως η :func:`rmdir` εκτός "
+"από το ότι, αν ο τελικός κατάλογος αφαιρεθεί με επιτυχία, η "
+":func:`removedirs` προσπαθεί να αφαιρέσει διαδοχικά κάθε γονικό "
+"κατάλογο που αναφέρεται στο *path* μέχρι να γίνει raise ένα σφάλμα "
+"(το οποίο αγνοείται, επειδή γενικά σημαίνει ότι ένας γονικός "
+"κατάλογος δεν είναι κενός). Για παράδειγμα, ``os.removedirs('foo/bar/baz')`` "
+"θα αφαιρέσει πρώτα τον κατάλογο ``'foo/bar/baz'``, και στη συνέχεια "
+"θα αφαιρέσει τους ``'foo/bar'`` και ``'foo'`` αν είναι κενά. Κάνει raise "
+":exc:`OSError` αν ο τελικός κατάλογος δεν μπορεί να αφαιρεθεί με επιτυχία."
 
 #: library/os.rst:2751
 msgid ""
