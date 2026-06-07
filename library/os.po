@@ -3712,6 +3712,8 @@ msgid ""
 "Rename the file or directory *src* to *dst*. If *dst* exists, the operation "
 "will fail with an :exc:`OSError` subclass in a number of cases:"
 msgstr ""
+"Μετονομάζει το αρχείο ή τον κατάλογο *src* σε *dst*. Αν το *dst* υπάρχει, η λειτουργία "
+"θα αποτύχει με μια υποκλάση του :exc:`OSError` σε αρκετές περιπτώσεις:"
 
 #: library/os.rst:2754
 msgid ""
@@ -3719,6 +3721,9 @@ msgid ""
 "operation may fail if *src* and *dst* are on different filesystems. Use :"
 "func:`shutil.move` to support moves to a different filesystem."
 msgstr ""
+"Στα Windows, εάν υπάρχει το *dst* θα γίνεται raised πάντα μια :exc:`FileExistsError`. "
+"Η λειτουργία μπορεί να αποτύχει αν το *src* και το *dst* βρίσκονται σε διαφορετικά συστήματα αρχείων. "
+"Χρησιμοποιήστε τη :func:`shutil.move` για να υποστηρίξετε μετακινήσεις σε διαφορετικό σύστημα αρχείων."
 
 #: library/os.rst:2758
 msgid ""
@@ -3731,28 +3736,36 @@ msgid ""
 "are on different filesystems.  If successful, the renaming will be an atomic "
 "operation (this is a POSIX requirement)."
 msgstr ""
+"Στο UNIX, εάν το *src* είναι ένα αρχείο και το *dst* είναι ένας "
+"κατάλογος ή το αντίστροφο, θα γίνει raise μια :exc:`IsADirectoryError` "
+"ή μια :exc:`NotADirectoryError` αντίστοιχα. "
 
 #: library/os.rst:2807
 msgid ""
 "This function can support specifying *src_dir_fd* and/or *dst_dir_fd* to "
 "supply :ref:`paths relative to directory descriptors <dir_fd>`."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να υποστηρίξει τον καθορισμό *src_dir_fd* και/ή *dst_dir_fd* για να "
+"παρέχει :ref:`paths relative to directory descriptors <dir_fd>`."
 
 #: library/os.rst:2770
 msgid ""
 "If you want cross-platform overwriting of the destination, use :func:"
 "`replace`."
 msgstr ""
+"Αν θέλετε διασταυρούμενη πλατφόρμα αντικατάστασης του προορισμού, χρησιμοποιήστε τη :func:`replace`."
 
 #: library/os.rst:2793 library/os.rst:2810
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.rename`` with arguments "
 "``src``, ``dst``, ``src_dir_fd``, ``dst_dir_fd``."
 msgstr ""
+"Κάνει raise ένα :ref:`auditing event <auditing>` ``os.rename`` με ορίσματα "
+"``src``, ``dst``, ``src_dir_fd``, ``dst_dir_fd``."
 
 #: library/os.rst:2774
 msgid "Added the *src_dir_fd* and *dst_dir_fd* parameters."
-msgstr ""
+msgstr "Προστέθηκαν οι παράμετροι *src_dir_fd* και *dst_dir_fd*."
 
 #: library/os.rst:2783
 msgid ""
@@ -3762,16 +3775,24 @@ msgid ""
 "corresponding to rightmost path segments of the old name will be pruned away "
 "using :func:`removedirs`."
 msgstr ""
+"Συνάρτηση αναδρομικής μετονομασίας καταλόγου ή αρχείου. Λειτουργεί όπως η :func:`rename`, "
+"εκτός από το ότι η δημιουργία οποιωνδήποτε ενδιάμεσων καταλόγων "
+"που χρειάζονται για να γίνει καλή η νέα διαδρομή προσπαθείται "
+"πρώτα. Μετά τη μετονομασία, οι κατάλογοι που "
+"αντιστοιχούν στα δεξιότερα τμήματα της παλιάς διαδρομής "
+"θα αφαιρούνται χρησιμοποιώντας τη :func:`removedirs`."
 
 #: library/os.rst:2790
 msgid ""
 "This function can fail with the new directory structure made if you lack "
 "permissions needed to remove the leaf directory or file."
 msgstr ""
+"Αυτή η συνάρτηση μπορεί να αποτύχει με τη νέα δομή καταλόγου που δημιουργήθηκε αν δεν έχετε "
+"τις απαραίτητες άδειες για να αφαιρέσετε τον τελικό κατάλογο ή αρχείο."
 
 #: library/os.rst:2795
 msgid "Accepts a :term:`path-like object` for *old* and *new*."
-msgstr ""
+msgstr "Δέχεται ένα :term:`αντικείμενο παρόμοιο με διαδρομή` για το *old* και το *new*."
 
 #: library/os.rst:2801
 msgid ""
@@ -3781,6 +3802,11 @@ msgid ""
 "fail if *src* and *dst* are on different filesystems.  If successful, the "
 "renaming will be an atomic operation (this is a POSIX requirement)."
 msgstr ""
+"Μετονομάζει το αρχείο ή τον κατάλογο *src* σε *dst*. Αν το *dst* είναι ένας μη κενός "
+"κατάλογος, θα γίνει raise μια :exc:`OSError`. Αν το *dst* υπάρχει και είναι ένα αρχείο, "
+"θα αντικατασταθεί σιωπηλά αν ο χρήστης έχει άδεια. Η λειτουργία μπορεί να αποτύχει αν "
+"το *src* και το *dst* βρίσκονται σε διαφορετικά συστήματα αρχείων. Αν είναι επιτυχής, "
+"η μετονομασία θα είναι μια ατομική λειτουργία (αυτό είναι μια απαίτηση POSIX)."
 
 #: library/os.rst:2820
 msgid ""
@@ -3789,12 +3815,16 @@ msgid ""
 "respectively.  In order to remove whole directory trees, :func:`shutil."
 "rmtree` can be used."
 msgstr ""
+"Αφαιρεί (διαγράφει) τον κατάλογο *path*. Αν ο κατάλογος δεν υπάρχει ή δεν είναι "
+"κενός, γίνεται raise μια :exc:`FileNotFoundError` ή μια :exc:`OSError` αντίστοιχα. "
+"Για να αφαιρέσετε ολόκληρα δέντρα καταλόγων, μπορείτε να χρησιμοποιήσετε τη :func:`shutil.rmtree`."
 
 #: library/os.rst:2828
 msgid ""
 "Raises an :ref:`auditing event <auditing>` ``os.rmdir`` with arguments "
 "``path``, ``dir_fd``."
 msgstr ""
+"Αυτή η συνάρτηση κάνει raise ένα :ref:`auditing event <auditing>` ``os.rmdir`` με τα ορίσματα ``path``, ``dir_fd``."
 
 #: library/os.rst:2839
 msgid ""
@@ -3805,6 +3835,11 @@ msgid ""
 "creating the iterator, whether an entry for that file be included is "
 "unspecified."
 msgstr ""
+"Επιστρέφει έναν iterator από :class:`os.DirEntry` αντικείμενα που αντιστοιχούν στις "
+"καταχωρήσεις στον κατάλογο που δίνεται από το *path*. Οι καταχωρήσεις αποδίδονται σε "
+"τυχαία σειρά, και οι ειδικές καταχωρήσεις ``'.'`` και ``'..'`` δεν περιλαμβάνονται. "
+"Αν ένα αρχείο αφαιρεθεί ή προστεθεί στον κατάλογο μετά τη δημιουργία του iterator, "
+"αν μια καταχώρηση για αυτό το αρχείο θα συμπεριληφθεί είναι απροσδιόριστο."
 
 #: library/os.rst:2846
 msgid ""
@@ -3817,6 +3852,14 @@ msgid ""
 "symbolic links; :func:`os.DirEntry.stat` always requires a system call on "
 "Unix but only requires one for symbolic links on Windows."
 msgstr ""
+"Η χρήση της :func:`scandir` αντί της :func:`listdir` μπορείς να βελτιώσει σημαντικά την απόδοση "
+"κώδικα που χρειάζεται επίσης πληροφορίες σχετικά με τον τύπο ή τα χαρακτηριστικά των αρχείων, επειδή τα "
+"αντικείμενα `os.DirEntry` παρέχουν αυτές τις πληροφορίες όταν το λειτουργικό σύστημα "
+"τις διαθέτει κατά τη σάρωση ενός καταλόγου. Όλες οι μέθοδοι της :class:`os."
+"DirEntry` ενδέχεται να εκτελέσουν μια κλήση συστήματος όμως οι :func:`~os.DirEntry.is_dir` "
+"and :func:`~os.DirEntry.is_file` συνήθως απαιτούν κλήση συστήματος μόνο για συμβολικούς συνδέσμους "
+"(symbolic links)∙ η :func:`os.DirEntry.stat` απαιτεί πάντοτε κλήση συστήματος σε συστήματα Unix, ενώ στα "
+"Windows απαιτείται κλήση συστήματος μόνο για συμβολικούς συνδέσμους."
 
 #: library/os.rst:2856
 msgid ""
